@@ -70,6 +70,7 @@ Copyright &copy; 2025 The authors
 #extra_javascript = ["assets/javascript/extra.js"]
 extra_javascript = [
     "javascripts/katex.js",
+    "javascripts/homepage.js",
     "https://unpkg.com/katex@0/dist/katex.min.js",
     "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"
 ]
