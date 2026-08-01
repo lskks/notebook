@@ -12,30 +12,34 @@
         <meta name="author" content="<ljhkss>">
       
       
+        <link rel="canonical" href="https://www.ljhkss.top/Mathematics/Probability/2/">
+      
+      
+        <link rel="prev" href="../1/">
       
       
       
         
       
       
-      <link rel="icon" href="/images/favicon.jpg">
+      <link rel="icon" href="../../../images/favicon.jpg">
       <meta name="generator" content="zensical-0.0.51">
     
     
       
-        <title>ljhkss's Notebook</title>
+        <title>Conditional Probability - ljhkss's Notebook</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="/assets/stylesheets/modern/main.62c9b9cc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.62c9b9cc.min.css">
       
         
           
         
-        <link rel="stylesheet" href="/assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
       
       
 
@@ -56,13 +60,13 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="/stylesheets/riscv.css">
+      <link rel="stylesheet" href="../../../stylesheets/riscv.css">
     
-      <link rel="stylesheet" href="/stylesheets/custom.css">
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
     
-    <script>__md_scope=new URL("/",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -86,7 +90,8 @@
     <label class="md-overlay" for="__drawer" aria-label="导航栏"></label>
     <div data-md-component="skip">
       
-        <a href="#__skip" class="md-skip">
+        
+        <a href="#conditional-probabilities" class="md-skip">
           跳转至
         </a>
       
@@ -100,7 +105,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/" title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+    <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -120,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Conditional Probability
             
           </span>
         </div>
@@ -194,7 +199,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/" class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
   Index
@@ -239,7 +244,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/Computer%20Science/Computer%20Organization/" class="md-tabs__link">
+        <a href="../../../Computer%20Science/Computer%20Organization/" class="md-tabs__link">
           
   
   Computer Science
@@ -257,6 +262,8 @@
   
   
   
+    
+  
   
     
       
@@ -273,8 +280,8 @@
     
     
     
-      <li class="md-tabs__item">
-        <a href="/Mathematics/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   Mathematics
@@ -307,7 +314,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/" title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+    <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -325,7 +332,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/" class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -432,7 +439,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Computer%20Science/Computer%20Organization/" class="md-nav__link ">
+            <a href="../../../Computer%20Science/Computer%20Organization/" class="md-nav__link ">
               
   
   
@@ -474,7 +481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/Computer%20Organization/4/" class="md-nav__link">
+      <a href="../../../Computer%20Science/Computer%20Organization/4/" class="md-nav__link">
         
   
   
@@ -565,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/csapp/chapter2/" class="md-nav__link">
+      <a href="../../../Computer%20Science/csapp/chapter2/" class="md-nav__link">
         
   
   
@@ -592,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/csapp/chapter3/" class="md-nav__link">
+      <a href="../../../Computer%20Science/csapp/chapter3/" class="md-nav__link">
         
   
   
@@ -631,6 +638,8 @@
       
   
   
+    
+  
   
   
     
@@ -648,20 +657,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -678,13 +690,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -723,10 +735,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -734,7 +749,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/DiscreteMath/" class="md-nav__link ">
+            <a href="../../DiscreteMath/" class="md-nav__link ">
               
   
   
@@ -751,7 +766,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -842,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.1/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter1%20Logic%26Proof/1.1/" class="md-nav__link">
         
   
   
@@ -869,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.2%20applicationsOfPropositionalLogic/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter1%20Logic%26Proof/1.2%20applicationsOfPropositionalLogic/" class="md-nav__link">
         
   
   
@@ -896,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.3%20PropositionalEquivalences/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter1%20Logic%26Proof/1.3%20PropositionalEquivalences/" class="md-nav__link">
         
   
   
@@ -923,7 +938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.4%20Predicates%26Quantifiers/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter1%20Logic%26Proof/1.4%20Predicates%26Quantifiers/" class="md-nav__link">
         
   
   
@@ -950,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.5%20NestedQuantifiers/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter1%20Logic%26Proof/1.5%20NestedQuantifiers/" class="md-nav__link">
         
   
   
@@ -977,7 +992,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.6%20InferRule/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter1%20Logic%26Proof/1.6%20InferRule/" class="md-nav__link">
         
   
   
@@ -1004,7 +1019,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.7%20introProof/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter1%20Logic%26Proof/1.7%20introProof/" class="md-nav__link">
         
   
   
@@ -1099,7 +1114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.1%20set/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter2%20BasicStructure/2.1%20set/" class="md-nav__link">
         
   
   
@@ -1126,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.2%20setOperator/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter2%20BasicStructure/2.2%20setOperator/" class="md-nav__link">
         
   
   
@@ -1153,7 +1168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.3%20function/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter2%20BasicStructure/2.3%20function/" class="md-nav__link">
         
   
   
@@ -1180,7 +1195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.4%20summation/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter2%20BasicStructure/2.4%20summation/" class="md-nav__link">
         
   
   
@@ -1271,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter3%20Algorithm/algotithm/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter3%20Algorithm/algotithm/" class="md-nav__link">
         
   
   
@@ -1298,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter3%20Algorithm/function/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter3%20Algorithm/function/" class="md-nav__link">
         
   
   
@@ -1393,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.1%20squence/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter5%20Squence/5.1%20squence/" class="md-nav__link">
         
   
   
@@ -1420,7 +1435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.2/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter5%20Squence/5.2/" class="md-nav__link">
         
   
   
@@ -1447,7 +1462,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.3/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter5%20Squence/5.3/" class="md-nav__link">
         
   
   
@@ -1474,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.4/" class="md-nav__link">
+      <a href="../../DiscreteMath/Chapter5%20Squence/5.4/" class="md-nav__link">
         
   
   
@@ -1514,6 +1529,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1533,18 +1550,21 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/Probability/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -1561,13 +1581,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1586,7 +1606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/Probability/1/" class="md-nav__link">
+      <a href="../1/" class="md-nav__link">
         
   
   
@@ -1610,10 +1630,34 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/Mathematics/Probability/2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Conditional Probability
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1628,6 +1672,119 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conditional Probabilities
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bayes-rule-and-the-law-of-total-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Bayes' Rule and the Law of Total Probability
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-probabilities-are-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conditional Probabilities Are Probabilities
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independence-of-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Independence of Events
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coherency-of-bayes-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Coherency of Bayes' Rule
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditioning-as-a-problem-solving-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conditioning as a Problem-solving Tool
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pitfalls-and-paradoxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pitfalls and Paradoxes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pitfalls and Paradoxes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simpsons-paradox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Simpson's paradox
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1663,6 +1820,11 @@
                     
                     
                     
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
                   
                   <div class="md-sidebar__inner">
                     
@@ -1672,6 +1834,108 @@
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conditional Probabilities
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bayes-rule-and-the-law-of-total-probability" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Bayes' Rule and the Law of Total Probability
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditional-probabilities-are-probabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conditional Probabilities Are Probabilities
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#independence-of-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Independence of Events
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coherency-of-bayes-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Coherency of Bayes' Rule
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditioning-as-a-problem-solving-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conditioning as a Problem-solving Tool
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pitfalls-and-paradoxes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pitfalls and Paradoxes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pitfalls and Paradoxes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#simpsons-paradox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Simpson's paradox
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1689,11 +1953,315 @@
   
 
 
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Probability
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  <h1 id="__skip">Conditional Probability</h1>
+
+<h2 id="conditional-probabilities">Conditional Probabilities</h2>
+<p><span class="arithmatex">\(P(A|B)\)</span>被称为<strong>在<span class="arithmatex">\(B\)</span>发生的条件下<span class="arithmatex">\(A\)</span>发生的条件概率</strong>.要在<span class="arithmatex">\(F\)</span>发生的条件下让<span class="arithmatex">\(E\)</span>也发生,实际结果必须同时包含在<span class="arithmatex">\(E\)</span>和 <span class="arithmatex">\(F\)</span>中,即属于<span class="arithmatex">\(EF\)</span>.同时,既然已经知道<span class="arithmatex">\(F\)</span>发生了,那些<span class="arithmatex">\(F\)</span>未发生的结果就不再可能出现了,因此<span class="arithmatex">\(F\)</span>就成了新的,缩小后的样本空间.
+根据上面的描述便可以得到条件概率的定义</p>
+<p>如果<span class="arithmatex">\(P(B)&gt;0\)</span>,那么
+$$
+P(A|B)=\frac{P(A\cap B)}{P(B)}
+$$</p>
+<div class="admonition info">
+<p class="admonition-title">注意</p>
+<ol>
+<li>需要特别注意那个事件在竖线的前面,即<span class="arithmatex">\(P(A|B)\ne P(B|A)\)</span>.</li>
+<li><span class="arithmatex">\(P(A|B)\)</span>和<span class="arithmatex">\(P(B|A)\)</span>都有意义</li>
+<li><span class="arithmatex">\(P(A)\)</span>被称为<strong>先验概率</strong>(prior),<span class="arithmatex">\(P(A|B)\)</span>被称为<strong>后验概率</strong>(posterior)</li>
+</ol>
+</div>
+<p>将上面的定义稍加变形得到
+$$
+P(A\cap B)=P(A|B)P(B)=P(A)P(B|A) \tag{1.1}
+$$
+这个公式在计算事件交集的概率时十分有用.</p>
+<p>可以将公式(1.1)推广到<span class="arithmatex">\(n\)</span>个事件
+$$
+P(E_1E_2\cdots E_n)=P(E_1)P(E_2|E_1)P(E_3|E_1E_2)\cdots P(E_n|E_1E_2\cdots E_{n-1})\tag{1.2}
+$$
+这个公式被称为<strong>乘法规则</strong>(multiplication rule).</p>
+<details class="tip">
+<summary>证明</summary>
+<p>对等式的右边使用条件概率的定义得到
+$$
+P(E_1)\cdot\frac{P(E_1E_2)}{P(E_1)}\cdot\frac{P(E_1E_2E_3)}{P(E_1E_2)}\cdots\frac{P(E_1E_2\cdots E_n)}{P(E_1E_2\cdots E_{n-1})}=P(E_1E_2\cdots E_n)
+$$</p>
+</details>
+<p>我们可以改变公式(1.2)中事件<span class="arithmatex">\(A_i\)</span>的顺序,从而得到<span class="arithmatex">\(n!\)</span>不同的乘法规则.<br />
+例如,对于三个事件<span class="arithmatex">\(A_1,A_2,A_3\)</span>,我们有
+$$
+P(A_1\cap A_2\cap A_3)=P(A_1)P(A_2|A_1)P(A_3|A_1, A_2)=P(A_2)P(A_1|A_2)P(A_3|A_1, A_2)
+$$
+通常需要根据事件的顺序,选择一个<span class="arithmatex">\(A_i\)</span>作为第一个事件,从而得到一个乘法规则.</p>
+<h2 id="bayes-rule-and-the-law-of-total-probability">Bayes' Rule and the Law of Total Probability</h2>
+<p>根据公式(1.1)可以得到著名的<strong>贝叶斯公式</strong>(Bayes' rule)
+$$
+P(A|B)=\frac{P(B|A)P(A)}{P(B)}
+$$
+另一种定义贝叶斯公式的方法是使用<strong>发生比</strong>(odds)</p>
+<div class="admonition note">
+<p class="admonition-title">发生比</p>
+<p>一个事件的发生比为
+$$
+\text{odds}(A)=\frac{P(A)}{P(A^c)}
+$$
+当然,也可以使用发生比来表示事件的概率,即
+$$
+P(A)=\frac{\text{odds}(A)}{1+\text{odds}(A)}
+$$</p>
+</div>
+<p>因此,贝叶斯公式也可以表示为
+$$
+\frac{P(A|B)}{P(A^c|B)}=\frac{P(B|A)}{P(B|A^c)}\frac{P(A)}{P(A^c)}
+$$</p>
+<div class="admonition info">
+<p><span class="arithmatex">\(\dfrac{P(B|A)}{P(B|A^c)}\)</span> 在统计学中被称为<strong>似然比</strong>(likelihood ratio)</p>
+</div>
+<p><strong>全概率公式</strong>(law of total probabilitiy, LOTP)将条件概率和非条件概率关联起来,将一个事件分解为多个小事件
+令<span class="arithmatex">\(A_1,\cdots,A_n\)</span>是样本空间<span class="arithmatex">\(S\)</span>的一个划分<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>,并且<span class="arithmatex">\(P(A_i)&gt;0\)</span>,那么
+$$
+P(B)=\sum_{i=1}^nP(B|A_i)P(A_i)
+$$</p>
+<details class="tip">
+<summary>证明</summary>
+<p>因为<span class="arithmatex">\(A_i\)</span>是<span class="arithmatex">\(S\)</span>的一个划分,所以
+$$
+\begin{aligned}
+B&amp;=B\cap S\
+&amp;=B\cap(A_1\cup A_2\cup\cdots\cup A_n)\
+&amp;=(B\cap A_1)\cup(B\cap A_2)\cup\cdots\cup(B\cap A_n)
+\end{aligned}
+$$
+因为<span class="arithmatex">\(A_1​,\cdots,A_n​\)</span>构成样本空间的一个划分,所以 <span class="arithmatex">\(B\cap A_1​,\cdots,B\cap A_n\)</span>​ 是<strong>两两互斥</strong>的事件.根据概率公理得到:
+$$
+P(B)=P(B\cap A_1​)+P(B\cap A_2​)+\cdots+P(B\cap A_n​)
+$$
+再对每一项应用乘法规则 <span class="arithmatex">\(P(B\cap A_i​)=P(B|A_i​)P(A_i​)\)</span>,即可得到:
+$$
+P(B)=P(B|A_1)P(A_1)+P(B|A_2)P(A_2)+\cdots+P(B|A_n)P(A_n)
+$$</p>
+</details>
+<p>根据全概率公式,可以将样本空间分为不相交的集合<span class="arithmatex">\(A_i\)</span>,找到<span class="arithmatex">\(B\)</span>在每个集合中的条件概率,然后计算出他们的加权和.</p>
+<h2 id="conditional-probabilities-are-probabilities">Conditional Probabilities Are Probabilities</h2>
+<p>条件概率也是一个概率,因此满足概率的所有性质</p>
+<ul>
+<li>条件概率在0到1之间</li>
+<li><span class="arithmatex">\(P(S|E)=1, P(\varnothing|E)=0\)</span></li>
+<li><span class="arithmatex">\(A_1,A_2,\cdots,A_n\)</span>,<span class="arithmatex">\(P(\bigcup_{j=1}^{\infty}A_j|E)=\sum_{j=1}^{\infty}P(A_j|E)\)</span></li>
+<li><span class="arithmatex">\(P(A^c|E)=1-P(A|E)\)</span></li>
+</ul>
+<p>同时,非条件概率也可以看作满足特定条件的条件概率</p>
+<div class="admonition info">
+<p><strong>条件概率是概率,并且所有概率都是有条件的</strong></p>
+</div>
+<p>除此之外,贝叶斯公式和全概率公式也可以附加更多的条件</p>
+<p><strong>带额外条件的贝叶斯公式</strong>
+$$
+P(A|B, E)=\frac{P(B|A, E)P(A|E)}{P(B|E)}
+$$</p>
+<p><strong>带额外条件的全概率公式</strong>
+$$
+P(B|E)=\sum_{i=1}^nP(B|A_i, E)P(A_i|E)
+$$</p>
+<h2 id="independence-of-events">Independence of Events</h2>
+<p>如果事件<span class="arithmatex">\(A\)</span>和<span class="arithmatex">\(B\)</span>满足
+$$
+P(A\cap B)=P(A)P(B)
+$$
+那么事件<span class="arithmatex">\(A\)</span>和事件<span class="arithmatex">\(B\)</span>是<strong>独立事件</strong>(independent)</p>
+<blockquote>
+<p>如果<span class="arithmatex">\(P(A)&gt;0\)</span>且<span class="arithmatex">\(P(B)&gt;0\)</span>,上述定义可以等价为<span class="arithmatex">\(P(A|B)=P(A)\)</span>或<span class="arithmatex">\(P(B|A)=P(B)\)</span></p>
+</blockquote>
+<p>独立是一个<strong>对称关系</strong>,即如果事件<span class="arithmatex">\(A\)</span>与事件<span class="arithmatex">\(B\)</span>独立,那么事件<span class="arithmatex">\(B\)</span>与事件<span class="arithmatex">\(A\)</span>独立</p>
+<blockquote>
+<p>互斥是指 <span class="arithmatex">\(A \cap B = \varnothing\)</span>.如果 <span class="arithmatex">\(P(A)&gt;0, P(B)&gt;0\)</span>，那么<strong>互斥事件绝不独立</strong>因为已知 <span class="arithmatex">\(A\)</span> 发生,则<span class="arithmatex">\(B\)</span> 必不发生.</p>
+</blockquote>
+<p>如果<span class="arithmatex">\(A\)</span>与<span class="arithmatex">\(B\)</span>独立,那么<span class="arithmatex">\(A\)</span>与<span class="arithmatex">\(B^c\)</span>独立,<span class="arithmatex">\(A^c\)</span>与<span class="arithmatex">\(B\)</span>独立,<span class="arithmatex">\(A^c\)</span>与<span class="arithmatex">\(B^c\)</span>独立</p>
+<p>如果事件<span class="arithmatex">\(A,B,C\)</span>满足
+$$
+\begin{aligned}
+P(A\cap B)&amp;=P(A)P(B)\\
+P(A\cap C)&amp;=P(A)P(C)\\
+P(B\cap C)&amp;=P(B)P(C)\\
+P(A\cap B\cap C)&amp;=P(A)P(B)P(C)
+\end{aligned}
+$$
+那么事件<span class="arithmatex">\(A,B,C\)</span>是独立的.如果只满足前三个,那么事件<span class="arithmatex">\(A,B,C\)</span>是<strong>成对独立</strong>(pairwise independence).</p>
+<div class="admonition info">
+<p class="admonition-title">注意</p>
+<ul>
+<li>成对独立并不意味着相互独立</li>
+<li>仅满足 <span class="arithmatex">\(P(A \cap B \cap C) = P(A)P(B)P(C)\)</span> 也推不出成对独立.</li>
+</ul>
+</div>
+<p>如果事件<span class="arithmatex">\(A\)</span>和<span class="arithmatex">\(B\)</span>满足
+$$
+P(A\cap B|E)=P(A|E)P(B|E)
+$$
+那么事件<span class="arithmatex">\(A\)</span>和事件<span class="arithmatex">\(B\)</span>是<strong>条件独立</strong>(conditionally independent)</p>
+<blockquote>
+<p>独立事件与条件独立没有必然联系,两个独立事件可以不是条件独立;两个条件独立事件可以不是独立事件.即不能从<span class="arithmatex">\(P(AB)=P(A)P(B)\)</span>得到<span class="arithmatex">\(P(A\cap B|E)=P(A|E)P(B|E)\)</span>.</p>
+</blockquote>
+<h2 id="coherency-of-bayes-rule">Coherency of Bayes' Rule</h2>
+<p>贝叶斯公式满足一个重要的性质:<strong>连贯性</strong>(coherency),即当我们获得到多条信息并希望整合这些信息来更新概率时，无论是逐条依次更新概率,还是最后同时结合所有信息更新概率,最终得到的后验概率完全相同.</p>
+<h2 id="conditioning-as-a-problem-solving-tool">Conditioning as a Problem-solving Tool</h2>
+<p>下面是两种解决概率问题的常用策略:<br />
+<strong>Strategy:Condition on what you wish you knew</strong> <br />
+如果知道某个未知状态/中间变量<span class="arithmatex">\(E\)</span>从而能轻松解题，就对 <span class="arithmatex">\(E\)</span> 和 <span class="arithmatex">\(E^c\)</span> 进行条件分解</p>
+<p><strong>Strategy: condition on the first step</strong><br />
+适用于多阶段/递归结构的问题,通过对第一步可能出现的结果进行条件分解,建立关于目标概率的递归方程.</p>
+<h2 id="pitfalls-and-paradoxes">Pitfalls and Paradoxes</h2>
+<div class="admonition danger">
+<p class="admonition-title">常见的概率谬误</p>
+<p><strong>Prosecutor's fallacy</strong>: 混淆了<span class="arithmatex">\(P(A|B)\)</span>和<span class="arithmatex">\(P(B|A)\)</span><br />
+<strong>Defense attorney's fallacy</strong>: 没有将所有的证据作为条件  </p>
+</div>
+<h3 id="simpsons-paradox">Simpson's paradox</h3>
+<p>当数据按某个混杂变量分组拆分时，各组内部均表现出某种趋势,但在总体数据聚合后,该趋势却完全反转
+例如
+事件<span class="arithmatex">\(A,B,C\)</span>满足
+$$
+P(A|B,C) &lt; P(A|B^c,C) \text{且} P(A|B,C^c) &lt; P(A|B^c,C^c)
+$$
+但最终
+<span class="arithmatex">\(P(A|B) &gt; P(A|B^c)\)</span></p>
+<p>Simpson悖论的本质是因为全概率公式中各组的加权权重存在巨大差异.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>即<span class="arithmatex">\(\bigcup\limits_{i=1}^n A_i = S\)</span>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">概率统计</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">数学</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1711,6 +2279,28 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Probability and Counting">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Probability and Counting
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1743,14 +2333,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"/","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"/assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"../../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
-      <script src="/assets/javascripts/bundle.d7f30b55.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
       
-        <script src="/javascripts/katex.js"></script>
+        <script src="../../../javascripts/katex.js"></script>
       
-        <script src="/javascripts/homepage.js"></script>
+        <script src="../../../javascripts/homepage.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

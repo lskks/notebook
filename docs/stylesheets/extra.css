@@ -5,6 +5,8 @@
 
   --md-hue: 225deg;
 
+  --md-typeset-font-size: 17px;
+
   --md-default-fg-color: #1e1e1e;
   --md-default-fg-color--light: #444444;
   --md-default-fg-color--lighter: #666666;
@@ -82,6 +84,8 @@
   color-scheme: dark;
 
   --md-hue: 225deg;
+
+  --md-typeset-font-size: 17px;
 
   --md-default-fg-color: #d4d4d4;
   --md-default-fg-color--light: #babdc2;
@@ -420,4 +424,22 @@ body.is-homepage .content-section {
 .hero-section.is-homepage {
   min-height: 100vh !important;
   height: 100vh !important;
+}
+
+/* 加粗文本样式 - 醒目但不喧宾夺主 */
+:root,
+[data-md-color-scheme="default"] {
+  --md-strong-color: #004d99;
+  font-size: 1.3em;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-strong-color: #29b6f6;
+  font-size: 1.3em;
+}
+
+.md-typeset strong,
+.md-typeset b {
+  color: var(--md-strong-color);
+  font-weight: 600;
 }

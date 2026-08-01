@@ -12,30 +12,36 @@
         <meta name="author" content="<ljhkss>">
       
       
+        <link rel="canonical" href="https://www.ljhkss.top/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.6%20InferRule/">
       
+      
+        <link rel="prev" href="../1.5%20NestedQuantifiers/">
+      
+      
+        <link rel="next" href="../1.7%20introProof/">
       
       
         
       
       
-      <link rel="icon" href="/images/favicon.jpg">
+      <link rel="icon" href="../../../../images/favicon.jpg">
       <meta name="generator" content="zensical-0.0.51">
     
     
       
-        <title>ljhkss's Notebook</title>
+        <title>1.6 推理规则 - ljhkss's Notebook</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="/assets/stylesheets/modern/main.62c9b9cc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/modern/main.62c9b9cc.min.css">
       
         
           
         
-        <link rel="stylesheet" href="/assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
       
       
 
@@ -56,13 +62,13 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="/stylesheets/riscv.css">
+      <link rel="stylesheet" href="../../../../stylesheets/riscv.css">
     
-      <link rel="stylesheet" href="/stylesheets/custom.css">
+      <link rel="stylesheet" href="../../../../stylesheets/custom.css">
     
-    <script>__md_scope=new URL("/",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("../../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -86,7 +92,8 @@
     <label class="md-overlay" for="__drawer" aria-label="导航栏"></label>
     <div data-md-component="skip">
       
-        <a href="#__skip" class="md-skip">
+        
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -100,7 +107,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/" title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+    <a href="../../../.." title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -120,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              1.6 推理规则
             
           </span>
         </div>
@@ -194,7 +201,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/" class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   Index
@@ -239,7 +246,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/Computer%20Science/Computer%20Organization/" class="md-tabs__link">
+        <a href="../../../../Computer%20Science/Computer%20Organization/" class="md-tabs__link">
           
   
   Computer Science
@@ -257,6 +264,8 @@
   
   
   
+    
+  
   
     
       
@@ -273,8 +282,8 @@
     
     
     
-      <li class="md-tabs__item">
-        <a href="/Mathematics/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
           
   
   Mathematics
@@ -307,7 +316,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/" title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+    <a href="../../../.." title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -325,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/" class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -432,7 +441,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Computer%20Science/Computer%20Organization/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Computer%20Organization/" class="md-nav__link ">
               
   
   
@@ -474,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/Computer%20Organization/4/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Organization/4/" class="md-nav__link">
         
   
   
@@ -565,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/csapp/chapter2/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/csapp/chapter2/" class="md-nav__link">
         
   
   
@@ -592,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/csapp/chapter3/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/csapp/chapter3/" class="md-nav__link">
         
   
   
@@ -631,6 +640,8 @@
       
   
   
+    
+  
   
   
     
@@ -648,20 +659,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   
@@ -678,13 +692,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -700,6 +714,8 @@
                 
   
   
+    
+  
   
   
     
@@ -723,18 +739,21 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/DiscreteMath/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -751,13 +770,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -773,8 +792,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -801,11 +822,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
@@ -825,7 +846,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -842,7 +863,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.1/" class="md-nav__link">
+      <a href="../1.1/" class="md-nav__link">
         
   
   
@@ -869,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.2%20applicationsOfPropositionalLogic/" class="md-nav__link">
+      <a href="../1.2%20applicationsOfPropositionalLogic/" class="md-nav__link">
         
   
   
@@ -896,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.3%20PropositionalEquivalences/" class="md-nav__link">
+      <a href="../1.3%20PropositionalEquivalences/" class="md-nav__link">
         
   
   
@@ -923,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.4%20Predicates%26Quantifiers/" class="md-nav__link">
+      <a href="../1.4%20Predicates%26Quantifiers/" class="md-nav__link">
         
   
   
@@ -950,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.5%20NestedQuantifiers/" class="md-nav__link">
+      <a href="../1.5%20NestedQuantifiers/" class="md-nav__link">
         
   
   
@@ -974,10 +995,34 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.6%20InferRule/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  1.6 推理规则
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -992,6 +1037,91 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        命题逻辑的有效论证
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        命题逻辑的推理规则
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        使用推理规则建立论证
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        消解律
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        谬误
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        量化命题的推理规则
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1004,7 +1134,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.7%20introProof/" class="md-nav__link">
+      <a href="../1.7%20introProof/" class="md-nav__link">
         
   
   
@@ -1099,7 +1229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.1%20set/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.1%20set/" class="md-nav__link">
         
   
   
@@ -1126,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.2%20setOperator/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.2%20setOperator/" class="md-nav__link">
         
   
   
@@ -1153,7 +1283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.3%20function/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.3%20function/" class="md-nav__link">
         
   
   
@@ -1180,7 +1310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.4%20summation/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.4%20summation/" class="md-nav__link">
         
   
   
@@ -1271,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter3%20Algorithm/algotithm/" class="md-nav__link">
+      <a href="../../Chapter3%20Algorithm/algotithm/" class="md-nav__link">
         
   
   
@@ -1298,7 +1428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter3%20Algorithm/function/" class="md-nav__link">
+      <a href="../../Chapter3%20Algorithm/function/" class="md-nav__link">
         
   
   
@@ -1393,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.1%20squence/" class="md-nav__link">
+      <a href="../../Chapter5%20Squence/5.1%20squence/" class="md-nav__link">
         
   
   
@@ -1420,7 +1550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.2/" class="md-nav__link">
+      <a href="../../Chapter5%20Squence/5.2/" class="md-nav__link">
         
   
   
@@ -1447,7 +1577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.3/" class="md-nav__link">
+      <a href="../../Chapter5%20Squence/5.3/" class="md-nav__link">
         
   
   
@@ -1474,7 +1604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.4/" class="md-nav__link">
+      <a href="../../Chapter5%20Squence/5.4/" class="md-nav__link">
         
   
   
@@ -1533,10 +1663,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1544,7 +1677,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/Probability/" class="md-nav__link ">
+            <a href="../../../Probability/" class="md-nav__link ">
               
   
   
@@ -1561,7 +1694,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1586,7 +1719,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/Probability/1/" class="md-nav__link">
+      <a href="../../../Probability/1/" class="md-nav__link">
         
   
   
@@ -1613,7 +1746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/Probability/2/" class="md-nav__link">
+      <a href="../../../Probability/2/" class="md-nav__link">
         
   
   
@@ -1663,6 +1796,11 @@
                     
                     
                     
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
                   
                   <div class="md-sidebar__inner">
                     
@@ -1672,6 +1810,80 @@
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        命题逻辑的有效论证
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        命题逻辑的推理规则
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        使用推理规则建立论证
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        消解律
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        谬误
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        量化命题的推理规则
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1689,11 +1901,229 @@
   
 
 
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    DiscreteMath
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../1.1/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Chapter1 Logic&Proof
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+<h2 id="_1">命题逻辑的有效论证</h2>
+<div class="admonition info">
+<p class="admonition-title">定义1</p>
+<p><strong>论证</strong>是一连串的命题。
+<strong>前提</strong>是除了论证中最后一个命题外的其他命题
+<strong>结论</strong>是论证中最后那个命题
+<strong>论证形式</strong>是一连串涉及命题变量复合命</p>
+</div>
+<p><em>有效性(valid)</em>
+无论用什么特定命题来替换中的命题变量，如果前提均真时结论为真，则称该论证形式是有效的.
+当一个论证的所有前提为真蕴含着结论为真,则这个论证是有效的.</p>
+<blockquote>
+<p>当<span class="arithmatex">\((p_1\wedge p_2\wedge\cdots\wedge p_n)\to q\)</span>是永真式时,以<span class="arithmatex">\(p_1,p_2,\cdots,p_n\)</span>为前提,以<span class="arithmatex">\(q\)</span>为结论的论证形式是有效的</p>
+</blockquote>
+<h1 id="_2">命题逻辑的推理规则</h1>
+<h1 id="_3">使用推理规则建立论证</h1>
+<p>当有多个前提时，常常需要用到多个推理规则来证明一个论证是有效的,比如下面的例子</p>
+<div class="admonition example">
+<p>针对假设<span class="arithmatex">\(p\to q,\neg p\to r\)</span>,以及 <span class="arithmatex">\(r\to s\)</span>和结论<span class="arithmatex">\(\neg q\to s\)</span>,给出一个有效论证。
+<strong>解:</strong></p>
+<div class="arithmatex">\[
+\begin{align}
+&amp;p\to q\\
+&amp;\neg q\to\neg p\\
+&amp;\neg p\to r\\
+&amp;\neg q\to r\\
+&amp;r\to s\\
+&amp;\neg q\to s
+\end{align}
+\]</div>
+</div>
+<h1 id="_4">消解律</h1>
+<p>消解率基于以下的永真式</p>
+<div class="arithmatex">\[
+(p\vee q)\wedge(\neg p\vee r)\to(q\vee r)
+\]</div>
+<p>其中命题<span class="arithmatex">\(q\vee r\)</span>被称为消解式.</p>
+<h1 id="_5">谬误</h1>
+<p>常见的谬误一般是基于可能式而非永真式,例如
+$$
+((p\to q)\wedge q)\to p
+$$
+前提为真,但结论不一定正确,这类不正确的推理称为肯定结论的谬误</p>
+<h1 id="_6">量化命题的推理规则</h1>
+<p><em>全称假言推理</em></p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\forall(P(x)\to Q(x))\\
+&amp;\underline{P(a),a\text{是论域中的一个特定元素}}\\
+\therefore &amp;Q(a)
+\end{aligned}
+\]</div>
+<p><em>全称取拒式</em></p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\forall(P(x)\to Q(x))\\
+&amp;\underline{\neg Q(a),a\text{是论域中的一个特定元素}}\\
+\therefore &amp;\neg (a)
+\end{aligned}
+\]</div>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">离散数学</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1711,6 +2141,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../1.5%20NestedQuantifiers/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1.5 嵌套量词">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                1.5 嵌套量词
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../1.7%20introProof/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1.7 证明导论">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                1.7 证明导论
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1743,14 +2211,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"/","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"/assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"../../../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
-      <script src="/assets/javascripts/bundle.d7f30b55.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
       
-        <script src="/javascripts/katex.js"></script>
+        <script src="../../../../javascripts/katex.js"></script>
       
-        <script src="/javascripts/homepage.js"></script>
+        <script src="../../../../javascripts/homepage.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

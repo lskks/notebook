@@ -89,6 +89,8 @@ extra_files = [
 [project.markdown_extensions.pymdownx.arithmatex]
 
 generic = true
+
+[project.markdown_extensions.footnotes]
 # ----------------------------------------------------------------------------
 # Section for configuring theme options
 # ----------------------------------------------------------------------------
@@ -268,6 +270,8 @@ features = [
     # always rendered as part of the navigation sidebar on the left.
     # https://zensical.org/docs/setup/navigation/#navigation-integration
     #"toc.integrate"
+
+    "content.footnote.tooltips"
 ]
 
 # ----------------------------------------------------------------------------

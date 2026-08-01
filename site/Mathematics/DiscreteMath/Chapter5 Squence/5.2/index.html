@@ -12,30 +12,36 @@
         <meta name="author" content="<ljhkss>">
       
       
+        <link rel="canonical" href="https://www.ljhkss.top/Mathematics/DiscreteMath/Chapter5%20Squence/5.2/">
       
+      
+        <link rel="prev" href="../5.1%20squence/">
+      
+      
+        <link rel="next" href="../5.3/">
       
       
         
       
       
-      <link rel="icon" href="/images/favicon.jpg">
+      <link rel="icon" href="../../../../images/favicon.jpg">
       <meta name="generator" content="zensical-0.0.51">
     
     
       
-        <title>ljhkss's Notebook</title>
+        <title>5.2 数学归纳法 - ljhkss's Notebook</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="/assets/stylesheets/modern/main.62c9b9cc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/modern/main.62c9b9cc.min.css">
       
         
           
         
-        <link rel="stylesheet" href="/assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
       
       
 
@@ -56,13 +62,13 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="/stylesheets/riscv.css">
+      <link rel="stylesheet" href="../../../../stylesheets/riscv.css">
     
-      <link rel="stylesheet" href="/stylesheets/custom.css">
+      <link rel="stylesheet" href="../../../../stylesheets/custom.css">
     
-    <script>__md_scope=new URL("/",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("../../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -86,7 +92,8 @@
     <label class="md-overlay" for="__drawer" aria-label="导航栏"></label>
     <div data-md-component="skip">
       
-        <a href="#__skip" class="md-skip">
+        
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -100,7 +107,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/" title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+    <a href="../../../.." title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -120,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              5.2 数学归纳法
             
           </span>
         </div>
@@ -194,7 +201,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/" class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   Index
@@ -239,7 +246,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/Computer%20Science/Computer%20Organization/" class="md-tabs__link">
+        <a href="../../../../Computer%20Science/Computer%20Organization/" class="md-tabs__link">
           
   
   Computer Science
@@ -257,6 +264,8 @@
   
   
   
+    
+  
   
     
       
@@ -273,8 +282,8 @@
     
     
     
-      <li class="md-tabs__item">
-        <a href="/Mathematics/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
           
   
   Mathematics
@@ -307,7 +316,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/" title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+    <a href="../../../.." title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -325,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/" class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -432,7 +441,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Computer%20Science/Computer%20Organization/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Computer%20Organization/" class="md-nav__link ">
               
   
   
@@ -474,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/Computer%20Organization/4/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Organization/4/" class="md-nav__link">
         
   
   
@@ -565,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/csapp/chapter2/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/csapp/chapter2/" class="md-nav__link">
         
   
   
@@ -592,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/csapp/chapter3/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/csapp/chapter3/" class="md-nav__link">
         
   
   
@@ -631,6 +640,8 @@
       
   
   
+    
+  
   
   
     
@@ -648,20 +659,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   
@@ -678,13 +692,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -700,6 +714,8 @@
                 
   
   
+    
+  
   
   
     
@@ -723,18 +739,21 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/DiscreteMath/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -751,13 +770,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -842,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.1/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.1/" class="md-nav__link">
         
   
   
@@ -869,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.2%20applicationsOfPropositionalLogic/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.2%20applicationsOfPropositionalLogic/" class="md-nav__link">
         
   
   
@@ -896,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.3%20PropositionalEquivalences/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.3%20PropositionalEquivalences/" class="md-nav__link">
         
   
   
@@ -923,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.4%20Predicates%26Quantifiers/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.4%20Predicates%26Quantifiers/" class="md-nav__link">
         
   
   
@@ -950,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.5%20NestedQuantifiers/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.5%20NestedQuantifiers/" class="md-nav__link">
         
   
   
@@ -977,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.6%20InferRule/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.6%20InferRule/" class="md-nav__link">
         
   
   
@@ -1004,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.7%20introProof/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.7%20introProof/" class="md-nav__link">
         
   
   
@@ -1099,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.1%20set/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.1%20set/" class="md-nav__link">
         
   
   
@@ -1126,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.2%20setOperator/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.2%20setOperator/" class="md-nav__link">
         
   
   
@@ -1153,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.3%20function/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.3%20function/" class="md-nav__link">
         
   
   
@@ -1180,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.4%20summation/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.4%20summation/" class="md-nav__link">
         
   
   
@@ -1271,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter3%20Algorithm/algotithm/" class="md-nav__link">
+      <a href="../../Chapter3%20Algorithm/algotithm/" class="md-nav__link">
         
   
   
@@ -1298,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter3%20Algorithm/function/" class="md-nav__link">
+      <a href="../../Chapter3%20Algorithm/function/" class="md-nav__link">
         
   
   
@@ -1330,8 +1349,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1352,11 +1373,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
@@ -1376,7 +1397,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1393,7 +1414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.1%20squence/" class="md-nav__link">
+      <a href="../5.1%20squence/" class="md-nav__link">
         
   
   
@@ -1417,10 +1438,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1435,6 +1465,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1447,7 +1478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.3/" class="md-nav__link">
+      <a href="../5.3/" class="md-nav__link">
         
   
   
@@ -1474,7 +1505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.4/" class="md-nav__link">
+      <a href="../5.4/" class="md-nav__link">
         
   
   
@@ -1533,10 +1564,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1544,7 +1578,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/Probability/" class="md-nav__link ">
+            <a href="../../../Probability/" class="md-nav__link ">
               
   
   
@@ -1561,7 +1595,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1586,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/Probability/1/" class="md-nav__link">
+      <a href="../../../Probability/1/" class="md-nav__link">
         
   
   
@@ -1613,7 +1647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/Probability/2/" class="md-nav__link">
+      <a href="../../../Probability/2/" class="md-nav__link">
         
   
   
@@ -1662,6 +1696,8 @@
                     
                     
                     
+                      
+                    
                     
                   
                   <div class="md-sidebar__inner">
@@ -1671,6 +1707,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
+  
+    
   
   
 </nav>
@@ -1689,11 +1727,308 @@
   
 
 
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    DiscreteMath
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../5.1%20squence/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Chapter5 Squence
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+<h1 id="_1">数学归纳法</h1>
+<p><strong>演绎(deduction)</strong>是指使用逻辑推理法则从一般原理推断出结论,<strong>归纳</strong>则是指在观察到某一规律在大量具体实例中均成立后，总结出一个一般性原则.</p>
+<div class="admonition note">
+<p><strong>数学归纳法</strong>是一种演绎而不是归纳,它实际上是一种<strong>基于自然数良序性质</strong>的演绎推理，不依赖于经验观察，而是通过“基本步+归纳步”的逻辑链条证明所有自然数都满足命题</p>
+</div>
+<p>假设<span class="arithmatex">\(P(n)\)</span>是一个关于整数<span class="arithmatex">\(n\)</span>的命题,而<span class="arithmatex">\(a\)</span>是一个固定的整数,<strong>数学归纳法原理(The principle of mathematical induction)</strong>指的是,如果满足以下两个条件</p>
+<ol>
+<li><span class="arithmatex">\(P(a)\)</span>为真</li>
+<li>对于任意整数<span class="arithmatex">\(k\ge a\)</span>,如果<span class="arithmatex">\(P(k)\)</span>为真,那么<span class="arithmatex">\(P(k+1)\)</span>也为真</li>
+</ol>
+<p>那么对于任意的整数<span class="arithmatex">\(n\ge a\)</span>,<span class="arithmatex">\(P(n)\)</span>为真.</p>
+<p>数学归纳法可用于证明形如“对于任意的<span class="arithmatex">\(n\ge a\)</span>的整数,<span class="arithmatex">\(P(n)\)</span>为真”的命题.在使用数学归纳法时,需要完成以下两个步骤</p>
+<ol>
+<li><strong>基本步骤(basis step)</strong>:说明<span class="arithmatex">\(P(a)\)</span>为真</li>
+<li><strong>归纳步骤(inductive step)</strong>:说明对于任意整数<span class="arithmatex">\(k\ge a\)</span>,如果<span class="arithmatex">\(P(k)\)</span>为真,那么<span class="arithmatex">\(P(k+1)\)</span>也为真</li>
+</ol>
+<blockquote>
+<p>在进行归纳步骤时,首先假设<span class="arithmatex">\(P(k)\)</span>为真(这个假设被称为<strong>推理假设(inductive hypothesis)</strong>),然后利用推理假设推导出<span class="arithmatex">\(P(k+1)\)</span>.一般就是将<span class="arithmatex">\(P(k+1)\)</span>往<span class="arithmatex">\(P(k)\)</span>的形式上凑.</p>
+</blockquote>
+<details class="info">
+<summary>数学归纳法的直观理解</summary>
+<p>数学归纳法可以用多米诺骨牌倒下的过程来形象地表示.基本步骤就像是推倒了第<span class="arithmatex">\(a\)</span>张骨牌,而归纳步骤就像是说明每一张骨牌倒下都会推倒下一张骨牌.因此,如果基本步骤和归纳步骤都成立,那么所有的骨牌都会被推倒.
+<figure markdown="span">
+<img alt="Dominoes" height="100" src="../images/informal.png" />
+<figcaption>数学归纳法可以用多米诺骨牌倒下的过程来形象地表示</figcaption>
+</figure></p>
+</details>
+<p>下面来看几个利用数学归纳法进行证明的例子</p>
+<div class="admonition example">
+<p class="admonition-title">数学归纳法证明的例子</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">前<span class="arithmatex">\(n\)</span>项整数的和</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>使用数学归纳法证明</p>
+</div>
+</div>
+</div>
+</div>
+<div class="arithmatex">\[
+        1+2+\cdots+n=\frac{n(n+1)}{2}, n\ge1
+\]</div>
+<pre><code>    本题要证明的命题$P(n)$是$1+2+\cdots+n=\dfrac{n(n+1)}{2}, n\ge1$.
+
+    对于基本步骤, 需要证明$P(1)$为真,将$P(n)$中的$n$替换为$1$,得到
+    $$
+    1=\frac{1\cdot(1+1)}{2}=1
+    $$
+    显然,$P(1)$为真.   
+    接着,来看归纳步骤.假设$P(k), k\ge1$为真,即
+    $$
+    1+2+\cdots+k=\frac{k(k+1)}{2}
+    $$
+    需要证明$P(k+1)$为真,即$1+2+\cdots+(k+1)=\dfrac{(k+1)(k+2)}{2}$为真.
+    $$
+    \begin{aligned}
+    1+2+\cdots+k+(k+1)&amp;=\frac{k(k+1)}{2}+(k+1) \\\\
+    &amp;=\frac{k(k+1)+2(k+1)}{2} \\\\
+    &amp;=\frac{(k+1)(k+2)}{2}
+    \end{aligned}
+    $$    
+    所以$P(k+1)$为真.$\blacksquare$
+
+=== "证明整除性"
+    使用数学归纳法证明$2^{2n}-1, n\ge0$可以被$3$整除
+
+    本题要证明的命题$P(n)$是$3\mid 2^{2n}-1, n\ge0$.
+    对于基本步骤, 需要证明$P(0)$为真,将$P(n)$中的$n$替换为$0$,得到
+    $$
+    2^0-1=0=0\cdot3
+    $$
+    根据整除性的定义,$P(0)$为真.
+    接着,来看归纳步骤.假设$P(k), k\ge0$为真,即
+    $$
+    2^{2k}-1\text{可以被}3\text{整除}
+    $$
+    根据整除性的定义,令$2^{2k}-1=3r$,$r$为整数.
+    我们需要证明$P(k+1)$为真,即$2^{2(k+1)}-1$可以被$3$整除.
+    $$
+    \begin{aligned}
+    2^{2(k+1)}-1&amp;=2^{2k}\cdot2^2-1 \\\\
+    &amp;=2^{2k}(3+1)-1 \\\\
+    &amp;=3\cdot2^{2k}+2^{2k}-1 \\\\
+    &amp;=3\cdot2^{2k}+3r \\\\
+    &amp;=3(2^{2k}+r)
+    \end{aligned}
+    $$
+    因为$2^{2k}+r$是整数,所以$2^{2(k+1)}-1$可以被$3$整除.
+    所以$P(k+1)$为真.$\blacksquare$
+
+=== "证明不等式"
+    使用数学归纳法证明对任意大于等于$3$的整数$n$, 
+    $$
+    2n+1&lt;2^n
+    $$
+
+    本题要证明的命题$P(n)$是$2n+1&lt;2^n,n\ge3$.
+    对于基本步骤, 需要证明$P(3)$为真,将$P(n)$中的$n$替换为$3$,得到
+    $$
+    2\cdot3+1=7&lt;2^3=8
+    $$
+    显然,$P(3)$为真.
+    接着,来看归纳步骤.假设$P(k), k\ge3$为真,即
+    $$
+    2k+1&lt;2^k
+    $$
+    我们需要证明$P(k+1)$为真,即$2(k+1)+1&lt;2^{k+1}$.
+    $$
+    \begin{aligned}
+    2(k+1)+1&amp;=(2k+1)+2 \\\\
+    &amp;&lt;2^k+2 \\\\
+    &amp;&lt;2^k+2^k \\\\
+    &amp;&lt;2^{k+1}
+    \end{aligned}
+    $$
+    所以$P(k+1)$为真.$\blacksquare$
+
+=== "Trominoes问题"
+    Trominoes是由三个正方形组成的图形,包括两种类型,如下图所示
+    &lt;figure markdown="span"&gt;
+    ![Trominoes](./images/trominoes.png){ height="100" }
+    &lt;figcaption&gt;Trominoes的两种类型&lt;/figcaption&gt;
+    &lt;/figure&gt;
+    使用数学归纳法证明对于任意的$n\ge1$,一个$2^n\times2^n$的棋盘,如果去掉其中的一个正方形,那么剩下的部分可以被L型的Trominoes覆盖.
+
+    本题要证明的命题$P(n)$是对于任意的$n\ge1$,一个$2^n\times2^n$的棋盘,如果去掉其中的一个正方形,那么剩下的部分可以被L型的Trominoes覆盖.
+
+    对于基本步骤, 需要证明$P(1)$为真,将$P(n)$中的$n$替换为$1$,得到一个$2\times2$的棋盘,如果去掉其中的一个正方形,那么剩下的部分可以被L型的Trominoes覆盖.
+    如左图所示
+
+    显然,$P(1)$为真.
+
+    接着,来看归纳步骤.假设$P(k), k\ge1$为真,即对于任意的$k\ge1$,一个$2^k\times2^k$的棋盘,如果去掉其中的一个正方形,那么剩下的部分可以被L型的Trominoes覆盖.
+    我们需要证明$P(k+1)$为真,即对于任意的$k+1\ge1$,一个$2^{k+1}\times2^{k+1}$的棋盘,如果去掉其中的一个正方形,那么剩下的部分可以被L型的Trominoes覆盖.
+
+    将一个$2^{k+1}\times2^{k+1}$的棋盘分成四个$2^k\times2^k$的子棋盘,去掉的那个正方形必然在其中的一个子棋盘中,根据归纳假设,这个子棋盘剩下的部分可以被L型的Trominoes覆盖.
+
+    将其他三部分的缺口拼成一个L型的Trominoes,覆盖在四个子棋盘的交界处,如右图所示
+
+    所以$P(k+1)$为真.$\blacksquare$
+
+    &lt;figure markdown="span"&gt;
+    ![Trominoes-BaseCase](./images/base-case.png){width="200" align=left}
+    ![Trominoes-BaseCase](./images/inductive-step.png){width="200" align=right}
+    &lt;/figure&gt;
+</code></pre>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">离散数学</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1711,6 +2046,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../5.1%20squence/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 5.1 数列">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                5.1 数列
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../5.3/" class="md-footer__link md-footer__link--next" aria-label="下一页: 5.3 强数学归纳法和良序性公理">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                5.3 强数学归纳法和良序性公理
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1743,14 +2116,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"/","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"/assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"../../../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
-      <script src="/assets/javascripts/bundle.d7f30b55.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
       
-        <script src="/javascripts/katex.js"></script>
+        <script src="../../../../javascripts/katex.js"></script>
       
-        <script src="/javascripts/homepage.js"></script>
+        <script src="../../../../javascripts/homepage.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

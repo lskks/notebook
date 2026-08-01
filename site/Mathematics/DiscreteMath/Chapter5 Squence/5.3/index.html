@@ -12,30 +12,36 @@
         <meta name="author" content="<ljhkss>">
       
       
+        <link rel="canonical" href="https://www.ljhkss.top/Mathematics/DiscreteMath/Chapter5%20Squence/5.3/">
       
+      
+        <link rel="prev" href="../5.2/">
+      
+      
+        <link rel="next" href="../5.4/">
       
       
         
       
       
-      <link rel="icon" href="/images/favicon.jpg">
+      <link rel="icon" href="../../../../images/favicon.jpg">
       <meta name="generator" content="zensical-0.0.51">
     
     
       
-        <title>ljhkss's Notebook</title>
+        <title>5.3 强数学归纳法和良序性公理 - ljhkss's Notebook</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="/assets/stylesheets/modern/main.62c9b9cc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/modern/main.62c9b9cc.min.css">
       
         
           
         
-        <link rel="stylesheet" href="/assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
       
       
 
@@ -56,13 +62,13 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="/stylesheets/riscv.css">
+      <link rel="stylesheet" href="../../../../stylesheets/riscv.css">
     
-      <link rel="stylesheet" href="/stylesheets/custom.css">
+      <link rel="stylesheet" href="../../../../stylesheets/custom.css">
     
-    <script>__md_scope=new URL("/",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("../../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -86,7 +92,8 @@
     <label class="md-overlay" for="__drawer" aria-label="导航栏"></label>
     <div data-md-component="skip">
       
-        <a href="#__skip" class="md-skip">
+        
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -100,7 +107,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/" title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+    <a href="../../../.." title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -120,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              5.3 强数学归纳法和良序性公理
             
           </span>
         </div>
@@ -194,7 +201,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/" class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   Index
@@ -239,7 +246,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/Computer%20Science/Computer%20Organization/" class="md-tabs__link">
+        <a href="../../../../Computer%20Science/Computer%20Organization/" class="md-tabs__link">
           
   
   Computer Science
@@ -257,6 +264,8 @@
   
   
   
+    
+  
   
     
       
@@ -273,8 +282,8 @@
     
     
     
-      <li class="md-tabs__item">
-        <a href="/Mathematics/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../" class="md-tabs__link">
           
   
   Mathematics
@@ -307,7 +316,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/" title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+    <a href="../../../.." title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -325,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/" class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -432,7 +441,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Computer%20Science/Computer%20Organization/" class="md-nav__link ">
+            <a href="../../../../Computer%20Science/Computer%20Organization/" class="md-nav__link ">
               
   
   
@@ -474,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/Computer%20Organization/4/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/Computer%20Organization/4/" class="md-nav__link">
         
   
   
@@ -565,7 +574,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/csapp/chapter2/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/csapp/chapter2/" class="md-nav__link">
         
   
   
@@ -592,7 +601,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Computer%20Science/csapp/chapter3/" class="md-nav__link">
+      <a href="../../../../Computer%20Science/csapp/chapter3/" class="md-nav__link">
         
   
   
@@ -631,6 +640,8 @@
       
   
   
+    
+  
   
   
     
@@ -648,20 +659,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   
@@ -678,13 +692,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -700,6 +714,8 @@
                 
   
   
+    
+  
   
   
     
@@ -723,18 +739,21 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/DiscreteMath/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -751,13 +770,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -842,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.1/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.1/" class="md-nav__link">
         
   
   
@@ -869,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.2%20applicationsOfPropositionalLogic/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.2%20applicationsOfPropositionalLogic/" class="md-nav__link">
         
   
   
@@ -896,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.3%20PropositionalEquivalences/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.3%20PropositionalEquivalences/" class="md-nav__link">
         
   
   
@@ -923,7 +942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.4%20Predicates%26Quantifiers/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.4%20Predicates%26Quantifiers/" class="md-nav__link">
         
   
   
@@ -950,7 +969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.5%20NestedQuantifiers/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.5%20NestedQuantifiers/" class="md-nav__link">
         
   
   
@@ -977,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.6%20InferRule/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.6%20InferRule/" class="md-nav__link">
         
   
   
@@ -1004,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter1%20Logic%26Proof/1.7%20introProof/" class="md-nav__link">
+      <a href="../../Chapter1%20Logic%26Proof/1.7%20introProof/" class="md-nav__link">
         
   
   
@@ -1099,7 +1118,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.1%20set/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.1%20set/" class="md-nav__link">
         
   
   
@@ -1126,7 +1145,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.2%20setOperator/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.2%20setOperator/" class="md-nav__link">
         
   
   
@@ -1153,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.3%20function/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.3%20function/" class="md-nav__link">
         
   
   
@@ -1180,7 +1199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter2%20BasicStructure/2.4%20summation/" class="md-nav__link">
+      <a href="../../Chapter2%20BasicStructure/2.4%20summation/" class="md-nav__link">
         
   
   
@@ -1271,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter3%20Algorithm/algotithm/" class="md-nav__link">
+      <a href="../../Chapter3%20Algorithm/algotithm/" class="md-nav__link">
         
   
   
@@ -1298,7 +1317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter3%20Algorithm/function/" class="md-nav__link">
+      <a href="../../Chapter3%20Algorithm/function/" class="md-nav__link">
         
   
   
@@ -1330,8 +1349,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1352,11 +1373,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
@@ -1376,7 +1397,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1393,7 +1414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.1%20squence/" class="md-nav__link">
+      <a href="../5.1%20squence/" class="md-nav__link">
         
   
   
@@ -1420,7 +1441,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.2/" class="md-nav__link">
+      <a href="../5.2/" class="md-nav__link">
         
   
   
@@ -1444,10 +1465,36 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.3/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  5.3 强数学归纳法和良序性公理
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1462,6 +1509,38 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        良序性公理
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1474,7 +1553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/DiscreteMath/Chapter5%20Squence/5.4/" class="md-nav__link">
+      <a href="../5.4/" class="md-nav__link">
         
   
   
@@ -1533,10 +1612,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1544,7 +1626,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="/Mathematics/Probability/" class="md-nav__link ">
+            <a href="../../../Probability/" class="md-nav__link ">
               
   
   
@@ -1561,7 +1643,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -1586,7 +1668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/Probability/1/" class="md-nav__link">
+      <a href="../../../Probability/1/" class="md-nav__link">
         
   
   
@@ -1613,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/Mathematics/Probability/2/" class="md-nav__link">
+      <a href="../../../Probability/2/" class="md-nav__link">
         
   
   
@@ -1662,6 +1744,13 @@
                     
                     
                     
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
                     
                   
                   <div class="md-sidebar__inner">
@@ -1672,6 +1761,27 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        良序性公理
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1689,11 +1799,213 @@
   
 
 
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    DiscreteMath
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../5.1%20squence/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Chapter5 Squence
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+<h1 id="_1">强数学归纳法和良序性公理</h1>
+<p><strong>强数学归纳法(strong mathematical induction)</strong> 与数学归纳法有一些类似,都包括基本步骤和归纳步骤,但强数学归纳法的归纳步骤不再是假设一个整数<span class="arithmatex">\(k\)</span>满足<span class="arithmatex">\(P(k)\)</span>为真,而是假设对于所有满足<span class="arithmatex">\(a\le i\le k\)</span>的整数<span class="arithmatex">\(i\)</span>,<span class="arithmatex">\(P(i)\)</span>为真,然后利用这些假设来证明<span class="arithmatex">\(P(k+1)\)</span>为真.</p>
+<p><strong>强数学归纳法原理</strong>指的是,如果满足以下两个条件</p>
+<ol>
+<li><span class="arithmatex">\(P(a), P(a+1), \cdots, P(b)\)</span>都为真</li>
+<li>对于任意整数<span class="arithmatex">\(k\ge b\)</span>,如果对于所有满足<span class="arithmatex">\(a\le i\le k\)</span>的整数<span class="arithmatex">\(i\)</span>,<span class="arithmatex">\(P(i)\)</span>为真,那么<span class="arithmatex">\(P(k+1)\)</span>也为真</li>
+</ol>
+<p>那么对于任意的整数<span class="arithmatex">\(n\ge a\)</span>,<span class="arithmatex">\(P(n)\)</span>为真.</p>
+<blockquote>
+<p>假设<span class="arithmatex">\(P(i), a\le i\le k\)</span>为真被称为<strong>推理假设(inductive hypothesis)</strong></p>
+</blockquote>
+<div class="admonition note">
+<p>强数学归纳法有很多不同的名称，包括<em>第二归纳法(second principle of induction)</em>,<em>第二有限归纳法(the second principle of finite induction)</em>和<em>完全归纳法(the principle of complete induction)</em></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">强数学归纳法证明的例子</p>
+<p>证明任意大于<span class="arithmatex">\(1\)</span>的整数都可以被一个质数整除.</p>
+<p>本题要证明的命题<span class="arithmatex">\(P(n)\)</span>是
+$$
+n\text{可以被一个质数整除}, n&gt;1
+$$
+对于基本步骤, 需要证明<span class="arithmatex">\(P(2)\)</span>为真,将<span class="arithmatex">\(P(n)\)</span>中的<span class="arithmatex">\(n\)</span>替换为<span class="arithmatex">\(2\)</span>,得到
+$$
+2\text{可以被一个质数整除}
+$$
+因为<span class="arithmatex">\(2\)</span>是一个质数,所以<span class="arithmatex">\(P(2)\)</span>为真.<br />
+接着,来看归纳步骤.假设整数<span class="arithmatex">\(k\ge2, 2\le i\le k\)</span>的整数<span class="arithmatex">\(i\)</span>,<span class="arithmatex">\(P(i)\)</span>为真,即
+$$
+i\text{可以被一个质数整除}
+$$
+需要证明<span class="arithmatex">\(P(k+1)\)</span>为真,即<span class="arithmatex">\(k+1\)</span>可以被一个质数整除为真.<br />
+<strong>情况1</strong>:<span class="arithmatex">\(k+1\)</span>是一个质数,那么<span class="arithmatex">\(k+1\)</span>可以被一个质数整除(它自己),所以<span class="arithmatex">\(P(k+1)\)</span>为真.<br />
+<strong>情况2</strong>:<span class="arithmatex">\(k+1\)</span>不是一个质数,那么<span class="arithmatex">\(k+1=ab\)</span>,其中<span class="arithmatex">\(2\le a,b\le k\)</span>.根据推理假设,<span class="arithmatex">\(P(a)\)</span>和<span class="arithmatex">\(P(b)\)</span>都为真,即<span class="arithmatex">\(a\)</span>和<span class="arithmatex">\(b\)</span>都可以被一个质数整除.因此,<span class="arithmatex">\(k+1\)</span>也可以被一个质数整除,即<span class="arithmatex">\(P(k+1)\)</span>为真.<span class="arithmatex">\(\blacksquare\)</span></p>
+</div>
+<h2 id="_2">良序性公理</h2>
+<p><strong>良序性公理(well-ordering principle)</strong>指的是,每一个非空的自然数集合都有一个最小元素.</p>
+<blockquote>
+<p>良序性公理,数学归纳法以及强归纳法三者是完全等价的.</p>
+</blockquote>
+<details class="tip">
+<summary>使用良序性公理证明强数学归纳法</summary>
+<p>设<span class="arithmatex">\(P(n)\)</span>是一个关于整数<span class="arithmatex">\(n\ge a\)</span>的命题,满足以下两个条件<br />
+1. <span class="arithmatex">\(P(a), P(a+1), \cdots, P(b)\)</span>都为真</p>
+</details>
+<details class="tip">
+<summary>使用强数学归纳法证明数学归纳法</summary>
+</details>
+<details class="tip">
+<summary>使用数学归纳法证明良序性公理</summary>
+</details>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">离散数学</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1711,6 +2023,44 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../5.2/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 5.2 数学归纳法">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                5.2 数学归纳法
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../5.4/" class="md-footer__link md-footer__link--next" aria-label="下一页: 5.4 应用 算法的正确性">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                5.4 应用 算法的正确性
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -1743,14 +2093,14 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":"/","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"/assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"../../../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
-      <script src="/assets/javascripts/bundle.d7f30b55.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
       
-        <script src="/javascripts/katex.js"></script>
+        <script src="../../../../javascripts/katex.js"></script>
       
-        <script src="/javascripts/homepage.js"></script>
+        <script src="../../../../javascripts/homepage.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
