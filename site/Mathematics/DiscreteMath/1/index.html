@@ -1,0 +1,2869 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A new project generated from the default template project.">
+      
+      
+        <meta name="author" content="<ljhkss>">
+      
+      
+        <link rel="canonical" href="https://www.ljhkss.top/Mathematics/DiscreteMath/1/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/favicon.jpg">
+      <meta name="generator" content="zensical-0.0.51">
+    
+    
+      
+        <title>The Foundations: Logic and Proofs - ljhkss's Notebook</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.62c9b9cc.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetbrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Jetbrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/riscv.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="indigo" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="导航栏"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#11" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="导航栏">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ljhkss's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The Foundations: Logic and Proofs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="indigo" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="查找">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="查找">
+  <button type="button" class="md-search__button">
+    查找
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Computer%20Science/Computer%20Organization/" class="md-tabs__link">
+          
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Mathematics
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    ljhkss's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Index
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Computer Science
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Computer Science
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Computer%20Science/Computer%20Organization/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Computer Organization
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Computer Organization
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Organization/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chapter4 Processor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Csapp
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Csapp
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/csapp/chapter2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  第二章 信息的存储与表示
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/csapp/chapter3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chapter 3: The Memory Hierarchy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mathematics
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Mathematics
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DiscreteMath
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  DiscreteMath
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Foundations: Logic and Proofs
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Foundations: Logic and Proofs
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.1 命题
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        条件语句
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        复合命题的真值表
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        逻辑运算符的优先级
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        逻辑运算和位运算
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.2 命题逻辑的应用
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        语句翻译
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        系统规范说明
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        布尔搜索
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        逻辑电路
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.3 命题等价式
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        逻辑等价式
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        构造新的逻辑等价式
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        命题的可满足性
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        可满足性的应用
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可满足性的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <span class="arithmatex">\(n\)</span>皇后问题
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.4 谓词和量词
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        谓词
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        量词
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="量词">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        全称量词
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        存在量词
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        唯一性量词
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        优先级
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        变量绑定
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        涉及量词的逻辑等价式
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        量化表达式的否定
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.5 嵌套量词
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.6 推理规则
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        命题逻辑的有效论证
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        命题逻辑的推理规则
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        使用推理规则建立论证
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        消解律
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        谬误
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        量化命题的推理规则
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="量化命题的推理规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.7 证明导论
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        术语
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        直接证明法
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic Structures: Sets, Functions, Sequences, Sums, and Matrices
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Algorithms
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Induction and Recursion
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Probability/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Probability
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Probability
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probability/1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Probability and Counting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probability/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Conditional Probability
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Probability/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Random Variables and their Distributions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.1 命题
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        条件语句
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        复合命题的真值表
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        逻辑运算符的优先级
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        逻辑运算和位运算
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.2 命题逻辑的应用
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        语句翻译
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        系统规范说明
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        布尔搜索
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        逻辑电路
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.3 命题等价式
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        逻辑等价式
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        构造新的逻辑等价式
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        命题的可满足性
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        可满足性的应用
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可满足性的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <span class="arithmatex">\(n\)</span>皇后问题
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.4 谓词和量词
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        谓词
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        量词
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="量词">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        全称量词
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        存在量词
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        唯一性量词
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        优先级
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        变量绑定
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        涉及量词的逻辑等价式
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        量化表达式的否定
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.5 嵌套量词
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.6 推理规则
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        命题逻辑的有效论证
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        命题逻辑的推理规则
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        使用推理规则建立论证
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        消解律
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        谬误
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        量化命题的推理规则
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="量化命题的推理规则">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        1.7 证明导论
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        术语
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        直接证明法
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    DiscreteMath
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h2 id="11">1.1 命题</h2>
+<p><strong>命题</strong> 是一个陈述语句(即陈述事实的语句),它或真或假,但不能既真又假.</p>
+<p><strong>定义1</strong><span class="arithmatex">\(\qquad\)</span>令<span class="arithmatex">\(p\)</span>为一命题.则<span class="arithmatex">\(p\)</span>的否定命题记为<span class="arithmatex">\(\neg p\)</span>(也可以记为<span class="arithmatex">\(\over p\)</span>),指"不是<span class="arithmatex">\(p\)</span>所指的情形",命题<span class="arithmatex">\(\neg p\)</span>读作"非<span class="arithmatex">\(p\)</span>",<span class="arithmatex">\(p\)</span>的否定(<span class="arithmatex">\(\neg p\)</span>)的真值与<span class="arithmatex">\(p\)</span>的真值相反.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(p\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\neg p\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<p><strong>定义2</strong><span class="arithmatex">\(\qquad\)</span>令<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>为命题.<span class="arithmatex">\(p,q\)</span>的合取即命题"<span class="arithmatex">\(p\)</span>并且<span class="arithmatex">\(q\)</span>",记作<span class="arithmatex">\(p\wedge q\)</span>.当<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>都是真时，<span class="arithmatex">\(p\wedge q\)</span>命题为真,否则为假.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(p\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(p\wedge q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>在离散数学中,有时也用"但是"表示"而且".</p>
+</blockquote>
+<p><strong>定义3</strong><span class="arithmatex">\(\qquad\)</span>令<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>为命题.<span class="arithmatex">\(p,q\)</span>的析取即命题"<span class="arithmatex">\(p\)</span>或",记作<span class="arithmatex">\(p\vee q\)</span>.当<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>均为假时，<span class="arithmatex">\(p\vee q\)</span>命题为假,否则为真.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(p\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(p\vee q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+</tbody>
+</table>
+<p><strong>定义4<span class="arithmatex">\(\qquad\)</span></strong> 令<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>为命题.<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>的异或(记作<span class="arithmatex">\(p\oplus q\)</span>)是这样一个命题:当<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>中恰好只有一个为真时命题为真,否则为假.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(p\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(p\oplus q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>兼或</strong> 是指两命题可以同时成立,<strong>异或</strong> 指两命题只有一个成立.</p>
+</blockquote>
+<h2 id="_1">条件语句</h2>
+<p><strong>定义5<span class="arithmatex">\(\qquad\)</span></strong> 令<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>为命题.条件语句<span class="arithmatex">\(p\to q\)</span>是命题"如果<span class="arithmatex">\(p\)</span>,则<span class="arithmatex">\(q\)</span>":.当<span class="arithmatex">\(p\)</span>为真而<span class="arithmatex">\(q\)</span>为假时,条件语句<span class="arithmatex">\(p\to q\)</span>为假,否则为真.在条件语句<span class="arithmatex">\(p\to q\)</span>中,<span class="arithmatex">\(p\)</span>称为假设(前件,前提),<span class="arithmatex">\(q\)</span>称为结论(后件).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(p\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(p\to q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">条件语句的其他表示方法</p>
+<p><img alt="" src="../Chapter1%20Logic&amp;Proof/image/condition%20expresion.png" /></p>
+</div>
+<p><strong>逆命题、逆否命题与反命题</strong> 由条件语句可以构成一些新的条件语句.特别是三个常见的相关条件语句还拥有特殊的名称.
+1. 命题<span class="arithmatex">\(q\to p\)</span>称为<span class="arithmatex">\(p\to q\)</span>的<strong>逆命题</strong>,
+2. 而<span class="arithmatex">\(p\to q\)</span>的<strong>逆否命题</strong>是命题<span class="arithmatex">\(\neg q\to\neg p\)</span>.
+3. 命题<span class="arithmatex">\(\neg p\to\neg q\)</span>称为<span class="arithmatex">\(p\to q\)</span>的<strong>反命题</strong>.</p>
+<p><strong>双条件命题</strong></p>
+<p><strong>定义6<span class="arithmatex">\(\qquad\)</span></strong> 令<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>为命题.双条件语句<span class="arithmatex">\(p\leftrightarrow q\)</span>是命题"<span class="arithmatex">\(p\)</span>当且仅当<span class="arithmatex">\(q\)</span>".当<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>有同样的真值时，双条件语句为真,否则为假.双条件语句也称为双向蕴含.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(p\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(p\leftrightarrow q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">双条件命题的其他表示方法</p>
+<ul>
+<li>"<span class="arithmatex">\(p\)</span>是<span class="arithmatex">\(q\)</span>的充分必要条件"</li>
+<li>"如果<span class="arithmatex">\(p\)</span>,那么<span class="arithmatex">\(q\)</span>,反之亦然"</li>
+<li>"<span class="arithmatex">\(p\)</span>当且仅当<span class="arithmatex">\(q\)</span>"</li>
+</ul>
+</div>
+<h2 id="_2">复合命题的真值表</h2>
+<p>真值表的行数<span class="arithmatex">\(r\)</span>与命题个数<span class="arithmatex">\(n(n\in\mathcal{Z_+})\)</span>的关系为</p>
+<div class="arithmatex">\[
+r=2^n
+\]</div>
+<p>其中T与F各<span class="arithmatex">\(\dfrac{r}2\)</span>行</p>
+<div class="admonition example">
+<p class="admonition-title">给出<span class="arithmatex">\((p\vee\neg q)\to(p\wedge q)\)</span>的真值表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><span class="arithmatex">\(p\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(\neg q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(p\vee\neg q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\(p\wedge q\)</span></th>
+<th style="text-align: center;"><span class="arithmatex">\((p\vee\neg q)\to(p\wedge q)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="_3">逻辑运算符的优先级</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">运算符</th>
+<th style="text-align: center;">优先级</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\neg\)</span></td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\vee\)</span></td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\wedge\)</span></td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\to\)</span></td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr>
+<td style="text-align: center;"><span class="arithmatex">\(\leftrightarrow\)</span></td>
+<td style="text-align: center;">5</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_4">逻辑运算和位运算</h2>
+<p>计算机用 <strong>位</strong> 表示信息.位是一个具有两个可能值的符号,即0和1.位一词的含义来自二进制
+数字,因为0和1是数的二进制表示中用到的数字.我们用1表示真,用0表示假.即,1表示T(真),
+0表示F(假).如果一个变量的值或为真或为假,则此变量就称为<strong>布尔变量</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">真值</th>
+<th style="text-align: center;">位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;"><span class="arithmatex">\(1\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;"><span class="arithmatex">\(0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>定义7</strong><span class="arithmatex">\(\qquad\)</span> <strong>位串</strong> 是0位或多位的序列.位串的长度就是它所含位的数目.</p>
+<blockquote>
+<p>我们分别用符号<span class="arithmatex">\(\vee\)</span>,<span class="arithmatex">\(\wedge\)</span>和<span class="arithmatex">\(\oplus\)</span>表示 <strong>按位OR、按位AND</strong> 和 <strong>按位XOR</strong> 运算.</p>
+</blockquote>
+<hr />
+<h2 id="12">1.2 命题逻辑的应用</h2>
+<h2 id="_5">语句翻译</h2>
+<p>各种人类语言常有二义性,把语句翻译成复合命题则可以消除歧义.翻译时也许需要根据语句的含义做一些合理的假设。</p>
+<div class="admonition example">
+<p class="admonition-title">例1</p>
+<p>怎样把下面的语句翻译成逻辑表达式?</p>
+<p>"你可以在校园访问因特网，仅当你主修计算机科学或者你不是新生。"</p>
+<p><strong>解:</strong>
+令<span class="arithmatex">\(a,c\)</span>和<span class="arithmatex">\(f\)</span>分别表示"你可以在校园访问因特网"、"你主修计算机科   学"和"你是个新生",上述语句可以译为</p>
+<div class="arithmatex">\[
+a\to (c\vee\neg f)
+\]</div>
+</div>
+<h2 id="_6">系统规范说明</h2>
+<p>在描述硬件系统和软件系统时，将自然语言语句翻译成逻辑表达式是很重要的一部分。系 统和软件工程师根据自然语言描述的需求，生成精确而无二义性的规范说明，这些规范说明可作为系统开发的基础。</p>
+<p>系统规范说明应该是 <strong>一致的</strong> ，也就是说，系统规范说明不应该包含可能导致矛盾的相互冲突的需求。当规范说明不一致时，就无法开发出一个满足所有规范说明的系统。</p>
+<div class="admonition example">
+<p class="admonition-title">例2</p>
+<p>确定下列系统规范说明是否一致的。</p>
+<ul>
+<li>"诊断消息存储在缓冲区中或者被重传。" </li>
+<li>"诊断消息没有存储在缓冲区中。" </li>
+<li>"如果诊断消息存储在缓冲区中，那么它被重传。"</li>
+</ul>
+<p><strong>解</strong></p>
+<p>令<span class="arithmatex">\(p\)</span>为"诊断消息存储在缓冲区中",<span class="arithmatex">\(q\)</span>为"诊断消息被重传",则,
+以上语句可以表示为<span class="arithmatex">\(p\vee q, \neg p, p\to q\)</span>
+使<span class="arithmatex">\(p\)</span>为假,则<span class="arithmatex">\(\neg p\)</span>为真,此时,<span class="arithmatex">\(\neg p, p\to q\)</span>均为真.
+因此,该系统规范说明是一致的.</p>
+</div>
+<h2 id="_7">布尔搜索</h2>
+<p>逻辑联结词广泛用于大量信息搜索中，由于搜索采用命题逻辑的技术，所以称为布尔搜索。</p>
+<h2 id="_8">逻辑电路</h2>
+<p>逻辑电路(或数字电路)接受输入信号<span class="arithmatex">\(p_1,p_2,\cdots,p_n\)</span>，每个信号1位[或0(关)或1(开)], 产生输出信号<span class="arithmatex">\(s_1,s_2,\cdots,s_n\)</span>,每个1位。</p>
+<p>下图展示了三种基本逻辑门,分别是非门(NOT),或门(OR)以及与门(AND).
+<img alt="basic gate" src="../Chapter1%20Logic&amp;Proof/image/basic%20gate.png" /></p>
+<hr />
+<h2 id="13">1.3 命题等价式</h2>
+<p><strong>定义1</strong><span class="arithmatex">\(\qquad\)</span>一个真值永远是真的复合命题(无论其中出现的命题变元的真值是什么),称为 <strong>永真式</strong> ,也称为 <strong>重言式</strong> .一个真值永远为假的复合命题称为 <strong>矛盾式</strong> , 既不是永真式又不是矛盾式的复合命题称为 <strong>可能式</strong> .</p>
+<h2 id="_9">逻辑等价式</h2>
+<p><strong>定义2</strong><span class="arithmatex">\(\qquad\)</span>如果<span class="arithmatex">\(p\leftrightarrow q\)</span>是永真式,则复合命题<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>称为是逻辑等价的.用记号<span class="arithmatex">\(p\equiv q\)</span>表示<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>是逻辑等价的.</p>
+<div class="admonition tip">
+<p class="admonition-title">注意</p>
+<p>符号<span class="arithmatex">\(\equiv\)</span>不是逻辑联结词,<span class="arithmatex">\(p\equiv q\)</span>不是一个复合命题,而是代表"<span class="arithmatex">\(p\to q\)</span>是永真式" 这一语句.
+有时候用符号<span class="arithmatex">\(\Leftrightarrow\)</span>来代替<span class="arithmatex">\(\equiv\)</span>表示逻辑等价。</p>
+</div>
+<p>判定两个复合命题是否等价的方法之一是使用真值表.特别地,复合命题<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(q\)</span>是等价的,当且仅当对应它们真值的两列完全一致</p>
+<p><strong>常用的逻辑等价式</strong></p>
+<p><img alt="logical equivent.png" src="../Chapter1%20Logic&amp;Proof/image/logical%20equivent.png" /></p>
+<p><strong>定义3<span class="arithmatex">\(\qquad\)</span>合取与析取</strong>  只要<span class="arithmatex">\(p_1,p_2,\cdots,p_n\)</span>为命题,<span class="arithmatex">\(p_1\vee p_2\vee\cdots\vee p_n\)</span>和<span class="arithmatex">\(p_1\wedge p_2\wedge\cdots\wedge p_n\)</span>均有定义.除此以外,德摩根定律可以推广为</p>
+<div class="arithmatex">\[
+\neg(p_1\vee p_2\vee\cdots\vee p_n)\equiv\neg p_1\wedge\neg p_2\wedge\cdots\wedge p_n
+\]</div>
+<p>和</p>
+<div class="arithmatex">\[
+\neg(p_1\wedge p_2\wedge\cdots\wedge p_n)\equiv\neg p_1\vee\neg p_2\vee\cdots\vee p_n
+\]</div>
+<p>或简写为<span class="arithmatex">\(\neg(\bigvee\limits_{j=1}^{n}p_j)\equiv\bigwedge\limits_{j=1}^{n}\neg p_j\)</span>和<span class="arithmatex">\(\neg(\bigwedge\limits_{j=1}^{n}p_j)\equiv\bigvee\limits_{j=1}^{n}\neg p_j\)</span>.</p>
+<h2 id="_10">构造新的逻辑等价式</h2>
+<p>利用上表中逻辑等价式可以构造出新的命题.</p>
+<details class="example" open="open">
+<summary>例1</summary>
+<p><strong>试证明</strong> <span class="arithmatex">\(\neg(p\to q)\equiv p\wedge\neg q\)</span></p>
+<p><strong>证明:</strong></p>
+<div class="arithmatex">\[
+\begin{aligned}
+\neg(p\to q)&amp;\equiv\neg(\neg p\vee q)\\
+&amp;\equiv\neg(\neg p)\wedge\neg q\\
+&amp;\equiv p\wedge\neg q
+\end{aligned}
+\]</div>
+</details>
+<details class="example" open="open">
+<summary>例2</summary>
+<p><strong>试证明</strong> <span class="arithmatex">\(\neg(p\vee(\neg p\wedge q))\equiv\neg p\wedge\neg q\)</span></p>
+<p><strong>证明:</strong></p>
+<div class="arithmatex">\[
+\begin{aligned}
+\neg(p\vee(\neg p\wedge q))&amp;\equiv\neg p\wedge\neg(\neg p\wedge q)\\
+&amp;\equiv\neg p\wedge(p\vee\neg q)\\
+&amp;\equiv(\neg p\wedge p)\vee(\neg p\wedge\neg q)\\
+&amp;\equiv F\vee(\neg p\wedge\neg q)\\
+&amp;\equiv\neg p\wedge\neg q
+\end{aligned}
+\]</div>
+</details>
+<h2 id="_11">命题的可满足性</h2>
+<p>如果存在一个对其变元的真值赋值使其为真,则该复合命题称为是 <strong>可满足的</strong> .反之,则称该符合命题是 <strong>不可满足的</strong>.</p>
+<p>当我们找到一个特定的使得复合命题为真的真值赋值时，就证明了它是可满足的。这样的一个赋值称为这个特定的可满足性问题的一个 <strong>解</strong>.</p>
+<blockquote>
+<p>由可满足性的定义可以知道,永真式和可能式是可满足的;矛盾式是不可满足的.</p>
+</blockquote>
+<h2 id="_12">可满足性的应用</h2>
+<h3 id="n"><span class="arithmatex">\(n\)</span>皇后问题</h3>
+<p><span class="arithmatex">\(n\)</span>皇后问题要求在一个<span class="arithmatex">\(n\times n\)</span>的棋盘上放置<span class="arithmatex">\(n\)</span>个皇后,并且每一行,每一列以及每一对角线只存在一个皇后.
+如图为一个<span class="arithmatex">\(8\times8\)</span>的<span class="arithmatex">\(8\)</span>皇后的解.</p>
+<p><img alt="n-queen" src="../Chapter1%20Logic&amp;Proof/image/n-queen.png" /></p>
+<p><strong>分析:</strong>
+1. 确保每一行至少有 <span class="arithmatex">\(1\)</span> 个皇后:
+   $$
+   Q_1 = \bigwedge\limits_{i=1}^n \bigvee\limits_{j=1}^n p(i, j)
+   $$</p>
+<ol>
+<li>
+<p>确保每一行至多有 <span class="arithmatex">\(1\)</span> 个皇后:
+   $$
+   Q_2 = \bigwedge\limits_{i=1}^n \bigwedge\limits_{j=1}^{n-1} \bigwedge\limits_{k=j+1}^n (\neg p(i, j)) \vee (\neg p(i, k))
+   $$</p>
+</li>
+<li>
+<p>确保每一列至多有 <span class="arithmatex">\(1\)</span> 个皇后:
+   $$
+   Q_3 = \bigwedge\limits_{j=1}^n \bigwedge\limits_{i=1}^{n-1} \bigwedge\limits_{k=i+1}^n (\neg p(i, j)) \vee (\neg p(k, j))
+   $$</p>
+</li>
+<li>
+<p>确保对角线不包含两个皇后:</p>
+</li>
+<li>左下到右上的对角线：
+     $$
+     Q_4 = \bigwedge\limits_{i=2}^n \bigwedge\limits_{j=1}^{n-1} \bigwedge\limits_{k=1}^{\min(i-1, n-j)} (\neg p(i, j)) \vee (\neg p(i-k, k+j))
+     $$</li>
+<li>
+<p>左上到右下的对角线:
+     $$
+     Q_5 = \bigwedge\limits_{i=1}^n \bigwedge\limits_{j=1}^{n-1} \bigwedge\limits_{k=1}^{\min(n-i, n-j)} (\neg p(i, j)) \vee (\neg p(i+k, k+j))
+     $$</p>
+</li>
+<li>
+<p>综合公式:
+   $$
+   Q = Q_1 \wedge Q_2 \wedge Q_3 \wedge Q_4 \wedge Q_5
+   $$</p>
+</li>
+</ol>
+<hr />
+<h2 id="14">1.4 谓词和量词</h2>
+<h2 id="_13">谓词</h2>
+<p>涉及<span class="arithmatex">\(n\)</span>个变量 <span class="arithmatex">\(x_1,x_2,\cdots,x_n\)</span> 如的语句可以表示成,</p>
+<div class="arithmatex">\[
+P(x_1,x_2,\cdots,x_n)
+\]</div>
+<p>形式为 <span class="arithmatex">\(P(x_1,x_2,\cdots,x_n)\)</span> 的语句是命题函数 <span class="arithmatex">\(P\)</span> 在"<span class="arithmatex">\(n\)</span>元组 <span class="arithmatex">\((x_1,x_2,\cdots,x_n)\)</span> 的值，<span class="arithmatex">\(P\)</span> 也称为"<span class="arithmatex">\(n\)</span> 位谓词"或"<span class="arithmatex">\(n\)</span>元谓词".</p>
+<blockquote>
+<p>描述合法输入的语句叫做 <strong>前置条件</strong>，而程序运行的输出应该满足的条件称为 <strong>后置条件</strong>.</p>
+</blockquote>
+<h2 id="_14">量词</h2>
+<blockquote>
+<p>处理谓词和量词的逻辑领域称为 <strong>谓词演算</strong>。</p>
+<p>许多数学命题断言某一性质对于变量在某一特定域内的所有值均为真，这一特 定域称为变量的 <strong>论域</strong>(或 <strong>全体域</strong>)时常简称为 <strong>域</strong>.</p>
+</blockquote>
+<h4 id="_15">全称量词</h4>
+<p><strong>定义1</strong><span class="arithmatex">\(\qquad\)</span><span class="arithmatex">\(P(x)\)</span>的全称量化是语句</p>
+<div class="arithmatex">\[
+P(x)对在其论域的所有值为真.
+\]</div>
+<p>符号<span class="arithmatex">\(\forall xP(x)\)</span>表示<span class="arithmatex">\(P(x)\)</span>的全称量化,其中<span class="arithmatex">\(\forall\)</span>称为 <strong>全称量词</strong>。命题 <span class="arithmatex">\(\forall xP(x)\)</span> 读做"对所有<span class="arithmatex">\(x\)</span>,<span class="arithmatex">\(P(x)\)</span>"或"对每个<span class="arithmatex">\(x\)</span>,<span class="arithmatex">\(P(x)\)</span>".
+一个使<span class="arithmatex">\(P(x)\)</span>为假的个体称为<span class="arithmatex">\(\forall xP(x)\)</span>的反例.</p>
+<h4 id="_16">存在量词</h4>
+<p><strong>定义2</strong><span class="arithmatex">\(\qquad\)</span><span class="arithmatex">\(P(x)\)</span>的存在量化是语句</p>
+<div class="arithmatex">\[
+论域中存在一个x满足P(x)
+\]</div>
+<p>符号<span class="arithmatex">\(\exists xP(x)\)</span>表示<span class="arithmatex">\(P(x)\)</span>的全称量化,其中<span class="arithmatex">\(\exists\)</span>称为 <strong>存在量词</strong>.</p>
+<div class="admonition note 存在量词的其他表示方法">
+<p class="admonition-title">Note</p>
+<p>"对某些","至少有一个"或"有";
+存在量词可读做 "有一个<span class="arithmatex">\(x\)</span>满足<span class="arithmatex">\(P(x)\)</span>" "至少有一个<span class="arithmatex">\(x\)</span>满足<span class="arithmatex">\(P(x)\)</span>" 或 "对某个<span class="arithmatex">\(x\)</span>，<span class="arithmatex">\(P(x)\)</span>".</p>
+</div>
+<p>全称量词和存在量词可以用如下的方式进行表示</p>
+<div class="arithmatex">\[\begin{aligned}
+\forall P(x)&amp;\equiv P(x_1)\wedge P(x_2)\wedge\cdots\wedge P(x_n)\\
+\exists P(x)&amp;\equiv P(x_1)\vee P(x_2)\vee\cdots\vee P(x_n)
+\end{aligned}\]</div>
+<div class="admonition question">
+<p class="admonition-title">如果<span class="arithmatex">\(P(x)\)</span>是语句"<span class="arithmatex">\(x&gt;10\)</span>"，论域为不超过4的正整数，则<span class="arithmatex">\(\exists P(x)\)</span>的真值是什么?</p>
+<p><strong>解:</strong>
+论域为<span class="arithmatex">\(\{1,2,3,4\}\)</span>,则</p>
+<div class="arithmatex">\[
+\exists P(x)\equiv P(1)\vee P(2)\vee P(3)\vee P(4)
+\]</div>
+<p>因为<span class="arithmatex">\(P(4)=4^2&gt;10\)</span>,所以<span class="arithmatex">\(\exists P(x)\)</span>为假.</p>
+</div>
+<h4 id="_17">唯一性量词</h4>
+<p>用符号<span class="arithmatex">\(\exists!\)</span>或<span class="arithmatex">\(\exists_1\)</span>表示唯一性量词,这种表示法是指"存在一个唯一的<span class="arithmatex">\(x\)</span>使得<span class="arithmatex">\(P(x)\)</span>为真"。</p>
+<h4 id="_18">优先级</h4>
+<p>量词<span class="arithmatex">\(\forall\)</span>和<span class="arithmatex">\(\exists\)</span>比命题演算中的所有逻辑运算符都具有更高的优先级.</p>
+<blockquote>
+<p><span class="arithmatex">\(\forall P(x)\vee Q(x)\)</span>表示<span class="arithmatex">\((\forall P(x))\vee Q(x)\)</span>而不是<span class="arithmatex">\(\forall (P(x)\vee Q(x))\)</span>.</p>
+</blockquote>
+<h4 id="_19">变量绑定</h4>
+<p>当量词作用于变量<span class="arithmatex">\(x\)</span>时，我们说此变量的这次出现为<strong>约束的</strong>。
+一个变量如果没有被量词约束或设置为等于某一特定值,则它的出现被称为是<strong>自由的</strong>.</p>
+<blockquote>
+<p>命题函数中的所有变量出现必须是约束的或者被设置为等于某个特定值的，才能把它转变为一个命题。</p>
+</blockquote>
+<h2 id="_20">涉及量词的逻辑等价式</h2>
+<p><strong>定义3</strong><span class="arithmatex">\(\qquad\)</span>涉及谓词和量词的语句是逻辑等价的当且仅当无论用什么谓词代入这些语句,也无论为这些命题函数里的变量指定什么论域,它们都有相同的真值.我们用<span class="arithmatex">\(S\equiv T\)</span>表示涉及谓词和量词的两个语句<span class="arithmatex">\(S\)</span>和<span class="arithmatex">\(T\)</span>是逻辑等价的.</p>
+<div class="arithmatex">\[\begin{aligned}
+\forall x(P(x)\vee Q(x))\equiv\forall xP(x)\vee\forall xQ(x)\\
+\forall x(P(x)\wedge Q(x))\equiv\forall xP(x)\wedge\forall xQ(x)
+\end{aligned}\]</div>
+<h2 id="_21">量化表达式的否定</h2>
+<div class="arithmatex">\[\begin{align}
+\neg\forall xP(x)\equiv\exists x\neg P(x)\\
+\neg\exists xP(x)\equiv\forall x\neg P(x)
+\end{align}
+\]</div>
+<p><img alt="negation.png" src="../Chapter1%20Logic&amp;Proof/image/negation.png" /></p>
+<hr />
+<h2 id="15">1.5 嵌套量词</h2>
+<p><strong>嵌套量词</strong> 是指一个量词出现在另一个量词的作用域内.</p>
+<p>在处理多个变量的量化式时,可以借助嵌套循环的思想来理解.</p>
+<ul>
+<li>对于 <span class="arithmatex">\(\forall x\forall yP(x,y)\)</span>，当所有情况均为真时，结果为真；否则为假</li>
+<li>对于 <span class="arithmatex">\(\forall x\exists yP(x,y)\)</span>，对于每一趟外层循环，只要有一种子情况为真，结果为真；否则为假</li>
+<li>对于 <span class="arithmatex">\(\exists x\forall yP(x,y)\)</span>，如果存在一趟外层循环，其所有子情况均为真，结果为真；否则为假</li>
+<li>对于 <span class="arithmatex">\(\exists x\exists yP(x,y)\)</span>，只要有一种情况为真，结果为真；否则为假</li>
+</ul>
+<hr />
+<h2 id="16">1.6 推理规则</h2>
+<h2 id="_22">命题逻辑的有效论证</h2>
+<div class="admonition info">
+<p class="admonition-title">定义1</p>
+<p><strong>论证</strong>是一连串的命题。
+<strong>前提</strong>是除了论证中最后一个命题外的其他命题
+<strong>结论</strong>是论证中最后那个命题
+<strong>论证形式</strong>是一连串涉及命题变量复合命</p>
+</div>
+<p><em>有效性(valid)</em>
+无论用什么特定命题来替换中的命题变量，如果前提均真时结论为真，则称该论证形式是有效的.
+当一个论证的所有前提为真蕴含着结论为真,则这个论证是有效的.</p>
+<blockquote>
+<p>当<span class="arithmatex">\((p_1\wedge p_2\wedge\cdots\wedge p_n)\to q\)</span>是永真式时,以<span class="arithmatex">\(p_1,p_2,\cdots,p_n\)</span>为前提,以<span class="arithmatex">\(q\)</span>为结论的论证形式是有效的</p>
+</blockquote>
+<h1 id="_23">命题逻辑的推理规则</h1>
+<h1 id="_24">使用推理规则建立论证</h1>
+<p>当有多个前提时，常常需要用到多个推理规则来证明一个论证是有效的,比如下面的例子</p>
+<div class="admonition example">
+<p>针对假设<span class="arithmatex">\(p\to q,\neg p\to r\)</span>,以及 <span class="arithmatex">\(r\to s\)</span>和结论<span class="arithmatex">\(\neg q\to s\)</span>,给出一个有效论证。
+<strong>解:</strong></p>
+<div class="arithmatex">\[
+\begin{align}
+&amp;p\to q\\
+&amp;\neg q\to\neg p\\
+&amp;\neg p\to r\\
+&amp;\neg q\to r\\
+&amp;r\to s\\
+&amp;\neg q\to s
+\end{align}
+\]</div>
+</div>
+<h1 id="_25">消解律</h1>
+<p>消解率基于以下的永真式</p>
+<div class="arithmatex">\[
+(p\vee q)\wedge(\neg p\vee r)\to(q\vee r)
+\]</div>
+<p>其中命题<span class="arithmatex">\(q\vee r\)</span>被称为消解式.</p>
+<h1 id="_26">谬误</h1>
+<p>常见的谬误一般是基于可能式而非永真式,例如
+$$
+((p\to q)\wedge q)\to p
+$$
+前提为真,但结论不一定正确,这类不正确的推理称为肯定结论的谬误</p>
+<h1 id="_27">量化命题的推理规则</h1>
+<p><em>全称假言推理</em></p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\forall(P(x)\to Q(x))\\
+&amp;\underline{P(a),a\text{是论域中的一个特定元素}}\\
+\therefore &amp;Q(a)
+\end{aligned}
+\]</div>
+<p><em>全称取拒式</em></p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\forall(P(x)\to Q(x))\\
+&amp;\underline{\neg Q(a),a\text{是论域中的一个特定元素}}\\
+\therefore &amp;\neg (a)
+\end{aligned}
+\]</div>
+<hr />
+<h2 id="17">1.7 证明导论</h2>
+<h2 id="_28">术语</h2>
+<p><strong>定理</strong>: 是一个能够被证明是真的语句.</p>
+<blockquote>
+<p>定理一词通通常是用来专指那些被认为至少有些重要的语句。</p>
+</blockquote>
+<p>不太重要的定理有时称为<strong>命题</strong>(定理也可以称为<strong>事实</strong>或<strong>结论</strong>.</p>
+<h2 id="_29">直接证明法</h2>
+<p>条件语句<span class="arithmatex">\(p\to q\)</span>的直接证明法的构造：首先假设<span class="arithmatex">\(p\)</span>为真,然后用推理规则构造，最后表明<span class="arithmatex">\(q\)</span>必须也为真.</p>
+<p><strong>定义 1</strong><span class="arithmatex">\(\qquad\)</span>如果存在一个整数<span class="arithmatex">\(k\)</span>,使得<span class="arithmatex">\(n=2k\)</span>,那么<span class="arithmatex">\(n\)</span>为偶数;如果存在一个整数<span class="arithmatex">\(k\)</span>使得<span class="arithmatex">\(n=2k+1\)</span>,那么<span class="arithmatex">\(n\)</span>为奇数</p>
+<p><strong>定理 1</strong><span class="arithmatex">\(\qquad\)</span>如果<span class="arithmatex">\(n\)</span>是偶数,则<span class="arithmatex">\(n^2\)</span>也是偶数.</p>
+<p><strong>证明:</strong></p>
+<p>假设<span class="arithmatex">\(n\)</span>是偶数,则存在一个整数<span class="arithmatex">\(k\)</span>使得<span class="arithmatex">\(n=2k\)</span>.</p>
+<p>那么</p>
+<div class="arithmatex">\[
+n^2=(2k)^2=4k^2=2(2k^2)
+\]</div>
+<p>因此<span class="arithmatex">\(n^2\)</span>也是偶数.</p>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">离散数学</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 离散数学">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                离散数学
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../2/" class="md-footer__link md-footer__link--next" aria-label="下一页: Basic Structures: Sets, Functions, Sequences, Sums, and Matrices">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Basic Structures: Sets, Functions, Sequences, Sums, and Matrices
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 The authors
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"../../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="../../../javascripts/homepage.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

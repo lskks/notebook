@@ -4,11 +4,23 @@ tags:
   - 离散数学
 ---
 
-离散数学是计算机科学的基础,它研究离散对象的结构和性质.离散对象是指那些可以被分割成独立的、不可分割的部分的对象,例如整数、图、集合等.
-
-我使用的教材是Epp的*Discrete Mathematics With Its Applications*
+我使用的教材是Kenneth Rosen的*Discrete Mathematics and Its Applications Eighth Edition*
 
 <figure markdown="span">
-  ![TextBook Cover](textbook.png){ width="300" }
+  ![TextBook Cover](./images/cover.png){ width="300" }
   <figcaption></figcaption>
 </figure>
+
+!!! note "目录"
+    - [x] [Chapter 1: The Foundations: Logic and Proofs](1.md)
+    - [x] [Chapter 2: Basic Structures: Sets, Functions, Sequences, Sums, and Matrices](2.md)
+    - [x] [Chapter 3: Algorithms](3.md)
+    - [ ] [Chapter 4: Number Theory and Cryptography]()
+    - [x] [Chapter 5: Induction and Recursion](5.md)
+    - [ ] [Chapter 6: Counting]()
+    - [ ] [Chapter 7: Discrete Probability]()
+    - [ ] [Chapter 8: Advanced Counting Techniques]()
+    - [ ] [Chapter 9: Relations]()
+    - [ ] [Chapter 10: Graphs]()
+    - [ ] [Chapter 11: Trees]()
+    - [ ] [Chapter 12: Boolean Algebra]()
