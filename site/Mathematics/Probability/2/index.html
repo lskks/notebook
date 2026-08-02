@@ -1610,6 +1610,68 @@ $$
 如果知道某个未知状态/中间变量<span class="arithmatex">\(E\)</span>从而能轻松解题，就对 <span class="arithmatex">\(E\)</span> 和 <span class="arithmatex">\(E^c\)</span> 进行条件分解</p>
 <p><strong>Strategy: condition on the first step</strong><br />
 适用于多阶段/递归结构的问题,通过对第一步可能出现的结果进行条件分解,建立关于目标概率的递归方程.</p>
+<p>下面是一个使用第二个策略的例子:</p>
+<div class="admonition question">
+<p class="admonition-title">Gambler's ruin</p>
+<p>两个赌徒A和B,进行一系列1$的打赌,其中A获胜的概率是 <span class="arithmatex">\(p\)</span>,B获胜的概率是<span class="arithmatex">\(q=1-p\)</span>.假设A初始有<span class="arithmatex">\(i\)</span>美元,B初始有   <span class="arithmatex">\(N-i\)</span>美元.每次A损失一美元,这一美元就到了B手里,反之亦然.因此,两个人之间的总财富保持不变(即<span class="arithmatex">\(N\)</span>).整个过程如下 图所示</p>
+<p><strong>求A获胜的概率</strong></p>
+<p>设<span class="arithmatex">\(p_i\)</span>为A从<span class="arithmatex">\(i\)</span>美元开始最终获胜的概率,事件<span class="arithmatex">\(W\)</span>为A获胜</p>
+<p>根据全概率公式可以计算出第一回合<span class="arithmatex">\(p_i\)</span>的值
+$$
+\begin{aligned}
+P_i&amp;=P(W|\text{A start at i, wins round 1})p+P(W|\text{A start at i, loses round 1})q \\
+&amp;=P(W|\text{A start at i + 1})p + P(W|\text{A start at i - 1})q \\
+&amp;= p_{i+1}\cdot p+p_{i-1}\cdot q
+\end{aligned}
+$$</p>
+<p>上面的递推公式的特征方程为<span class="arithmatex">\(px^2-x+q=0\)</span>,解得方程的两个根为<span class="arithmatex">\(1\)</span>和<span class="arithmatex">\(q/p\)</span>,当<span class="arithmatex">\(p\ne 1/2\)</span>时,这两个根不同,可以得到    递推公式的通解为
+$$
+p_i=a+b\left(\frac{q}{p}\right)^i\tag{1.3}
+$$</p>
+<p>通过边界条件<span class="arithmatex">\(p_0=0\)</span>和<span class="arithmatex">\(p_N=1\)</span>得到
+$$
+a=-b=\frac{1}{1-(\frac{q}{p})^N}
+$$</p>
+<p>将<span class="arithmatex">\(a,b\)</span>带入<span class="arithmatex">\((1.3)\)</span>即可得到结果.  </p>
+<p>当<span class="arithmatex">\(q=1/2\)</span>时,方程有两个相同的根,此时,通解为
+$$
+p_i=a+bi
+$$</p>
+<p>通过边界条件<span class="arithmatex">\(p_0=0\)</span>和<span class="arithmatex">\(p_N=1\)</span>得到
+$$
+a=0\qquad b=\frac 1N
+$$</p>
+<p>综上,可以得到
+$$
+p_i=
+\begin{cases}
+\dfrac{1-\left(\dfrac{q}{p}\right)^i}{1-\left(\dfrac{q}{p}\right)^N},&amp;p\ne1/2 \\
+\dfrac{i}{N},&amp;p=1/2
+\end{cases}
+$$</p>
+<p>补充:
+- 上面这个式子是连续的.因为
+$$
+\begin{aligned}
+\lim_{p\to\frac12}\frac{1-\left(\frac{q}{p}\right)^i}{1-\left(\frac{q}{p}\right)^N}&amp;\xlongequal {\text{let }x=q/p}
+\lim_{x\to1}\frac{1-x^i}{1-x^N} \\
+&amp;\xlongequal{\text{L'Hôpital}}
+\lim_{x\to1}\frac{ix^{i-1}}{Nx^{N-1}} \\
+&amp;=\frac iN
+\end{aligned}
+$$</p>
+<ul>
+<li>根据对称性,只需要交换p和q即可得到B获胜的概率为 
+$$
+P(\text{B wins}) = 
+\begin{cases} 
+\dfrac{1-\left(\dfrac{p}{q}\right)^{N-i}}{1-\left(\dfrac{p}{q}\right)^N}, &amp; p \neq 1/2 \
+\dfrac{N-i}{N}, &amp; p = 1/2 
+\end{cases}
+$$</li>
+</ul>
+<p>因为<span class="arithmatex">\(P(B wins)+p_i=1\)</span>,所以这个游戏必将结束.</p>
+</div>
 <h2 id="pitfalls-and-paradoxes">Pitfalls and Paradoxes</h2>
 <div class="admonition danger">
 <p class="admonition-title">常见的概率谬误</p>
