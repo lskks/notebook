@@ -80,15 +80,12 @@ jobs:
         env:
           URL_LIST: ${{ steps.urls.outputs.urls }}
         run: |
-          payload=$(cat <<EOF
-          {
-            "host": "www.ljhkss.top",
-            "key": "f3d4464644b14e3fb03ed45ad6842317",
-            "keyLocation": "https://www.ljhkss.top/f3d4464644b14e3fb03ed45ad6842317.txt",
-            "urlList": ${URL_LIST}
-          }
-EOF
-          )
+          payload=$(jq -n \
+            --arg host "www.ljhkss.top" \
+            --arg key "f3d4464644b14e3fb03ed45ad6842317" \
+            --arg keyLocation "https://www.ljhkss.top/f3d4464644b14e3fb03ed45ad6842317.txt" \
+            --argjson urlList "$URL_LIST" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
 
           curl -X POST "https://api.indexnow.org/indexnow" \
             -H "Content-Type: application/json; charset=utf-8" \
