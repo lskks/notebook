@@ -1,0 +1,95 @@
+name: IndexNow Auto Submit
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "docs/**/*.md"
+      - "docs/**/*.html"
+      - "docs/*.md"
+      - "docs/*.html"
+
+jobs:
+  check-and-submit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build changed URL list
+        id: urls
+        shell: bash
+        run: |
+          BEFORE="${{ github.event.before }}"
+          AFTER="${{ github.sha }}"
+
+          if [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            CHANGED_FILES=$(git diff --name-only "$(git hash-object -t tree /dev/null)" "$AFTER" || true)
+          else
+            CHANGED_FILES=$(git diff --name-only "$BEFORE" "$AFTER" || true)
+          fi
+
+          if [ -z "$CHANGED_FILES" ]; then
+            echo 'urls=[]' >> "$GITHUB_OUTPUT"
+            echo "No relevant content files changed."
+            exit 0
+          fi
+
+          export CHANGED_FILES
+
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          import json
+          import os
+
+          base_url = "https://www.ljhkss.top/"
+          urls = []
+
+          for raw_path in os.environ["CHANGED_FILES"].splitlines():
+              path = raw_path.strip().replace('\\', '/')
+              if not path.startswith("docs/"):
+                  continue
+
+              relative = path[5:]
+              if relative.endswith(".md"):
+                  relative = relative[:-3]
+              elif relative.endswith(".html"):
+                  relative = relative[:-5]
+              else:
+                  continue
+
+              if relative == "index":
+                  url = base_url
+              elif relative.endswith("/index"):
+                  url = base_url + relative[:-6].rstrip("/") + "/"
+              else:
+                  url = base_url + relative.rstrip("/") + "/"
+
+              if url not in urls:
+                  urls.append(url)
+
+          print(f"urls={json.dumps(urls, ensure_ascii=False)}")
+          PY
+
+      - name: Send updated URLs to IndexNow
+        if: ${{ steps.urls.outputs.urls != '[]' }}
+        shell: bash
+        env:
+          URL_LIST: ${{ steps.urls.outputs.urls }}
+        run: |
+          payload=$(cat <<EOF
+          {
+            "host": "www.ljhkss.top",
+            "key": "f3d4464644b14e3fb03ed45ad6842317",
+            "keyLocation": "https://www.ljhkss.top/f3d4464644b14e3fb03ed45ad6842317.txt",
+            "urlList": ${URL_LIST}
+          }
+EOF
+          )
+
+          curl -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$payload"
