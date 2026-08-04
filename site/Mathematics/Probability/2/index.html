@@ -84,7 +84,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="indigo" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -140,7 +140,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="none" data-md-color-scheme="indigo" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
     
       <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
@@ -1456,7 +1456,7 @@
   <h1 id="__skip">Conditional Probability</h1>
 
 <h2 id="conditional-probabilities">Conditional Probabilities</h2>
-<p><span class="arithmatex">\(P(A|B)\)</span>被称为<strong>在<span class="arithmatex">\(B\)</span>发生的条件下<span class="arithmatex">\(A\)</span>发生的条件概率</strong>.要在<span class="arithmatex">\(F\)</span>发生的条件下让<span class="arithmatex">\(E\)</span>也发生,实际结果必须同时包含在<span class="arithmatex">\(E\)</span>和 <span class="arithmatex">\(F\)</span>中,即属于<span class="arithmatex">\(EF\)</span>.同时,既然已经知道<span class="arithmatex">\(F\)</span>发生了,那些<span class="arithmatex">\(F\)</span>未发生的结果就不再可能出现了,因此<span class="arithmatex">\(F\)</span>就成了新的,缩小后的样本空间.
+<p><span class="arithmatex">\(P(A|B)\)</span>被称为<strong>在<span class="arithmatex">\(B\)</span>发生的条件下<span class="arithmatex">\(A\)</span>发生的条件概率</strong>.要在<span class="arithmatex">\(B\)</span>发生的条件下让<span class="arithmatex">\(A\)</span>也发生,实际结果必须同时包含在<span class="arithmatex">\(A\)</span>和<span class="arithmatex">\(B\)</span>中,即属于<span class="arithmatex">\(AB\)</span>.同时,既然已经知道<span class="arithmatex">\(B\)</span>发生了,那些<span class="arithmatex">\(B\)</span>未发生的结果就不再可能出现了,因此<span class="arithmatex">\(B\)</span>就成了新的样本空间.
 根据上面的描述便可以得到条件概率的定义</p>
 <p>如果<span class="arithmatex">\(P(B)&gt;0\)</span>,那么
 $$
@@ -1611,9 +1611,10 @@ $$
 <p><strong>Strategy: condition on the first step</strong><br />
 适用于多阶段/递归结构的问题,通过对第一步可能出现的结果进行条件分解,建立关于目标概率的递归方程.</p>
 <p>下面是一个使用第二个策略的例子:</p>
-<div class="admonition question">
-<p class="admonition-title">Gambler's ruin</p>
-<p>两个赌徒A和B,进行一系列1$的打赌,其中A获胜的概率是 <span class="arithmatex">\(p\)</span>,B获胜的概率是<span class="arithmatex">\(q=1-p\)</span>.假设A初始有<span class="arithmatex">\(i\)</span>美元,B初始有   <span class="arithmatex">\(N-i\)</span>美元.每次A损失一美元,这一美元就到了B手里,反之亦然.因此,两个人之间的总财富保持不变(即<span class="arithmatex">\(N\)</span>).整个过程如下 图所示</p>
+<details class="question" open="open">
+<summary>Gambler's ruin</summary>
+<p>两个赌徒A和B,进行一系列1$的打赌,其中A获胜的概率是 <span class="arithmatex">\(p\)</span>,B获胜的概率是<span class="arithmatex">\(q=1-p\)</span>.假设A初始有<span class="arithmatex">\(i\)</span>美元,B初始有   <span class="arithmatex">\(N-i\)</span>美元.每次A损失一美元,这一美元就到了B手里,反之亦然.因此,两个人之间的总财富保持不变(即<span class="arithmatex">\(N\)</span>).整个过程如下图所示</p>
+<p><img alt="ramdom_walk.png" src=".././images/ramdom_walk.png" /></p>
 <p><strong>求A获胜的概率</strong></p>
 <p>设<span class="arithmatex">\(p_i\)</span>为A从<span class="arithmatex">\(i\)</span>美元开始最终获胜的概率,事件<span class="arithmatex">\(W\)</span>为A获胜</p>
 <p>根据全概率公式可以计算出第一回合<span class="arithmatex">\(p_i\)</span>的值
@@ -1649,29 +1650,35 @@ p_i=
 \dfrac{i}{N},&amp;p=1/2
 \end{cases}
 $$</p>
-<p>补充:
-- 上面这个式子是连续的.因为
+<details class="note">
+<summary>一些补充</summary>
+<ul>
+<li>
+<p>上面这个式子是连续的.因为
 $$
 \begin{aligned}
-\lim_{p\to\frac12}\frac{1-\left(\frac{q}{p}\right)^i}{1-\left(\frac{q}{p}\right)^N}&amp;\xlongequal {\text{let }x=q/p}
+\lim_{p\to\frac12}\frac{1-\left(\frac{q}{p}\right)^i}{1-\left(\frac{q}{p}\right)^N}&amp;    \xlongequal {\text{let }x=q/p}
 \lim_{x\to1}\frac{1-x^i}{1-x^N} \\
 &amp;\xlongequal{\text{L'Hôpital}}
 \lim_{x\to1}\frac{ix^{i-1}}{Nx^{N-1}} \\
 &amp;=\frac iN
 \end{aligned}
 $$</p>
-<ul>
-<li>根据对称性,只需要交换p和q即可得到B获胜的概率为 
+</li>
+<li>
+<p>根据对称性,只需要交换p和q即可得到B获胜的概率为 
 $$
 P(\text{B wins}) = 
 \begin{cases} 
 \dfrac{1-\left(\dfrac{p}{q}\right)^{N-i}}{1-\left(\dfrac{p}{q}\right)^N}, &amp; p \neq 1/2 \
 \dfrac{N-i}{N}, &amp; p = 1/2 
 \end{cases}
-$$</li>
+$$</p>
+</li>
 </ul>
 <p>因为<span class="arithmatex">\(P(B wins)+p_i=1\)</span>,所以这个游戏必将结束.</p>
-</div>
+</details>
+</details>
 <h2 id="pitfalls-and-paradoxes">Pitfalls and Paradoxes</h2>
 <div class="admonition danger">
 <p class="admonition-title">常见的概率谬误</p>
@@ -1827,6 +1834,8 @@ $$
         <script src="../../../javascripts/katex.js"></script>
       
         <script src="../../../javascripts/homepage.js"></script>
+      
+        <script src="../../../javascripts/lightbox.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

@@ -71,6 +71,7 @@ Copyright &copy; 2025 The authors
 extra_javascript = [
     "javascripts/katex.js",
     "javascripts/homepage.js",
+    "javascripts/lightbox.js",
     "https://unpkg.com/katex@0/dist/katex.min.js",
     "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"
 ]
@@ -284,7 +285,7 @@ features = [
 # - https://zensical.org/docs/setup/colors/
 # ----------------------------------------------------------------------------
 [[project.theme.palette]]
-scheme = "indigo"
+scheme = "default"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
 
