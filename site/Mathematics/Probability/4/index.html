@@ -1253,6 +1253,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conclusion-of-discrete-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conclusion of Discrete Distributions
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1446,6 +1457,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#conclusion-of-discrete-distributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conclusion of Discrete Distributions
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1619,18 +1641,18 @@ $$</p>
 <div class="tabbed-block">
 <p>根据期望的定义
 $$
-E(X)=\sum_{k=0}^nk(P=k)=\sum^{n}_{k=0}k\binom{n}{k}p^kq^{n-k}
+E(X)=\sum_{k=0}^n k P(X=k)=\sum^{n}_{k=0}k\binom{n}{k}p^kq^{n-k}
+$$</p>
+<p>将 <span class="arithmatex">\(k\dbinom{n}{k}=n\dbinom{n-1}{k-1}\)</span> 带入上式中得到
 $$
-将 <span class="arithmatex">\(k\dbinom{n}{k}=n\dbinom{n-1}{k-1}\)</span> 带入上式中得到</p>
-<div class="arithmatex">\[
 \begin{aligned}
-E(X) &amp;= n\sum^{n}_{k=0}\binom{n-1}{k-1}p^{k}q^{n-k} \\
-&amp;= np\sum^{n}_{k=0}\binom{n-1}{k-1}p^{k-1}q^{n-k} \\
-&amp;= np\sum^{n-1}_{j=1}\binom{n-1}{j}p^{j}q^{n-j-1} \\
+E(X) &amp;= n\sum_{k=1}^{n}\binom{n-1}{k-1}p^{k}q^{n-k} \\
+&amp;= np\sum_{k=1}^{n}\binom{n-1}{k-1}p^{k-1}q^{n-k} \\
+&amp;= np\sum_{j=0}^{n-1}\binom{n-1}{j}p^{j}q^{n-1-j} \\
 &amp;= np(p+q)^{n-1} \\
 &amp;= np
 \end{aligned}
-\]</div>
+$$</p>
 </div>
 <div class="tabbed-block">
 <p>将<span class="arithmatex">\(X\)</span>看作是一系列的伯努利试验，即
@@ -1685,7 +1707,7 @@ $$
 $$
 F(x)=
 \begin{cases}
-1-q^{\lfloor x\rfloor+1},\text{if }x\ge0\
+1-q^{\lfloor x\rfloor+1},\text{if }x\ge0\\
 0,\text{if }x&lt;0
 \end{cases}
 $$
@@ -1703,6 +1725,9 @@ $$
 如果随机变量<span class="arithmatex">\(X\sim\text{Geom}(p)\)</span>,那么<span class="arithmatex">\(E(X)=q/p\)</span>,<span class="arithmatex">\(q=1-p\)</span></p>
 <details class="tip">
 <summary>证明</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">定义</label><label for="__tabbed_2_2">生存函数</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>根据期望的定义
 $$
 E(X)=\sum_{k=0}^{\infty}kq^{k}p
@@ -1715,6 +1740,15 @@ $$</p>
 $$
 E(X)=\sum_{k=0}^{\infty}kq^{k}p=\frac{pq}{(1-q)^2}=\frac qp
 $$</p>
+</div>
+<div class="tabbed-block">
+<p>根据几何分布的定义，事件<span class="arithmatex">\(\{X&gt;n\}\)</span>是前<span class="arithmatex">\(n+1\)</span>次试验全部失败，因此
+$$
+E(X)=\sum_{n=0}^{\infty}P(X&gt;n)=\sum^{\infty}_{n=0}q^{n+1}=\frac{q}{1-q}=\frac{q}{p}
+$$</p>
+</div>
+</div>
+</div>
 </details>
 <p><strong>First Success 的期望</strong><br />
 如果随机变量<span class="arithmatex">\(Y\sim\text{FS}(p)\)</span>,那么<span class="arithmatex">\(E(Y)=1/p\)</span></p>
@@ -1727,6 +1761,11 @@ $$</p>
 </details>
 <h3 id="negative-binomial">Negative Binomial</h3>
 <p>对于一系列独立的伯努利试验，每个试验的成功概率均为<span class="arithmatex">\(p\in(0, 1)\)</span>，令随机变量<span class="arithmatex">\(X\)</span>为第<span class="arithmatex">\(r\)</span>次成功前失败的次数，那么<span class="arithmatex">\(X\)</span>服从参数为<span class="arithmatex">\(p\)</span>和<span class="arithmatex">\(r\)</span>的<strong>负二项分布</strong>(negative binomial distribution)，记为<span class="arithmatex">\(X\sim\text{NBin}(r, p)\)</span></p>
+<p>如果<span class="arithmatex">\(X\sim\text{NBin}(r, p)\)</span>,那么<span class="arithmatex">\(X\)</span>的 PMF 为
+$$
+P(X=k)=\binom{k+r-1}{r-1}p^{r}q^{k}
+$$
+其中<span class="arithmatex">\(k=0,1,2,\cdots\)</span>,<span class="arithmatex">\(q=1-p\)</span></p>
 <p><strong>负二项分布的期望</strong>
 如果随机变量<span class="arithmatex">\(X\sim\text{NBin}(r, p)\)</span>,那么<span class="arithmatex">\(E(X)=rp/q\)</span></p>
 <details class="tip">
@@ -1767,6 +1806,28 @@ $$</p>
 <details class="tip">
 <summary>证明</summary>
 </details>
+<p>现在已经了解了四种离散随机变量的分布，它们的关系如下表</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: left;">放回</th>
+<th>不放回</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>试验次数固定</td>
+<td style="text-align: left;">二项分布</td>
+<td>超几何分布</td>
+</tr>
+<tr>
+<td>成功次数固定</td>
+<td style="text-align: left;">负二项分布</td>
+<td>负超几何分布</td>
+</tr>
+</tbody>
+</table>
 <p><strong>定理</strong><br />
 假设<span class="arithmatex">\(X\)</span>为非负的整数值随机变量，<span class="arithmatex">\(F\)</span>为<span class="arithmatex">\(X\)</span>的 CDF ，那么<span class="arithmatex">\(X\)</span>的生存函数<span class="arithmatex">\(G\)</span>定义为 <span class="arithmatex">\(G(x)=1-F(x)=P(X&gt;x)\)</span>
 $$
@@ -1774,16 +1835,28 @@ E(X)=\sum_{n=0}^{\infty}G(n)
 $$</p>
 <details class="tip">
 <summary>证明</summary>
+<p>可以将<span class="arithmatex">\(X\)</span>表示为一系列指示随机变量相加，即<span class="arithmatex">\(X=I_1+I_2+\cdots+I_b\)</span>，其中<span class="arithmatex">\(I_n=I(X\ge n)\)</span>，对于离散随机变量，<span class="arithmatex">\(P(X\ge n)\)</span> 和 <span class="arithmatex">\(P(X&gt;n-1)\)</span> 是相同的。根据期望的线性性质可以得到
+$$
+E(X)=\sum_{k=1}^{b}P(X\ge k)=\sum_{n=0}^{b-1}P(X&gt; n)=\sum_{n=0}^{\infty}P(X&gt;n)=\sum_{n=0}^{\infty}G(n)
+$$</p>
 </details>
 <h2 id="law-of-the-unconscious-statistician-lotus">Law of the Unconscious Statistician (LOTUS)</h2>
 <p>如果<span class="arithmatex">\(g(x)\)</span>不是线性函数，那么通常情况下<span class="arithmatex">\(g(E(X))\ne E(g(X))\)</span>.而 LOTUS 是一种不需要求出<span class="arithmatex">\(g(X)\)</span>的分布，直接使用<span class="arithmatex">\(X\)</span>的分布便可以得到 <span class="arithmatex">\(E(g(x))\)</span>的方法</p>
 <p><strong>定理 (LOTUS)</strong><br />
 假设<span class="arithmatex">\(X\)</span>是一个离散随机变量，<span class="arithmatex">\(g\)</span>是一个<span class="arithmatex">\(\mathbb{R}\to\mathbb{R}\)</span>的函数，那么
 $$
-E(g(x))=\sum_{x}g(x)P(X=x)
+E(g(X))=\sum_{x}g(x)P(X=x)
 $$</p>
 <details class="tip">
 <summary>证明</summary>
+<div class="arithmatex">\[
+\begin{aligned}
+E(g(X))&amp;=\sum_{s}g(s)P(\{s\}) \\
+&amp;=\sum_x\sum_{s:X(s)=x}g(X(s))P(\{s\}) \\
+&amp;=\sum_x g(X(s))\sum_{s:X(s)=x}P(\{s\}) \\
+&amp;=\sum_xg(x)P(X=x)
+\end{aligned}
+\]</div>
 </details>
 <h2 id="variance">Variance</h2>
 <p>LOTUS 的一个重要应用是寻找随机变量的<strong>方差</strong>(variance)，与期望一样，方差也是随机变量的的单个数字总结。不同之处在于，期望反应的是分布的中心，而方差则是表示分布有多分散</p>
@@ -1815,13 +1888,88 @@ $$</p>
 <li>如果 <span class="arithmatex">\(X\)</span>和 <span class="arithmatex">\(Y\)</span>是独立的，<span class="arithmatex">\(Var(X+Y)=Var(X)+Var(Y)\)</span></li>
 <li><span class="arithmatex">\(Var(X)\ge0\)</span>,当且仅当<span class="arithmatex">\(P(X=a)=1\)</span>时等号成立</li>
 </ul>
+<p><strong>几何分布的方差</strong></p>
+<p><strong>负二项分布的方差</strong></p>
+<p><strong>二项分布的方差</strong><br />
+如果随机变量<span class="arithmatex">\(X\sim\text{Bin}(n, p)\)</span>，那么<span class="arithmatex">\(Var(X)=np(1-p)\)</span></p>
+<p><strong>超几何分布的方差</strong></p>
 <h2 id="poisson">Poisson</h2>
 <p>如果随机变量<span class="arithmatex">\(X\)</span>服从参数为<span class="arithmatex">\(\lambda\)</span>的<strong>泊松分布</strong>(Poisson distribution)，那么<span class="arithmatex">\(X\)</span>的 PMF 为
 $$
 P(X=k)=\frac{e^{-\lambda}\lambda^k}{k!},k=0,1,2,\cdots
 $$
 记为<span class="arithmatex">\(X\sim\text{Pois}(\lambda)\)</span></p>
+<p><strong>泊松分布的期望和方差</strong><br />
+如果随机变量<span class="arithmatex">\(X\sim\text{Pois}(\lambda)\)</span>，那么<span class="arithmatex">\(E(X)=\lambda\)</span>和<span class="arithmatex">\(Var(X)=\lambda\)</span></p>
+<p>泊松分布常用于描述单位时间内的事件发生次数，特别是当事件发生概率较小且事件发生次数较多时。<span class="arithmatex">\(\lambda\)</span>表示这些稀有事件的发生率</p>
 <h2 id="connection-between-poisson-and-binomial">Connection between Poisson and Binomial</h2>
+<p>泊松分布与二项分布有着相等紧密的联系，可以通过给泊松分布增加条件得到二项分布；也可以通过给二项分布取极限得到泊松分布</p>
+<p><strong>定理</strong><br />
+如果<span class="arithmatex">\(X\sim\text{Pois}(\lambda_1)\)</span>,<span class="arithmatex">\(Y\sim\text{Pois}(\lambda_2)\)</span>,那么 <span class="arithmatex">\(X+Y\sim\text{Pois}(\lambda_1+\lambda_2)\)</span></p>
+<details class="tip">
+<summary>证明</summary>
+<p>为了求<span class="arithmatex">\(X+Y\)</span>的 PMF，可以将 <span class="arithmatex">\(X\)</span>作为条件并使用全概率公式
+$$
+\begin{aligned}
+P(X+Y=k)&amp;=\sum_{j=0}^kP(X+Y=k|X=j)P(X=j)\\
+&amp;=\sum_{j=0}^kP(Y=k-j)P(X=j) \\
+&amp;=\sum_{j=0}^k\frac{e^{-\lambda_2}\lambda_2^{k-j}}{(k-j)!}\frac{e^{-\lambda_1}\lambda_1^j}{j!} \\
+&amp;=\frac{e^{-(\lambda_1+\lambda_2)}}{k!}\sum_{j=0}^k\binom{k}{j}\lambda_1^{j}\lambda_2^{k-j} \\
+&amp;=\frac{e^{-(\lambda_1+\lambda_2)}(\lambda_1+\lambda_2)^k}{k!}
+\end{aligned}
+$$</p>
+</details>
+<p><strong>定理</strong><br />
+如果如果<span class="arithmatex">\(X\sim\text{Pois}(\lambda_1)\)</span>,<span class="arithmatex">\(Y\sim\text{Pois}(\lambda_2)\)</span>,并且<span class="arithmatex">\(X\)</span>和<span class="arithmatex">\(Y\)</span>独立，那么在<span class="arithmatex">\(X+Y=n\)</span>的条件下<span class="arithmatex">\(X\)</span>的分布为<span class="arithmatex">\(\text{Bin}(n, \lambda_1/(\lambda_1+\lambda_2))\)</span></p>
+<p><strong>定理</strong><br />
+如果<span class="arithmatex">\(X\sim\text{Bin}(n,p)\)</span>，在保持<span class="arithmatex">\(\lambda=np\)</span>不变的情况下，当<span class="arithmatex">\(n\to0, p\to\infty\)</span>或者<span class="arithmatex">\(n\to\infty, 0\to0\)</span>时，X的PMF会变为<span class="arithmatex">\(\text{Pois}(\lambda)\)</span></p>
+<h2 id="conclusion-of-discrete-distributions">Conclusion of Discrete Distributions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">分布名称</th>
+<th style="text-align: left;">期望 <span class="arithmatex">\(E(X)\)</span></th>
+<th style="text-align: left;">方差 <span class="arithmatex">\(Var(X)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>伯努利分布</strong> <span class="arithmatex">\(\text{Bern}(p)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(p\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(p(1-p)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>二项分布</strong> <span class="arithmatex">\(\text{Bin}(n, p)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(np\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(np(1-p)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>超几何分布</strong> <span class="arithmatex">\(\text{HGeom}(w, b, n)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(n \dfrac{w}{w+b}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\dfrac{w+b-n}{w+b-1} \, n \dfrac{w}{w+b} \left(1 - \dfrac{w}{w+b}\right)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>几何分布</strong> <span class="arithmatex">\(\text{Geom}(p)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\dfrac{q}{p}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\dfrac{q}{p^2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>负二项分布</strong> <span class="arithmatex">\(\text{NBin}(r, p)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\dfrac{rq}{p}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\dfrac{rq}{p^2}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>负超几何分布</strong> <span class="arithmatex">\(\text{NHGeom}(w, b, r)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\dfrac{rb}{w+1}\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\dfrac{rb(w+b+1)(w-r+1)}{(w+1)^2(w+2)}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>泊松分布</strong> <span class="arithmatex">\(\text{Pois}(\lambda)\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\lambda\)</span></td>
+<td style="text-align: left;"><span class="arithmatex">\(\lambda\)</span></td>
+</tr>
+</tbody>
+</table>
 
 
   <nav class="md-tags" >

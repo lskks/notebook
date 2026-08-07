@@ -113,11 +113,11 @@ def main():
             if webp_path.exists():
                 total_optimized += webp_path.stat().st_size
 
-        # 创建响应式版本（仅对大图）
-        if image_path.stat().st_size > 100 * 1024:  # 大于 100KB
-            responsive = create_responsive_images(image_path)
-            if responsive:
-                print(f"  📐 创建了 {len(responsive)} 个响应式版本")
+        # # 创建响应式版本（仅对大图）
+        # if image_path.stat().st_size > 100 * 1024:  # 大于 100KB
+        #     responsive = create_responsive_images(image_path)
+        #     if responsive:
+        #         print(f"  📐 创建了 {len(responsive)} 个响应式版本")
 
         print()
 
