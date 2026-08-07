@@ -7,7 +7,7 @@ tags:
 我使用的教材是Joseph K. Blitzstein和Jessica Hwang的*Introduction to Probability second edition*
 
 <figure markdown="span">
-  ![TextBook Cover](images/cover.png){ width="300" }
+  ![TextBook Cover](images/cover.webp){ width="300" }
   <figcaption></figcaption>
 </figure>
 

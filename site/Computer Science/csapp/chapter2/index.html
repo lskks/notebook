@@ -24,7 +24,7 @@
         
       
       
-      <link rel="icon" href="../../../images/favicon.jpg">
+      <link rel="icon" href="../../../images/favicon.webp">
       <meta name="generator" content="zensical-0.0.51">
     
     
@@ -1291,6 +1291,8 @@
       
         
       
+        
+      
     
     
     
@@ -1412,6 +1414,33 @@
     
   
   Random Variables and their Distributions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Mathematics/Probability/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Expectation
 
     
   </span>
@@ -1919,7 +1948,7 @@
 <h1 id="_1">信息存储与表示</h1>
 <h2 id="_2">信息存储</h2>
 <h3 id="_3">十六进制表示法</h3>
-<p><img alt="hexadecimal" src="../image/hexadecimal.png" /></p>
+<p><img alt="hexadecimal" src="../image/hexadecimal.webp" /></p>
 <p>十进制和十六进制表示之间的转换需要使用乘法或者除法来处理.一般情况,将一个十进制数字<span class="arithmatex">\(x\)</span>转换为十六进制，可以反复地用<span class="arithmatex">\(16\)</span>除<span class="arithmatex">\(x\)</span>,得到一个商<span class="arithmatex">\(q\)</span>和一个余数<span class="arithmatex">\(r\)</span>,也就是<span class="arithmatex">\(x=q\times16+r\)</span>.然后，我们用十六进制数字表示的<span class="arithmatex">\(r\)</span>作为最低位数字,并且通过对<span class="arithmatex">\(q\)</span>反复进行这个过程得到剩下的数字。</p>
 <p>例如,考虑十进制<span class="arithmatex">\(314156\)</span>的转换:</p>
 <div class="arithmatex">\[
@@ -1944,12 +1973,12 @@
 32位字长限制虚拟地址空间为4千兆字节(写作4GB),扩展到 64 位字长使得虚拟地址空间为16EB, 大约是<span class="arithmatex">\(1.84\times10^{19}\)</span>字节。</p>
 </div>
 <p>下图为 <code>C语言</code> 中的数据类型的大小,其中<code>int</code>和<code>long</code>的大小与编译器有关,通常在32位系统中为4字节,在64位系统中为8字节.</p>
-<p><img alt="data_size" src="../image/data_size.png" /></p>
+<p><img alt="data_size" src="../image/data_size.webp" /></p>
 <h3 id="_5">寻址和字节顺序</h3>
 <p>一个<span class="arithmatex">\(w\)</span>位整数的位表示为:<span class="arithmatex">\([x_{w-1},x_{w-2},\cdots,x_1,x_0]\)</span>,其中<span class="arithmatex">\(x_{w-1}\)</span>为最高有效位,<span class="arithmatex">\(x_0\)</span>为最低有效位.
 最低有效位在前的表示方式为<strong>小端法</strong>,最高有效位在前的表示方法为<strong>大端法</strong>.
 例如,对于数<code>0x01234567</code>,大端法和小端法的表示如下图
-<img alt="endian" src="../image/endian.png" /></p>
+<img alt="endian" src="../image/endian.webp" /></p>
 <h2 id="c">C语言中的位级运算</h2>
 <h2 id="_6">整数表示</h2>
 <h3 id="_7">无符号数的编码</h3>
@@ -2098,9 +2127,9 @@ b=\sum^m_{i=-n}2^i\times b_i
 <li><span class="arithmatex">\(k\)</span> 位的阶码字段 <span class="arithmatex">\(exp=e_{k-1} \cdots e_1 e_0\)</span>。编码阶码 <span class="arithmatex">\(E\)</span>。</li>
 <li><span class="arithmatex">\(n\)</span> 位小数字段 <span class="arithmatex">\(frac=f_{n-1} \cdots f_1 f_0\)</span>编码尾数 <span class="arithmatex">\(M\)</span>, 但是编码出来的值也依赖于阶码字段的值是否等于0</li>
 </ul>
-<p><img alt="ieee-floating-point" src="../image/float.png" /></p>
+<p><img alt="ieee-floating-point" src="../image/float.webp" /></p>
 <p>给定位表示,根据<code>exp</code>的值，被编码的值可以分成三种不同的情况(最后一种情况有两个变种)</p>
-<p><img alt="ieee-floating-class" src="../image/floatingclass.png" /></p>
+<p><img alt="ieee-floating-class" src="../image/floatingclass.webp" /></p>
 <h2 id="1">补充1:掩码</h2>
 <h3 id="_19">提取特定的位</h3>
 <p>要提取一个数中特定的位应使用<code>&amp;</code>,将要提取的位对应的mask设置为<span class="arithmatex">\(1\)</span>,其余的设置为<span class="arithmatex">\(0\)</span>.
@@ -2243,7 +2272,7 @@ b=\sum^m_{i=-n}2^i\times b_i
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2025 The authors
+      Copyright &copy; 2026 ljhkss
 
     </div>
   
@@ -2278,6 +2307,8 @@ b=\sum^m_{i=-n}2^i\times b_i
         <script src="../../../javascripts/homepage.js"></script>
       
         <script src="../../../javascripts/lightbox.js"></script>
+      
+        <script src="../../../javascripts/image-optimizer.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

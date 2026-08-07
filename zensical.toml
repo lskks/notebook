@@ -36,7 +36,7 @@ site_author = "<ljhkss>"
 #
 # Read more: https://zensical.org/docs/setup/basics/#copyright
 copyright = """
-Copyright &copy; 2025 The authors
+Copyright &copy; 2026 ljhkss
 """
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
@@ -51,27 +51,11 @@ Copyright &copy; 2025 The authors
 #   { "Markdown in 5min" = "markdown.md" },
 # ]
 
-# With the "extra_css" option you can add your own CSS styling to customize
-# your Zensical project according to your needs. You can add any number of
-# CSS files.
-#
-# The path provided should be relative to the "docs_dir".
-#
-# Read more: https://zensical.org/docs/customization/#additional-css
-#
-#extra_css = ["assets/stylesheets/extra.css"]
-
-# With the `extra_javascript` option you can add your own JavaScript to your
-# project to customize the behavior according to your needs.
-#
-# The path provided should be relative to the "docs_dir".
-#
-# Read more: https://zensical.org/docs/customization/#additional-javascript
-#extra_javascript = ["assets/javascript/extra.js"]
 extra_javascript = [
     "javascripts/katex.js",
     "javascripts/homepage.js",
     "javascripts/lightbox.js",
+    "javascripts/image-optimizer.js",
     "https://unpkg.com/katex@0/dist/katex.min.js",
     "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"
 ]
@@ -118,7 +102,7 @@ generic = true
 # - https://zensical.org/docs/setup/logo-and-icons/#favicon
 # - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
 #
-favicon = "images/favicon.jpg"
+favicon = "images/favicon.webp"
 
 # Zensical supports more than 60 different languages. This means that the
 # labels and tooltips that Zensical's templates produce are translated.

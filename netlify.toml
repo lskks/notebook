@@ -21,3 +21,38 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# 图片缓存策略 - 长期缓存（带文件名 hash）
+[[headers]]
+  for = "/images/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+    Content-Type = "image/webp"
+
+[[headers]]
+  for = "/images/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"  # 30天
+
+[[headers]]
+  for = "/images/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"  # 30天
+
+# 数学/CS 图片目录的 WebP 缓存
+[[headers]]
+  for = "/Mathematics/**/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/Computer Science/**/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# 开启 Brotli 压缩（优先）和 Gzip 压缩
+[build.environment]
+  NODE_VERSION = "18"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"

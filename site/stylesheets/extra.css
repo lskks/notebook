@@ -232,7 +232,7 @@ body.is-homepage .md-grid {
   margin-right: calc(-50vw + 50%);
   padding: 0;
   /* 背景图片铺满整个页面 */
-  background-image: url('../images/hero-bg.png');
+  background-image: url('../images/hero-bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -476,4 +476,109 @@ body.is-homepage .content-section {
 .lightbox-active .lightbox-img {
   transform: scale(1);
   opacity: 1;
+}
+
+/* ==== 引用块（blockquote）样式 ==== */
+:root,
+[data-md-color-scheme="default"] {
+  --md-blockquote-border-color: #2b96ee !important;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-blockquote-border-color: #4a8bc2 !important;
+}
+
+.md-typeset blockquote {
+  border-left-color: var(--md-blockquote-border-color) !important;
+}
+
+/* ========== 图片优化样式 ========== */
+
+/* 图片懒加载占位符 */
+img[loading="lazy"] {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"].loaded,
+img[loading="lazy"].is-loaded {
+  opacity: 1;
+}
+
+/* 响应式图片容器 */
+.md-typeset img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-typeset img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Hero 背景图优化 - 使用 WebP */
+.hero-section {
+  background-image: url('../images/hero-bg.webp');
+}
+
+/* Fallback for browsers that don't support WebP */
+@supports not (background-image: url('data:image/webp;base64,UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==')) {
+  .hero-section {
+    background-image: url('../images/hero-bg.png');
+  }
+}
+
+/* 图片加载失败时的样式 */
+img.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--md-default-bg-color--lighter);
+  color: var(--md-default-fg-color--lighter);
+  min-height: 200px;
+}
+
+img.error::before {
+  content: "图片加载失败";
+  font-size: 14px;
+}
+
+/* 响应式图片断点 */
+@media screen and (max-width: 480px) {
+  .md-typeset img {
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .md-typeset img {
+    max-width: 90%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .md-typeset img {
+    max-width: 85%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .md-typeset img {
+    max-width: 80%;
+  }
+}
+
+/* 预加载关键图片（Hero 背景） */
+.hero-section {
+  background-attachment: fixed;
+  will-change: transform;
+}
+
+/* 优化 favicon 加载 */
+.md-typeset :link > img,
+.md-typeset :visited > img {
+  border: none;
 }

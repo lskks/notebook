@@ -10,7 +10,7 @@ tags:
 
 
 ### 十六进制表示法
-![hexadecimal](image/hexadecimal.png)
+![hexadecimal](image/hexadecimal.webp)
 
 十进制和十六进制表示之间的转换需要使用乘法或者除法来处理.一般情况,将一个十进制数字$x$转换为十六进制，可以反复地用$16$除$x$,得到一个商$q$和一个余数$r$,也就是$x=q\times16+r$.然后，我们用十六进制数字表示的$r$作为最低位数字,并且通过对$q$反复进行这个过程得到剩下的数字。
 
@@ -44,14 +44,14 @@ $$
 
 下图为 `C语言` 中的数据类型的大小,其中` int `和` long `的大小与编译器有关,通常在32位系统中为4字节,在64位系统中为8字节.
 
-![data_size](image/data_size.png)
+![data_size](image/data_size.webp)
 
 ### 寻址和字节顺序
 
 一个$w$位整数的位表示为:$[x_{w-1},x_{w-2},\cdots,x_1,x_0]$,其中$x_{w-1}$为最高有效位,$x_0$为最低有效位.
 最低有效位在前的表示方式为**小端法**,最高有效位在前的表示方法为**大端法**.
 例如,对于数`0x01234567`,大端法和小端法的表示如下图
-![endian](image/endian.png)
+![endian](image/endian.webp)
 
 ## C语言中的位级运算
 
@@ -243,11 +243,11 @@ IEEE浮点标准用 $V=(-1)^s\times M\times 2^E$ 来表示浮点数:
 - $k$ 位的阶码字段 $exp=e_{k-1} \cdots e_1 e_0$。编码阶码 $E$。
 - $n$ 位小数字段 $frac=f_{n-1} \cdots f_1 f_0$编码尾数 $M$, 但是编码出来的值也依赖于阶码字段的值是否等于0
 
-![ieee-floating-point](image/float.png)
+![ieee-floating-point](image/float.webp)
 
 给定位表示,根据`exp`的值，被编码的值可以分成三种不同的情况(最后一种情况有两个变种)
 
-![ieee-floating-class](image/floatingclass.png)
+![ieee-floating-class](image/floatingclass.webp)
 
 ## 补充1:掩码
 ### 提取特定的位

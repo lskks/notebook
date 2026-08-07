@@ -7,7 +7,7 @@ tags:
 我使用的教材是Kenneth Rosen的*Discrete Mathematics and Its Applications Eighth Edition*
 
 <figure markdown="span">
-  ![TextBook Cover](./images/cover.png){ width="300" }
+  ![TextBook Cover](./images/cover.webp){ width="300" }
   <figcaption></figcaption>
 </figure>
 
