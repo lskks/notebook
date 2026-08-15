@@ -12,3 +12,57 @@
   -webkit-mask-image: var(--md-admonition-icon--proposition);
           mask-image: var(--md-admonition-icon--proposition);
 }
+
+/* ========== 数学公式响应式滚动 ========== */
+/* 公式块容器 - 超出宽度时允许横向滚动，不破坏布局 */
+.md-typeset .arithmatex {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.5em 0;
+  /* 右边缘渐变提示 */
+  /* box-shadow: inset -8px 0 8px -8px var(--md-default-fg-color--lighter); */
+}
+
+.md-typeset .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 1em 0;
+  /* 右边缘渐变提示 */
+  /* box-shadow: inset -8px 0 8px -8px var(--md-default-fg-color--lighter); */
+}
+
+/* 隐藏滚动条 - WebKit (Chrome/Edge/Safari) */
+.md-typeset .arithmatex::-webkit-scrollbar,
+.md-typeset .katex-display::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+/* Firefox */
+.md-typeset .arithmatex,
+.md-typeset .katex-display {
+  scrollbar-width: none;
+}
+
+/* 行内公式 - 不换行但允许滚动 */
+.md-typeset .katex {
+  white-space: nowrap;
+}
+
+/* 确保公式内容不撑破容器 */
+.md-typeset .katex * {
+  max-width: none;
+}
+
+/* 小屏幕优化 */
+@media screen and (max-width: 768px) {
+  .md-typeset .katex-display {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

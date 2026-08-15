@@ -13,11 +13,11 @@ tags:
 
 
 
-!!! note "目录"
+!!! abstract "目录"
     - [x] [Chapter 1: Probability and Counting](1.md)
     - [x] [Chapter 2: Conditional Probability](2.md)
     - [x] [Chapter 3: Random Variables and their Distributions](3.md)
-    - [ ] [Chapter 4: Expectation]()
+    - [x] [Chapter 4: Expectation](4.md)
     - [ ] [Chapter 5: Continuous Random Variables]()
     - [ ] [Chapter 6: Moments]()
     - [ ] [Chapter 7: Joint Distributions]()
@@ -27,3 +27,7 @@ tags:
     - [ ] [Chapter 11: Markov Chains]()
     - [ ] [Chapter 12: Markov Chain and Monte Carlo]()
     - [ ] [Chapter 13: Poisson Processes]()
+
+!!! note "相关资源"
+	- [课程网站(Harvard Stat110)](https://stat110.hsites.harvard.edu/){:target="_blank"}
+	- [教材](http://probabilitybook.net/){:target="_blank"}

@@ -1,0 +1,2320 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A new project generated from the default template project.">
+      
+      
+        <meta name="author" content="<ljhkss>">
+      
+      
+        <link rel="canonical" href="https://www.ljhkss.top/Mathematics/Probability/5/">
+      
+      
+        <link rel="prev" href="../4/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/favicon.webp">
+      <meta name="generator" content="zensical-0.0.51">
+    
+    
+      
+        <title>Continuous Random Variables - ljhkss's Notebook</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.62c9b9cc.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetbrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Jetbrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/riscv.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="导航栏"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#probability-density-function" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="导航栏">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ljhkss's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Continuous Random Variables
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="查找">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="查找">
+  <button type="button" class="md-search__button">
+    查找
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Computer%20Science/Computer%20Organization/" class="md-tabs__link">
+          
+  
+  Computer Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Mathematics
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    ljhkss's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Index
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Computer Science
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Computer Science
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../Computer%20Science/Computer%20Organization/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Computer Organization
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Computer Organization
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/Computer%20Organization/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chapter4 Processor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Csapp
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Csapp
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/csapp/chapter2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  第二章 信息的存储与表示
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Computer%20Science/csapp/chapter3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chapter 3: The Memory Hierarchy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mathematics
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Mathematics
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../DiscreteMath/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DiscreteMath
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  DiscreteMath
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DiscreteMath/1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Foundations: Logic and Proofs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DiscreteMath/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic Structures: Sets, Functions, Sequences, Sums, and Matrices
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DiscreteMath/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Algorithms
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DiscreteMath/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Induction and Recursion
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Probability
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Probability
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Probability and Counting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Conditional Probability
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Random Variables and their Distributions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Expectation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Continuous Random Variables
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Continuous Random Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#probability-density-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Probability Density Function
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uniform" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Uniform
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universality-of-the-uniform" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Universality of the Uniform
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Normal
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Normal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quantiles
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-combination-of-independent-normals" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Linear Combination of Independent Normals
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponential" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Exponential
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relationship-between-geometric-and-exponential" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Relationship between Geometric and Exponential
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memorylessness" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Memorylessness
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-independent-exponentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sum of Independent Exponentials
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poisson-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Poisson Processes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symmetry-of-iid-continuous-rvs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Symmetry of i.i.d Continuous r.v.s
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Summary
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#probability-density-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Probability Density Function
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uniform" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Uniform
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universality-of-the-uniform" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Universality of the Uniform
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Normal
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Normal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quantiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quantiles
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#linear-combination-of-independent-normals" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Linear Combination of Independent Normals
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exponential" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Exponential
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exponential">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relationship-between-geometric-and-exponential" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Relationship between Geometric and Exponential
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memorylessness" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Memorylessness
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum-of-independent-exponentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sum of Independent Exponentials
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poisson-processes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Poisson Processes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symmetry-of-iid-continuous-rvs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Symmetry of i.i.d Continuous r.v.s
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Summary
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Mathematics
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Probability
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <h1 id="__skip">Continuous Random Variables</h1>
+
+<h2 id="probability-density-function">Probability Density Function</h2>
+<p>如果一个随机变量的 CDF 是可导的，那么这个随机变量服从一个连续的分布。<strong>连续随机变量</strong>(continuous random variable)是有着连续分布的随机变量。</p>
+<blockquote>
+<p>上面可导的定义允许有有限个不可导但连续的端点</p>
+</blockquote>
+<p>对于一个 CDF 为<span class="arithmatex">\(F\)</span>的连续随机变量<span class="arithmatex">\(X\)</span>,它的<strong>概率密度函数</strong>(probability density function, PDF) <span class="arithmatex">\(f\)</span>是 CDF 的导数，即
+$$
+f(x)=F'(x)
+$$
+<span class="arithmatex">\(X\)</span>的支撑是所有满足<span class="arithmatex">\(f(x) &gt; 0\)</span> 的<span class="arithmatex">\(x\)</span>的集合。</p>
+<p><strong>定理：合法的 CDF</strong><br />
+连续随机变量的 CDF <span class="arithmatex">\(f\)</span> 必须满足下面两条性质</p>
+<ol>
+<li><strong>非负</strong>:<span class="arithmatex">\(f(x)\ge0\)</span></li>
+<li><strong>积分为1</strong>:<span class="arithmatex">\(\int_{-\infty}^{\infty}f(x)dx=1\)</span></li>
+</ol>
+<div class="admonition note">
+<p>对于连续随机变量<span class="arithmatex">\(X\)</span>的支撑集中所有的元素 <span class="arithmatex">\(x, P(X=x)=0\)</span>。因为<span class="arithmatex">\(P(X=x)=F(x)-\lim_{t\to x^-}F(t)\)</span>，而连续随机变量的 CDF 是连续的，所以 <span class="arithmatex">\(\lim_{t\to x^-}F(t)=F(x)\)</span>。</p>
+</div>
+<p>PDF 的值<span class="arithmatex">\(f(x)\)</span>不是一个概率，对于某些<span class="arithmatex">\(x\)</span>可能会出现<span class="arithmatex">\(f(x)&gt;1\)</span>的情况。为了得到对应的概率，需要对 PDF 做<strong>积分</strong>。下面是将 PDF 转换为 CDF 的方法</p>
+<p><strong>命题：将 PDF 转换为 CDF</strong><br />
+如果<span class="arithmatex">\(X\)</span>是 PDF 为<span class="arithmatex">\(f\)</span>的连续随机变量，那么<span class="arithmatex">\(X\)</span>的 CDF 为
+$$
+F(X)=\int_{-\infty}^{x}f(t)dt
+$$</p>
+<details class="tip">
+<summary>证明</summary>
+<p>通过 CDF 的定义和积分的基本性质，可以得到
+$$
+P(a&lt;x\le b)=F(b)-F(a)=\int_{a}^{b}f(x)dx
+$$</p>
+</details>
+<p>端点处的值不影响概率，即
+$$
+P(a\le X\le b)=P(a&lt;X\le b)=P(a\le X&lt;b)=P(a&lt;X&lt;b)
+$$</p>
+<div class="admonition danger">
+<p>离散随机变量没有这样的性质，需要特别注意端点处的情况</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+<p><strong>对 PDF 的适当区域进行积分便可以得到想要的概率</strong>, 积分的上下限可以根据区域调整，其结果就是对应的概率</p>
+</div>
+<p>连续随机变量的期望与离散随机变量的定义类似，只需要将对 CDF 进行求和替换为对 PDF 进行积分即可
+ PDF 为<span class="arithmatex">\(f\)</span>的连续随机变量<span class="arithmatex">\(X\)</span>的期望为
+$$
+E(X)=\int_{-\infty}^{\infty}xf(x)dx
+$$
+连续随机变量的期望同样满足<strong>线性</strong>(linearity)</p>
+<p><strong>定理：LOTUS</strong><br />
+<span class="arithmatex">\(X\)</span>是PDF 为<span class="arithmatex">\(f\)</span>的连续随机变量，<span class="arithmatex">\(g\)</span>是一个<span class="arithmatex">\(\mathbb{R}\to\mathbb{R}\)</span>的函数，那么
+ $$
+E(X)=\int_{-\infty}^{\infty}g(x)f(x)dx
+$$</p>
+<h2 id="uniform">Uniform</h2>
+<p>一个在区间<span class="arithmatex">\((a,b)\)</span>上服从<strong>均匀分布</strong>(uniform distribution)的连续随机变量<span class="arithmatex">\(U\)</span>的 PDF 为
+$$
+f(x)=
+\begin{cases}
+\dfrac{1}{b-a} &amp;\text{if }a&lt;x&lt;b  \\
+0 &amp;\text{  otehrwise}
+\end{cases}
+$$
+记为<span class="arithmatex">\(U\sim\text{Unif}(a,b)\)</span></p>
+<p>均匀分布的 CDF 是将其 PDF 的面积累加起来
+$$
+F(X)=
+\begin{cases}
+0 &amp;\text{if }x\le a\\
+\dfrac{x-a}{b-a}&amp;\text{if }a&lt;x&lt;b\\
+1&amp;\text{if }x\ge b
+\end{cases}
+$$</p>
+<p><strong>命题：对于均匀分布，概率与长度成比例</strong><br />
+令<span class="arithmatex">\(U\sim\text{Unif}(a, b)\)</span>,<span class="arithmatex">\((c,d)\)</span>是<span class="arithmatex">\((a,b)\)</span>的一个子区间，其长度为<span class="arithmatex">\(l=d-c\)</span>.那么<span class="arithmatex">\(U\)</span>的值在区间<span class="arithmatex">\((c,d)\)</span>的概率与<span class="arithmatex">\(l\)</span>成比例</p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<p>因为 U 的 PDF 是常数<span class="arithmatex">\(\frac{1}{b-a}\)</span>,而从<span class="arithmatex">\(c\)</span>的<span class="arithmatex">\(d\)</span>的区域是<span class="arithmatex">\(\frac{l}{b-a}\)</span></p>
+</details>
+<p><strong>命题</strong><br />
+令<span class="arithmatex">\(U\sim\text{Unif}(a, b)\)</span>,<span class="arithmatex">\((c,d)\)</span>是<span class="arithmatex">\((a,b)\)</span>的一个子区间，其长度为<span class="arithmatex">\(l=d-c\)</span>.那么在<span class="arithmatex">\(U\in(c,d)\)</span>的条件下，<span class="arithmatex">\(U\)</span>的条件分布为<span class="arithmatex">\(U\sim\text{Unif}(c, d)\)</span></p>
+<details class="tip">
+<summary>证明</summary>
+<p>根据条件概率的定义，得到
+$$
+P(U\le u|U\in(c,d))=\frac{P(U\le u, c&lt;U&lt;d)}{P(U\in(c,d))}=\frac{P(U\in(c,u])}{P(U\in(c,d))}=\frac{u-c}{d-c}
+$$</p>
+</details>
+<hr />
+<p><span class="arithmatex">\(\text{Unif}(0,1)\)</span>是最常用的均匀分布，被称为<strong>标准均匀分布</strong>(standard Uniform).它的 PDF 为<span class="arithmatex">\(f(x)=1,0&lt;x&lt;1\)</span>;CDF 为<span class="arithmatex">\(F(x)=x,0&lt;x&lt;1\)</span>,如下图所示</p>
+<p><img alt="Standard Uniform Distribution" src=".././images/SU.webp" /></p>
+<p>标准均匀分布的期望为<span class="arithmatex">\(\dfrac{1}{2}\)</span>,方差为<span class="arithmatex">\(\dfrac{1}{12}\)</span></p>
+<p>可以使用 <strong>位置-尺度变换</strong>(location-scale transformation)从原来的均匀分布中产生新的均匀分布。令<span class="arithmatex">\(X\)</span>为随机变量，<span class="arithmatex">\(Y=\sigma X+\mu, \sigma&gt;0\)</span>,那么称<span class="arithmatex">\(Y\)</span>为<span class="arithmatex">\(X\)</span>的一个位置-尺度变换。
+这里<span class="arithmatex">\(\mu\)</span>控制位置如何改变，而<span class="arithmatex">\(\sigma\)</span>控制尺度如何改变</p>
+<p>位置-尺度变换适用于所有经过变换之后分布类型保持不变的分布。不能将其用于离散随机变量</p>
+<blockquote>
+<p>对于均匀分布的连续随机变量<span class="arithmatex">\(X\)</span>,如果<span class="arithmatex">\(Y\)</span>不是<span class="arithmatex">\(X\)</span>的线性变换，那么<span class="arithmatex">\(Y\)</span>通常不服从均匀分布</p>
+</blockquote>
+<p>均匀分布的期望为
+$$
+E(U)=\int_{a}^{b}x\cdot\frac{1}{b-a}dx=\frac1{b-a}\left(\frac{b^2}{2}-\frac{a^2}{2} \right)=\frac{a+b}{2}
+$$
+而它的方差为<span class="arithmatex">\(\dfrac{(b-a)^2}{12}\)</span></p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">定义</label><label for="__tabbed_1_2">位置-尺度变换</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>首先用 LOTUS 算出 <span class="arithmatex">\(E(U^2)\)</span>为
+$$
+E(U^2)=\int_{a}^{b}x^2\frac{1}{b-a}=\frac{1}{3}\frac{b^3-a^3}{b-a}
+$$
+然后带入方差的公式得到
+$$
+\begin{aligned}
+Var(U)&amp;=E(U^2)-(EU)^2\\
+&amp;=\frac{1}{3}\frac{b^3-a^3}{b-a}-\left(\frac{a+b}{2}\right)^2 \\
+&amp;=\frac{1}{3}\frac{(b-a)(a^2+ab+b^2)}{b-a}-\left(\frac{a+b}{2}\right)^2\\
+&amp;=\dfrac{(b-a)^2}{12}
+\end{aligned}
+$$</p>
+</div>
+<div class="tabbed-block">
+<p>假设<span class="arithmatex">\(U\sim\text{Unif}(0,1)\)</span>,根据 Location-scale transformation 得到
+$$
+\tilde{U}=a+(b-a)U
+$$
+即<span class="arithmatex">\(\tilde{U}\sim\text{Unif}(a,b)\)</span>
+那么
+$$
+\begin{aligned}
+E(\tilde{U})=E(a+(b-a)U)=a+(b-a)E(U)=a+\frac{b-a}{2}=\frac{a+b}{2}\\
+Var(\tilde{U})=Var(a+(b-a)U)=(b-a)^2Var(U)=\frac{(b-a)^2}{12}
+\end{aligned}
+$$</p>
+</div>
+</div>
+</div>
+</details>
+<h2 id="universality-of-the-uniform">Universality of the Uniform</h2>
+<p><strong>定理：均匀分布的通用性</strong><br />
+令<span class="arithmatex">\(F\)</span>是一个连续随机变量的 CDF，它是严格递增且连续的函数。如果<span class="arithmatex">\(U\sim\text{Unif}(0,1)\)</span>，那么随机变量<span class="arithmatex">\(F^{-1}(U)\)</span>的 CDF 为<span class="arithmatex">\(F\)</span>。即
+$$
+P(F^{-1}(U)\le x)=F(x)
+$$</p>
+<details class="tip">
+<summary>证明</summary>
+<p>因为<span class="arithmatex">\(F\)</span>是严格递增的，所以<span class="arithmatex">\(F^{-1}\)</span>也是严格递增的，于是事件<span class="arithmatex">\(\{F^{-1}(U)\le x\}\)</span>等价于事件<span class="arithmatex">\(\{U\le F(x)\}\)</span>
+$$
+P(F^{-1}(U)\le x)=P(U\le F(x))
+$$
+由于<span class="arithmatex">\(U\sim\text{Unif}(0,1)\)</span>，其 CDF 为<span class="arithmatex">\(P(U\le u)=u,0&lt;u&lt;1\)</span>，因此
+$$
+P(U\le F(x))=F(x)
+$$
+即<span class="arithmatex">\(F^{-1}(U)\)</span>的 CDF 恰好是<span class="arithmatex">\(F\)</span></p>
+</details>
+<p><strong>推论</strong>：对于任何连续分布，可以通过将标准均匀随机变量逆变换为其对应的分位数函数（CDF 的反函数）来生成该分布的随机变量</p>
+<p>这一结论在计算机模拟中非常重要：只需要一个能够生成标准均匀分布的程序，就可以通过逆变换法生成服从任意连续分布的随机数</p>
+<blockquote>
+<p>即使<span class="arithmatex">\(F\)</span>不是严格递增的，定义广义反函数<span class="arithmatex">\(F^{-1}(u)=\inf\{x:F(x)\ge u\}\)</span>，上述结论依然成立</p>
+</blockquote>
+<hr />
+<p>利用逆CDF方法也可以从一种已知分布出发推导出另一种相关分布的参数统计量，这是逆CDF技巧的另一层含义</p>
+<div class="admonition info">
+<p class="admonition-title">总结</p>
+<p><strong>标准均匀分布是概率论中最基础的工具之一</strong>。所有连续分布都可以看作是通过某个单调递增的变换作用于标准均匀分布而得到的</p>
+</div>
+<h2 id="normal">Normal</h2>
+<p><strong>正态分布</strong>(normal distribution)，又称高斯分布，是概率论与统计学中最重要的一种连续分布</p>
+<p>如果连续随机变量<span class="arithmatex">\(X\)</span>服从参数为<span class="arithmatex">\(\mu\in\mathbb{R}\)</span>和<span class="arithmatex">\(\sigma^2&gt;0\)</span>的正态分布，记为<span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>，其 PDF 为
+$$
+f(x)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}
+$$
+其中<span class="arithmatex">\(\mu\)</span>为位置参数（均值），<span class="arithmatex">\(\sigma\)</span>为尺度参数（标准差）</p>
+<p>当<span class="arithmatex">\(\mu=0,\sigma=1\)</span>时，称为<strong>标准正态分布</strong>(standard normal distribution)，记为<span class="arithmatex">\(Z\sim N(0,1)\)</span>，其 PDF 为
+$$
+\phi(z)=\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}
+$$
+相应的 CDF 通常记为大写的<span class="arithmatex">\(\Phi\)</span>
+$$
+\Phi(z)=\int_{-\infty}^{z}\frac{1}{\sqrt{2\pi}}e^{-\frac{t^2}{2}}dt
+$$</p>
+<blockquote>
+<p><span class="arithmatex">\(\phi\)</span>是小写希腊字母 phi，对应标准正态的 PDF；<span class="arithmatex">\(\Phi\)</span>是大写 Phi，对应标准正态的 CDF。普通正态分布没有单独的特殊符号</p>
+</blockquote>
+<p>任何一个正态随机变量都可以通过<strong>标准化</strong>(standardization)转化为标准正态随机变量。令<span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>，则
+$$
+Z=\frac{X-\mu}{\sigma}\sim N(0,1)
+$$
+反过来，如果<span class="arithmatex">\(Z\sim N(0,1)\)</span>，那么
+$$
+X=\sigma Z+\mu\sim N(\mu,\sigma^2)
+$$
+这也是一种位置-尺度变换的关系</p>
+<p><strong>命题：标准正态的性质</strong>  </p>
+<ol>
+<li>对称性：<span class="arithmatex">\(\phi(-z)=\phi(z)\)</span>，且<span class="arithmatex">\(\Phi(-z)=1-\Phi(z)\)</span></li>
+<li>期望：<span class="arithmatex">\(E(Z)=0\)</span></li>
+<li>方差：<span class="arithmatex">\(Var(Z)=1\)</span></li>
+</ol>
+<details class="tip" open="open">
+<summary>证明</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">对称性</label><label for="__tabbed_2_2">期望</label><label for="__tabbed_2_3">方差</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>PDF <span class="arithmatex">\(\phi(z)\)</span>中只含有<span class="arithmatex">\(z^2\)</span>项，所以<span class="arithmatex">\(\phi(-z)=\phi(z)\)</span>，图形关于纵轴对称</p>
+<p>由对称性可以推出<span class="arithmatex">\(\Phi(-z)=1-\Phi(z)\)</span>：整个曲线下方面积为1，左侧的面积等于右侧面积</p>
+</div>
+<div class="tabbed-block">
+<p>$$
+E(Z)=\int_{-\infty}^{\infty}z\cdot\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}dz
+$$
+被积函数是关于<span class="arithmatex">\(z\)</span>的奇函数，在对称区间上积分为0，即<span class="arithmatex">\(E(Z)=0\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>$$
+Var(Z)=E(Z^2)=(EZ)^2=E(Z^2)-0=E(Z^2)
+$$
+使用分部积分法计算<span class="arithmatex">\(E(Z^2)\)</span>：
+$$
+\begin{aligned}
+E(Z^2)&amp;=\int_{-\infty}^{\infty}z^2\cdot\frac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}dz\\
+&amp;=-\int_{-\infty}^{\infty}z\cdot\left(-z e^{-\frac{z^2}{2}}\right)\frac{1}{\sqrt{2\pi}}dz\\
+&amp;=\left[-z\cdot\frac{-e^{-\frac{z^2}{2}}}{\sqrt{2\pi}}\right]<em -_infty="-\infty">{-\infty}^{\infty}-\int</em>dz\\
+&amp;=0-(-1)=1
+\end{aligned}
+$$
+第一项边界值为0（指数衰减远快于线性增长），第二项为标准正态PDF在全实数域上的积分，结果为1}^{\infty}\frac{e^{-\frac{z^2}{2}}}{\sqrt{2\pi}</p>
+</div>
+</div>
+</div>
+</details>
+<p>根据位置-尺度变换的性质可以直接得到一般正态分布的数字特征</p>
+<p><strong>命题：正态分布的期望与方差</strong><br />
+如果<span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>，那么
+$$
+E(X)=\mu,\quad Var(X)=\sigma^2
+$$</p>
+<h3 id="quantiles">Quantiles</h3>
+<p>对于一个分布和其 CDF <span class="arithmatex">\(F\)</span>以及<span class="arithmatex">\(p\in(0,1)\)</span>，令<span class="arithmatex">\(q_p\)</span>为<span class="arithmatex">\(F(q_p)=p\)</span>的解，称<span class="arithmatex">\(q_p\)</span>为该分布的**第<span class="arithmatex">\(p分位点**(quantile)
+对于标准正态分布，常使用的分位点记作\)</span>z_p<span class="arithmatex">\(，满足\)</span>\Phi(z_p)=p$</p>
+<p>常用的标准正态分位点（近似值）如下表所示</p>
+<table>
+<thead>
+<tr>
+<th><span class="arithmatex">\(p\)</span></th>
+<th style="text-align: center;">0.90</th>
+<th style="text-align: center;">0.95</th>
+<th style="text-align: center;">0.975</th>
+<th style="text-align: center;">0.99</th>
+<th style="text-align: center;">0.995</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="arithmatex">\(z_p\)</span></td>
+<td style="text-align: center;">1.28</td>
+<td style="text-align: center;">1.645</td>
+<td style="text-align: center;">1.96</td>
+<td style="text-align: center;">2.33</td>
+<td style="text-align: center;">2.58</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>由对称性可知，<span class="arithmatex">\(z_{1-p}=-z_p\)</span>。例如<span class="arithmatex">\(z_{0.025}=-1.96\)</span></p>
+</blockquote>
+<p>分位点在置信区间和假设检验中有广泛的应用：对于标准正态分布，约<span class="arithmatex">\(95\%\)</span>的概率质量落在区间<span class="arithmatex">\((-1.96, 1.96)\)</span>内</p>
+<h3 id="linear-combination-of-independent-normals">Linear Combination of Independent Normals</h3>
+<p><strong>定理</strong><br />
+如果<span class="arithmatex">\(X_1\sim N(\mu_1,\sigma_1^2),\cdots,X_n\sim N(\mu_n,\sigma_n^2)\)</span>且相互独立，那么它们的线性组合也服从正态分布：
+$$
+a_1X_1+a_2X_2+\cdots+a_nX_n\sim N\left(\sum_{i=1}^na_i\mu_i,\;\sum_{i=1}^na_i^2\sigma_i^2\right)
+$$
+特别地，两个独立正态随机变量之和仍然服从正态分布</p>
+<details class="tip" open="open">
+<summary>证明概要</summary>
+<p>利用矩母函数(MGF)可以简洁地证明。<span class="arithmatex">\(X\sim N(\mu,\sigma^2)\)</span>的MGF为<span class="arithmatex">\(M_X(t)=e^{\mu t+\frac{1}{2}\sigma^2t^2}\)</span></p>
+<p>由于独立性，线性组合<span class="arithmatex">\(Y=\sum a_iX_i\)</span>的MGF为各个MGF的乘积
+$$
+M_Y(t)=\prod_{i=1}^n M_{a_iX_i}(t)=\prod_{i=1}^n e^{a_i\mu_i t+\frac{1}{2}a_i^2\sigma_i^2t^2}=e^{\left(\sum a_i\mu_i\right)t+\frac{1}{2}\left(\sum a_i^2\sigma_i^2\right)t^2}
+$$
+这正是均值为<span class="arithmatex">\(\sum a_i\mu_i\)</span>、方差为<span class="arithmatex">\(\sum a_i^2\sigma_i^2\)</span>的正态分布的MGF</p>
+</details>
+<div class="admonition danger">
+<p>独立正态随机变量的线性组合仍然是正态的这一性质是正态分布独有的。<strong>不独立的</strong>正态随机变量之和不一定服从正态分布，这一点与离散情况不同</p>
+</div>
+<h2 id="exponential">Exponential</h2>
+<p><strong>指数分布</strong>(exponential distribution)是描述等待时间的最常用连续分布</p>
+<p>如果连续随机变量<span class="arithmatex">\(T\)</span>服从参数为<span class="arithmatex">\(\lambda&gt;0\)</span>的指数分布，记为<span class="arithmatex">\(T\sim\text{Exp}(\lambda)\)</span>，其 PDF 为
+$$
+f(t)=\begin{cases}\lambda e^{-\lambda t}&amp;\text{if }t&gt;0\\0&amp;\text{otherwise}\end{cases}
+$$
+相应的 CDF 为
+$$
+F(t)=\begin{cases}1-e^{-\lambda t}&amp;\text{if }t&gt;0\\0&amp;\text{otherwise}\end{cases}
+$$</p>
+<blockquote>
+<p><span class="arithmatex">\(\lambda\)</span>被称为<strong>率参数</strong>(rate parameter)，它表示单位时间内的平均事件发生率。其倒数<span class="arithmatex">\(1/\lambda\)</span>则是平均等待时间</p>
+</blockquote>
+<details class="tip">
+<summary>推导 CDF</summary>
+<p>对 PDF 进行积分可以得到 CDF
+$$
+F(t)=\int_{0}^{t}\lambda e^{-\lambda s}ds=\left.-e^{-\lambda s}\right|_{0}^{t}=1-e^{-\lambda t}
+$$</p>
+</details>
+<p><strong>命题：指数分布的期望与方差</strong><br />
+如果<span class="arithmatex">\(T\sim\text{Exp}(\lambda)\)</span>，那么
+$$
+E(T)=\frac{1}{\lambda},\quad Var(T)=\frac{1}{\lambda^2}
+$$</p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">期望</label><label for="__tabbed_3_2">方差</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>使用分部积分法
+$$
+\begin{aligned}
+E(T)&amp;=\int_{0}^{\infty}t\cdot\lambda e^{-\lambda t}dt\\
+&amp;=\left.t\cdot\frac{-e^{-\lambda t}}{}\right|<em 0="0">{0}^{\infty}-\int</em>dt\\
+&amp;=0+\left.\frac{e^{-\lambda t}}{\lambda}\right|_0^\infty\\
+&amp;=\frac{1}{\lambda}
+\end{aligned}
+$$}^{\infty}\frac{-e^{-\lambda t}}{</p>
+</div>
+<div class="tabbed-block">
+<p>首先使用 LOTUS 计算<span class="arithmatex">\(E(T^2)\)</span>
+$$
+\begin{aligned}
+E(T^2)&amp;=\int_{0}^{\infty}t^2\lambda e^{-\lambda t}dt\\
+&amp;=\left.t^2\cdot\frac{-e^{-\lambda t}}{}\right|<em 0="0">{0}^{\infty}-\int</em>dt\\
+&amp;=0+\frac{2}{\lambda}\int_{0}^{\infty}te^{-\lambda t}dt\\
+&amp;=\frac{2}{\lambda}\cdot\frac{1}{\lambda}=\frac{2}{\lambda^2}
+\end{aligned}
+$$
+然后代入方差公式
+$$
+Var(T)=E(T^2)-(ET)^2=\frac{2}{\lambda^2}-\frac{1}{\lambda^2}=\frac{1}{\lambda^2}
+$$}^{\infty}2t\cdot\frac{-e^{-\lambda t}}{</p>
+</div>
+</div>
+</div>
+</details>
+<h3 id="relationship-between-geometric-and-exponential">Relationship between Geometric and Exponential</h3>
+<p>几何分布是离散情形下的等待时间模型，指数分布则是其在连续情形的对应物</p>
+<p><strong>联系</strong>：
+- <strong>几何分布</strong><span class="arithmatex">\(Geom(p)\)</span>：以固定的步长（每次试验）为单位，等待第一次成功
+- <strong>指数分布</strong><span class="arithmatex">\(\text{Exp}(\lambda)\)</span>：在连续时间内，以恒定速率<span class="arithmatex">\(\lambda\)</span>等待下一次事件的发生</p>
+<p>两者本质上都是对"恒定风险下首次到达"这一过程的建模，只是时间维度不同</p>
+<h3 id="memorylessness">Memorylessness</h3>
+<p><strong>命题：无记忆性(memoryless)</strong><br />
+如果<span class="arithmatex">\(T\sim\text{Exp}(\lambda)\)</span>，那么对于任意的<span class="arithmatex">\(s,t&gt;0\)</span>，有
+$$
+P(T&gt;s+t|T&gt;s)=P(T&gt;t)
+$$</p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<p>根据条件概率的定义
+$$
+\begin{aligned}
+P(T&gt;s+t|T&gt;s)&amp;=\frac{P(T&gt;s+t)}{P(T&gt;s)}\\
+&amp;=\frac{e^{-\lambda(s+t)}}{e^{-\lambda s}}\\
+&amp;=e^{-\lambda t}\\
+&amp;=P(T&gt;t)
+\end{aligned}
+$$</p>
+</details>
+<blockquote>
+<p>无记忆性的直观解释是：已经等待了时间<span class="arithmatex">\(s\)</span>之后，再继续等待超过额外时间<span class="arithmatex">\(t\)</span>的概率，等同于从头开始等待超过时间<span class="arithmatex">\(t\)</span>的概率。过去的等待不会减少未来的等待时间——就像抛硬币，无论之前失败了多少次，下次成功的概率依然是<span class="arithmatex">\(p\)</span></p>
+</blockquote>
+<p><strong>唯一性</strong>：在所有连续分布中，只有指数分布具有无记忆性。类似地，在所有离散分布中，只有几何分布具有无记忆性</p>
+<h3 id="sum-of-independent-exponentials">Sum of Independent Exponentials</h3>
+<p><strong>定理</strong><br />
+如果<span class="arithmatex">\(T_1\sim\text{Exp}(\lambda_1)\)</span>和<span class="arithmatex">\(T_2\sim\text{Exp}(\lambda_2)\)</span>相互独立，那么最小值<span class="arithmatex">\(\min(T_1,T_2)\)</span>服从参数为<span class="arithmatex">\(\lambda_1+\lambda_2\)</span>的指数分布：
+$$
+\min(T_1,T_2)\sim\text{Exp}(\lambda_1+\lambda_2)
+$$</p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<p>考虑生存函数（Survival function）<span class="arithmatex">\(G(t)=P(T&gt;t)=1-F(t)=e^{-\lambda t}\)</span>
+$$
+\begin{aligned}
+P(\min(T_1,T_2)&gt;t)&amp;=P(T_1&gt;t,T_2&gt;t)\\
+&amp;=P(T_1&gt;t)P(T_2&gt;t)\quad\text{(独立性)}\\
+&amp;=e^{-\lambda_1 t}e^{-\lambda_2 t}\\
+&amp;=e^{-(\lambda_1+\lambda_2)t}
+\end{aligned}
+$$
+这正是参数为<span class="arithmatex">\(\lambda_1+\lambda_2\)</span>的指数分布的生存函数</p>
+</details>
+<p><strong>推论</strong>：如果有<span class="arithmatex">\(n\)</span>个独立的指数随机变量<span class="arithmatex">\(T_i\sim\text{Exp}(\lambda_i)\)</span>，那么
+$$
+\min(T_1,\cdots,T_n)\sim\text{Exp}\left(\sum_{i=1}^n\lambda_i\right)
+$$</p>
+<p><strong>定理</strong>：在上面的设定下，最小的那个随机变量恰好是<span class="arithmatex">\(T_j\)</span>的概率为
+$$
+P(\text{argmin}<em i="1">i T_i=j)=\frac{\lambda_j}{\sum</em>
+$$}^n\lambda_i</p>
+<blockquote>
+<p>这意味着率参数越大的指数变量更可能成为最小值——事件发生越快的那个过程越有可能最先触发</p>
+</blockquote>
+<p><strong>定理</strong><br />
+如果<span class="arithmatex">\(T_1,\cdots,T_n\)</span>独立同分布于<span class="arithmatex">\(\text{Exp}(\lambda)\)</span>，它们的和服从<strong>伽马分布</strong>(Gamma distribution)：
+$$
+T_1+\cdots+T_n\sim\text{Gamma}(n,\lambda)
+$$
+伽马分布<span class="arithmatex">\(\text{Gamma}(k,\lambda)\)</span>的 PDF 为
+$$
+f(x)=\frac{\lambda^k x^{k-1}e^{-\lambda x}}{(k-1)!},\quad x&gt;0,k\in\mathbb{N}^+
+$$
+当<span class="arithmatex">\(k\)</span>为正整数时也称为<strong>爱尔朗分布</strong>(Erlang distribution)</p>
+<details class="tip">
+<summary>直觉理解</summary>
+<p><span class="arithmatex">\(T_1+\cdots+T_n\)</span>表示等待第<span class="arithmatex">\(n\)</span>次事件发生的总时间，其中每次事件的间隔服从<span class="arithmatex">\(\text{Exp}(\lambda)\)</span>。这正是泊松过程中第<span class="arithmatex">\(n\)</span>次到达的时间</p>
+</details>
+<h2 id="poisson-processes">Poisson Processes</h2>
+<p><strong>泊松过程</strong>(Poisson process)是描述随机事件在连续时间中发生的数学模型。它是最基本的计数过程之一</p>
+<p>在一个率为<span class="arithmatex">\(\lambda\)</span>的泊松过程中：
+- 令<span class="arithmatex">\(T_i\)</span>表示第<span class="arithmatex">\(i-1\)</span>次事件和第<span class="arithmatex">\(i\)</span>次事件之间的时间间隔（<strong>间隔时间</strong>, interarrival time），则<span class="arithmatex">\(T_i\overset{i.i.d}{\sim}\text{Exp}(\lambda)\)</span>
+- 令<span class="arithmatex">\(N(t)\)</span>表示时间段<span class="arithmatex">\((0,t]\)</span>内发生的事件总数，则
+$$
+N(t)\sim\text{Pois}(\lambda t)
+$$</p>
+<blockquote>
+<p>泊松过程中的计数服从泊松分布，间隔时间服从指数分布。这两者之间存在内在的联系，反映了同一过程的不同视角</p>
+</blockquote>
+<p><strong>泊松过程的三大特性</strong>：</p>
+<ol>
+<li><strong>平稳增量(stationary increments)</strong>：在长度为<span class="arithmatex">\(t\)</span>的区间内发生的事件数与区间的起始位置无关，始终服从<span class="arithmatex">\(\text{Pois}(\lambda t)\)</span></li>
+<li><strong>独立增量(independent increments)</strong>：不相交的时间区间内发生的事件数是互相独立的</li>
+<li><strong>稀疏性(rarity)</strong>：在非常短的时间间隔<span class="arithmatex">\(h\)</span>内，最多只有一个事件发生的概率趋于1：</li>
+<li><span class="arithmatex">\(P(N(h)=1)=\lambda h+o(h)\)</span></li>
+<li><span class="arithmatex">\(P(N(h)\ge2)=o(h)\)</span></li>
+</ol>
+<p><strong>定理：泊松过程与指数分布的关系</strong><br />
+在一个率为<span class="arithmatex">\(\lambda\)</span>的泊松过程中，以下三个陈述是等价的</p>
+<ol>
+<li>计数过程：对所有<span class="arithmatex">\(t&gt;0\)</span>，<span class="arithmatex">\(N(t)\sim\text{Pois}(\lambda t)\)</span></li>
+<li>间隔时间为独立同分布的指数变量：<span class="arithmatex">\(T_i\overset{i.i.d}{\sim}\text{Exp}(\lambda)\)</span></li>
+<li>在很短的间隔<span class="arithmatex">\(h\)</span>内，上述的稀疏性条件成立</li>
+</ol>
+<p><strong>定理：泊松过程的分解(Splitting)</strong><br />
+将一个率为<span class="arithmatex">\(\lambda\)</span>的泊松过程中的每个事件独立地以概率<span class="arithmatex">\(p\)</span>标记为类型A、以概率<span class="arithmatex">\(q=1-p\)</span>标记为类型B。那么</p>
+<ul>
+<li>类型A的事件构成一个率为<span class="arithmatex">\(\lambda p\)</span>的泊松过程</li>
+<li>类型B的事件构成一个率为<span class="arithmatex">\(\lambda q\)</span>的泊松过程</li>
+<li>这两个过程是相互独立的</li>
+</ul>
+<blockquote>
+<p>这类似于二项分布的条件分解思想，但在连续时间框架下进行</p>
+</blockquote>
+<p><strong>定理：泊松过程的叠加(Superposition)</strong><br />
+两个独立的泊松过程，分别为<span class="arithmatex">\(\text{PP}(\lambda_1)\)</span>和<span class="arithmatex">\(\text{PP}(\lambda_2)\)</span>，将它们的所有事件合并在一起形成一个新的过程。这个新的过程仍为一个泊松过程，其率为两过程之和：
+$$
+\text{PP}(\lambda_1)+\text{PP}(\lambda_2)=\text{PP}(\lambda_1+\lambda_2)
+$$</p>
+<details class="tip" open="open">
+<summary>证明概要</summary>
+<p>设<span class="arithmatex">\(N_1(t)\sim\text{Pois}(\lambda_1 t)\)</span>和<span class="arithmatex">\(N_2(t)\sim\text{Pois}(\lambda_2 t)\)</span>是两个独立计数过程</p>
+<p>它们的和<span class="arithmatex">\(N(t)=N_1(t)+N_2(t)\)</span>的概率为卷积：
+$$
+\begin{aligned}
+P(N(t)=k)&amp;=\sum_{j=0}^kP(N_1(t)=j)P(N_2(t)=k-j)\\
+&amp;=\sum_{j=0}^k\frac{e^{-\lambda_1 t}(\lambda_1 t)^j}{j!}\frac{e^{-\lambda_2 t}(\lambda_2 t)^{k-j}}{(k-j)!}\\
+&amp;=\frac{e^{-(\lambda_1+\lambda_2)t}}{k!}\sum_{j=0}^k\binom{k}{j}(\lambda_1 t)^j(\lambda_2 t)^{k-j}\\
+&amp;=\frac{e^{-(\lambda_1+\lambda_2)t}((\lambda_1+\lambda_2)t)^k}{k!}
+\end{aligned}
+$$
+即<span class="arithmatex">\(N(t)\sim\text{Pois}((\lambda_1+\lambda_2)t)\)</span></p>
+</details>
+<h2 id="symmetry-of-iid-continuous-rvs">Symmetry of i.i.d Continuous r.v.s</h2>
+<p>独立同分布的连续随机变量具有一系列基于对称性的重要结论，这些结论可以不借助具体分布的形式直接得出</p>
+<p><strong>定理：排序的等可能性</strong><br />
+令<span class="arithmatex">\(X_1,X_2,\cdots,X_n\)</span>为独立同分布的连续随机变量。那么在所有可能的全排列中，每一种排列顺序出现的概率相等：
+$$
+P(X_{i_1}&lt;X_{i_2}&lt;\cdots&lt;X_{i_n})=\frac{1}{n!}
+$$
+其中<span class="arithmatex">\((i_1,i_2,\cdots,i_n)\)</span>是<span class="arithmatex">\(\{1,2,\cdots,n\}\)</span>的一个排列</p>
+<blockquote>
+<p>因为<span class="arithmatex">\(X_i\)</span>是连续的，所以不存在取到相同值的概率（<span class="arithmatex">\(P(X_i=X_j)=0\)</span>）。又因为它们独立同分布，没有任何一个索引比另一个更有优势排在前面</p>
+</blockquote>
+<p><strong>推论：最大值和最小值的位置</strong><br />
+对于<span class="arithmatex">\(n\)</span>个独立同分布的连续随机变量<span class="arithmatex">\(X_1,\cdots,X_n\)</span>，每一个<span class="arithmatex">\(X_i\)</span>等可能是最大值或最小值：
+$$
+P(X_i=\max{X_1,\cdots,X_n})=\frac{1}{n}
+$$
+$$
+P(X_i=\min{X_1,\cdots,X_n})=\frac{1}{n}
+$$</p>
+<p><strong>定理：次序统计量的排名</strong><br />
+对于<span class="arithmatex">\(n\)</span>个独立同分布的连续随机变量，按照从小到大排列为次序统计量<span class="arithmatex">\(X_{(1)}&lt;X_{(2)}&lt;\cdots&lt;X_{(n)}\)</span>，每一个原始观测<span class="arithmatex">\(X_i\)</span>都有相同的概率成为第<span class="arithmatex">\(j\)</span>小的次序统计量：
+$$
+P(X_i=X_{(j)})=\frac{1}{n}
+$$</p>
+<p><strong>定理：独立同分布指数变量的比例</strong><br />
+令<span class="arithmatex">\(T_1,\cdots,T_n\)</span>为独立同分布于<span class="arithmatex">\(\text{Exp}(\lambda)\)</span>的随机变量，并记<span class="arithmatex">\(S=T_1+\cdots+T_n\)</span>。那么对于每一个<span class="arithmatex">\(i\)</span>，比值<span class="arithmatex">\(T_i/S\)</span>的分布与<span class="arithmatex">\(\lambda\)</span>无关，且
+$$
+\frac{T_i}{S}\sim\text{Beta}(1,n-1)
+$$
+更一般地，向量<span class="arithmatex">\(\left(\frac{T_1}{S},\frac{T_2}{S},\cdots,\frac{T_n}{S}\right)\)</span>在<span class="arithmatex">\(n\)</span>维单纯形上均匀分布</p>
+<p><strong>推论</strong>：由于对称性，对于任意<span class="arithmatex">\(i,j\neq i\)</span>
+$$
+E\left(\frac{T_i}{S}\right)=\frac{1}{n}
+$$</p>
+<blockquote>
+<p>指数分布的比例性质在无记忆性和泊松过程中扮演着核心角色，是推导许多结果的关键工具</p>
+</blockquote>
+<h2 id="summary">Summary</h2>
+<p>下面是本章介绍的几种主要连续分布的汇总</p>
+<table>
+<thead>
+<tr>
+<th>分布</th>
+<th>PDF / 关键表达式</th>
+<th>期望 <span class="arithmatex">\(E(X)\)</span></th>
+<th>方差 <span class="arithmatex">\(Var(X)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>均匀分布</strong> <span class="arithmatex">\(\text{Unif}(a,b)\)</span></td>
+<td><span class="arithmatex">\(f(x)=\dfrac{1}{b-a},a&lt;x&lt;b\)</span></td>
+<td><span class="arithmatex">\(\dfrac{a+b}{2}\)</span></td>
+<td><span class="arithmatex">\(\dfrac{(b-a)^2}{12}\)</span></td>
+</tr>
+<tr>
+<td><strong>正态分布</strong> <span class="arithmatex">\(N(\mu,\sigma^2)\)</span></td>
+<td><span class="arithmatex">\(f(x)=\dfrac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span></td>
+<td><span class="arithmatex">\(\mu\)</span></td>
+<td><span class="arithmatex">\(\sigma^2\)</span></td>
+</tr>
+<tr>
+<td><strong>标准正态分布</strong> <span class="arithmatex">\(N(0,1)\)</span></td>
+<td><span class="arithmatex">\(\phi(z)=\dfrac{1}{\sqrt{2\pi}}e^{-\frac{z^2}{2}}\)</span></td>
+<td><span class="arithmatex">\(0\)</span></td>
+<td><span class="arithmatex">\(1\)</span></td>
+</tr>
+<tr>
+<td><strong>指数分布</strong> <span class="arithmatex">\(\text{Exp}(\lambda)\)</span></td>
+<td><span class="arithmatex">\(f(t)=\lambda e^{-\lambda t},t&gt;0\)</span></td>
+<td><span class="arithmatex">\(\dfrac{1}{\lambda}\)</span></td>
+<td><span class="arithmatex">\(\dfrac{1}{\lambda^2}\)</span></td>
+</tr>
+<tr>
+<td><strong>伽马分布</strong> <span class="arithmatex">\(\text{Gamma}(k,\lambda)\)</span></td>
+<td><span class="arithmatex">\(f(x)=\dfrac{\lambda^k x^{k-1}e^{-\lambda x}}{(k-1)!},x&gt;0\)</span></td>
+<td><span class="arithmatex">\(\dfrac{k}{\lambda}\)</span></td>
+<td><span class="arithmatex">\(\dfrac{k}{\lambda^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">概率统计</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">数学</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../4/" class="md-footer__link md-footer__link--prev" aria-label="上一页: Expectation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Expectation
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 ljhkss
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"../../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="../../../javascripts/homepage.js"></script>
+      
+        <script src="../../../javascripts/lightbox.js"></script>
+      
+        <script src="../../../javascripts/image-optimizer.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

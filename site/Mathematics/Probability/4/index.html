@@ -18,6 +18,8 @@
         <link rel="prev" href="../3/">
       
       
+        <link rel="next" href="../5/">
+      
       
         
       
@@ -923,6 +925,8 @@
       
         
       
+        
+      
     
     
     
@@ -1301,6 +1305,33 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Continuous Random Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1612,6 +1643,8 @@
       
         
       
+        
+      
     
     
     
@@ -1710,7 +1743,7 @@ $$
 <p>对于一系列独立的伯努利试验，每个试验的成功概率均为<span class="arithmatex">\(p\in(0, 1)\)</span>，当第一次出现成功时停止试验。令随机变量<span class="arithmatex">\(Y\)</span>为第一次成功前失败的次数，包括最后一次成功的试验，那么<span class="arithmatex">\(Y\)</span>服从参数为<span class="arithmatex">\(p\)</span>的 <strong>First Success</strong>，记为<span class="arithmatex">\(Y\sim\text{FS}(p)\)</span></p>
 <p>如果<span class="arithmatex">\(Y\sim\text{FS}(p)\)</span>，那么 <span class="arithmatex">\(Y-1\sim\text{Geom}(p)\)</span>,可以用下面的公式转换 PMF
 $$
-P(Y=k)=P(Y-1=k-1)
+P(Y=k)=P(Y-1=k-1)=q^{k-1}p
 $$
 同样的，如果<span class="arithmatex">\(X\sim\text{Geom}(p)\)</span>,那么<span class="arithmatex">\(X+1\sim\text{FS}(p)\)</span></p>
 <h3 id="negative-binomial">Negative Binomial</h3>
@@ -1830,7 +1863,7 @@ $$
 E(X-\mu)^2=E(X^2)-2\mu EX+\mu^2=E(X^2)-\mu
 $$</p>
 </details>
-<p>下面来看方差的几个性质</p>
+<p>下面是方差的几个性质</p>
 <ul>
 <li>对于任意常数<span class="arithmatex">\(c\)</span>, <span class="arithmatex">\(Var(X+c)=Var(X)\)</span></li>
 <li>对于任意常数<span class="arithmatex">\(c\)</span>, <span class="arithmatex">\(Var(cX)=c^2Var(X)\)</span></li>
@@ -1915,8 +1948,10 @@ $$</p>
 如果<span class="arithmatex">\(X\sim\text{Bin}(n,p)\)</span>，在保持<span class="arithmatex">\(\lambda=np\)</span>不变的情况下，当<span class="arithmatex">\(n\to\infty, p\to0\)</span>时，X的PMF会变为<span class="arithmatex">\(\text{Pois}(\lambda)\)</span></p>
 <h2 id="conclusion-of-discrete-distributions">Conclusion of Discrete Distributions</h2>
 <h3 id="expectance-of-discrete-distributions">Expectance of Discrete Distributions</h3>
-<p><strong>伯努利分布的期望</strong><br />
-如果随机变量<span class="arithmatex">\(X\sim\text{Bern}(p)\)</span>,那么<span class="arithmatex">\(E(X)=p\)</span></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:7"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><input id="__tabbed_2_7" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><strong>伯努利分布的期望</strong></label><label for="__tabbed_2_2"><strong>二项分布的期望</strong></label><label for="__tabbed_2_3"><strong>超几何分布的期望</strong></label><label for="__tabbed_2_4"><strong>几何分布的期望</strong></label><label for="__tabbed_2_5"><strong>First Success 的期望</strong></label><label for="__tabbed_2_6"><strong>负二项分布的期望</strong></label><label for="__tabbed_2_7"><strong>负超几何分布的期望</strong></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{Bern}(p)\)</span>,那么<span class="arithmatex">\(E(X)=p\)</span></p>
 <details class="tip" open="open">
 <summary>证明</summary>
 <p>根据期望的定义
@@ -1924,11 +1959,12 @@ $$
 E(X)=1p+0q=p
 $$</p>
 </details>
-<p><strong>二项分布的期望</strong><br />
-如果随机变量<span class="arithmatex">\(X\sim\text{Bin}(n, p)\)</span>,那么<span class="arithmatex">\(E(X)=np\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{Bin}(n, p)\)</span>,那么<span class="arithmatex">\(E(X)=np\)</span></p>
 <details class="tip" open="open">
 <summary>证明</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">定义</label><label for="__tabbed_2_2">线性</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">定义</label><label for="__tabbed_3_2">线性</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>根据期望的定义
@@ -1959,7 +1995,8 @@ $$</p>
 </div>
 </div>
 </details>
-<p><strong>超几何分布的期望</strong></p>
+</div>
+<div class="tabbed-block">
 <p>如果随机变量<span class="arithmatex">\(X\sim\text{HGeom}(w, b, n)\)</span>,那么<span class="arithmatex">\(E(X)=n\dfrac{w}{w+b}\)</span></p>
 <details class="tip" open="open">
 <summary>证明</summary>
@@ -1975,11 +2012,12 @@ $$</p>
 <p>虽然 <span class="arithmatex">\(I_j\)</span>之间不是独立的，但线性与是否独立无关</p>
 </blockquote>
 </details>
-<p><strong>几何分布的期望</strong><br />
-如果随机变量<span class="arithmatex">\(X\sim\text{Geom}(p)\)</span>,那么<span class="arithmatex">\(E(X)=q/p\)</span>,<span class="arithmatex">\(q=1-p\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{Geom}(p)\)</span>,那么<span class="arithmatex">\(E(X)=q/p\)</span>,<span class="arithmatex">\(q=1-p\)</span></p>
 <details class="tip" open="open">
 <summary>证明</summary>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">定义</label><label for="__tabbed_3_2">生存函数</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">定义</label><label for="__tabbed_4_2">生存函数</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>根据期望的定义
@@ -2004,8 +2042,9 @@ $$</p>
 </div>
 </div>
 </details>
-<p><strong>First Success 的期望</strong><br />
-如果随机变量<span class="arithmatex">\(Y\sim\text{FS}(p)\)</span>,那么<span class="arithmatex">\(E(Y)=1/p\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(Y\sim\text{FS}(p)\)</span>,那么<span class="arithmatex">\(E(Y)=1/p\)</span></p>
 <details class="tip" open="open">
 <summary>证明</summary>
 <p>因为 <span class="arithmatex">\(Y=X+1\)</span>,因此
@@ -2013,8 +2052,9 @@ $$
 E(Y)=E(X+1)=E(X)+1=\frac qp+1=\frac1p
 $$</p>
 </details>
-<p><strong>负二项分布的期望</strong><br />
-如果随机变量<span class="arithmatex">\(X\sim\text{NBin}(r, p)\)</span>,那么<span class="arithmatex">\(E(X)=rq/p\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{NBin}(r, p)\)</span>,那么<span class="arithmatex">\(E(X)=rq/p\)</span></p>
 <details class="tip" open="open">
 <summary>证明</summary>
 <p>将<span class="arithmatex">\(X\)</span>看作是一系列的独立同分布随机变量<span class="arithmatex">\(X_j\sim\text{Geom}(p)\)</span>,那么<span class="arithmatex">\(X=X_1+X_2+\cdots+X_r\)</span>,根据期望的线性
@@ -2022,8 +2062,9 @@ $$
 E(X)=E(X_1)+E(X_2)+\cdots+E(X_r)=r\frac{q}{p}
 $$</p>
 </details>
-<p><strong>负超几何分布的期望</strong><br />
-如果随机变量<span class="arithmatex">\(X\sim\text{NHGEom}(w, b , r)\)</span>，那么<span class="arithmatex">\(E(X)=rb/(w+1)\)</span></p>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{NHGEom}(w, b , r)\)</span>，那么<span class="arithmatex">\(E(X)=rb/(w+1)\)</span></p>
 <details class="tip" open="open">
 <summary>证明</summary>
 <p>将<span class="arithmatex">\(X\)</span>看作是一系列的伯努利试验，即
@@ -2035,62 +2076,172 @@ $$
 E(X)=E(I_1)+E(I_2)+\cdots+E(I_r)=rb/(w+1)
 $$</p>
 </details>
+</div>
+</div>
+</div>
 <h3 id="variance-of-discrete-distributions">Variance of Discrete Distributions</h3>
-<p><strong>几何分布的方差</strong><br />
-如果随机变量<span class="arithmatex">\(X\sim\text{Geom}(p)\)</span>，那么<span class="arithmatex">\(Var(X)=\dfrac{q}{p^2}\)</span></p>
-<p><strong>负二项分布的方差</strong><br />
-如果随机变量<span class="arithmatex">\(X\sim\text{NBin}(r, p)\)</span>，那么<span class="arithmatex">\(Var(X)=r\dfrac{q}{p^2}\)</span></p>
-<p><strong>二项分布的方差</strong><br />
-如果随机变量<span class="arithmatex">\(X\sim\text{Bin}(n, p)\)</span>，那么<span class="arithmatex">\(Var(X)=np(1-p)\)</span></p>
-<p><strong>超几何分布的方差</strong><br />
-如果随机变量<span class="arithmatex">\(X\sim\text{HGeom}(w, b, n)\)</span>，那么<span class="arithmatex">\(Var(X)=n\dfrac{w}{w+b} \dfrac{b}{w+b} \dfrac{w+b-n}{w+b-1}\)</span></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:7"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><input id="__tabbed_5_3" name="__tabbed_5" type="radio" /><input id="__tabbed_5_4" name="__tabbed_5" type="radio" /><input id="__tabbed_5_5" name="__tabbed_5" type="radio" /><input id="__tabbed_5_6" name="__tabbed_5" type="radio" /><input id="__tabbed_5_7" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1"><strong>伯努利分布的方差</strong></label><label for="__tabbed_5_2"><strong>几何分布的方差</strong></label><label for="__tabbed_5_3"><strong>First Success 的方差</strong></label><label for="__tabbed_5_4"><strong>负二项分布的方差</strong></label><label for="__tabbed_5_5"><strong>二项分布的方差</strong></label><label for="__tabbed_5_6"><strong>超几何分布的方差</strong></label><label for="__tabbed_5_7"><strong>负超几何分布的方差</strong></label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{Bern}(p)\)</span>，那么<span class="arithmatex">\(Var(X)=p(1-p)\)</span></p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<p>由于<span class="arithmatex">\(x=0\text{或}x=1\)</span>时<span class="arithmatex">\(x^2=x\)</span>恒成立，所以随机变量满足<span class="arithmatex">\(X^2=X\)</span>，即<span class="arithmatex">\(E(X^2)=E(X)=p\)</span>。直接代入方差计算公式得到
+$$
+Var(X)=E(X^2)-(EX)^2=p-p^2=p(1-p)
+$$</p>
+</details>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{Geom}(p)\)</span>，那么<span class="arithmatex">\(Var(X)=\dfrac{q}{p^2}\)</span></p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<p>为了利用 LOTUS 避开直接处理平方项<span class="arithmatex">\(k^2\)</span>的复杂级数，可以先计算更易处理的<span class="arithmatex">\(E[X(X-1)]\)</span>。对于几何分布 PMF 有
+$$
+E[X(X-1)] = \sum_{k=0}^{\infty} k(k-1)pq^k = pq^2\sum_{k=2}^{\infty}k(k-1)q^{k-2}
+$$
+利用几何级数求和公式 <span class="arithmatex">\(\sum_{k=0}^{\infty}q^k = \frac{1}{1-q} = \frac{1}{p}\)</span>,将该式两边分别求一阶和二阶导数，可以得到：
+$$
+\sum_{k=2}^{\infty}k(k-1)q^{k-2}=\left(\sum_{k=0}^{\infty}q^{k}\right)''=\left(\frac{1}{p}\right)''=\frac{2}{p^3}
+$$
+代回级数中得到 <span class="arithmatex">\(E[X(X-1)] = pq^2 \cdot \frac{2}{p^3} = \frac{2q^2}{p^2}\)</span>。<br />
+此时我们可以还原出 <span class="arithmatex">\(E(X^2)\)</span>，再减去期望的平方：
+$$
+\begin{aligned}
+Var(X)&amp;=E(X^2)-(EX)^2 \\
+&amp;= E[X(X-1)]+EX-(EX)^2 \\
+&amp;= \frac{2q^2}{p^2} + \frac{q}{p} - \frac{q^2}{p^2} \\
+&amp;= \frac{q}{p^2}
+\end{aligned}
+$$</p>
+</details>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(Y\sim\text{FS}(p)\)</span>，那么<span class="arithmatex">\(Var(Y)=\dfrac{q}{p^2}\)</span></p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<p>由定义知 <span class="arithmatex">\(Y=X+1\)</span>，其中 <span class="arithmatex">\(X \sim \text{Geom}(p)\)</span> 记录的是失败次数。因为平移不会改变数据的波动程度（位置变换的方差不变性），所以 
+$$
+Var(Y)=Var(X+1)=Var(X)=\frac{q}{p^2}
+$$</p>
+</details>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{NBin}(r, p)\)</span>，那么<span class="arithmatex">\(Var(X)=r\dfrac{q}{p^2}\)</span></p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<p>将获取总共<span class="arithmatex">\(r\)</span>次成功的过程看作是<span class="arithmatex">\(r\)</span>轮连续的“等待下一次成功”。若定义每轮新增成功之前经历的新鲜失败次数为<span class="arithmatex">\(X_i\)</span>，则显然 <span class="arithmatex">\(X_i \stackrel{\text{i.i.d.}}{\sim}\text{Geom}(p)\)</span> 且总失败次数 <span class="arithmatex">\(X = \sum_{i=1}^r X_i\)</span>。根据独立随机变量之和的方差具有可加性这一关键性质，我们有：
+$$
+Var(X) = Var\left(\sum_{i=1}^r X_i\right) = \sum_{i=1}^r Var(X_i) = r \cdot \frac{q}{p^2}
+$$</p>
+</details>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{Bin}(n, p)\)</span>，那么<span class="arithmatex">\(Var(X)=np(1-p)\)</span></p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<p>把<span class="arithmatex">\(n\)</span>次重复的实验拆解为单个的试验，令指示随机变量<span class="arithmatex">\(I_j\)</span>为第<span class="arithmatex">\(j\)</span>次实验是否成功，则每一个 <span class="arithmatex">\(I_j\)</span> 都服从参数为 <span class="arithmatex">\(p\)</span> 的伯努利分布。同时由于各次试验彼此无关（独立），所以总的成功次数 <span class="arithmatex">\(X = \sum_{i=1}^n I_i\)</span>。利用独立随机变量和的方差可加性：
+$$
+Var(X) = Var\left(\sum_{i=1}^n I_i\right) = \sum_{i=1}^n Var(I_i) = n \cdot p(1-p)
+$$</p>
+</details>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{HGeom}(w, b, n)\)</span>，那么<span class="arithmatex">\(Var(X)=n\dfrac{w}{w+b} \dfrac{b}{w+b} \dfrac{w+b-n}{w+b-1}\)</span></p>
+<details class="tip" open="open">
+<summary>证明</summary>
+<p>令<span class="arithmatex">\(W=w+b\)</span>表示总体大小。不放回的抽取可以写成一系列指示随机变量之和 <span class="arithmatex">\(X=\sum_{i=1}^n I_i\)</span>（<span class="arithmatex">\(I_i=1\)</span>代表第<span class="arithmatex">\(i\)</span>次抽到了白球）。注意由于是不放回抽样，各<span class="arithmatex">\(I_i\)</span>不再具备独立性，因此在求和展开方差时必须考虑两两之间的协方差项 (Covariance)：
+$$
+Var(X)=\underbrace{\sum_{i=1}^n Var(I_i)}<em _neq="\neq" i="i" j="j">{\text{各项自身的方差}}+\underbrace{\sum</em>
+$$
+对于任意单独某一次抽样，抽出白球的无条件概率仍是 }Cov(I_i,   I_j)}_{\text{不同项间产生的依赖效应}<span class="arithmatex">\(\frac{w}{W}\)</span>，故每个 <span class="arithmatex">\(I_i\)</span> 相当于参数为 <span class="arithmatex">\(\frac{w}{W}\)</span> 的单    点伯努利变量，单个方差为 <span class="arithmatex">\(Var(I_i) = \frac{w}{W}(1-\frac{w}{W}) = \frac{wb}{W^2}\)</span>。第一部分一共<span class="arithmatex">\(n\)</span>项，合计  为 <span class="arithmatex">\(\frac{nwb}{W^2}\)</span>。</p>
+<p>接下来看第二部分，对于任意两次不同的抽样位置 <span class="arithmatex">\(i\)</span> 和 <span class="arithmatex">\(j\)</span>，依据对称性所有这类组合的贡献是一样大的，而一共存在 <span class="arithmatex">\(n  (n-1)\)</span> 种可能的配对方式。它们对应的协方差定义为：
+$$
+Cov(I_i,I_j) = E(I_i I_j)-E(I_i)E(I_j)
+$$
+其中联合期望 <span class="arithmatex">\(E(I_i I_j)\)</span> 即为先后两次均抽到白球的发生概率（不放回的条件乘法公式）：
+$<span class="arithmatex">\(E(I_i I_j) = \frac{w}{W} \times \frac{w-1}{W-1}\)</span>$
+代入协方差表达式计算得
+$$
+Cov(I_i,I_j) = \frac{w(w-1)}{W(W-1)} - \left(\frac{w}{W}\right)^2 = \frac{-wb}{W^2(W-1)}
+$$
+汇总这两个贡献项，通过代数上的通分整理即可得到最终结果：
+$$
+\begin{aligned}
+Var(X) &amp; = \frac{nwb}{W^2} - \frac{n(n-1)wb}{W^2(W-1)} \\
+&amp;= \frac{nw b}{W^2} \left( 1 - \frac{n-1}{W-1} \right) \\
+&amp;= \frac{nwb}{W^2} \left( \frac{W-1 - n + 1}{W-1} \right) \\
+&amp;= \frac{nwb}{W^2} \cdot \frac{W-n}{W-1}
+\end{aligned}
+$$
+将<span class="arithmatex">\(W=w+b\)</span>重新代回分子分母拆分，便可完美对应命题里的连乘形式。</p>
+</details>
+</div>
+<div class="tabbed-block">
+<p>如果随机变量<span class="arithmatex">\(X\sim\text{NHGEom}(w, b , r)\)</span>，那么<span class="arithmatex">\(Var(X)=\dfrac{rb(w+b+1)(w+1-r)}{(w+1)^2(w+2)}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">证明提示</p>
+<p>该分布的计算较为繁复，同样可以使用指示随机变量结合不放回条件下多阶段取样的协方差矩阵来严格推导。由于其对称结构与超几何分布同属一个数学体系，上述结论常作为对照知识在习题中进行反向验证应用.</p>
+</div>
+</div>
+</div>
+</div>
 <p>最后将所有分布的期望和方差总结如下：</p>
 <table>
 <thead>
 <tr>
 <th>分布</th>
-<th>期望 <span class="arithmatex">\(E(X)\)</span></th>
-<th>方差 <span class="arithmatex">\(Var(X)\)</span></th>
+<th> PMF  </th>
+<th>期望 <span class="arithmatex">\(E(X)\)</span>    </th>
+<th>方差 <span class="arithmatex">\(Var(X)\)</span>  </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>伯努利分布</strong> <span class="arithmatex">\(\text{Bern}(p)\)</span></td>
-<td><span class="arithmatex">\(p\)</span></td>
-<td><span class="arithmatex">\(p(1-p)\)</span></td>
+<td><strong>伯努利分布</strong> <span class="arithmatex">\(\text{Bern}(p)\)</span>  </td>
+<td><span class="arithmatex">\(P(X=1)=p\)</span></td>
+<td><span class="arithmatex">\(p\)</span>              </td>
+<td><span class="arithmatex">\(p(1-p)\)</span>                                            </td>
 </tr>
 <tr>
-<td><strong>二项分布</strong> <span class="arithmatex">\(\text{Bin}(n, p)\)</span></td>
-<td><span class="arithmatex">\(np\)</span></td>
-<td><span class="arithmatex">\(np(1-p)\)</span></td>
+<td><strong>二项分布</strong> <span class="arithmatex">\(\text{Bin}(n, p)\)</span>  </td>
+<td><span class="arithmatex">\(P(X=k)=\binom{n}{k}p^kq^{n-k}\)</span></td>
+<td><span class="arithmatex">\(np\)</span>              </td>
+<td><span class="arithmatex">\(np(1-p)\)</span>                                          </td>
 </tr>
 <tr>
-<td><strong>超几何分布</strong> <span class="arithmatex">\(\text{HGeom}(w, b, n)\)</span></td>
-<td><span class="arithmatex">\(n \frac{w}{w+b}\)</span></td>
-<td><span class="arithmatex">\(n \dfrac{w}{w+b} \dfrac{b}{w+b} \dfrac{w+b-n}{w+b-1}\)</span></td>
+<td><strong>超几何分布</strong> <span class="arithmatex">\(\text{HGeom}(w, b, n)\)</span>  </td>
+<td><span class="arithmatex">\(P(X=k)=\frac{\binom wk\binom{b}{n-k}}{\binom{w+b}{n}}\)</span></td>
+<td>$n \dfrac{w}{w+b} $</td>
+<td><span class="arithmatex">\(\dfrac{b}{w+b} \dfrac{w+b-n}{w+b-1}\)</span></td>
 </tr>
 <tr>
-<td><strong>几何分布</strong> <span class="arithmatex">\(\text{Geom}(p)\)</span></td>
-<td><span class="arithmatex">\(\dfrac{q}{p}\)</span></td>
-<td><span class="arithmatex">\(\dfrac{q}{p^2}\)</span></td>
+<td><strong>几何分布</strong> <span class="arithmatex">\(\text{Geom}(p)\)</span>  </td>
+<td><span class="arithmatex">\(P(X=k)=q^{k}p\)</span></td>
+<td><span class="arithmatex">\(\dfrac{q}{p}\)</span>    </td>
+<td><span class="arithmatex">\(\dfrac{q}{p^2}\)</span>                                    </td>
 </tr>
 <tr>
-<td><strong>First Success</strong> <span class="arithmatex">\(\text{FS}(p)\)</span></td>
+<td><strong>First Success</strong> <span class="arithmatex">\(\text{FS}(p)\)</span>  </td>
+<td><span class="arithmatex">\(P(X=1)=q^{k-1}p\)</span></td>
 <td><span class="arithmatex">\(\dfrac{1}{p}\)</span></td>
-<td><span class="arithmatex">\(\dfrac{q}{p^2}\)</span></td>
+<td><span class="arithmatex">\(\dfrac{q}{p^2}\)</span>                                    </td>
 </tr>
 <tr>
-<td><strong>负二项分布</strong> <span class="arithmatex">\(\text{NBin}(r, p)\)</span></td>
+<td><strong>负二项分布</strong> <span class="arithmatex">\(\text{NBin}(r, p)\)</span>  </td>
+<td><span class="arithmatex">\(P(X=k)=\binom{k+r-1}{r-1}p^{r}q^{k}\)</span></td>
 <td><span class="arithmatex">\(r \dfrac{q}{p}\)</span></td>
-<td><span class="arithmatex">\(r \dfrac{q}{p^2}\)</span></td>
+<td><span class="arithmatex">\(r \dfrac{q}{p^2}\)</span>                                  </td>
 </tr>
 <tr>
 <td><strong>负超几何分布</strong> <span class="arithmatex">\(\text{NHGeom}(w, b, r)\)</span></td>
+<td><span class="arithmatex">\(P(X=k)=\frac{\binom{r+k-1}{r-1}\binom{w+b-k-r}{w-r}}{\binom{w+b}{w}}\)</span></td>
 <td><span class="arithmatex">\(\dfrac{rb}{w+1}\)</span></td>
-<td><span class="arithmatex">\(\dfrac{rb(w+b+1)(w+1-r)}{(w+1)^2(w+2)}\)</span></td>
+<td><span class="arithmatex">\(\dfrac{rb(w+b+1)(w+1-r)}{(w+1)^2(w+2)}\)</span>            </td>
 </tr>
 <tr>
-<td><strong>泊松分布</strong> <span class="arithmatex">\(\text{Pois}(\lambda)\)</span></td>
+<td><strong>泊松分布</strong> <span class="arithmatex">\(\text{Pois}(\lambda)\)</span>  </td>
+<td><span class="arithmatex">\(P(X=k)=\frac{e^{-\lambda}\lambda^k }{k!}\)</span></td>
 <td><span class="arithmatex">\(\lambda\)</span></td>
 <td><span class="arithmatex">\(\lambda\)</span></td>
 </tr>
@@ -2169,6 +2320,22 @@ $$</p>
             </div>
           </a>
         
+        
+          
+          <a href="../5/" class="md-footer__link md-footer__link--next" aria-label="下一页: Continuous Random Variables">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Continuous Random Variables
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
         
       </nav>
     
