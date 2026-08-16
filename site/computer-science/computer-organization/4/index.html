@@ -12,34 +12,36 @@
         <meta name="author" content="<ljhkss>">
       
       
-        <link rel="canonical" href="https://www.ljhkss.top/">
+        <link rel="canonical" href="https://www.ljhkss.top/computer-science/computer-organization/4/">
       
       
+        <link rel="prev" href="../">
       
-        <link rel="next" href="./mathematics/">
+      
+        <link rel="next" href="../../csapp/2/">
       
       
         
       
       
-      <link rel="icon" href="./images/favicon.webp">
+      <link rel="icon" href="../../../images/favicon.webp">
       <meta name="generator" content="zensical-0.0.51">
     
     
       
-        <title>Index - ljhkss's Notebook</title>
+        <title>Chapter4 Processor - ljhkss's Notebook</title>
       
     
     
       
         
       
-      <link rel="stylesheet" href="./assets/stylesheets/modern/main.62c9b9cc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.62c9b9cc.min.css">
       
         
           
         
-        <link rel="stylesheet" href="./assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
       
       
 
@@ -60,13 +62,13 @@
     
       <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
     
-      <link rel="stylesheet" href="./stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="./stylesheets/riscv.css">
+      <link rel="stylesheet" href="../../../stylesheets/riscv.css">
     
-      <link rel="stylesheet" href="./stylesheets/custom.css">
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
     
-    <script>__md_scope=new URL(".",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -104,7 +106,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="" title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+    <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -124,7 +126,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Index
+              Chapter4 Processor
             
           </span>
         </div>
@@ -196,11 +198,9 @@
   
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
         
   
   Home
@@ -231,7 +231,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="./mathematics/" class="md-tabs__link">
+        <a href="../../../mathematics/" class="md-tabs__link">
           
   
   Mathematics
@@ -246,6 +246,8 @@
   
   
   
+    
+  
   
     
       
@@ -262,8 +264,8 @@
     
     
     
-      <li class="md-tabs__item">
-        <a href="./computer-science/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
   Computer Science
@@ -296,7 +298,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="" title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+    <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
@@ -311,17 +313,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      
-      
-      
-      
-      <a href="" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -336,7 +331,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -373,7 +367,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./mathematics/" class="md-nav__link ">
+            <a href="../../../mathematics/" class="md-nav__link ">
               
   
   
@@ -444,7 +438,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./mathematics/discretemath/" class="md-nav__link ">
+            <a href="../../../mathematics/discretemath/" class="md-nav__link ">
               
   
   
@@ -486,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./mathematics/discretemath/1/" class="md-nav__link">
+      <a href="../../../mathematics/discretemath/1/" class="md-nav__link">
         
   
   
@@ -513,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./mathematics/discretemath/2/" class="md-nav__link">
+      <a href="../../../mathematics/discretemath/2/" class="md-nav__link">
         
   
   
@@ -540,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./mathematics/discretemath/3/" class="md-nav__link">
+      <a href="../../../mathematics/discretemath/3/" class="md-nav__link">
         
   
   
@@ -567,7 +561,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./mathematics/discretemath/5/" class="md-nav__link">
+      <a href="../../../mathematics/discretemath/5/" class="md-nav__link">
         
   
   
@@ -633,7 +627,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./mathematics/probability/" class="md-nav__link ">
+            <a href="../../../mathematics/probability/" class="md-nav__link ">
               
   
   
@@ -675,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./mathematics/probability/1/" class="md-nav__link">
+      <a href="../../../mathematics/probability/1/" class="md-nav__link">
         
   
   
@@ -702,7 +696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./mathematics/probability/2/" class="md-nav__link">
+      <a href="../../../mathematics/probability/2/" class="md-nav__link">
         
   
   
@@ -729,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./mathematics/probability/3/" class="md-nav__link">
+      <a href="../../../mathematics/probability/3/" class="md-nav__link">
         
   
   
@@ -756,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./mathematics/probability/4/" class="md-nav__link">
+      <a href="../../../mathematics/probability/4/" class="md-nav__link">
         
   
   
@@ -783,7 +777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./mathematics/probability/5/" class="md-nav__link">
+      <a href="../../../mathematics/probability/5/" class="md-nav__link">
         
   
   
@@ -822,6 +816,8 @@
       
   
   
+    
+  
   
   
     
@@ -839,18 +835,21 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./computer-science/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   
@@ -867,13 +866,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -889,6 +888,8 @@
                 
   
   
+    
+  
   
   
     
@@ -907,15 +908,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="./computer-science/computer-organization/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -938,7 +939,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -954,10 +955,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="./computer-science/computer-organization/4/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
@@ -972,6 +980,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1044,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="./computer-science/csapp/2/" class="md-nav__link">
+      <a href="../../csapp/2/" class="md-nav__link">
         
   
   
@@ -1120,20 +1129,97 @@
   
 
 
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Computer Science
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Computer Organization
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
               
               <article class="md-content__inner md-typeset">
                 
                   
 
-<div class="hero-section is-homepage">
-  <div class="hero-content">
-    <h1 class="hero-title">ljhkss' Notebook</h1>
-    <p class="hero-subtitle">欢迎来到ljhkss的知识笔记站点</p>
-    <a href="" class="hero-scroll-button">
-      <div class="scroll-arrow"></div>
-    </a>
-  </div>
-</div>
+  <h1 id="__skip">Chapter4 Processor</h1>
 
 
 
@@ -1142,6 +1228,11 @@
 
 
 
+
+
+
+  
+  
 
 
 
@@ -1170,15 +1261,31 @@
       
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: Index">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Index
+              </div>
+            </div>
+          </a>
+        
         
           
-          <a href="./mathematics/" class="md-footer__link md-footer__link--next" aria-label="下一页: Mathematics">
+          <a href="../../csapp/2/" class="md-footer__link md-footer__link--next" aria-label="下一页: 第二章 信息的存储与表示">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Mathematics
+                第二章 信息的存储与表示
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1220,18 +1327,18 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate":null,"base":".","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"./assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"../../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
-      <script src="./assets/javascripts/bundle.d7f30b55.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
       
-        <script src="./javascripts/katex.js"></script>
+        <script src="../../../javascripts/katex.js"></script>
       
-        <script src="./javascripts/homepage.js"></script>
+        <script src="../../../javascripts/homepage.js"></script>
       
-        <script src="./javascripts/lightbox.js"></script>
+        <script src="../../../javascripts/lightbox.js"></script>
       
-        <script src="./javascripts/image-optimizer.js"></script>
+        <script src="../../../javascripts/image-optimizer.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       

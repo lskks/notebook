@@ -9,5 +9,5 @@ tags:
 
 ## Table of Contents
 
-- [Discrete Mathematics](./DiscreteMath/index.md)
-- [Probability](./Probability/index.md)
+- [Discrete Mathematics](./discretemath/index.md)
+- [Probability](./probability/index.md)

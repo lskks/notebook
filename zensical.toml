@@ -46,10 +46,38 @@ Copyright &copy; 2026 ljhkss
 # can be defined using TOML syntax.
 #
 # Read more: https://zensical.org/docs/setup/navigation/
-# nav = [
-#   { "Get started" = "index.md" },
-#   { "Markdown in 5min" = "markdown.md" },
-# ]
+nav = [
+    { "Home" = "index.md" },
+    { "Mathematics" = [
+        "mathematics/index.md",
+        { "Discrete Mathematics" = [
+            "mathematics/discretemath/index.md",
+            "mathematics/discretemath/1.md",
+            "mathematics/discretemath/2.md",
+            "mathematics/discretemath/3.md",
+            "mathematics/discretemath/5.md",
+        ] },
+        { "Probability" = [
+            "mathematics/probability/index.md",
+            "mathematics/probability/1.md",
+            "mathematics/probability/2.md",
+            "mathematics/probability/3.md",
+            "mathematics/probability/4.md",
+            "mathematics/probability/5.md",
+        ] },
+    ] },
+    { "Computer Science" = [
+        "computer-science/index.md",
+        { "Computer Organization" = [
+            "computer-science/computer-organization/index.md",
+            "computer-science/computer-organization/4.md",
+        ] },
+        { "CSAPP" = [
+            "computer-science/csapp/2.md",
+        ] },
+    ] },
+
+]
 
 extra_javascript = [
     "javascripts/katex.js",
@@ -57,19 +85,17 @@ extra_javascript = [
     "javascripts/lightbox.js",
     "javascripts/image-optimizer.js",
     "https://unpkg.com/katex@0/dist/katex.min.js",
-    "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"
+    "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",
 ]
 
 extra_css = [
     "https://unpkg.com/katex@0/dist/katex.min.css",
     "stylesheets/extra.css",
     "stylesheets/riscv.css",
-    "stylesheets/custom.css"
+    "stylesheets/custom.css",
 ]
 
-extra_files = [
-  "BingSiteAuth.xml"
-]
+extra_files = ["BingSiteAuth.xml"]
 
 [project.markdown_extensions.pymdownx.arithmatex]
 
@@ -218,7 +244,7 @@ features = [
     # When sections are enabled, top-level sections are rendered as groups in
     # the sidebar for viewports above 1220px, but remain as-is on mobile.
     # https://zensical.org/docs/setup/navigation/#navigation-sections
-    "navigation.sections",
+    # "navigation.sections",
 
     # When tabs are enabled, top-level sections are rendered in a menu layer
     # below the header for viewports above 1220px, but remain as-is on mobile.
@@ -256,7 +282,7 @@ features = [
     # https://zensical.org/docs/setup/navigation/#navigation-integration
     #"toc.integrate"
 
-    "content.footnote.tooltips"
+    "content.footnote.tooltips",
 ]
 
 # ----------------------------------------------------------------------------
