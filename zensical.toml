@@ -46,38 +46,38 @@ Copyright &copy; 2026 ljhkss
 # can be defined using TOML syntax.
 #
 # Read more: https://zensical.org/docs/setup/navigation/
-nav = [
-    { "Home" = "index.md" },
-    { "Mathematics" = [
-        "mathematics/index.md",
-        { "Discrete Mathematics" = [
-            "mathematics/discretemath/index.md",
-            "mathematics/discretemath/1.md",
-            "mathematics/discretemath/2.md",
-            "mathematics/discretemath/3.md",
-            "mathematics/discretemath/5.md",
-        ] },
-        { "Probability" = [
-            "mathematics/probability/index.md",
-            "mathematics/probability/1.md",
-            "mathematics/probability/2.md",
-            "mathematics/probability/3.md",
-            "mathematics/probability/4.md",
-            "mathematics/probability/5.md",
-        ] },
-    ] },
-    { "Computer Science" = [
-        "computer-science/index.md",
-        { "Computer Organization" = [
-            "computer-science/computer-organization/index.md",
-            "computer-science/computer-organization/4.md",
-        ] },
-        { "CSAPP" = [
-            "computer-science/csapp/2.md",
-        ] },
-    ] },
+# nav = [
+#     { "Home" = "index.md" },
+#     { "Mathematics" = [
+#         "mathematics/index.md",
+#         { "Discrete Mathematics" = [
+#             "mathematics/discretemath/index.md",
+#             "mathematics/discretemath/1.md",
+#             "mathematics/discretemath/2.md",
+#             "mathematics/discretemath/3.md",
+#             "mathematics/discretemath/5.md",
+#         ] },
+#         { "Probability" = [
+#             "mathematics/probability/index.md",
+#             "mathematics/probability/1.md",
+#             "mathematics/probability/2.md",
+#             "mathematics/probability/3.md",
+#             "mathematics/probability/4.md",
+#             "mathematics/probability/5.md",
+#         ] },
+#     ] },
+#     { "Computer Science" = [
+#         "computer-science/index.md",
+#         { "Computer Organization" = [
+#             "computer-science/computer-organization/index.md",
+#             "computer-science/computer-organization/4.md",
+#         ] },
+#         { "CSAPP" = [
+#             "computer-science/csapp/2.md",
+#         ] },
+#     ] },
 
-]
+# ]
 
 extra_javascript = [
     "javascripts/katex.js",
