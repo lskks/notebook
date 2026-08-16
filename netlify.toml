@@ -1,5 +1,10 @@
 [build]
-  command = "pip install zensical && zensical build"
+  command = """
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    export PATH="$HOME/.cargo/bin:$PATH"
+    uv sync
+    uv run zensical build
+  """
   publish = "site"
 
 # 暂时注释掉这个重定向规则，测试一下
