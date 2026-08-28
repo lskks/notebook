@@ -18,7 +18,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../../csapp/2/">
+        <link rel="next" href="../5/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Chapter4 Processor - ljhkss's Notebook</title>
+        <title>The Processor - ljhkss's Notebook</title>
       
     
     
@@ -55,8 +55,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetbrains+Mono:400,400i,700,700i&amp;display=fallback">
-        <style>:root{--md-text-font:"Inter";--md-code-font:"Jetbrains Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -92,7 +92,8 @@
     <label class="md-overlay" for="__drawer" aria-label="导航栏"></label>
     <div data-md-component="skip">
       
-        <a href="#__skip" class="md-skip">
+        
+        <a href="#single-cycle" class="md-skip">
           跳转至
         </a>
       
@@ -126,7 +127,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Chapter4 Processor
+              The Processor
             
           </span>
         </div>
@@ -424,6 +425,8 @@
       
         
       
+        
+      
     
     
     
@@ -488,6 +491,23 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Processor
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="././" class="md-nav__link md-nav__link--active">
         
   
@@ -495,7 +515,7 @@
   <span class="md-ellipsis">
     
   
-  Chapter4 Processor
+  The Processor
 
     
   </span>
@@ -504,6 +524,279 @@
 
       </a>
       
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#single-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Single Cycle
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Single Cycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datapath" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Datapath
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Control
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-alu-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The ALU control
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-control-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Main Control Unit
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conclusion
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multicycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Multicycle
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pipeline
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-datapath" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pipeline Datapath
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pipeline Control
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-hazards" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pipeline Hazards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-hazards" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Structural Hazards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-hazards" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Data Hazards
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Hazards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forwarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Forwarding
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stalls
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-hazards" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Control Hazards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Exception
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instruction-level-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Instruction-level Parallelism
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Large and Fast: Exploiting Memory Hierarchy
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -917,6 +1210,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1102,6 +1399,60 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Moments
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint Distributions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1132,6 +1483,11 @@
                     
                     
                     
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
                   
                   <div class="md-sidebar__inner">
                     
@@ -1141,6 +1497,242 @@
   
   
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#single-cycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Single Cycle
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Single Cycle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#datapath" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Datapath
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Control
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-alu-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The ALU control
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#main-control-unit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Main Control Unit
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Conclusion
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multicycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Multicycle
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pipeline
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-datapath" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pipeline Datapath
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pipeline Control
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pipeline-hazards" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pipeline Hazards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structural-hazards" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Structural Hazards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-hazards" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Data Hazards
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Hazards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forwarding" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Forwarding
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stalls
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#control-hazards" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Control Hazards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Exception
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instruction-level-parallelism" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Instruction-level Parallelism
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1222,6 +1814,8 @@
       
         
       
+        
+      
     
     
     
@@ -1248,9 +1842,285 @@
                 
                   
 
-  <h1 id="__skip">Chapter4 Processor</h1>
+  <h1 id="__skip">The Processor</h1>
 
+<p>计算机的性能由三个因素决定:<strong>指令数</strong>,<strong>时钟周期</strong>以及<strong>每条指令的时钟周期数(CPI)</strong>.而处理器的设计同时决定了时钟周期和CPI</p>
+<h2 id="single-cycle">Single Cycle</h2>
+<p>首先来看单周期CPU的设计, 单周期CPU在一个时钟周期内只能执行一条指令(即<span class="arithmatex">\(\text{CPI}=1\)</span>), 而一个单周期CPU由<strong>数据通路(Datapath)</strong> 和 <strong>控制单元(Control)</strong> 两部分组成</p>
+<h3 id="datapath">Datapath</h3>
+<p>Datapath主要由以下这些组件组成,包括程序计数器(PC),指令存储器,加法器,寄存器堆,ALU,数据存储单元以及立即数生成单元</p>
+<p><img alt="Elements1" src=".././images/Processor/Elements1.webp" /></p>
+<ul>
+<li><strong>指令存储器</strong>(<em>Instruction Memory</em>)保存需要执行的指令,根据输入的地址输出对应的指令.</li>
+<li><strong>程序计数器</strong>(<em>Program Counter, PC</em>)是一个保存了当前指令地址的寄存器.</li>
+<li><strong>加法器</strong>(<em>Adder</em>)用于将PC中的地址增加<span class="arithmatex">\(4\)</span>, 以获取下一条指令.</li>
+</ul>
+<p>将上面的三个组件进行组合,就可以得到<strong>取指</strong>(<em>Fetch</em>)部分,如下图</p>
+<p><img alt="Fetch" src=".././images/Processor/Fetch.webp" /></p>
+<ul>
+<li>寄存器堆(<em>Registers</em>)包括了RISC-V的32个通用寄存器,通过两个<span class="arithmatex">\(5\)</span>位<blockquote>
+<p>在写寄存器时,除了需要输入寄存器编号和数据,还需要设置控制信号<code>RegWrite=1</code>.
+(<span class="arithmatex">\(\log_2 32=5\)</span>)的读端口和一个<span class="arithmatex">\(5\)</span>位的写端口控制对应寄存器的读写.</p>
+</blockquote>
+</li>
+<li>算术逻辑单元(<em>ALU</em>)用来执行各类算术与逻辑运算,通过一个<span class="arithmatex">\(4\)</span>位的ALU operation来指定具体的运算指令.<blockquote>
+<p>ALU中的Zero信号用于判断运算结果是否为<span class="arithmatex">\(0\)</span>.在判断两数是否相等是会用到.</p>
+</blockquote>
+</li>
+</ul>
+<p><img alt="Elements2" src=".././images/Processor/Elements2.webp" /></p>
+<ul>
+<li><strong>数据存储单元</strong>(<em>Data Memory Unit</em>)具有读(<code>lw</code>)和的控制输入<code>MemRead</code>和写(<code>sw</code>)的控制输入<code>MemWrite</code>.</li>
+<li><strong>立即数生成单元</strong>(<em>Immediate Generator</em>)将一个12位的立即数符号扩展为32位,使其那个作为ALU输入参与运算.</li>
+</ul>
+<p><img alt="Elements3" src=".././images/Processor/Elements3.webp" /></p>
+<p>将上面的所有组件进行组合,便可以得到一个完整的datapath(暂时省略control)</p>
+<p><img alt="Datapath" src=".././images/Processor/Datapath.webp" /></p>
+<h3 id="control">Control</h3>
+<p>为方便起见,下面只考虑一个RISC-V指令集的子集,即只包括<code>lw</code>, <code>sw</code>,<code>beq</code>,<code>add</code>,<code>sub</code>, <code>and</code>以及<code>or</code>这几条指令.</p>
+<p>首先来看最重要的ALU control</p>
+<h4 id="the-alu-control">The ALU control</h4>
+<p>ALU control采用的是<strong>两级控制(多级译码)</strong>,control unit首先根据指令类型生成一个2位的<code>ALUop</code>:</p>
+<ul>
+<li>load/store指令:<code>00</code></li>
+<li>条件分支指令:<code>01</code></li>
+<li>R-type指令:<code>10</code></li>
+</ul>
+<p>然后再根据这个2位的ALUop以及指令的<code>funt3</code>和<code>func7</code>生成对应的4位ALU control,如下图</p>
+<p><img alt="ALU_control_conclusion.webp" src=".././images/Processor/ALU_control_conclusion.webp" /></p>
+<h4 id="main-control-unit">Main Control Unit</h4>
+<p>除了ALU control之外,还有6个control信号需要考虑(即图中的蓝色部分),下表给出了每个控制信号的具体含义</p>
+<p><img alt="Control signal" src=".././images/Processor/Control_signal.webp" /></p>
+<p>最后将上面的控制信号组合在一起,便可以得到一个完整的单周期处理器</p>
+<p><img alt="Signal_cycle.webp" src=".././images/Processor/Signal_cycle.webp" /></p>
+<h3 id="conclusion">Conclusion</h3>
+<p>虽然单周期处理器设计简单且可以正确地完成工作,但它的效率不高,这是因为</p>
+<ul>
+<li>单周期处理器一个时钟周期只能执行一条指令</li>
+<li>执行每条指令所需的时钟周期一样长，因而处理器中的最长通路（耗时最久的指令）决定了时钟周期的长度</li>
+</ul>
+<p>提升处理器的效率主要有 <strong>多周期(mutlicycle)</strong> 和<strong>流水线(pipeline)</strong> 两种方法.</p>
+<h2 id="multicycle">Multicycle</h2>
+<h2 id="pipeline">Pipeline</h2>
+<p><strong>流水线</strong>(pipeline) 是一种使多条指令能够被重叠(同时)执行的技术.</p>
+<p>首先来看一个洗衣店的例子.将洗衣服的流程分为4个阶段,从下图可以看出,不使用流水线需要8个小时,而使用流水线后只需要3.5个小时.因为每个阶段(洗衣、烘干等)原本是串行工作，而流水线让它们并行(同时)进行.</p>
+<p><img alt="Laundry_analog.webp" src=".././images/Processor/Laundry_analog.webp" /></p>
+<p>流水线减少了系统的总执行时间,提高了吞吐率(throughput)</p>
+<blockquote>
+<p>流水线不能减少单个任务的执行时间,但是可以通过提高吞吐率,减少总的执行时间</p>
+</blockquote>
+<p>将同样的思想运用到处理器的指令执行,可以将一条指令的执行分为5个阶段:</p>
+<ul>
+<li>取指(IF):从(指令)内存中获取指令</li>
+<li>译码(ID):指令译码并读取寄存器</li>
+<li>执行(EX):执行算术逻辑运算或计算跳转地址</li>
+<li>访存(ME):读取或写入(数据)内存</li>
+<li>写回(WB):将计算结果写回寄存器</li>
+</ul>
+<p>在各个阶段时间一样且指令数非常多的情况下</p>
+<div class="arithmatex">\[
+\text{Time between instructions}_\text{pipelined}=\frac{\text{Time between instructions}_\text{nonpipelined}}{\text{Number of pipeline stage}}
+\]</div>
+<p>即使用流水线的加速比近似等于流水线的阶段数</p>
+<p>如果不满足上述条件,那么这个公式将不成立.比如说上面的洗衣店的例子,<span class="arithmatex">\(8/4=2\)</span>,也就是说,执行完这4个任务应该需要2h, 但实际上花了3.5小时.</p>
+<p>RISC-V指令集的设计很好的迎合了流水线:</p>
+<ul>
+<li>所有指令长度相同</li>
+<li>只有几种指令类型</li>
+<li>只有load/store指令涉及内存操作</li>
+</ul>
+<h3 id="pipeline-datapath">Pipeline Datapath</h3>
+<p>可以将一个单周期处理器按照下图划分为5个阶段
+<img alt="Five_Stage" src=".././images/Processor/Five_Stage.webp" /></p>
+<p>上图中大部分指令的执行顺序都是从左往右,但是也有2个例外</p>
+<ol>
+<li>写回(WB)阶段,最后的结果是从右写回到中间的寄存器中</li>
+<li>下一个PC的值是从右向左</li>
+</ol>
+<p>前者会导致数据冒险,而后者会导致控制冒险</p>
+<p>下来来看下面这个例子:</p>
+<p>![[Example.png]]</p>
+<p>这里执行三个连续的<code>ld</code>指令,指令内存只在每条指令的第一个阶段(IF)使用，因此它可以在其他四个阶段被后续指令共享.但第一条指令后续的四个阶段仍然需要使用自己的指令编码,为了在其他阶段保留该指令的值，从指令存储器中读取的值需要保存到<strong>流水线寄存器</strong>(pipeline register)中.
+流水线寄存器位于两个阶段之间,根据前后两个阶段来命名,分别为IF/ID,ID/EX,EX/MEM,MEM/WB.如下图所示:</p>
+<p><img alt="Pipeline_regs" src=".././images/Processor/Pipeline_regs.webp" /></p>
+<h3 id="pipeline-control">Pipeline Control</h3>
+<p>将之前的单周期控制信号加到流水线中,便可以得到下图
+![[Pipeline_control.png]]
+由于PC和流水线寄存器在每个周期都需要进行写操作,因此不需要额外的写信号来控制.</p>
+<p>每个阶段需要的控制信号:</p>
+<ul>
+<li>IF:无</li>
+<li>ID:无</li>
+<li>EX:<code>ALUOp</code>和<code>ALUSrc</code>,前者决定ALU的运算,后者决定第二个操作数的来源</li>
+<li>MEM:<code>Branch</code>,<code>MEMRead</code>,<code>MEMWrite</code></li>
+<li>WB:<code>MEMtoReg</code>和<code>RegWrite</code></li>
+</ul>
+<blockquote>
+<p>流水线的控制信号与单周期的并没有什么不同</p>
+</blockquote>
+<p>实线流水线的控制意味着在每个阶段为每条指令将七条控制线设置为对应的值,为了确保当前指令能在后续阶段使用正确的控制,控制信号也应该通过流水线寄存器进行保存,如下图所示.</p>
+<p><img alt="Control" src=".././images/Processor/Control.webp" /></p>
+<h4 id="pipeline-hazards">Pipeline Hazards</h4>
+<p>在流水线中,无法在下一个时钟周期内执行下一条的指令的情况被称为<strong>流水线冒险</strong>(pipeline hazard).有三种不同类型的流水线冒险,分别是</p>
+<ul>
+<li>结构冒险</li>
+<li>数据冒险</li>
+<li>控制冒险</li>
+</ul>
+<h4 id="structural-hazards">Structural Hazards</h4>
+<p><strong>结构冒险</strong>(Structural Hazards)指的是硬件无法在同一个时钟周期内支持我们想要执行的指令组合.因为RISC-V指令在设计时专门考虑了流水线,因此很容易在设计流水线时避免结构冒险.</p>
+<h4 id="data-hazards">Data Hazards</h4>
+<p><strong>数据冒险</strong>(Data Hazards)指的是因为指令尚未获得所需的数据而不得不使流水线<em>停顿</em>(stall),直到获得所需的数据.</p>
+<p>可以添加被称为<strong>前递</strong>(forwarding)或者<strong>旁路</strong>(bypass)的额外硬件,提前从流水线中获得所需的数据,从而减少数据冒险造成的停顿.</p>
+<h5 id="forwarding">Forwarding</h5>
+<p>来看下面这段指令:</p>
+<div class="highlight"><pre><span></span><code><span class="nf">sub</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x1</span><span class="p">,</span><span class="w"> </span><span class="no">x3</span>
+<span class="nf">and</span><span class="w"> </span><span class="no">x12</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x5</span>
+<span class="nf">or</span><span class="w">  </span><span class="no">x13</span><span class="p">,</span><span class="w"> </span><span class="no">x6</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span>
+<span class="nf">add</span><span class="w"> </span><span class="no">x14</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span><span class="p">,</span><span class="w"> </span><span class="no">x2</span>
+<span class="nf">sw</span><span class="w">  </span><span class="no">x15</span><span class="p">,</span><span class="mi">100</span><span class="p">(</span><span class="no">x2</span><span class="p">)</span>
+</code></pre></div>
+<p>后面的4条指令都依赖第一条指令中的寄存器<code>x2</code>的值,具体可以看下图</p>
+<p><img alt="Data_hazard" src=".././images/Processor/Data_hazard.webp" /></p>
+<p>假设<code>x2</code>的值在<code>sub</code>指令之前是10,之后是-20,那么后续的指令在使用<code>x2</code>时,值应该为-20.而从图中可以看出,<code>sub</code>的结果(即<code>x2</code>)需要等到CC5才能写回到寄存器,因此,<code>and</code>和<code>or</code>使用的都是错误的值(10).</p>
+<p><code>x2</code>的值其实在EX阶段就已经被计算(CC3), 而<code>and</code>和<code>or</code>到EX阶段才使用<code>x2</code>的值(即CC4和CC5),因此,我们可以使用forwarding来避免流水线停顿.</p>
+<p>为了解决这个问题，首先要做的是<strong>依赖检测</strong>(dependency detection), 即确定何时会发生数据冒险问题.可以将数据冒险分为两类:</p>
+<ol>
+<li>EX/MEM.RegisterRd = ID/EX.RegisterRs1(或 ID/EX.RegisterRs2)</li>
+<li>MEM/WB.RegisterRd = ID/EX.RegisterRs1(或 ID/EX.RegisterRs2)</li>
+</ol>
+<p>在上面的例子中,
+<code>sub</code>和<code>and</code>是第一种情况,即EX/MEM.RegisterRd = ID/EX.RegisterRs1=x2
+<code>sub</code>和<code>or</code>是第二种情况,即MEM/WB.RegisterRd = ID/EX.RegisterRs2=x2</p>
+<p>现在,我们将数据冒险细分为<strong>执行阶段 (EX) 冒险</strong>和<strong>访存阶段 (MEM) 冒险</strong>两类，得到以下判断条件:</p>
+<ul>
+<li>
+<p>EX Hazards
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegWrite</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRs1</span><span class="p">))</span>
+<span class="w">        </span><span class="n">ForwardA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
 
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegWrite</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRs2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">ForwardB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>MEM Hazard
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MEM</span><span class="o">/</span><span class="n">WB</span><span class="p">.</span><span class="n">RegWrite</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">MEM</span><span class="o">/</span><span class="n">WB</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="n">and</span><span class="w"> </span><span class="n">not</span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegWrite</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRs1</span><span class="p">))</span>
+<span class="w">    </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">MEM</span><span class="o">/</span><span class="n">WB</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRs1</span><span class="p">))</span>
+<span class="w">        </span><span class="n">ForwardA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">01</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">MEM</span><span class="o">/</span><span class="n">WB</span><span class="p">.</span><span class="n">RegWrite</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">MEM</span><span class="o">/</span><span class="n">WB</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span><span class="n">and</span><span class="w"> </span><span class="n">not</span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegWrite</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<span class="w">        </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">EX</span><span class="o">/</span><span class="n">MEM</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRs2</span><span class="p">))</span>
+<span class="w">    </span><span class="n">and</span><span class="w"> </span><span class="p">(</span><span class="n">MEM</span><span class="o">/</span><span class="n">WB</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRs2</span><span class="p">))</span>
+<span class="w">        </span><span class="n">ForwardB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mo">01</span>
+</code></pre></div></p>
+</li>
+</ul>
+<p>上面设置的两个控制信号(即ForwardA和ForwardB)实际上是MUX的控制信号,这两个MUX用来决定ALU的操作数,具体内容如下:</p>
+<p><img alt="Forwarding_Control" src=".././images/Processor/forwarding_control.webp" /></p>
+<p>最后将前递控制单元(forwarding unit)加到CPU中,便可以得到下面的设计</p>
+<p><img alt="Datapath_forwarding" src=".././images/Processor/Datapath_forwarding.webp" /></p>
+<h5 id="stalls">Stalls</h5>
+<p>虽然前递能解决大部分情况,但它不能避免所有的流水线停顿.典型的情况是load指令之后的一条指令需要使用load的结果,这种情况即使使用前递也必须插入一个停顿,称为<strong>load-use data hazard</strong>.</p>
+<p>为解决这个问题,除了forwarding unit之外,还需要一个<strong>冒险检测单元</strong>(hazards detection unit),用于在加载(load)指令与需要依赖其结果的指令之间插入停顿.可以使用下面的语句判断是否需要插入停顿:</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">MemRead</span><span class="w"> </span><span class="n">and</span>
+<span class="w">    </span><span class="p">((</span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IF</span><span class="o">/</span><span class="n">ID</span><span class="p">.</span><span class="n">RegisterRS1</span><span class="p">)</span><span class="w"> </span><span class="n">or</span>
+<span class="w">        </span><span class="p">(</span><span class="n">ID</span><span class="o">/</span><span class="n">EX</span><span class="p">.</span><span class="n">RegisterRd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IF</span><span class="o">/</span><span class="n">ID</span><span class="p">.</span><span class="n">RegisterRs2</span><span class="p">)))</span>
+<span class="w">    </span><span class="n">stall</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">pipeline</span>
+</code></pre></div>
+<p>要想停止流水线的运行，需要做到：
+- 停止 IF:不能改变 PC 寄存器的值(读取重复的指令),所以要为 PC 寄存器添加写信号 PCWrite。当 PCWrite = 0 时，就能做到停止 IF 了
+- 停止 ID：不能改变 IF/ID 流水线寄存器的值(读取重复的值)所以要为该寄存器添加写信号 IF/IDWrite。当 IF/IDWrite = 0 时，就能做到停止 ID 了
+- 停顿的那段时间，虽然 CPU 仍然在运行，但实际上没有改变任何状态，这种情况称为<strong>空操作</strong>(nops)。为了保证所有元件状态不变，还需要确保所有的控制信号均为 0.</p>
+<p>下面为添加了<strong>冒险检测单元</strong> 后的流水线 CPU</p>
+<p><img alt="CPU_hazard" src=".././images/Processor/CPU_hazard.webp" /></p>
+<h4 id="control-hazards">Control Hazards</h4>
+<p><strong>控制冒险</strong>(Control Hazards)指的是接下来要执行的指令取决于之前的指令,导致执行了错误的指令.</p>
+<blockquote>
+<p>控制冒险的根源在于 <strong>PC（程序计数器）</strong> 的更新依赖于分支指令的执行结果，而该结果在流水线的 <strong>EX（执行）</strong> 或 <strong>MEM（访存）</strong> 阶段才产生，导致后续指令在 IF 阶段无法确定正确的取指地址。</p>
+</blockquote>
+<p>解决控制冒险有两种方法:
+- 停顿:在遇到分支指令时立即停顿流水线,直到确定分支的结果和下一条指令的地
+- 分支预测:在确定分支指令的结果之前,直接猜测下一条指令的地址并取指</p>
+<p>因为停顿直到指令完成的速度太慢,因此一个改进方案是预测<strong>分支指令不会跳转</strong>(not taken), 这样CPU就会继续沿着顺序指令流继续执行.如果分支指令执行了,那么后续两条被取指和解码的指令必须被丢弃.
+为了丢弃指令,在条件指令到底MEM阶段时,需要将IF,ID,EX阶段的指令<strong>清除</strong>(flush)掉,即把原本的控制信号变为0,</p>
+<p>虽然上述的静态分支预测足以应付五级流水线的控制冒险问题，但是对于更高级数，或更高要求的处理器，这种预测的失败成本还是太大，于是引入了<strong>动态分支预测</strong>(dynamic branch prediction)——在程序执行过程中，根据上一条条件分支指令的运行结果来预测分支是否跳转。</p>
+<p>实现动态分支预测需要借助<strong>分支预测缓存</strong>(branch prediction buffer)（或<strong>分支历史表</strong>(branch history table)），它是一块由分支指令的低位地址来索引的很小的内存，包含 1 位或多位关于分支跳转的信息。</p>
+<p>对于最简单的<strong>1 位</strong>缓存，可以仅用 0 和 1 区别上次的分支指令是否发生跳转。如果预测失败，则需要翻转这个比特。</p>
+<p>缺点：内侧循环分支会有 2 次预测错误，一次在内侧循环的最后 1 次迭代（以为是跳转），另一次是在下次内层循环中的第 1 次迭代（以为不跳转</p>
+<ul>
+<li><strong>2 位</strong>缓存能够提高预测精度，虽然它需要 2 次预测错误才会改变预测值，但是对于执行一连串跳转情况一致的指令时这种方法的优势更大，下面给出对应的有限状态机图</li>
+</ul>
+<p><img alt="2_bit_predictor" src=".././images/Processor/2_bit_predictor.webp" /></p>
+<p>在解决控制冒险问题后，我们得到最终版本的五级流水线处理器的原理图</p>
+<p><img alt="Five_Stage" src=".././images/Processor/FinalProcessor.webp" /></p>
+<h2 id="exception">Exception</h2>
+<p><strong>异常</strong>(Exception) 和 <strong>中断</strong>(Interrupt) 是改变正常程序指令执行流（控制流）的突发事件。它们本质上类似于一次“非计划的程序调用” </p>
+<ul>
+<li><strong>异常</strong>(Exception)：通常源自 CPU <strong>内部</strong>的非计划事件（例如：执行了未定义的指令、硬件故障等） </li>
+<li><strong>中断</strong>(Interrupt)：通常源自 CPU <strong>外部</strong>的事件（例如：I/O 设备请求）</li>
+</ul>
+<blockquote>
+<p><strong>注意</strong>：RISC-V 处理器在发生整数或浮点溢出（Overflow / Underflow）时，<strong>不会</strong>抛出异常；相反，软件可以通过读取浮点控制和状态寄存器（<code>fcsr</code>）来检查是否发生了溢出 。</p>
+</blockquote>
+<p><img alt="Exception" src=".././images/Processor/Exception.webp" /></p>
+<p>在 RISC-V 架构中，硬件处理异常需要借助以下几个特殊的控制与状态寄存器 ：</p>
+<ul>
+<li><strong><code>SEPC</code> (Supervisor Exception Program Counter)</strong>：保存发生异常的那条指令的 PC 地址，以便在异常处理程序执行完后，能够返回重新执行该指令 </li>
+<li><strong><code>SCAUSE</code> (Supervisor Exception Cause Register)</strong>：一个 64 位的寄存器，用来记录异常发生的原因。例如：编码 <code>2</code> 代表未定义指令，<code>12</code> 代表硬件故障 </li>
+<li><strong><code>STVEC</code> (Supervisor Trap Vector Register)</strong>：保存异常处理程序的入口基地址。当异常发生时，PC 会跳转到该寄存器指定的地址 在书中的流水线简化实现中，通常使用一个固定的虚拟入口地址 <code>0x000000001C090000</code> </li>
+</ul>
+<p>在五级流水线中，异常被视作一种特殊的 <strong>控制冒险</strong>(Control Hazards) .如果一条指令（例如在 EX 阶段执行的 <code>add</code>）发生了异常，处理器必须立即响应，避免对后续状态产生破坏:</p>
+<ul>
+<li><strong>清空流水线 (Flush)</strong>：<ul>
+<li><strong>IF 阶段</strong>：将当前正在取指的指令通过将其控制信号置零，转变为一条 <code>nop</code>（即发出 <code>IF.Flush</code> 信号） </li>
+<li><strong>ID 阶段</strong>：使用译码阶段已有的复用器将控制信号全部清零。控制信号 <code>ID.Flush</code> 与挂起信号（Stall）进行“或（OR）”运算，用于在异常发生时清空 ID 阶段</li>
+<li><strong>EX 阶段</strong>：引入一个新的控制信号 <code>EX.Flush</code> 作用于新增的复用器，使 EX 阶段的控制信号全部置为 0，防止发生异常的指令在 WB 阶段向寄存器写入错误结果</li>
+</ul>
+</li>
+<li><strong>更改 PC 跳转</strong>：PC 复用器中增加一个输入源，直接将异常入口地址（如 <code>0x000000001C090000</code>）送入 PC，从下一个周期开始提取异常处理程序的首条指令</li>
+</ul>
+<blockquote>
+<p><strong>精确异常 (Precise Exception/Precise Interrupt)</strong>：是指能够与发生异常的准确指令强绑定的异常处理机制 在精确异常下，发生异常之前的所有指令都必须执行完毕，而异常指令及其之后的所有指令都必须被清空且不改变任何寄存器或内存状态，处理完异常后可以重新启动该指令 RISC-V 架构支持精确异常，这对于虚拟内存的实现至关重要 </p>
+</blockquote>
+<h2 id="instruction-level-parallelism">Instruction-level Parallelism</h2>
+<p><strong>指令级并行</strong>(Instruction-level Parallelism, ILP) 是指通过让多条指令重叠执行来提高处理器性能的技术</p>
+<p>除了经典的流水线外，要进一步提升 ILP，核心方法是 <strong>多发射</strong>(Multiple Issue) —— 即允许在一个时钟周期内发射和执行多条指令 </p>
+<ul>
+<li><strong>静态多发射</strong>(Static Multiple Issue)：<ul>
+<li>发射决策由 <strong>编译器</strong> 在编译阶段决定 </li>
+<li>编译器会将无依赖的一组指令打包进一个 <strong>发射包</strong>(Issue Packet) 中，通常在硬件上被视为一条超长的指令（又称 <strong>VLIW</strong>, 超长指令字）</li>
+</ul>
+</li>
+<li><strong>动态多发射</strong>(Dynamic Multiple Issue)：<ul>
+<li>又称为 <strong>超标量</strong>(Superscalar) 处理器 </li>
+<li>发射决策在运行期由 <strong>处理器硬件</strong> 动态决定。硬件在每个周期检查指令流，动态选出没有依赖的指令并将其并行发射</li>
+<li>即使编译器没有进行指令重排，超标量处理器硬件依然能保证执行的正确性，且代码可以跨平台兼容不同的流水线结构 </li>
+</ul>
+</li>
+</ul>
+<p>为了克服数据和控制依赖对 ILP 的物理限制，编译器或硬件常常使用 <strong>猜测</strong>(Speculation) 技术，提前“预测”指令的属性（例如分支是否跳转、Load 和 Store 地址是否冲突）并提前开始执行后续相关指令</p>
+<ul>
+<li><strong>软件猜测</strong>：由编译器重排指令，并在猜测失败时插入额外的检查和修正（Fix-up）例程 </li>
+<li><strong>硬件猜测</strong>：处理器将猜测执行的结果暂存到缓冲区中（如 <strong>重排缓冲区 ROB</strong> 或 Store Buffer），直到确定猜测正确时，再最终写入寄存器或内存（即 Commit 提交阶段）。如果猜测失败，硬件会直接丢弃缓冲区中的结果并回滚状态 </li>
+</ul>
+<p>动态流水线调度是指由硬件动态重排指令的执行顺序，以避免由于慢速操作（如 Cache Miss）导致流水线卡顿的技术</p>
+<p>在动态调度的处理器中，流水线通常分为三个核心部分：</p>
+<ol>
+<li><strong>取指和译码单元</strong>（Instruction Fetch and Decode Unit）：负责按序提取指令，完成基础译码并下发</li>
+<li><strong>多个功能单元</strong>（Multiple Functional Units）：每个单元有各自的缓冲区（称为 <strong>保留站 Reservation Stations</strong>），指令一旦数据源准备就绪便可以 <strong>乱序执行</strong>(Out-of-Order Execution)</li>
+<li><strong>按序提交单元</strong>（Commit Unit）：包含 <strong>重排缓冲区</strong>(Reorder Buffer, ROB)。为了保证精确异常，指令对寄存器或内存的写入，必须严格按照程序原本的顺序进行 <strong>按序提交</strong>(In-Order Commit) </li>
+</ol>
+<p>当硬件或编译器尝试重排指令顺序时，会遇到由于寄存器名字有限而导致的 <strong>反依赖</strong>(Antidependence, 又称 <strong>名依赖 Name Dependence / WAR / WAW</strong>)</p>
+<ul>
+<li><strong>反依赖</strong>：指后面的指令要写入某个寄存器，而前面的指令还需要读取该寄存器，这种由于名字重复导致的顺序强制</li>
+<li><strong>解决方案</strong>：<strong>寄存器重命名</strong>(Register Renaming)。通过硬件或编译器将逻辑寄存器映射到更丰富的物理临时寄存器或 ROB 槽位中，从而消除这种假的数据依赖，极大释放了 ILP 的潜力 </li>
+</ul>
 
 
 
@@ -1308,13 +2178,13 @@
         
         
           
-          <a href="../../csapp/2/" class="md-footer__link md-footer__link--next" aria-label="下一页: 第二章 信息的存储与表示">
+          <a href="../5/" class="md-footer__link md-footer__link--next" aria-label="下一页: Large and Fast: Exploiting Memory Hierarchy">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                第二章 信息的存储与表示
+                Large and Fast: Exploiting Memory Hierarchy
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1361,8 +2231,6 @@
     
       <script src="../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
       
-        <script src="../../../javascripts/katex.js"></script>
-      
         <script src="../../../javascripts/homepage.js"></script>
       
         <script src="../../../javascripts/lightbox.js"></script>
@@ -1372,6 +2240,8 @@
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
       
     
   </body>

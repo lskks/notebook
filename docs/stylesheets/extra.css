@@ -7,6 +7,10 @@
 
   --md-typeset-font-size: 17px;
 
+  /* 中文字体栈：优先使用 Noto Sans SC，然后苹方，最后系统默认 */
+  --md-text-font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
+  --md-code-font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Source Code Pro", monospace;
+
   --md-default-fg-color: #1e1e1e;
   --md-default-fg-color--light: #444444;
   --md-default-fg-color--lighter: #666666;
@@ -86,6 +90,10 @@
   --md-hue: 225deg;
 
   --md-typeset-font-size: 17px;
+
+  /* 中文字体栈：优先使用 Noto Sans SC，然后苹方，最后系统默认 */
+  --md-text-font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
+  --md-code-font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Source Code Pro", monospace;
 
   --md-default-fg-color: #d4d4d4;
   --md-default-fg-color--light: #babdc2;
@@ -581,4 +589,79 @@ img.error::before {
 .md-typeset :link > img,
 .md-typeset :visited > img {
   border: none;
+}
+
+/* ========== 字体优化 ========== */
+
+/* 应用自定义字体到正文 */
+.md-typeset {
+  font-family: var(--md-text-font-family);
+}
+
+/* 应用自定义字体到代码块 */
+.md-typeset code,
+.md-typeset pre,
+.highlight code {
+  font-family: var(--md-code-font-family) !important;
+}
+
+/* 标题字体 */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: var(--md-text-font-family);
+  font-weight: 600;
+}
+
+/* 导航栏字体 */
+.md-header,
+.md-tabs,
+.md-nav {
+  font-family: var(--md-text-font-family);
+}
+
+/* ========== 图片居中样式 ========== */
+
+/* 让正文中的所有图片居中显示 */
+.md-typeset img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 图片容器居中（适用于带标题的图片） */
+.md-typeset figure {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* 确保图片的父容器也居中 */
+.md-typeset p:has(img) {
+  text-align: center;
+}
+
+/* ========== 表格居中样式 ========== */
+
+/* 让正文中的所有表格居中显示 */
+.md-typeset .md-typeset__table {
+  display: inline-block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
+}
+
+.md-typeset .md-typeset__scrollwrap {
+  text-align: center !important;
+}
+
+.md-typeset .md-typeset__table table {
+  display: inline-table !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: auto !important;
 }

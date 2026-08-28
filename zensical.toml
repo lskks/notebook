@@ -80,12 +80,12 @@ Copyright &copy; 2026 ljhkss
 # ]
 
 extra_javascript = [
-    "javascripts/katex.js",
     "javascripts/homepage.js",
     "javascripts/lightbox.js",
     "javascripts/image-optimizer.js",
     "https://unpkg.com/katex@0/dist/katex.min.js",
     "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",
+    "javascripts/katex.js",
 ]
 
 extra_css = [
@@ -311,8 +311,8 @@ toggle.name = "Switch to light mode"
 # a monospaced font used in code blocks.
 # ----------------------------------------------------------------------------
 [project.theme.font]
-text = "Inter"
-code = "Jetbrains Mono"
+text = "Noto Sans SC"
+code = "JetBrains Mono"
 size = 18
 
 # ----------------------------------------------------------------------------

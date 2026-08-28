@@ -55,8 +55,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetbrains+Mono:400,400i,700,700i&amp;display=fallback">
-        <style>:root{--md-text-font:"Inter";--md-code-font:"Jetbrains Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -418,6 +418,8 @@
       
         
       
+        
+      
     
     
     
@@ -482,7 +484,34 @@
   <span class="md-ellipsis">
     
   
-  Chapter4 Processor
+  The Processor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../computer-science/computer-organization/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Large and Fast: Exploiting Memory Hierarchy
 
     
   </span>
@@ -910,6 +939,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -1310,6 +1343,60 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Moments
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint Distributions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1611,6 +1698,10 @@
       
         
           
+        
+      
+        
+      
         
       
         
@@ -2128,22 +2219,24 @@ $$</p>
 <p>如果随机变量<span class="arithmatex">\(X\sim\text{HGeom}(w, b, n)\)</span>，那么<span class="arithmatex">\(Var(X)=n\dfrac{w}{w+b} \dfrac{b}{w+b} \dfrac{w+b-n}{w+b-1}\)</span></p>
 <details class="tip" open="open">
 <summary>证明</summary>
-<p>令<span class="arithmatex">\(W=w+b\)</span>表示总体大小。不放回的抽取可以写成一系列指示随机变量之和 <span class="arithmatex">\(X=\sum_{i=1}^n I_i\)</span>（<span class="arithmatex">\(I_i=1\)</span>代表第<span class="arithmatex">\(i\)</span>次抽到了白球）。注意由于是不放回抽样，各<span class="arithmatex">\(I_i\)</span>不再具备独立性，因此在求和展开方差时必须考虑两两之间的协方差项 (Covariance)：
+<p>令<span class="arithmatex">\(W=w+b\)</span>表示总体大小。不放回的抽取可以写成一系列指示随机变量之和 <span class="arithmatex">\(X=\sum_{i=1}^n I_i\)</span>（<span class="arithmatex">\(I_i=1\)</span>代表第<span class="arithmatex">\(i\)</span>次抽到了白球）。注意由于是不放回抽样，各<span class="arithmatex">\(I_i\)</span>不再具备独立性，因此在求和展开方差时必须考虑两两之间的协方差项 (Covariance)
 $$
-Var(X)=\underbrace{\sum_{i=1}^n Var(I_i)}<em _neq="\neq" i="i" j="j">{\text{各项自身的方差}}+\underbrace{\sum</em>
+Var(X)=\sum_{i=1}^n Var(I_i)+\sum_{i \neq j}Cov(I_i,   I_j)
 $$
-对于任意单独某一次抽样，抽出白球的无条件概率仍是 }Cov(I_i,   I_j)}_{\text{不同项间产生的依赖效应}<span class="arithmatex">\(\frac{w}{W}\)</span>，故每个 <span class="arithmatex">\(I_i\)</span> 相当于参数为 <span class="arithmatex">\(\frac{w}{W}\)</span> 的单    点伯努利变量，单个方差为 <span class="arithmatex">\(Var(I_i) = \frac{w}{W}(1-\frac{w}{W}) = \frac{wb}{W^2}\)</span>。第一部分一共<span class="arithmatex">\(n\)</span>项，合计  为 <span class="arithmatex">\(\frac{nwb}{W^2}\)</span>。</p>
-<p>接下来看第二部分，对于任意两次不同的抽样位置 <span class="arithmatex">\(i\)</span> 和 <span class="arithmatex">\(j\)</span>，依据对称性所有这类组合的贡献是一样大的，而一共存在 <span class="arithmatex">\(n  (n-1)\)</span> 种可能的配对方式。它们对应的协方差定义为：
+对于任意单独某一次抽样，抽出白球的无条件概率仍是 <span class="arithmatex">\(\frac{w}{W}\)</span>，故每个 <span class="arithmatex">\(I_i\)</span> 相当于参数为 <span class="arithmatex">\(\frac{w}{W}\)</span> 的单点伯努利变量，单个方差为 <span class="arithmatex">\(Var(I_i) = \frac{w}{W}(1-\frac{w}{W}) = \frac{wb}{W^2}\)</span>。第一部分一共<span class="arithmatex">\(n\)</span>项，合计  为 <span class="arithmatex">\(\frac{nwb}{W^2}\)</span>。</p>
+<p>接下来看第二部分，对于任意两次不同的抽样位置 <span class="arithmatex">\(i\)</span> 和 <span class="arithmatex">\(j\)</span>，依据对称性所有这类组合的贡献是一样大的，而一共存在 <span class="arithmatex">\(n(n-1)\)</span> 种可能的配对方式。它们对应的协方差定义为：
 $$
 Cov(I_i,I_j) = E(I_i I_j)-E(I_i)E(I_j)
 $$
 其中联合期望 <span class="arithmatex">\(E(I_i I_j)\)</span> 即为先后两次均抽到白球的发生概率（不放回的条件乘法公式）：
-$<span class="arithmatex">\(E(I_i I_j) = \frac{w}{W} \times \frac{w-1}{W-1}\)</span>$
+$$
+E(I_i I_j) = \frac{w}{W} \times \frac{w-1}{W-1}
+$$
 代入协方差表达式计算得
 $$
 Cov(I_i,I_j) = \frac{w(w-1)}{W(W-1)} - \left(\frac{w}{W}\right)^2 = \frac{-wb}{W^2(W-1)}
-$$
-汇总这两个贡献项，通过代数上的通分整理即可得到最终结果：
+$$</p>
+<p>汇总这两个贡献项，通过代数上的通分整理即可得到最终结果：
 $$
 \begin{aligned}
 Var(X) &amp; = \frac{nwb}{W^2} - \frac{n(n-1)wb}{W^2(W-1)} \\
@@ -2353,8 +2446,6 @@ $$
     
       <script src="../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
       
-        <script src="../../../javascripts/katex.js"></script>
-      
         <script src="../../../javascripts/homepage.js"></script>
       
         <script src="../../../javascripts/lightbox.js"></script>
@@ -2364,6 +2455,8 @@ $$
         <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
       
         <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
       
     
   </body>

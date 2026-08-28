@@ -1,0 +1,1806 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A new project generated from the default template project.">
+      
+      
+        <meta name="author" content="<ljhkss>">
+      
+      
+        <link rel="canonical" href="https://www.ljhkss.top/computer-science/computer-organization/5/">
+      
+      
+        <link rel="prev" href="../4/">
+      
+      
+        <link rel="next" href="../../csapp/2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../images/favicon.webp">
+      <meta name="generator" content="zensical-0.0.51">
+    
+    
+      
+        <title>Large and Fast: Exploiting Memory Hierarchy - ljhkss's Notebook</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.62c9b9cc.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/riscv.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="导航栏"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="导航栏">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ljhkss's Notebook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Large and Fast: Exploiting Memory Hierarchy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="查找">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="查找">
+  <button type="button" class="md-search__button">
+    查找
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Computer science
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../mathematics/" class="md-tabs__link">
+          
+  
+  Mathematics
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    ljhkss's Notebook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Index
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Computer science
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Computer science
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Computer organization
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Computer organization
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Processor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Large and Fast: Exploiting Memory Hierarchy
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Large and Fast: Exploiting Memory Hierarchy
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Introduction
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Memory Technologies
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sram" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SRAM
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dram" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DRAM
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Flash Memory
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Disk
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-basics-of-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Basics of Caches
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Csapp
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Csapp
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../csapp/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  第二章 信息的存储与表示
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../csapp/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chapter 3: The Memory Hierarchy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../mathematics/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mathematics
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Mathematics
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../mathematics/discretemath/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Discretemath
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Discretemath
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/discretemath/1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Foundations: Logic and Proofs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/discretemath/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic Structures: Sets, Functions, Sequences, Sums, and Matrices
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/discretemath/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Algorithms
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/discretemath/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Induction and Recursion
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../mathematics/probability/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Probability
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Probability
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability/1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Probability and Counting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability/2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Conditional Probability
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability/3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Random Variables and their Distributions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability/4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Expectation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability/5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Continuous Random Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability/6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Moments
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mathematics/probability/7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint Distributions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Introduction
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-technologies" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Memory Technologies
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Memory Technologies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sram" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SRAM
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dram" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DRAM
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Flash Memory
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disk" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Disk
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-basics-of-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Basics of Caches
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Computer science
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Computer organization
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  <h1 id="__skip">Large and Fast: Exploiting Memory Hierarchy</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>因为程序不会以相同的概率访问它的全部代码或数据，因此可以创造一种程序拥有无限快速内存的假象。<strong>局部性原理</strong>(principle of locality)为实现这种假象提供了可能，局部性分为两类：</p>
+<ul>
+<li><strong>时间局部性</strong>(temporal locality):如果内存中的某个地址被访问，那么在<strong>短时间内</strong>很有可能在下一次再次被访问</li>
+<li><strong>空间局部性</strong>(spatial locality):如果内存中的某个地址被访问，那么与它<strong>相邻的地址</strong>很有可能在下一次被访问</li>
+</ul>
+<p>可以通过将计算机的内存实现为<strong>内存层级</strong>(memory hierarchy)的方式来利用局部性原理，从而加速对数据的访问。内存层级由多个速度与大小不同的内存等级组成，如下图<br />
+距离 CPU 越近，访问速度越快，存储空间越小，每一位的成本越高</p>
+<p><img alt="Memory Hierarchy Sketch" src=".././images/Memory/memory_hierarchy.png" /></p>
+<p>各个层级上的数据也是层次化的：离 CPU 更近的层级上的数据通常是更远层级的子集，最下方的层级保存着所有的数据，且数据每次只能在两个<strong>相邻的层级</strong>之间传递</p>
+<p>在两个内存层级之间传递的最小的信息单元称为<strong>块或行</strong>(block/line)(下图中的蓝色部分)</p>
+<p><img alt="Block Transfer" src=".././images/Memory/block_transfer.png" /></p>
+<p><strong>命中</strong>(hit)指的是处理器请求的数据位于上层内存 </p>
+<ul>
+<li><strong>命中率</strong>(hit rate):请求的数据位于上层内存的比例</li>
+<li><strong>命中时间</strong>(hit time):访问上层内存所需的时间，包括判断是否命中所需的时间</li>
+</ul>
+<blockquote>
+<p>命中率常用于衡量内存层级的性能</p>
+</blockquote>
+<p><strong>失效</strong>(miss)指的是处理器请求的数据没有位于上层内存</p>
+<ul>
+<li><strong>失效率</strong>(miss rate):请求的数据不在上层内存的比例(<span class="arithmatex">\(1-\text{hit rate}\)</span>)</li>
+<li><strong>失效惩罚</strong>(miss penalty):将上层的数据块与对应的下层的数据块进行交换的时间，再加上将这个块发送给处理器的时间</li>
+</ul>
+<p>因为所有程序都需要大量时间访问内存，因此内存系统是决定性能的重要因素。为了提高内存系统的性能，计算机设计师提出了许多复杂的机制。</p>
+<h2 id="memory-technologies">Memory Technologies</h2>
+<p>如今的内存系统主要使用4种内存技术：DRAM,SRAM,闪存和机械硬盘</p>
+<h3 id="sram">SRAM</h3>
+<p><strong>SRAM</strong>(static random access memory)是<strong>只有一个端口用于读写</strong>的简单集成电路，通常使用6-8个晶体管来保存一位的信息，而且功耗较低。除此之外，它还有以下的特点：</p>
+<ul>
+<li>虽然读写的访问时间不同，但访问任何数据所需的时间是固定的</li>
+<li>不需要刷新，访问时间非常接近时钟周期</li>
+</ul>
+<p>SRAM 常用作处理器的<strong>缓存</strong>(cache)</p>
+<h3 id="dram">DRAM</h3>
+<p><strong>DRAM</strong>(dynamic random access memory)是一个由单个晶体管控制读写的电容。<br />
+由于 DRAM 每一位只需要一个晶体管进行控制，因此成本低于 SRAM<br />
+储存在 DRAM 中的数据需要周期性的进行刷新，即将数据读取后再写回。DRAM 使用<strong>双层解码结构</strong>(tow-level decode structure)一次刷新一整行的数据，这样有助于提升性能</p>
+<p><img alt="DRAM Structure" src=".././images/Memory/DRAM_structure.png" /></p>
+<p>如上图，DRAM 内部被划分为多个<strong>存储体</strong>(memory bank)，每个存储体都有一些<strong>行缓冲器</strong>(row buffer)，从而实现对同一地址的同步访问
+假如有 <span class="arithmatex">\(n\)</span> 个存储体，在一个访问时间内便能轮换访问 <span class="arithmatex">\(n\)</span> 个存储体，使得带宽提升了 <span class="arithmatex">\(n\)</span> 倍，这种轮换访问方法被称为<strong>地址交错</strong>(address interleaving)</p>
+<div class="admonition info">
+<p class="admonition-title">DRAM的类型</p>
+<ul>
+<li><strong>SDRAM</strong>（同步 DRAM）：通过一个时钟来消除同步内存和寄存器所需的时间</li>
+<li><strong>DDR SDRAM</strong>(double data rate SDRAM) ：能在时钟的上升沿和下降沿中进行数据传输，从而提升了一倍的<strong>带宽</strong>(bandwidth)</li>
+<li><strong>双内联内存模块</strong> (dual inline memory module)</li>
+</ul>
+</div>
+<p>DRAM 主要用于构建<strong>主存</strong>(main memory)</p>
+<h3 id="flash-memory">Flash Memory</h3>
+<p><strong>闪存</strong>(flash memory)是一种电子可擦除可编程只读存储器 (EEPROM).</p>
+<p>写操作会损耗闪存的存储位，通过名为<strong>磨损均衡</strong>(wear leveling)的方法将需要写的块重新映射到写入次数较少的块，从而延长闪存的寿命</p>
+<h3 id="disk">Disk</h3>
+<p><strong>磁盘</strong>(disk)由一组绕轴旋转的<strong>金属盘片</strong> (platter) 构成，盘片上覆有磁记录材料，通过一个<strong>读写头</strong> (read-write head) 来读写信息，整个驱动器被密封在磁盘内部</p>
+<p>磁盘由下面几个部分组成：</p>
+<ul>
+<li><strong>迹</strong> (track)：磁盘表面上的同心圆</li>
+<li><strong>区</strong>(sector)：构成迹的某个片段，是能够被读写的最小单位的信息，包括：区 ID、数据以及纠错码 (ECC)，计量单位为 bit 或 byte</li>
+<li><strong>柱面</strong> (cylinder)：读写头下所有的迹（形成一个柱面）</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">访问磁盘某个区的时间</p>
+<p>访问磁盘某个区的时间由以下几部分构成:</p>
+<ul>
+<li><strong>寻找时间</strong>(seek time)：定位读写头到要被访问的迹</li>
+<li><strong>旋转时延</strong>(rotation latency)：将要访问的区旋转至读写头下所需的时间，通常假设为旋转时间的一半</li>
+<li><strong>数据传输</strong>(data transfer) = 区的大小 / 传输速率 (transfer rate)</li>
+<li><strong>控制器开销</strong>(controller overhead)</li>
+</ul>
+</div>
+<details class="tip">
+<summary>Stream Benchmark</summary>
+<p>Stream Benchmark 是一种测试内存性能的方法，它利用没有空间局部性和比缓存更大的向量操作来衡量性能</p>
+</details>
+<h2 id="the-basics-of-caches">The Basics of Caches</h2>
+<p><strong>缓存</strong>(cache)最早指内存层级中处理器和主存之间的部分，现在也泛指利用局部性访问的储存器</p>
+<blockquote>
+<p><a href="../4/">第四章</a>介绍的处理器中的 Memory 可以直接替换为缓存</p>
+</blockquote>
+<p>首先考虑一个处理器一次只读取一个字的简单情况，在读取之前，缓存中的最近被访问的数据包括 <span class="arithmatex">\(X_1,X_2,\cdots,X_{n-1}\)</span>，而处理器需要读取的数据 <span class="arithmatex">\(X_n\)</span> 不在缓存中，这会导致一次失效。因此，内存系统会读取底层级内存中的数据并将其加入到缓存中，如下图所示</p>
+<p><img alt="a simple cache" src="../images/Memory/simple_cache.png" /></p>
+<p>在上面的例子中，有两个问题需要考虑：</p>
+<div class="admonition question">
+<p>我们如何知道一个数据是否在缓存中以及我们如何找到它？</p>
+</div>
+<p>如果每个字都在缓存中有一个准确的位置，那么想要找到它就很简单。为内存中的每个字分配缓存位置最简单的方法是根据字在内存中的地址来分配，这种方法被称为<strong>直接映射</strong>(direct mapped),可以使用下面的公式计算字在缓存中的位置（即<strong>索引</strong>）
+$$
+\text{(Block Adress) module (Number of the blocks in the cache)}
+$$</p>
+<blockquote>
+<p>如果缓存的块数是2的幂，只需要取地址的低N位即可。其中 <span class="arithmatex">\(N=\log2\text{缓存的块数}\)</span></p>
+</blockquote>
+<p>因为同一个缓存中的位置可能会被多个内存地址映射，因此为缓存添加一组<strong>标签</strong>(tags)来判断缓存中的字是否为要读取的字。标签只需要包含地址中未用于缓存的位置的部分，如下图</p>
+<p><img alt="direct mapped example" src="../images/Memory/direct_mapped.png" /></p>
+<p>在上图中，因为缓存的块数是8,所以索引需要低3位，标签就是地址中剩下的高2位</p>
+<p>除此之外，还需要增加一个<strong>有效位</strong>(valid bit)表示高速缓存块内是否有合法的数据，若有则将其设为 1，否则为 0</p>
+<div class="admonition example">
+<p class="admonition-title">例子</p>
+<p>对一个缓存块数为8, 初始为空的缓存进行如下的访问
+<img alt="" src="../Pasted%20image%2020260827163526.png" />
+各操作后缓存的变化如下
+<img alt="" src="../Pasted%20image%2020260827163543.png" />
+从图中不难发现，第2次访问（<span class="arithmatex">\(26=11010_\text{two}\)</span>）和第8次访问（<span class="arithmatex">\(18=10010_\text{two}\)</span>）被映射到了同一个缓存块内，在这种情况下，最近访问的数据将会替换原本的数据，这体现了<a href="#introduction"><strong>时间局部性</strong></a></p>
+</div>
+<p><img alt="" src="../images/Memory/cache_and_memory.png" /></p>
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+      
+        <span class="md-tag">Computer Organization</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">COmputer Science</span>
+      
+    
+  </nav>
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../4/" class="md-footer__link md-footer__link--prev" aria-label="上一页: The Processor">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                The Processor
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../csapp/2/" class="md-footer__link md-footer__link--next" aria-label="下一页: 第二章 信息的存储与表示">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                第二章 信息的存储与表示
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 ljhkss
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips"],"search":"../../../assets/javascripts/workers/search.b6b7e04f.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7f30b55.min.js"></script>
+      
+        <script src="../../../javascripts/homepage.js"></script>
+      
+        <script src="../../../javascripts/lightbox.js"></script>
+      
+        <script src="../../../javascripts/image-optimizer.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>
