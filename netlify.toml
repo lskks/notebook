@@ -7,12 +7,6 @@
   """
   publish = "site"
 
-[[redirects]]
-  from = "/*"
-  to = "/:lower"
-  status = 301
-  force = true
-
 # 缓存配置保留
 [[headers]]
   for = "/*"
