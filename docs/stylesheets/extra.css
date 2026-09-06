@@ -1,171 +1,5 @@
 /* VSCode light 配色（亮色模式） */
-:root,
-[data-md-color-scheme="default"] {
-  color-scheme: light;
-
-  --md-hue: 225deg;
-
-  --md-typeset-font-size: 17px;
-
-  /* 中文字体栈：优先使用 Noto Sans SC，然后苹方，最后系统默认 */
-  --md-text-font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
-  --md-code-font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Source Code Pro", monospace;
-
-  --md-default-fg-color: #1e1e1e;
-  --md-default-fg-color--light: #444444;
-  --md-default-fg-color--lighter: #666666;
-  --md-default-fg-color--lightest: #b3b3b3;
-
-  --md-default-bg-color: #ffffff;
-  --md-default-bg-color--light: #f3f3f3;
-  --md-default-bg-color--lighter: #ededed;
-  --md-default-bg-color--lightest: #f6f6f6;
-
-  --md-primary-fg-color: #1976d2;
-  --md-primary-fg-color--light: #63a4ff;
-  --md-primary-fg-color--dark: #004ba0;
-  --md-primary-bg-color: #ffffff;
-  --md-primary-bg-color--light: #e3f2fd;
-
-  --md-accent-fg-color: #007acc;
-  --md-accent-fg-color--transparent: rgba(0, 122, 204, 0.08);
-  --md-accent-bg-color: #e5f3ff;
-  --md-accent-bg-color--light: #ebf7ff;
-
-  --md-code-fg-color: #1e1e1e;
-  --md-code-bg-color: #f5f5f5;
-  --md-code-bg-color--light: #fafbfc;
-  --md-code-bg-color--lighter: #f0f0f0;
-
-  --md-code-hl-color: #eaf5ff;
-  --md-code-hl-color--light: #eaf5ff80;
-
-  --md-code-hl-number-color: #098658;
-  --md-code-hl-special-color: #795e26;
-  --md-code-hl-function-color: #795e26;
-  --md-code-hl-constant-color: #36acaa;
-  --md-code-hl-keyword-color: #af00db;
-  /* 控制语句: 紫色 */
-  --md-code-hl-type-color: #007acc;
-  --md-code-hl-string-color: #a31515;
-  --md-code-hl-name-color: #267f99;
-  --md-code-hl-operator-color: #222222;
-  --md-code-hl-punctuation-color: #222222;
-  --md-code-hl-comment-color: #008000;
-  --md-code-hl-generic-color: #c000c0;
-  --md-code-hl-variable-color: #267f99;
-
-  --md-typeset-color: var(--md-default-fg-color);
-  --md-typeset-a-color: var(--md-primary-fg-color);
-  --md-typeset-del-color: rgba(255, 70, 70, 0.12);
-  --md-typeset-ins-color: rgba(60, 200, 100, 0.14);
-  --md-typeset-kbd-color: #fff;
-  --md-typeset-kbd-accent-color: #ececec;
-  --md-typeset-kbd-border-color: #b3b3b3;
-  --md-typeset-mark-color: rgba(244, 216, 117, 0.5);
-  --md-typeset-table-color: #ececec;
-  --md-typeset-table-color--light: #f3f3f3;
-
-  --md-admonition-fg-color: var(--md-default-fg-color);
-  --md-admonition-bg-color: var(--md-default-bg-color);
-
-  --md-warning-fg-color: #1e1e1e;
-  --md-warning-bg-color: #fff3cd;
-
-  /* 阴影和搜索优化 */
-  --md-shadow-z1: 0 4px 10px rgba(0, 0, 0, 0.05), 0 0 1px rgba(0, 0, 0, 0.1);
-  --md-shadow-z2: 0 4px 10px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.25);
-  --md-shadow-z3: 0 4px 10px rgba(0, 0, 0, 0.18), 0 0 1px rgba(0, 0, 0, 0.35);
-
-  --color-foreground: 30 30 30;
-  --color-background: 255 255 255;
-  --color-background-subtle: 245 245 245;
-  --color-backdrop: 255 255 255;
-}
-
-/* VSCode dark+ 配色（暗色模式） */
-[data-md-color-scheme="slate"] {
-  color-scheme: dark;
-
-  --md-hue: 225deg;
-
-  --md-typeset-font-size: 17px;
-
-  /* 中文字体栈：优先使用 Noto Sans SC，然后苹方，最后系统默认 */
-  --md-text-font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
-  --md-code-font-family: "JetBrains Mono", "Fira Code", "Cascadia Code", "Source Code Pro", monospace;
-
-  --md-default-fg-color: #d4d4d4;
-  --md-default-fg-color--light: #babdc2;
-  --md-default-fg-color--lighter: #cccccc;
-  --md-default-fg-color--lightest: #bababa;
-
-  --md-default-bg-color: #1e1e1e;
-  --md-default-bg-color--light: #232935;
-  --md-default-bg-color--lighter: #2d3144;
-  --md-default-bg-color--lightest: #232935;
-
-  --md-primary-fg-color: #569cd6;
-  --md-primary-fg-color--light: #62bbee;
-  --md-primary-fg-color--dark: #294e80;
-  --md-primary-bg-color: #1e1e1e;
-  --md-primary-bg-color--light: #252526;
-
-  --md-accent-fg-color: #3794ff;
-  --md-accent-fg-color--transparent: rgba(55, 148, 255, 0.08);
-  --md-accent-bg-color: #232935;
-  --md-accent-bg-color--light: #232935;
-
-  --md-code-fg-color: #d4d4d4;
-  --md-code-bg-color: #1e1e1e;
-  --md-code-bg-color--light: #232935;
-  --md-code-bg-color--lighter: #232935;
-
-  --md-code-hl-color: #26313c;
-  --md-code-hl-color--light: rgba(38, 49, 60, 0.14);
-
-  --md-code-hl-number-color: #b5cea8;
-  --md-code-hl-special-color: #dcdcaa;
-  --md-code-hl-function-color: #dcdcaa;
-  --md-code-hl-constant-color: #4ec9b0;
-  --md-code-hl-keyword-color: #c586c0;
-  /* 控制语句：蓝 */
-  --md-code-hl-type-color: #569cd6;
-  /* 类型关键字：青绿 */
-  --md-code-hl-string-color: #ce9178;
-  --md-code-hl-name-color: #9cdcfe;
-  --md-code-hl-operator-color: #d4d4d4;
-  --md-code-hl-punctuation-color: #d4d4d4;
-  --md-code-hl-comment-color: #6a9955;
-  --md-code-hl-generic-color: #d7ba7d;
-  --md-code-hl-variable-color: #9cdcfe;
-
-  --md-typeset-color: var(--md-default-fg-color);
-  --md-typeset-a-color: var(--md-primary-fg-color);
-  --md-typeset-del-color: rgba(200, 20, 40, 0.14);
-  --md-typeset-ins-color: rgba(35, 255, 120, 0.16);
-  --md-typeset-kbd-color: #232a2d;
-  --md-typeset-kbd-accent-color: #232935;
-  --md-typeset-kbd-border-color: #4d4d4d;
-  --md-typeset-mark-color: rgba(244, 216, 117, 0.12);
-  --md-typeset-table-color: #222436;
-  --md-typeset-table-color--light: #2d3144;
-
-  --md-admonition-fg-color: var(--md-default-fg-color);
-  --md-admonition-bg-color: var(--md-default-bg-color);
-
-  --md-warning-fg-color: #d4d4d4;
-  --md-warning-bg-color: #7e651b;
-
-  --md-shadow-z1: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 1px rgba(0, 0, 0, 0.4);
-  --md-shadow-z2: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.5);
-  --md-shadow-z3: 0 4px 10px rgba(0, 0, 0, 0.5), 0 0 1px rgba(0, 0, 0, 0.7);
-
-  --color-foreground: 255 255 255;
-  --color-background: 30 30 30;
-  --color-background-subtle: 38 41 53;
-  --color-backdrop: 30 30 30;
-}
+/*  */
 
 /* ==== 关键字类型细分着色 for MkDocs Material（Pygments/Prism样式均覆盖） ==== */
 /* 控制语句 if/else/for/while/return/break... */
@@ -664,4 +498,180 @@ img.error::before {
   margin-left: auto !important;
   margin-right: auto !important;
   width: auto !important;
+}
+
+/* ========== 代码配色方案 (One Dark Pro 风格) ========== */
+
+/* 亮色模式代码配色 */
+[data-md-color-scheme="default"] {
+  --md-code-bg-color: #f6f8fa;
+  --md-code-fg-color: #24292e;
+  --md-code-hl-color: rgba(0, 122, 255, 0.15);
+  --md-code-hl-number-color: #005cc5;
+  --md-code-hl-special-color: #d73a49;
+  --md-code-hl-function-color: #6f42c1;
+  --md-code-hl-constant-color: #005cc5;
+  --md-code-hl-keyword-color: #d73a49;
+  --md-code-hl-string-color: #032f62;
+  --md-code-hl-name-color: #24292e;
+  --md-code-hl-operator-color: #d73a49;
+  --md-code-hl-punctuation-color: #24292e;
+  --md-code-hl-comment-color: #6a737d;
+  --md-code-hl-generic-color: #6a737d;
+  --md-code-hl-type-color: #6f42c1;
+}
+
+/* 暗色模式代码配色 */
+[data-md-color-scheme="slate"] {
+  --md-code-bg-color: #1e1e1e;
+  --md-code-fg-color: #d4d4d4;
+  --md-code-hl-color: rgba(0, 122, 255, 0.2);
+  --md-code-hl-number-color: #b5cea8;
+  --md-code-hl-special-color: #f44747;
+  --md-code-hl-function-color: #dcdcaa;
+  --md-code-hl-constant-color: #4fc1ff;
+  --md-code-hl-keyword-color: #c586c0;
+  --md-code-hl-string-color: #ce9178;
+  --md-code-hl-name-color: #9cdcfe;
+  --md-code-hl-operator-color: #d4d4d4;
+  --md-code-hl-punctuation-color: #d4d4d4;
+  --md-code-hl-comment-color: #6a9955;
+  --md-code-hl-generic-color: #569cd6;
+  --md-code-hl-variable-color: #9cdcfe;
+  --md-code-hl-type-color: #4ec9b0;
+}
+
+/* 代码块基础样式 */
+.md-typeset pre code,
+.highlight {
+  background-color: var(--md-code-bg-color) !important;
+  color: var(--md-code-fg-color) !important;
+}
+
+/* 行号样式 */
+.md-typeset .linenos {
+  background-color: var(--md-code-bg-color) !important;
+  color: var(--md-code-hl-comment-color) !important;
+  user-select: none;
+  padding-right: 1em;
+}
+
+/* 高亮行样式 */
+.md-typeset .highlight .hll {
+  background-color: var(--md-code-hl-color) !important;
+  display: block;
+  margin: 0 -12px;
+  padding: 0 12px;
+}
+
+/* 语法高亮 - 数字 */
+.highlight .m,
+.highlight .mi,
+.highlight .mf,
+.highlight .mo {
+  color: var(--md-code-hl-number-color) !important;
+}
+
+/* 语法高亮 - 关键字 */
+.highlight .k,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr {
+  color: var(--md-code-hl-keyword-color) !important;
+}
+
+/* 语法高亮 - 类型 */
+.highlight .kt,
+.highlight .nc {
+  color: var(--md-code-hl-type-color) !important;
+}
+
+/* 语法高亮 - 函数 */
+.highlight .nf,
+.highlight .fm {
+  color: var(--md-code-hl-function-color) !important;
+}
+
+/* 语法高亮 - 字符串 */
+.highlight .s,
+.highlight .s1,
+.highlight .s2,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .ss {
+  color: var(--md-code-hl-string-color) !important;
+}
+
+/* 语法高亮 - 注释 */
+.highlight .c,
+.highlight .c1,
+.highlight .cm,
+.highlight .cp,
+.highlight .cpf,
+.highlight .cs {
+  color: var(--md-code-hl-comment-color) !important;
+  font-style: italic;
+}
+
+/* 语法高亮 - 变量 */
+.highlight .n,
+.highlight .na,
+.highlight .nb,
+.highlight .bp {
+  color: var(--md-code-hl-variable-color) !important;
+}
+
+/* 语法高亮 - 常量 */
+.highlight .no,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+  color: var(--md-code-hl-constant-color) !important;
+}
+
+/* 语法高亮 - 运算符 */
+.highlight .o,
+.highlight .ow {
+  color: var(--md-code-hl-operator-color) !important;
+}
+
+/* 语法高亮 - 标点符号 */
+.highlight .p {
+  color: var(--md-code-hl-punctuation-color) !important;
+}
+
+/* 语法高亮 - 泛型/其他 */
+.highlight .ge {
+  color: var(--md-code-hl-generic-color) !important;
+}
+
+/* 代码块边框和圆角 */
+.md-typeset pre > code {
+  border-radius: 8px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+/* 行内代码样式 */
+.md-typeset code:not(pre code) {
+  background-color: var(--md-code-bg-color) !important;
+  color: var(--md-code-hl-string-color) !important;
+  border-radius: 4px;
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+/* 复制按钮样式 */
+.md-clipboard {
+  color: var(--md-code-hl-comment-color);
+}
+
+.md-clipboard:hover {
+  color: var(--md-code-hl-keyword-color);
 }

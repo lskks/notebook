@@ -21,7 +21,7 @@ tags:
     - [x] [Chapter 5: Continuous Random Variables](5.md)
     - [x] [Chapter 6: Moments](6.md)
     - [x] [Chapter 7: Joint Distributions](7.md)
-    - [ ] [Chapter 8: Transformations]()
+    - [x] [Chapter 8: Transformations](8.md)
     - [ ] [Chapter 9: Conditional Expectation]()
     - [ ] [Chapter 10: Inequalities and Limit Theorems]()
     - [ ] [Chapter 11: Markov Chains]()
