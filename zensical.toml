@@ -14,6 +14,15 @@
 site_name = "ljhkss's Notebook"
 site_url = "https://www.ljhkss.top/"
 
+# The public URL of the repository. Required for the "view source" and
+# "edit this page" buttons (see content.action.* features below).
+repo_url = "https://github.com/lskks/notebook"
+repo_name = "lskks/notebook"
+
+# The repository's default branch is "master", so the auto-derived edit URL
+# must be overridden.
+edit_uri = "edit/master/docs/"
+
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
 #
@@ -42,42 +51,52 @@ Copyright &copy; 2026 ljhkss
 # Zensical supports both implicit navigation and explicitly defined navigation.
 # If you decide not to define a navigation here then Zensical will simply
 # derive the navigation structure from the directory structure of your
-# "docs_dir". The definition below demonstrates how a navigation structure
-# can be defined using TOML syntax.
+# "docs_dir". The definition below is the explicit navigation structure of
+# this site, written in TOML syntax.
 #
 # Read more: https://zensical.org/docs/setup/navigation/
-# nav = [
-#     { "Home" = "index.md" },
-#     { "Mathematics" = [
-#         "mathematics/index.md",
-#         { "Discrete Mathematics" = [
-#             "mathematics/discretemath/index.md",
-#             "mathematics/discretemath/1.md",
-#             "mathematics/discretemath/2.md",
-#             "mathematics/discretemath/3.md",
-#             "mathematics/discretemath/5.md",
-#         ] },
-#         { "Probability" = [
-#             "mathematics/probability/index.md",
-#             "mathematics/probability/1.md",
-#             "mathematics/probability/2.md",
-#             "mathematics/probability/3.md",
-#             "mathematics/probability/4.md",
-#             "mathematics/probability/5.md",
-#         ] },
-#     ] },
-#     { "Computer Science" = [
-#         "computer-science/index.md",
-#         { "Computer Organization" = [
-#             "computer-science/computer-organization/index.md",
-#             "computer-science/computer-organization/4.md",
-#         ] },
-#         { "CSAPP" = [
-#             "computer-science/csapp/2.md",
-#         ] },
-#     ] },
-
-# ]
+nav = [
+    { "Home" = "index.md" },
+    { "Mathematics" = [
+        "mathematics/index.md",
+        { "Discrete Mathematics" = [
+            "mathematics/discretemath/index.md",
+            "mathematics/discretemath/1.md",
+            "mathematics/discretemath/2.md",
+            "mathematics/discretemath/3.md",
+            "mathematics/discretemath/5.md",
+        ] },
+        { "Probability" = [
+            "mathematics/probability/index.md",
+            "mathematics/probability/1.md",
+            "mathematics/probability/2.md",
+            "mathematics/probability/3.md",
+            "mathematics/probability/4.md",
+            "mathematics/probability/5.md",
+            "mathematics/probability/6.md",
+            "mathematics/probability/7.md",
+            "mathematics/probability/8.md",
+        ] },
+    ] },
+    { "Computer Science" = [
+        "computer-science/index.md",
+        { "Computer Organization" = [
+            "computer-science/computer-organization/index.md",
+            "computer-science/computer-organization/4.md",
+            "computer-science/computer-organization/5.md",
+        ] },
+        { "CSAPP" = [
+            "computer-science/csapp/2.md",
+            "computer-science/csapp/3.md",
+        ] },
+        { "Data Structure" = [
+            "computer-science/ds/index.md",
+            "computer-science/ds/2.md",
+            "computer-science/ds/3.md",
+            "computer-science/ds/4.md",
+        ] },
+    ] },
+]
 
 extra_javascript = [
     "javascripts/homepage.js",
@@ -283,6 +302,9 @@ features = [
     #"toc.integrate"
 
     "content.footnote.tooltips",
+
+    "content.action.edit",
+    "content.action.view",
 ]
 
 # ----------------------------------------------------------------------------
