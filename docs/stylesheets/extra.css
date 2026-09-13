@@ -101,7 +101,7 @@ body.is-homepage .md-grid {
   left: 0;
   right: 0;
   height: 30%;
-  background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, transparent 100%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
   z-index: 2;
 }
 
@@ -181,6 +181,7 @@ body.is-homepage .md-grid {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -192,6 +193,7 @@ body.is-homepage .md-grid {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -202,18 +204,26 @@ body.is-homepage .md-grid {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: rotate(45deg) translateY(0);
   }
+
   40% {
     transform: rotate(45deg) translateY(-10px);
   }
+
   60% {
     transform: rotate(45deg) translateY(-5px);
   }
@@ -224,11 +234,11 @@ body.is-homepage .md-grid {
   .hero-title {
     font-size: 2.5rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1.2rem;
   }
-  
+
   .hero-section {
     min-height: 400px;
   }
@@ -238,7 +248,7 @@ body.is-homepage .md-grid {
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1rem;
   }
@@ -420,8 +430,8 @@ img.error::before {
 }
 
 /* 优化 favicon 加载 */
-.md-typeset :link > img,
-.md-typeset :visited > img {
+.md-typeset :link>img,
+.md-typeset :visited>img {
   border: none;
 }
 
@@ -504,7 +514,7 @@ img.error::before {
 
 
 /* 代码块边框和圆角 */
-.md-typeset pre > code {
+.md-typeset pre>code {
   border-radius: 8px;
   border: 1px solid rgba(128, 128, 128, 0.2);
 }
@@ -517,4 +527,19 @@ img.error::before {
 
 .md-clipboard:hover {
   color: var(--md-code-hl-keyword-color);
+}
+
+/* 自定义字体 */
+@import url('https://fontsapi.zeoseven.com/292/main/result.css');
+
+body {
+  font-family: "LXGW WenKai";
+  font-weight: normal;
+}
+
+/* 返回顶部按钮字体 */
+button.md-top {
+  font-family: "LXGW WenKai";
+  font-size: 16px;
+  font-weight: bold;
 }

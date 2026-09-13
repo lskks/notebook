@@ -6,10 +6,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A new project generated from the default template project.">
+        <meta name="description" content="ljhkss 的个人学习笔记站,整理计算机科学核心知识和数学的基础理论,包含定理推导、例题解析与代码示例">
       
       
-        <meta name="author" content="<ljhkss>">
+        <meta name="author" content="ljhkss">
       
       
         <link rel="canonical" href="https://www.ljhkss.top/computer-science/ds/2/">
@@ -55,8 +55,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
-        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=LXGW+WenKai:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"LXGW WenKai";--md-code-font:"JetBrains Mono"}</style>
       
     
     
@@ -64,9 +64,13 @@
     
       <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../stylesheets/riscv.css">
-    
       <link rel="stylesheet" href="../../../stylesheets/custom.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/code-theme.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css">
+    
+      <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
     <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
@@ -282,6 +286,62 @@
           
   
   Computer Science
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cpp/index.md" class="md-tabs__link">
+          
+  
+  C++ Programming Language
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../tools/index.md" class="md-tabs__link">
+          
+  
+  Tools
 
         </a>
       </li>
@@ -1514,6 +1574,136 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../cpp/index.md" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  C++ Programming Language
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  C++ Programming Language
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../tools/index.md" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tools
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Tools
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1759,8 +1949,8 @@
 <li>如果 <span class="arithmatex">\(T_1(N)=O(f(N))\)</span>, <span class="arithmatex">\(T_2(N)=O(g(N))\)</span> ，那么<br />
 <span class="arithmatex">\(T_1(N)+T_2(N)=O(f(N)+g(N))\)</span><br />
 <span class="arithmatex">\(T_1(N)*T_2(N)=O(f(N)*g(N))\)</span></li>
-<li>如果 <span class="arithmatex">\(T(N)\)</span> 是一个 <span class="arithmatex">\(k\)</span> 阶多项式，那么 <span class="arithmatex">\(T(N)=O(n^k)\)</span></li>
-<li>对于任意实数 <span class="arithmatex">\(k\)</span>,都有 <span class="arithmatex">\(log^kN=O(N)\)</span> </li>
+<li>如果 <span class="arithmatex">\(T(N)\)</span> 是一个 <span class="arithmatex">\(k\)</span> 阶多项式，那么 <span class="arithmatex">\(T(N)=O(N^k)\)</span></li>
+<li>对于任意实数 <span class="arithmatex">\(k\)</span>,都有 <span class="arithmatex">\(\log^kN=O(N)\)</span></li>
 </ol>
 </div>
 <p>也可以通过<strong>洛必达法则</strong>计算两个函数比值的极限，从而得到它们的相对关系，即对于 <span class="arithmatex">\(f(N)\)</span> 和 <span class="arithmatex">\(g(N)\)</span>,计算
@@ -1782,8 +1972,10 @@ $$</p>
 <li><span class="arithmatex">\(T_{worst}(N)\)</span>:表示最差运行时间</li>
 </ul>
 <p>显然，<span class="arithmatex">\(T_{avg}(N)\le T_{worst}(N)\)</span></p>
-<p>通常不考虑最优情况下算法的性能，因为它不能反映该算法的一般情况；平均性能通常能反映算法的一般情况，而最坏情况下的性能反映任何可能输入的性能。
-如果没有特殊说明，<strong>通常只需要分析最差性能</strong></p>
+<p>通常不考虑最优情况下算法的性能，因为它不能反映该算法的一般情况；平均性能通常能反映算法的一般情况，而最坏情况下的性能反映任何可能输入的性能</p>
+<div class="admonition tip">
+<p>如果没有特殊说明，<strong>通常只需要分析最差性能</strong></p>
+</div>
 <h2 id="running-time-calculations">Running-Time Calculations</h2>
 <p>先来看一个例子</p>
 <div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span>
@@ -1796,26 +1988,29 @@ $$</p>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">partialSum</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>第3行需要一个单位时间，第6行每次执行需要四个单位时间（两个乘法，一个加法和一个赋值），并且执行 <span class="arithmatex">\(N+1\)</span> 次，总计 <span class="arithmatex">\(4N+4\)</span> 个单位时间。第5行有初始化 <code>i</code>、测试 <code>i&lt;=N</code> 和 <code>i</code> 递增的隐性成本，总成本是初始化1次，测试 <span class="arithmatex">\(N+1\)</span> 次，递增 <span class="arithmatex">\(N+1\)</span> 次，总共是 <span class="arithmatex">\(2N+3\)</span>。第8行的 <code>return</code> 需要一个单位时间。忽略调用函数的成本，总计 <span class="arithmatex">\(6N+9\)</span>。因此，这个函数的复杂度是 <span class="arithmatex">\(O(N)\)</span></p>
-<p>由于我们是用大 O 表示法来给出答案，所以有很多不会影响最终结果的捷径可以走。例如，第6行显然是一个 O(1) 语句（每次执行一次），所以去精确计算它是两次、三次还是四次执行是没有意义的；第3行与 for 循环相比显然微不足道，所以在这里浪费时间也没必要。因此可以得到下面这些通用规则</p>
+<p>第3行需要一个单位时间。第5行的 for 循环有初始化 <code>i</code>、测试 <code>i&lt;=N</code> 和 <code>i</code> 递增三项隐性成本，总成本是初始化 1 次，测试和递增各 <span class="arithmatex">\(N+1\)</span> 次，总共 <span class="arithmatex">\(2N+3\)</span>。循环体第6行每次执行需要四个单位时间（两个乘法，一个加法和一个赋值），并且执行 <span class="arithmatex">\(N+1\)</span> 次，总计 <span class="arithmatex">\(4N+4\)</span> 个单位时间。第8行的 <code>return</code> 需要一个单位时间。忽略调用函数的成本，总计 <span class="arithmatex">\(6N+9\)</span>。因此，这个函数的复杂度是 <span class="arithmatex">\(O(N)\)</span></p>
+<p>由于我们是用大 O 表示法来给出答案，所以有很多不会影响最终结果的捷径可以走。例如，第6行显然是一个 <span class="arithmatex">\(O(1)\)</span> 语句，所以去精确计算它是两次、三次还是四次执行是没有意义的；第3行与 <code>for</code> 循环相比显然微不足道，所以在这里浪费时间也没必要。因此可以得到下面这些通用规则</p>
+<div class="admonition note">
+<p class="admonition-title">运行时间分析的一般规则</p>
 <p><strong>Rule 1: for 循环</strong><br />
 for 循环的运行时间是循环内运行<strong>时间最长的语句</strong>乘上循环次数</p>
 <p><strong>Rule 2: 嵌套循环</strong><br />
 嵌套循环的运行时间是循环内语句的运行时间乘上总的循环次数</p>
-<p><strong>Rule 3:连续的语句</strong><br />
+<p><strong>Rule 3: 连续的语句</strong><br />
 连续语句的总运行时间等于各语句运行时间之和（最终结果取最高阶项）</p>
-<p><strong>Rule 4:if/else 语句</strong><br />
-对于下面的代码片段
+<p><strong>Rule 4: if/else 语句</strong><br />
+对于下面的代码片段</p>
 <div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
 <span class="w">    </span><span class="n">S1</span>
 <span class="k">else</span>
 <span class="w">    </span><span class="n">S2</span>
 </code></pre></div>
-运行时间为测试条件是否为真的时间再加上 S1和 S2中运行时间<strong>最长</strong>的</p>
+<p>运行时间为测试条件是否为真的时间再加上 S1 和 S2 中运行时间<strong>最长</strong>的</p>
+</div>
 <h3 id="maximum-subsequence-sum-problem">Maximum Subsequence Sum Problem</h3>
 <div class="admonition question">
 <p class="admonition-title">Maximum Subsequence Sum Problem</p>
-<p>假设有一个整数(可能为负)序列 <span class="arithmatex">\(A_1, A_2, ..., A_n\)</span>，我们要找到 <span class="arithmatex">\(\sum\limits_{k=i}^j A_k\)</span> 的最大值</p>
+<p>假设有一个整数(可能为负)序列 <span class="arithmatex">\(A_1, A_2, ..., A_N\)</span>，我们要找到 <span class="arithmatex">\(\sum\limits_{k=i}^j A_k\)</span> 的最大值。当序列中所有整数都为负数时，约定最大子段和为 <span class="arithmatex">\(0\)</span></p>
 </div>
 <p>下面给出4种不同时间复杂度的算法来解决这个问题</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Cubic Time</label><label for="__tabbed_1_2">Square Time</label><label for="__tabbed_1_3">Linearithmic Time</label><label for="__tabbed_1_4">Linear Time</label></div>
@@ -1825,9 +2020,9 @@ for 循环的运行时间是循环内运行<strong>时间最长的语句</strong
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="kt">int</span><span class="w"> </span><span class="n">thisSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
@@ -1836,7 +2031,7 @@ for 循环的运行时间是循环内运行<strong>时间最长的语句</strong
 
 <span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">thisSum</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">maxSum</span><span class="p">)</span>
 <span class="w">                </span><span class="n">maxSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">thisSum</span><span class="p">;</span>
-<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">maxSum</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1848,10 +2043,10 @@ for 循环的运行时间是循环内运行<strong>时间最长的语句</strong
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">thisSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">j</span><span class="p">)</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="n">thisSum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
 
@@ -1900,7 +2095,7 @@ for 循环的运行时间是循环内运行<strong>时间最长的语句</strong
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">maxSumRec</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>使用分治法，将序列分成两半，最大子段和要么在左半、要么在右半、要么跨越中点（前缀和与后缀和的最大值之和，线性时间可求）。得到递推式</p>
+<p>使用分治法，将序列分成两半，最大子段和要么在左半、要么在右半、要么跨越中点（即左半的最大后缀和与右半的最大前缀和之和，线性时间可求）。得到递推式</p>
 <div class="arithmatex">\[
 T(N)=2T(N/2)+O(N),\quad T(1)=O(1)
 \]</div>
@@ -1911,7 +2106,7 @@ T(N)=2T(N/2)+O(N),\quad T(1)=O(1)
 <span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">maxSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">thisSum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 
-<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="n">thisSum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
 <span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">thisSum</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">maxSum</span><span class="p">)</span>
@@ -1927,13 +2122,14 @@ T(N)=2T(N/2)+O(N),\quad T(1)=O(1)
 </div>
 </div>
 <h3 id="logarithms-in-running-time">Logarithms in Running Time</h3>
-<p>在上面的例子中，第三个算法使用了分治法，它的时间复杂度为 <span class="arithmatex">\(O(N\log N)\)</span>;除了分治法，大部分复杂度为对数的算法都满足：若算法能在常数时间内将问题规模缩小为原来的常数倍，则其复杂度为 <span class="arithmatex">\(O(\log N)\)</span>。由于换底公式只相差一个常数因子，大 O 意义下对数的底数不影响结果</p>
-<blockquote>
+<p>在上面的例子中，第三个算法使用了分治法，它的时间复杂度为 <span class="arithmatex">\(O(N\log N)\)</span>。对数经常出现在运行时间的分析中，大部分复杂度为对数的算法都满足：若算法能在常数时间内将问题规模缩小为原来的常数倍，则其复杂度为 <span class="arithmatex">\(O(\log N)\)</span>。由于换底公式只相差一个常数因子，大 O 意义下对数的底数不影响结果</p>
+<div class="admonition note">
+<p class="admonition-title">一个假设</p>
 <p>当讨论一个算法的时间复杂度为 <span class="arithmatex">\(O(\log N)\)</span> 时，通常假设输入已经存放在数组中，访问其任意部分只需 <span class="arithmatex">\(O(1)\)</span> 时间</p>
-</blockquote>
+</div>
 <p>下面来看三个例子</p>
 <p><strong>Binary Search</strong></p>
-<p>假设在一个有序且在内存中的整数序列 <span class="arithmatex">\(A_0, A_1, ..., A_{N-1}\)</span> 寻找一个整数 <span class="arithmatex">\(X\)</span> ，返回满足 <span class="arithmatex">\(A_i=X\)</span> 的下标 <span class="arithmatex">\(i\)</span> ，如果没有找到就返回-1</p>
+<p>假设在一个有序且在内存中的整数序列 <span class="arithmatex">\(A_0, A_1, ..., A_{N-1}\)</span> 寻找一个整数 <span class="arithmatex">\(X\)</span> ，返回满足 <span class="arithmatex">\(A_i=X\)</span> 的下标 <span class="arithmatex">\(i\)</span> ，如果没有找到就返回 <span class="arithmatex">\(-1\)</span></p>
 <p>利用数组已经有序的特性，首先判断 <span class="arithmatex">\(X\)</span> 与中间元素是否相等，如果相等，直接返回即可；如果小于中间元素，我们对左边到中间的子数组使用相同的策略；如果大于中间元素，我们对中间到右边的子数组使用相同的策略</p>
 <p>下面是对应的C++实现</p>
 <div class="highlight"><pre><span></span><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
@@ -1953,7 +2149,7 @@ T(N)=2T(N/2)+O(N),\quad T(1)=O(1)
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">NOT_FOUND</span><span class="p">;</span><span class="w"> </span><span class="c1">// NOT_FOUND is -1</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>循环内的所有语句的时间复杂度为 <span class="arithmatex">\(O(1)\)</span> ，所以我们只需要分析循环的次数。循环开始时 <code>high</code>-<code>low</code><span class="arithmatex">\(=N-1\)</span> 结束时 <code>high</code>-<code>low</code><span class="arithmatex">\(\le-1\)</span> .每循环一次，<code>high</code>-<code>low</code> 的值会比之前减少一半。因此，循环最多进行 <span class="arithmatex">\(\lceil\log(N-1)\rceil+2\)</span> 次</p>
+<p>循环内的所有语句的时间复杂度为 <span class="arithmatex">\(O(1)\)</span> ，所以我们只需要分析循环的次数。循环开始时 <code>high</code><span class="arithmatex">\(-\)</span><code>low</code> 的值为 <span class="arithmatex">\(N-1\)</span>，当 <code>high</code><span class="arithmatex">\(-\)</span><code>low</code><span class="arithmatex">\(\le-1\)</span> 时循环结束。每循环一次，<code>high</code><span class="arithmatex">\(-\)</span><code>low</code> 的值会比之前减少一半。因此，循环最多进行 <span class="arithmatex">\(\lceil\log(N-1)\rceil+2\)</span> 次</p>
 <p><strong>Euclid's Algorithm</strong></p>
 <p>欧几里得算法主要用于计算两个整数的<strong>最大公因数</strong>(greatest common divisor, gcd),实现如下,在这里假设 <span class="arithmatex">\(M\ge N\)</span></p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">迭代</label><label for="__tabbed_2_2">递归</label></div>
@@ -2001,11 +2197,15 @@ T(N)=2T(N/2)+O(N),\quad T(1)=O(1)
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">isEven</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
 <span class="w">    </span><span class="k">else</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pow</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">小结</p>
+<p>上面三个例子体现了同一个思想：<strong>在常数时间内将问题规模缩小为原来的常数倍</strong>，因此复杂度都是 <span class="arithmatex">\(O(\log N)\)</span></p>
+</div>
 
 
 

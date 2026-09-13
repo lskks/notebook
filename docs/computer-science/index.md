@@ -1,7 +1,7 @@
 ---
-title: "计算机科学"
+title: "Computer Science"
 tags:
-  - 计算机科学
+  - Computer Science
 ---
 
 !!! abstract "Computer Science"
@@ -10,3 +10,4 @@ tags:
 ## Table of Contents
 - [Computer Organization](./computer-organization/index.md)
 - [CSAPP](./csapp/2.md)
+- [Data Structures](./ds/index.md)
