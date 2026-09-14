@@ -535,6 +535,7 @@ img.error::before {
 body {
   font-family: "LXGW WenKai";
   font-weight: normal;
+  font-size: 28px;
 }
 
 /* 返回顶部按钮字体 */

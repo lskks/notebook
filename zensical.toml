@@ -89,7 +89,7 @@ nav = [
             "computer-science/ds/4.md",
         ] },
     ] },
-    { "C++ Programming Language" = [
+    { "C++" = [
         "cpp/index.md",
     ]},
     { "Tools" = [
@@ -337,7 +337,7 @@ toggle.name = "Switch to light mode"
 [project.theme.font]
 text = "LXGW WenKai"
 code = "JetBrains Mono"
-size = 20
+size = "28px"
 
 # ----------------------------------------------------------------------------
 # You can configure your own logo to be shown in the header using the "logo"

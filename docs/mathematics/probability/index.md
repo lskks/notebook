@@ -1,7 +1,9 @@
 ---
-title: 概率论
+title: "概率论"
+comment: true
 tags:
-  - 概率论
+  - Probability 
+  - Mathematics
 ---
 
 我使用的教材是Joseph K. Blitzstein和Jessica Hwang的*Introduction to Probability second edition*
