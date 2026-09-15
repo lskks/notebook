@@ -72,21 +72,22 @@ nav = [
         ] },
     ] },
     { "Computer Science" = [
-        "computer-science/index.md",
+        "cs/index.md",
         { "Computer Organization" = [
-            "computer-science/computer-organization/index.md",
-            "computer-science/computer-organization/4.md",
-            "computer-science/computer-organization/5.md",
+            "cs/co/index.md",
+            "cs/co/4.md",
+            "cs/co/5.md",
+            "cs/co/6.md",
         ] },
         { "CSAPP" = [
-            "computer-science/csapp/2.md",
-            "computer-science/csapp/3.md",
+            "cs/csapp/2.md",
+            "cs/csapp/3.md",
         ] },
         { "Data Structure" = [
-            "computer-science/ds/index.md",
-            "computer-science/ds/2.md",
-            "computer-science/ds/3.md",
-            "computer-science/ds/4.md",
+            "cs/ds/index.md",
+            "cs/ds/2.md",
+            "cs/ds/3.md",
+            "cs/ds/4.md",
         ] },
     ] },
     { "C++" = [
