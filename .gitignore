@@ -4,3 +4,4 @@
 .cache
 .venv
 .vscode
+package-lock.json

@@ -67,3 +67,25 @@
   }
 }
 
+/* ========== 侧边栏分组:文字与展开箭头合并为一整个色块 ========== */
+/* 激活的分组中,链接与箭头按钮之间去掉间隙,外侧圆角保留、内侧直角 */
+.md-nav__container {
+  gap: 0;
+}
+
+.md-nav__container > a.md-nav__link {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.md-nav__container > label.md-nav__link {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-right: 0;
+}
+
+/* ========== 首页隐藏"编辑此页/查看源代码"按钮 ========== */
+.md-content__inner:has(> .hero-section.is-homepage) > .md-content__button {
+  display: none;
+}
+

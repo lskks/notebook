@@ -25,7 +25,7 @@
       
       
       <link rel="icon" href="../../../images/favicon.webp">
-      <meta name="generator" content="zensical-0.0.20">
+      <meta name="generator" content="zensical-0.0.60">
     
     
       
@@ -36,12 +36,12 @@
       
         
       
-      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.d4922b3c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.ce62732f.min.css">
       
         
           
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.812a03bb.min.css">
       
       
 
@@ -55,7 +55,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=LXGW+WenKai:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=LXGW+WenKai:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"LXGW WenKai";--md-code-font:"JetBrains Mono"}</style>
       
     
@@ -72,7 +72,7 @@
     
       <link rel="stylesheet" href="https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
     
       
 
@@ -93,7 +93,7 @@
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__drawer" aria-label="导航栏"></label>
     <div data-md-component="skip">
       
         
@@ -114,10 +114,10 @@
     <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-header__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
 
     </a>
-    <label class="md-header__button md-icon" for="__drawer">
+    <label class="md-header__button md-icon" for="__drawer" aria-label="导航栏">
       
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
     </label>
@@ -171,7 +171,7 @@
     
       
       
-        <label class="md-header__button md-icon" for="__search">
+        <label class="md-header__button md-icon" for="__search" aria-label="查找">
           
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
         </label>
@@ -187,7 +187,7 @@
         <a href="https://github.com/lskks/notebook" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     lskks/notebook
@@ -231,6 +231,19 @@
   
   
     
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
     
       <li class="md-tabs__item">
         <a href="../../../mathematics/" class="md-tabs__link">
@@ -252,6 +265,21 @@
   
   
     
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
     
       <li class="md-tabs__item md-tabs__item--active">
         <a href="../../" class="md-tabs__link">
@@ -271,9 +299,18 @@
   
   
     
+      
+      
+        
+          
+        
+      
+    
+    
+    
     
       <li class="md-tabs__item">
-        <a href="../../../cpp/index.md" class="md-tabs__link">
+        <a href="../../../cpp/" class="md-tabs__link">
           
   
   C++
@@ -289,6 +326,15 @@
   
   
   
+    
+      
+      
+        
+          
+        
+      
+    
+    
     
     
       <li class="md-tabs__item">
@@ -328,7 +374,7 @@
     <a href="../../.." title="ljhkss&#x27;s Notebook" class="md-nav__button md-logo" aria-label="ljhkss's Notebook" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
 
     </a>
     ljhkss's Notebook
@@ -338,7 +384,7 @@
       <a href="https://github.com/lskks/notebook" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
     lskks/notebook
@@ -362,8 +408,7 @@
   <span class="md-ellipsis">
     
   
-    Home
-  
+  Home
 
     
   </span>
@@ -414,8 +459,7 @@
   <span class="md-ellipsis">
     
   
-    Mathematics
-  
+  Mathematics
 
     
   </span>
@@ -436,8 +480,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Mathematics
-  
+  Mathematics
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -487,8 +530,7 @@
   <span class="md-ellipsis">
     
   
-    Discrete Mathematics
-  
+  Discrete Mathematics
 
     
   </span>
@@ -509,8 +551,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Discrete Mathematics
-  
+  Discrete Mathematics
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -531,8 +572,7 @@
   <span class="md-ellipsis">
     
   
-    The Foundations: Logic and Proofs
-  
+  The Foundations: Logic and Proofs
 
     
   </span>
@@ -559,8 +599,7 @@
   <span class="md-ellipsis">
     
   
-    Basic Structures: Sets, Functions, Sequences, Sums, and Matrices
-  
+  Basic Structures: Sets, Functions, Sequences, Sums, and Matrices
 
     
   </span>
@@ -587,8 +626,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithms
-  
+  Algorithms
 
     
   </span>
@@ -615,8 +653,7 @@
   <span class="md-ellipsis">
     
   
-    Induction and Recursion
-  
+  Induction and Recursion
 
     
   </span>
@@ -688,8 +725,7 @@
   <span class="md-ellipsis">
     
   
-    Probability
-  
+  Probability
 
     
   </span>
@@ -710,8 +746,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Probability
-  
+  Probability
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -732,8 +767,7 @@
   <span class="md-ellipsis">
     
   
-    Probability and Counting
-  
+  Probability and Counting
 
     
   </span>
@@ -760,8 +794,7 @@
   <span class="md-ellipsis">
     
   
-    Conditional Probability
-  
+  Conditional Probability
 
     
   </span>
@@ -788,8 +821,7 @@
   <span class="md-ellipsis">
     
   
-    Random Variables and their Distributions
-  
+  Random Variables and their Distributions
 
     
   </span>
@@ -816,8 +848,7 @@
   <span class="md-ellipsis">
     
   
-    Expectation
-  
+  Expectation
 
     
   </span>
@@ -844,8 +875,7 @@
   <span class="md-ellipsis">
     
   
-    Continuous Random Variables
-  
+  Continuous Random Variables
 
     
   </span>
@@ -872,8 +902,7 @@
   <span class="md-ellipsis">
     
   
-    Moments
-  
+  Moments
 
     
   </span>
@@ -900,8 +929,7 @@
   <span class="md-ellipsis">
     
   
-    Joint Distributions
-  
+  Joint Distributions
 
     
   </span>
@@ -928,8 +956,7 @@
   <span class="md-ellipsis">
     
   
-    Transformation
-  
+  Transformation
 
     
   </span>
@@ -1003,8 +1030,7 @@
   <span class="md-ellipsis">
     
   
-    Computer Science
-  
+  Computer Science
 
     
   </span>
@@ -1025,8 +1051,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Computer Science
-  
+  Computer Science
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -1074,8 +1099,7 @@
   <span class="md-ellipsis">
     
   
-    Computer Organization
-  
+  Computer Organization
 
     
   </span>
@@ -1096,8 +1120,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Computer Organization
-  
+  Computer Organization
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -1118,8 +1141,7 @@
   <span class="md-ellipsis">
     
   
-    The Processor
-  
+  The Processor
 
     
   </span>
@@ -1142,7 +1164,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
       
       
       
@@ -1153,8 +1175,7 @@
   <span class="md-ellipsis">
     
   
-    Memory Hierarchy
-  
+  Memory Hierarchy
 
     
   </span>
@@ -1164,15 +1185,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
+      <a href="././" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Memory Hierarchy
-  
+  Memory Hierarchy
 
     
   </span>
@@ -1198,9 +1218,9 @@
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Introduction
-      
+      </span>
     </span>
   </a>
   
@@ -1209,9 +1229,9 @@
         <li class="md-nav__item">
   <a href="#memory-technologies" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Memory Technologies
-      
+      </span>
     </span>
   </a>
   
@@ -1221,9 +1241,9 @@
           <li class="md-nav__item">
   <a href="#sram" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         SRAM
-      
+      </span>
     </span>
   </a>
   
@@ -1232,9 +1252,9 @@
           <li class="md-nav__item">
   <a href="#dram" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         DRAM
-      
+      </span>
     </span>
   </a>
   
@@ -1243,9 +1263,9 @@
           <li class="md-nav__item">
   <a href="#flash-memory" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Flash Memory
-      
+      </span>
     </span>
   </a>
   
@@ -1254,9 +1274,9 @@
           <li class="md-nav__item">
   <a href="#disk" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Disk
-      
+      </span>
     </span>
   </a>
   
@@ -1270,9 +1290,9 @@
         <li class="md-nav__item">
   <a href="#the-basics-of-caches" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         The Basics of Caches
-      
+      </span>
     </span>
   </a>
   
@@ -1282,9 +1302,9 @@
           <li class="md-nav__item">
   <a href="#handling-cache-misses" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Handling Cache Misses
-      
+      </span>
     </span>
   </a>
   
@@ -1293,9 +1313,9 @@
           <li class="md-nav__item">
   <a href="#handling-writes" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Handling Writes
-      
+      </span>
     </span>
   </a>
   
@@ -1309,9 +1329,9 @@
         <li class="md-nav__item">
   <a href="#measuring-and-improving-cache-performance" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Measuring and Improving Cache Performance
-      
+      </span>
     </span>
   </a>
   
@@ -1321,9 +1341,9 @@
           <li class="md-nav__item">
   <a href="#flexible-placement-of-blocks" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Flexible Placement of Blocks
-      
+      </span>
     </span>
   </a>
   
@@ -1337,9 +1357,9 @@
         <li class="md-nav__item">
   <a href="#replace-blocks" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Replace Blocks
-      
+      </span>
     </span>
   </a>
   
@@ -1348,9 +1368,9 @@
         <li class="md-nav__item">
   <a href="#multilevel-cache" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Multilevel Cache
-      
+      </span>
     </span>
   </a>
   
@@ -1359,9 +1379,9 @@
         <li class="md-nav__item">
   <a href="#dependable-memory-hierarchy" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Dependable Memory Hierarchy
-      
+      </span>
     </span>
   </a>
   
@@ -1371,9 +1391,9 @@
           <li class="md-nav__item">
   <a href="#error-detect-code" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Error Detect Code
-      
+      </span>
     </span>
   </a>
   
@@ -1387,9 +1407,9 @@
         <li class="md-nav__item">
   <a href="#virtual-memory" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Virtual Memory
-      
+      </span>
     </span>
   </a>
   
@@ -1399,9 +1419,9 @@
           <li class="md-nav__item">
   <a href="#page-table" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Page Table
-      
+      </span>
     </span>
   </a>
   
@@ -1410,9 +1430,9 @@
           <li class="md-nav__item">
   <a href="#page-fault" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Page Fault
-      
+      </span>
     </span>
   </a>
   
@@ -1421,9 +1441,9 @@
           <li class="md-nav__item">
   <a href="#large-virtual-addresses" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Large Virtual Addresses
-      
+      </span>
     </span>
   </a>
   
@@ -1432,9 +1452,9 @@
           <li class="md-nav__item">
   <a href="#tlb" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         TLB
-      
+      </span>
     </span>
   </a>
   
@@ -1443,9 +1463,20 @@
           <li class="md-nav__item">
   <a href="#integrating-virtual-memory-tlbs-and-caches" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Integrating Virtual Memory, TLBs, and Caches
-      
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protect" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Protect
+      </span>
     </span>
   </a>
   
@@ -1507,8 +1538,7 @@
   <span class="md-ellipsis">
     
   
-    CSAPP
-  
+  CSAPP
 
     
   </span>
@@ -1523,8 +1553,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    CSAPP
-  
+  CSAPP
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -1543,8 +1572,7 @@
   <span class="md-ellipsis">
     
   
-    第二章 信息的存储与表示
-  
+  第二章 信息的存储与表示
 
     
   </span>
@@ -1571,8 +1599,7 @@
   <span class="md-ellipsis">
     
   
-    Chapter 3: The Memory Hierarchy
-  
+  Chapter 3: The Memory Hierarchy
 
     
   </span>
@@ -1634,8 +1661,7 @@
   <span class="md-ellipsis">
     
   
-    Data Structure
-  
+  Data Structure
 
     
   </span>
@@ -1656,8 +1682,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Data Structure
-  
+  Data Structure
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -1678,8 +1703,7 @@
   <span class="md-ellipsis">
     
   
-    Algorithm Analysis
-  
+  Algorithm Analysis
 
     
   </span>
@@ -1706,8 +1730,7 @@
   <span class="md-ellipsis">
     
   
-    List, Stack and Queue
-  
+  List, Stack and Queue
 
     
   </span>
@@ -1734,8 +1757,7 @@
   <span class="md-ellipsis">
     
   
-    4
-  
+  Tree
 
     
   </span>
@@ -1791,15 +1813,14 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../cpp/index.md" class="md-nav__link ">
+            <a href="../../../cpp/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
     
   
-    C++
-  
+  C++
 
     
   </span>
@@ -1815,8 +1836,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    C++
-  
+  C++
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -1865,8 +1885,7 @@
   <span class="md-ellipsis">
     
   
-    Tools
-  
+  Tools
 
     
   </span>
@@ -1882,8 +1901,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Tools
-  
+  Tools
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
@@ -1907,6 +1925,17 @@
               
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
                   <div class="md-sidebar__inner">
                     
 
@@ -1925,9 +1954,9 @@
         <li class="md-nav__item">
   <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Introduction
-      
+      </span>
     </span>
   </a>
   
@@ -1936,9 +1965,9 @@
         <li class="md-nav__item">
   <a href="#memory-technologies" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Memory Technologies
-      
+      </span>
     </span>
   </a>
   
@@ -1948,9 +1977,9 @@
           <li class="md-nav__item">
   <a href="#sram" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         SRAM
-      
+      </span>
     </span>
   </a>
   
@@ -1959,9 +1988,9 @@
           <li class="md-nav__item">
   <a href="#dram" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         DRAM
-      
+      </span>
     </span>
   </a>
   
@@ -1970,9 +1999,9 @@
           <li class="md-nav__item">
   <a href="#flash-memory" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Flash Memory
-      
+      </span>
     </span>
   </a>
   
@@ -1981,9 +2010,9 @@
           <li class="md-nav__item">
   <a href="#disk" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Disk
-      
+      </span>
     </span>
   </a>
   
@@ -1997,9 +2026,9 @@
         <li class="md-nav__item">
   <a href="#the-basics-of-caches" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         The Basics of Caches
-      
+      </span>
     </span>
   </a>
   
@@ -2009,9 +2038,9 @@
           <li class="md-nav__item">
   <a href="#handling-cache-misses" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Handling Cache Misses
-      
+      </span>
     </span>
   </a>
   
@@ -2020,9 +2049,9 @@
           <li class="md-nav__item">
   <a href="#handling-writes" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Handling Writes
-      
+      </span>
     </span>
   </a>
   
@@ -2036,9 +2065,9 @@
         <li class="md-nav__item">
   <a href="#measuring-and-improving-cache-performance" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Measuring and Improving Cache Performance
-      
+      </span>
     </span>
   </a>
   
@@ -2048,9 +2077,9 @@
           <li class="md-nav__item">
   <a href="#flexible-placement-of-blocks" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Flexible Placement of Blocks
-      
+      </span>
     </span>
   </a>
   
@@ -2064,9 +2093,9 @@
         <li class="md-nav__item">
   <a href="#replace-blocks" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Replace Blocks
-      
+      </span>
     </span>
   </a>
   
@@ -2075,9 +2104,9 @@
         <li class="md-nav__item">
   <a href="#multilevel-cache" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Multilevel Cache
-      
+      </span>
     </span>
   </a>
   
@@ -2086,9 +2115,9 @@
         <li class="md-nav__item">
   <a href="#dependable-memory-hierarchy" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Dependable Memory Hierarchy
-      
+      </span>
     </span>
   </a>
   
@@ -2098,9 +2127,9 @@
           <li class="md-nav__item">
   <a href="#error-detect-code" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Error Detect Code
-      
+      </span>
     </span>
   </a>
   
@@ -2114,9 +2143,9 @@
         <li class="md-nav__item">
   <a href="#virtual-memory" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Virtual Memory
-      
+      </span>
     </span>
   </a>
   
@@ -2126,9 +2155,9 @@
           <li class="md-nav__item">
   <a href="#page-table" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Page Table
-      
+      </span>
     </span>
   </a>
   
@@ -2137,9 +2166,9 @@
           <li class="md-nav__item">
   <a href="#page-fault" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Page Fault
-      
+      </span>
     </span>
   </a>
   
@@ -2148,9 +2177,9 @@
           <li class="md-nav__item">
   <a href="#large-virtual-addresses" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Large Virtual Addresses
-      
+      </span>
     </span>
   </a>
   
@@ -2159,9 +2188,9 @@
           <li class="md-nav__item">
   <a href="#tlb" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         TLB
-      
+      </span>
     </span>
   </a>
   
@@ -2170,9 +2199,20 @@
           <li class="md-nav__item">
   <a href="#integrating-virtual-memory-tlbs-and-caches" class="md-nav__link">
     <span class="md-ellipsis">
-      
+      <span class="md-typeset">
         Integrating Virtual Memory, TLBs, and Caches
-      
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protect" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Protect
+      </span>
     </span>
   </a>
   
@@ -2210,6 +2250,7 @@
     <li class="md-path__item">
       <a href="../../.." class="md-path__link">
         
+  
   <span class="md-ellipsis">
     Home
   </span>
@@ -2225,9 +2266,25 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
       <li class="md-path__item">
         <a href="../../" class="md-path__link">
           
+  
   <span class="md-ellipsis">
     Computer Science
   </span>
@@ -2243,9 +2300,23 @@
   
     
     
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
       <li class="md-path__item">
         <a href="../" class="md-path__link">
           
+  
   <span class="md-ellipsis">
     Computer Organization
   </span>
@@ -2280,7 +2351,7 @@
   
 
 
-  <h1>Memory Hierarchy</h1>
+  <h1 id="__skip">Memory Hierarchy</h1>
 
 <h2 id="introduction">Introduction</h2>
 <p>因为程序不会以相同的概率访问它的全部代码或数据，因此可以创造一种程序拥有无限快速内存的假象。<strong>局部性原理</strong>(principle of locality)为实现这种假象提供了可能，局部性分为两类：</p>
@@ -2442,7 +2513,7 @@ $$</p>
 <p class="admonition-title">写缓冲</p>
 <p>虽然写穿透可以很简单的处理写操作，但会带来一些性能问题。解决方案是引入一个<strong>写缓冲</strong>(write buffer),将需要写回主存的数据暂存在写缓冲中。当写入主存的操作完成后，写缓冲中的表项将被释放。如果写缓冲满了，处理器必须停顿流水线直到写缓冲中出现空闲表项。但是，如果主存写操作的速率小于处理器产生写操作的速率，多大容量的缓冲都无济于事。因为写操作的产生速度远远快于主存系统的处理速度。</p>
 </div>
-<p><img alt="FastMATH_cache" src="../images/Memory/FastMATH_cache.png" /></p>
+<p><img alt="FastMATH_cache" src="../images/Memory/FastMATH_cache.webp" /></p>
 <h2 id="measuring-and-improving-cache-performance">Measuring and Improving Cache Performance</h2>
 <p>CPU 时间可以分为运行程序所花费的时钟周期和等待内存系统所花费的时钟周期：
 $$
@@ -2499,9 +2570,9 @@ $$
 $$
 为了寻找一个特定的块，需要搜索组中的所有块</p>
 <p>下图展示了三种策略：</p>
-<p><img alt="placement_scheme" src="../images/Memory/placement_scheme.png" /></p>
+<p><img alt="placement_scheme" src="../images/Memory/placement_scheme.webp" /></p>
 <p>我们也可以将所有块放置策略看作是组相联的变体，对于一个8个块的缓存，直接映射即单路组相联，全相联则是8路组相联，如下图</p>
-<p><img alt="associative" src="../images/Memory/associative.png" /></p>
+<p><img alt="associative" src="../images/Memory/associative.webp" /></p>
 <blockquote>
 <p>如果缓存大小固定，增加相联度将会减少组数</p>
 </blockquote>
@@ -2509,7 +2580,7 @@ $$
 <p>增加相联度的优点是降低失效率，缺点则是增加命中时间</p>
 </div>
 <p>现在考虑在组相联缓存中寻找一个特定的块，和直接映射类似，可以将组相联的地址分为三个部分</p>
-<p><img alt="set associative address format" src=".././images/Memory/set_assoctive_address.png" /></p>
+<p><img alt="set associative address format" src=".././images/Memory/set_assoctive_address.webp" /></p>
 <ul>
 <li><strong>索引</strong>(index):用来选择一个组</li>
 <li><strong>标签</strong>(tag):用来在已选定的组中通过比较来选择一个块</li>
@@ -2520,7 +2591,7 @@ $$
 </blockquote>
 <p>组相联通过多个比较器实现并行查找， <span class="arithmatex">\(n\)</span> 路组相联需要 <span class="arithmatex">\(n\)</span> 个比较器和一个 <span class="arithmatex">\(n\)</span>-to-1选择器</p>
 <p>下图为一个4路组相联缓存的示意图</p>
-<p><img alt="four way associative" src="../images/Memory/four_way_associative.png" /></p>
+<p><img alt="four way associative" src="../images/Memory/four_way_associative.webp" /></p>
 <p>选择直接映射、组相联或全相联主要取决于未命中的成本与实现关联性所需的成本，这包括时间和额外硬件</p>
 <h2 id="replace-blocks">Replace Blocks</h2>
 <p>当缓存发生缺失时，需要将对应的数据块加入到缓存中，如果该数据块对应的缓存组已满，就需要替换数据块。</p>
@@ -2557,7 +2628,7 @@ $$
 $$</li>
 </ul>
 <p>可以使用"nines of availability"来衡量系统的可用性，如下图</p>
-<p><img alt="nine of availability" src="../images/Memory/nines_of_avail.png" /></p>
+<p><img alt="nine of availability" src="../images/Memory/nines_of_avail.webp" /></p>
 <p>提高系统的 MTTF 有如下三种方法：</p>
 <ol>
 <li>故障避免技术(fault avoidance)：通过合理构建系统来避免故障的出现。</li>
@@ -2586,7 +2657,7 @@ $$</li>
 <blockquote>
 <p>每个数据位都被至少两个奇偶校验位覆盖</p>
 </blockquote>
-<p><img alt="Error Detect Code (ECC) Example" src="../images/Memory/ecc.png" /></p>
+<p><img alt="Error Detect Code (ECC) Example" src="../images/Memory/ecc.webp" /></p>
 <p>可以将汉明距离增加到4个，这意味着我们可以<strong>纠正一位错误</strong>或者<strong>检测两位错误</strong>。只需要再增加一个奇偶校验位用于记录整个字的奇偶校验，称为<strong>双位检测</strong>(double error detecting, DED)</p>
 <p>例如，对于一个4 位的字，它的 DED 为
 $$
@@ -2614,10 +2685,10 @@ $$
 <p>虚拟内存的数据块被称为<strong>页</strong>(page)，失效被称为<strong>页错误</strong>(page fault)</p>
 <p>对于使用虚拟内存的计算机，处理器使用的都是<strong>虚拟地址</strong>(virtual address)，硬件和软件相结合可以将虚拟地址转换为物理地址，进而访问主存</p>
 <p>将虚拟地址转换为物理地址的过程被称为<strong>地址映射</strong>或者<strong>地址翻译</strong>(address translation)，过程如下图所示</p>
-<p><img alt="virtual memory sketch" src="../images/Memory/virtual_memory_sketch.png" /></p>
+<p><img alt="virtual memory sketch" src="../images/Memory/virtual_memory_sketch.webp" /></p>
 <p>从图中可以看出，虚拟内存和物理内存都被划分为了页，因此虚拟页可以映射到物理页</p>
 <p>在虚拟内存中，地址被分为了虚拟页编号和页偏移量两部分，下图展示了将虚拟地址转换为物理地址的过程</p>
-<p><img alt="address translation" src="../images/Memory/address_translation.png" /></p>
+<p><img alt="address translation" src="../images/Memory/address_translation.webp" /></p>
 <p>如图所示，物理页编号组成了物理地址的高位，而页偏移量则是低位。物理地址中的页偏移量与虚拟地址中的完全相同，页偏移量的位数决定了页的大小</p>
 <p>虚拟内存的许多设计都是为了减少页错误，一次页错误可能需要花费数百万时钟周期来处理，代价十分高昂。因此，在设计虚拟内存时需要注意下面这几点：</p>
 <ul>
@@ -2633,7 +2704,7 @@ $$
 <p>页表，程序计数器以及寄存器决定了虚拟机的<strong>状态</strong>(state)，这个状态通常被称为<strong>进程</strong>(process).当一个进程正在被处理器运行时，它是<strong>活跃</strong>(active)，否则它是<strong>不活跃</strong>(inactive)的。操作系统通过加载一个进程的状态使其变得活跃，在这个过程中，操作系统只加载页表寄存器而不是整个页表。如果需要让另一个进程使用处理器，我们需要先保持当前的进程，然后等另一个进程执行结束后恢复它的状态</p>
 </div>
 <p>下图<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>展示了带有页表的地址翻译过程</p>
-<p><img alt="translation with table" src="../images/Memory/translation_with_table.png" /></p>
+<p><img alt="translation with table" src="../images/Memory/translation_with_table.webp" /></p>
 <p>可以看到，页表中的每一项都有一个有效位</p>
 <ul>
 <li>如果有效位为0，那么页不在主存中，将会导致页错误</li>
@@ -2643,7 +2714,7 @@ $$
 <h3 id="page-fault">Page Fault</h3>
 <p>如果有效位为0，将会导致页错误。操作系统会通过异常机制来接管控制，一旦操作系统接管了控制，它必须在下一级存储（闪存或机械硬盘）中寻找页并决定对应的页放置在主存中的位置。由于我们事先并不知道页会被放在主存中的位置，因此，操作系统在创建进程时会在闪存（或硬盘）上创造一个空间用于保存所有的页，称为<strong>交换空间</strong>(swap space).同时也创建了一个记录每个虚拟页的存储情况的数据结构，该数据结构可以是页表的一部分，也可以是一个类似页表的辅助数据结构</p>
 <p>下图所示的页表中，除了用于保存物理地址的页之外，空闲的页（灰色的块）会被标记并在磁盘（二级内存）中保留它们的交换空间</p>
-<p><img alt="translation with page table" src=".././images/Memory/translation_with_tab.png" /></p>
+<p><img alt="translation with page table" src=".././images/Memory/translation_with_tab.webp" /></p>
 <p>当页错误发生时，如果主存中的所有页都已被使用，操作系统必须选择一个页进行替换。因为我们想最小化页错误的数量，因此操作系统使用<strong>最近使用</strong>(least recently used, LRU)替换方法。操作系统会搜索最近最少使用的页面，将被替换的页放在第二级存储中的交换空间</p>
 <p>实现一个精确的 LRU 方法过于复杂，因此，大多数操作系统都使用近似 LRU 。RISC-V 处理器提供了一个<strong>引用位</strong>，当页被访问是设置它的引用位。操作系统会周期性的清楚有效位并重新设置，以便找到在特定的时间段内需要被替换的页</p>
 <h3 id="large-virtual-addresses">Large Virtual Addresses</h3>
@@ -2659,11 +2730,11 @@ $$
 <li>多级页表，RISC-V 处理器使用的正是这种方法<br />
 从高位地址开始寻找，如果在某个页表中找到了的话（合法位为 1），那么继续到下一级页表中寻找，直至最后一个页表，如下图</li>
 </ol>
-<p><img alt="multilevel page table" src=".././images/Memory/multilevel_page.png" /></p>
+<p><img alt="multilevel page table" src=".././images/Memory/multilevel_page.webp" /></p>
 <h3 id="tlb">TLB</h3>
 <p>因为页表保存在主存中，程序访问内存需要进行两次：第一次访问主存获得物理地址，第二次访问主存获得数据。可以利用局部性原理，增加一个特殊的缓存来保存最近使用过的地址转换，这个特殊缓存通常被称为<strong>转译 - 旁路缓冲器</strong>(translation-lookaside buffer, <strong>TLB</strong>).</p>
 <p>下图展示一个带有 TLB 的页表，虽然图中展示的是一个单级页表，但 TLB 也同样适用于多级页表，此时TLB 只是从最后一级页表加载物理地址和标签</p>
-<p><img alt="translation with tlb" src=".././images/Memory/translation_with_tlb.png" /></p>
+<p><img alt="translation with tlb" src=".././images/Memory/translation_with_tlb.webp" /></p>
 <p>TLB 中的每个项的标签位保存了虚拟页编号，而数据位保存了物理页编号，同时也保留了页表中的几个状态位（合法位、引用位、脏位等)</p>
 <p>每次内存访问时，先在 TLB 中查找虚拟页号：</p>
 <ul>
@@ -2676,12 +2747,21 @@ $$
 </ul>
 <p>TLB 未命中可由<strong>硬件或软件</strong>处理。取回缺失的转换后需替换 TLB 条目：由于 TLB 条目中仅引用位、脏位会发生变化，替换时将这两个位<strong>写回页表项</strong>（采用写回策略，因 TLB 未命中率低，此方式更高效）。</p>
 <p>下面是一个典型的 TLB 的规格</p>
-<p><img alt="TLB parameters" src=".././images/Memory/TLB_para.png" /></p>
+<p><img alt="TLB parameters" src=".././images/Memory/TLB_para.webp" /></p>
 <h3 id="integrating-virtual-memory-tlbs-and-caches">Integrating Virtual Memory, TLBs, and Caches</h3>
 <p>虚拟内存和缓存共同组成了内存层级，不在主存中数据也不能出现在缓存中。操作系统通过周期性的刷新缓存中的数据来维持这一结构，如果在此时访问页表会造成页错误</p>
 <p>下图给出了可能的失效组合</p>
-<p><img alt="" src="../Pasted%20image%2020260914111417.png" /></p>
 <p>后三种情况是不可能发生的</p>
+<h3 id="protect">Protect</h3>
+<p>保护机制必须确保在多个进程共享一个主存时，一个进程不能写入其他进程或者操作系统的地址空间；同时，还需要确保一个进程不会读取到另一个进程的数据</p>
+<p>TLB 通过提供一个<strong>写访问位</strong>(write access bit)防止页被意外写入<br />
+操作系统提供确保页表组织良好，使得独立的虚拟页映射到不相交的物理页，那么就可以确保一个进程不会读到另一个进程上；将页表放入受保护的地址空间，使得只有操作系统能够修改页表，而用户无权修改</p>
+<p>硬件提供了以下机制帮助操作系统实现内存系统的保护</p>
+<ol>
+<li>为操作系统进程和用户进程提供至少两个模式</li>
+<li>为进程在处理器上提供一个只能读不能写的部分，包括用户/超级管理员位，页表指针和TLB</li>
+<li>提供一个可以让处理器在用户模式和超级管理员模式切换的机制</li>
+</ol>
 <div class="footnote">
 <hr />
 <ol>
@@ -2866,7 +2946,7 @@ $$
       
     
     <a href="https://github.com/lskks/notebook" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5v52c0 15 12.5 23.5 27.5 17.5C441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5v-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21"/></svg>
     </a>
   
 </div>
@@ -2884,11 +2964,10 @@ $$
     
       
       
-      
-      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips","content.action.edit","content.action.view"],"search":"../../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["announce.dismiss","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.tabs","navigation.top","navigation.tracking","search.highlight","content.footnote.tooltips","content.action.edit","content.action.view"],"search":"../../../assets/javascripts/workers/search.7d14d953.min.js","tags":null,"translations":{"clipboard.copied":"已复制","clipboard.copy":"复制","search.result.more.one":"在该页上还有 1 个符合条件的结果","search.result.more.other":"在该页上还有 # 个符合条件的结果","search.result.none":"没有找到符合条件的结果","search.result.one":"找到 1 个符合条件的结果","search.result.other":"# 个符合条件的结果","search.result.placeholder":"键入以开始搜索","search.result.term.missing":"缺少","select.version":"选择当前版本"},"version":null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8ffeb9c9.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.88ee1349.min.js"></script>
       
         <script src="../../../javascripts/homepage.js"></script>
       
