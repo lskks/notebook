@@ -89,3 +89,23 @@
   display: none;
 }
 
+/* ========== 右侧目录:默认折叠,滚动到对应章节才展开 ========== */
+/* 主题模板的 TOC 子列表没有折叠机制,子节会全部展开。
+   这里把嵌套的子目录默认收起,只有当其中包含当前活动锚点
+   (.md-nav__link--active,由主题 JS 随滚动添加)时才展开。 */
+.md-nav--secondary .md-nav__item > .md-nav {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.md-nav--secondary .md-nav__item > .md-nav > .md-nav__list {
+  min-height: 0;
+}
+
+/* 祖先链命中活动锚点时展开对应层级 */
+.md-nav--secondary .md-nav__item:has(.md-nav__link--active) > .md-nav {
+  grid-template-rows: 1fr;
+}
+
