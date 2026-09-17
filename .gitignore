@@ -5,3 +5,4 @@
 .venv
 .vscode
 package-lock.json
+./site

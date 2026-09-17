@@ -2626,9 +2626,9 @@
   <h1 id="__skip">Memory Hierarchy</h1>
 
 <h2 id="memory-technologies">Memory Technologies</h2>
-<p>如今的内存系统主要使用4种内存技术：DRAM,SRAM,闪存和机械硬盘</p>
+<p>如今的内存系统主要使用 4 种内存技术：DRAM、SRAM、闪存和机械硬盘</p>
 <h3 id="sram">SRAM</h3>
-<p><strong>SRAM</strong>(static random access memory)是<strong>只有一个端口用于读写</strong>的简单集成电路，通常使用6-8个晶体管来保存一位的信息，而且功耗较低。除此之外，它还有以下的特点：</p>
+<p><strong>SRAM</strong>(static random access memory)是<strong>只有一个端口用于读写</strong>的简单集成电路，通常使用6-8个晶体管来保存一位的信息，而且功耗较低。除此之外，它还有以下特点：</p>
 <ul>
 <li>虽然读写的访问时间不同，但访问任何数据所需的时间是固定的</li>
 <li>不需要刷新，访问时间非常接近时钟周期</li>
@@ -2637,14 +2637,14 @@
 <h3 id="dram">DRAM</h3>
 <p><strong>DRAM</strong>(dynamic random access memory)是一个由单个晶体管控制读写的电容。<br />
 由于 DRAM 每一位只需要一个晶体管进行控制，因此成本低于 SRAM<br />
-储存在 DRAM 中的数据需要周期性的进行刷新，即将数据读取后再写回。DRAM 使用<strong>双层解码结构</strong>(two-level decode structure)一次刷新一整行的数据，这样有助于提升性能</p>
+储存在 DRAM 中的数据需要周期性地进行刷新，即将数据读取后再写回。DRAM 使用<strong>双层解码结构</strong>(two-level decode structure)一次刷新一整行的数据，这样有助于提升性能</p>
 <p><img alt="DRAM Structure" src=".././images/Memory/DRAM_structure.webp" /></p>
 <p>如上图，DRAM 内部被划分为多个<strong>存储体</strong>(memory bank)，每个存储体都有一些<strong>行缓冲器</strong>(row buffer)，从而实现对同一地址的同步访问
 假如有 <span class="arithmatex">\(n\)</span> 个存储体，在一个访问时间内便能轮换访问 <span class="arithmatex">\(n\)</span> 个存储体，使得带宽提升了 <span class="arithmatex">\(n\)</span> 倍，这种轮换访问方法被称为<strong>地址交错</strong>(address interleaving)</p>
 <div class="admonition info">
 <p class="admonition-title">DRAM的类型</p>
 <ul>
-<li><strong>SDRAM</strong>（同步 DRAM）：通过一个时钟来消除同步内存和寄存器所需的时间</li>
+<li><strong>SDRAM</strong>（同步 DRAM）：通过一个时钟来消除同步内存和处理器所需的时间</li>
 <li><strong>DDR SDRAM</strong>(double data rate SDRAM) ：能在时钟的上升沿和下降沿中进行数据传输，从而提升了一倍的<strong>带宽</strong>(bandwidth)</li>
 <li><strong>双内联内存模块</strong> (dual inline memory module)</li>
 </ul>
@@ -2673,10 +2673,10 @@
 </div>
 <details class="tip">
 <summary>Stream Benchmark</summary>
-<p>Stream Benchmark 是一种测试内存性能的方法，它利用没有空间局部性和比缓存更大的向量操作来衡量性能</p>
+<p>Stream Benchmark 是一种测试内存性能的方法，它利用没有时间局部性和比缓存更大的向量操作来衡量性能</p>
 </details>
 <h2 id="introduction">Introduction</h2>
-<p>因为程序不会以相同的概率访问它的全部代码或数据，因此可以创造一种程序拥有无限快速内存的假象。<strong>局部性原理</strong>(principle of locality)为实现这种假象提供了可能，局部性分为两类：</p>
+<p>程序不会以相同的概率访问它的全部代码或数据，因此可以创造一种程序拥有无限快速内存的假象。<strong>局部性原理</strong>(principle of locality)为实现这种假象提供了可能，局部性分为两类：</p>
 <ul>
 <li><strong>时间局部性</strong>(temporal locality):如果内存中的某个地址被访问，那么在<strong>短时间内</strong>很有可能在下一次再次被访问</li>
 <li><strong>空间局部性</strong>(spatial locality):如果内存中的某个地址被访问，那么与它<strong>相邻的地址</strong>很有可能在下一次被访问</li>
@@ -2684,7 +2684,7 @@
 <p>可以通过将计算机的内存实现为<strong>内存层级</strong>(memory hierarchy)的方式来利用局部性原理，从而加速对数据的访问。内存层级由多个速度与大小不同的内存等级组成，如下图<br />
 距离 CPU 越近，访问速度越快，存储空间越小，每一位的成本越高</p>
 <p><img alt="Memory Hierarchy Sketch" src=".././images/Memory/memory_hierarchy.webp" /></p>
-<p>各个层级上的数据也是层次化的：离 CPU 更近的层级上的数据通常是更远层级的子集，最下方的层级保存着所有的数据，且数据每次只能在两个<strong>相邻的层级</strong>之间传递</p>
+<p>各个层级上的数据也是层次化的：离 CPU 更近的层级上的数据通常是更远层级数据的子集，最下方的层级保存着所有的数据，且数据每次只能在两个<strong>相邻的层级</strong>之间传递</p>
 <p>在两个内存层级之间传递的最小的信息单元称为<strong>块或行</strong>(block/line)(下图中的蓝色部分)</p>
 <p><img alt="Block Transfer" src=".././images/Memory/block_transfer.webp" /></p>
 <p><strong>命中</strong>(hit)指的是处理器请求的数据位于上层内存 </p>
@@ -2702,11 +2702,11 @@
 </ul>
 <p>因为所有程序都需要大量时间访问内存，因此内存系统是决定性能的重要因素。为了提高内存系统的性能，计算机设计师提出了许多复杂的机制。</p>
 <h2 id="caches">Caches</h2>
-<p><strong>缓存</strong>(cache)最早指内存层级中处理器和主存之间的部分，现在也泛指利用局部性访问的储存器</p>
+<p><strong>缓存</strong>(cache)最早指内存层级中处理器和主存之间的部分，现在也泛指利用局部性访问的存储器</p>
 <blockquote>
 <p><a href="../4/">第四章</a>介绍的处理器中的 Memory 可以直接替换为缓存</p>
 </blockquote>
-<p>首先考虑一个处理器一次只读取一个字的简单情况，在读取之前，缓存中的最近被访问的数据包括 <span class="arithmatex">\(X_1,X_2,\cdots,X_{n-1}\)</span>，而处理器需要读取的数据 <span class="arithmatex">\(X_n\)</span> 不在缓存中，这会导致一次失效。因此，内存系统会读取底层级内存中的数据并将其加入到缓存中，如下图所示</p>
+<p>首先考虑一个处理器一次只读取一个字的简单情况，在读取之前，缓存中最近被访问的数据包括 <span class="arithmatex">\(X_1,X_2,\cdots,X_{n-1}\)</span>，而处理器需要读取的数据 <span class="arithmatex">\(X_n\)</span> 不在缓存中，这会导致一次失效。因此，内存系统会读取底层级内存中的数据并将其加入到缓存中，如下图所示</p>
 <p><img alt="a simple cache" src="../images/Memory/simple_cache.webp" /></p>
 <p>在上面的例子中，有两个问题需要考虑：</p>
 <div class="admonition question">
@@ -2719,7 +2719,7 @@ $$</p>
 <blockquote>
 <p>如果缓存的块数是2的幂，只需要取地址的低N位即可。其中 <span class="arithmatex">\(N=\log_2\text{缓存的块数}\)</span></p>
 </blockquote>
-<p>因为同一个缓存中的位置可能会被多个内存地址映射，因此为缓存添加一组<strong>标签</strong>(tags)来判断缓存中的字是否为要读取的字。标签只需要包含地址中未用于缓存的位置的部分，如下图</p>
+<p>因为同一个缓存中的位置可能会被多个内存地址映射，因此为缓存添加一组<strong>标签</strong>(tags)来判断缓存中的字是否为要读取的字。标签只需要包含地址中未用于确定缓存位置的部分，如下图</p>
 <p><img alt="direct mapped example" src="../images/Memory/direct_mapped.webp" /></p>
 <p>在上图中，因为缓存的块数是8,所以索引需要低3位，标签就是地址中剩下的高2位</p>
 <p>除此之外，还需要增加一个<strong>有效位</strong>(valid bit)表示高速缓存块内是否有合法的数据，若有则将其设为 1，否则为 0</p>
@@ -2732,14 +2732,14 @@ $$</p>
 <p>从图中不难发现，第2次访问（<span class="arithmatex">\(26=11010_\text{two}\)</span>）和第8次访问（<span class="arithmatex">\(18=10010_\text{two}\)</span>）被映射到了同一个缓存块内，在这种情况下，最近访问的数据将会替换原本的数据，这体现了<a href="#introduction"><strong>时间局部性</strong></a></p>
 </details>
 <p><img alt="cache_and_memory" src="../images/Memory/cache_and_memory.webp" /></p>
-<p>上图展示了一个32位内存地址与缓存的关系，如图所示，可以将一个缓存块分为：</p>
+<p>上图展示了一个32位内存地址与缓存的关系，如图所示，可以将一个内存地址分为：</p>
 <ul>
 <li>标签字段：用于与缓存的标签字段的值进行比较</li>
 <li>缓存索引：用于选择缓存块</li>
-<li>数据字段：用于存储实际的数据
-标签字段和缓存索引唯一确定了缓存块中的内存地址
-因为一个地址表示一个字节，并且在缓存中的数据以<strong>字</strong>（即4 字节）为单位，如果字在内存中是对齐的，地址的低 2 位通常可以被忽略（都是00）</li>
+<li>数据字段：用于存储实际的数据</li>
 </ul>
+<p>标签字段和缓存索引唯一确定了缓存块中的内存地址
+因为一个地址表示一个字节，并且在缓存中的数据以<strong>字</strong>（即4 字节）为单位，如果字在内存中是对齐的，地址的低 2 位通常可以被忽略（都是00）</p>
 <div class="admonition note">
 <p class="admonition-title">缓存的大小</p>
 <p>假设满足下面这些条件：</p>
@@ -2764,10 +2764,10 @@ $$</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">缓存的命名</p>
-<p>在给缓存命名时只需要考虑 data 字段的大小，忽略标签字段与有效位。例如上面图中的缓存被命名4KiB 缓存</p>
+<p>在给缓存命名时只需要考虑 data 字段的大小，忽略标签字段与有效位。例如上面图中的缓存被命名为 4KiB 缓存</p>
 </div>
 <h3 id="handling-cache-misses">Handling Cache Misses</h3>
-<p>控制单元需要检测缓存是否命中，如果失效，需要通过从内存中读取所需的数据来处理失效，这将会导致流水线停顿；如果命中，处理器将继续使用数据就像无事发生</p>
+<p>控制单元需要检测缓存是否命中，如果失效，需要通过从内存中读取所需的数据来处理失效，这将会导致流水线停顿；如果命中，处理器将继续使用数据，就像无事发生</p>
 <p>缓存失效可以分为<strong>指令失效</strong>和<strong>数据失效</strong>，指令失效可以通过完成以下步骤来解决：</p>
 <ol>
 <li>将原本的 PC 值存入内存</li>
@@ -2783,7 +2783,7 @@ $$</p>
 </ul>
 <div class="admonition info">
 <p class="admonition-title">写缓冲</p>
-<p>虽然写穿透可以很简单的处理写操作，但会带来一些性能问题。解决方案是引入一个<strong>写缓冲</strong>(write buffer),将需要写回主存的数据暂存在写缓冲中。当写入主存的操作完成后，写缓冲中的表项将被释放。如果写缓冲满了，处理器必须停顿流水线直到写缓冲中出现空闲表项。但是，如果主存写操作的速率小于处理器产生写操作的速率，多大容量的缓冲都无济于事。因为写操作的产生速度远远快于主存系统的处理速度。</p>
+<p>虽然写穿透可以很简单地处理写操作，但会带来一些性能问题。解决方案是引入一个<strong>写缓冲</strong>(write buffer),将需要写回主存的数据暂存在写缓冲中。当写入主存的操作完成后，写缓冲中的表项将被释放。如果写缓冲满了，处理器必须停顿流水线直到写缓冲中出现空闲表项。但是，如果主存写操作的速率小于处理器产生写操作的速率，多大容量的缓冲都无济于事。因为写操作的产生速度远远快于主存系统的处理速度。</p>
 </div>
 <p><img alt="FastMATH_cache" src="../images/Memory/FastMATH_cache.webp" /></p>
 <h3 id="measuring-and-improving-cache-performance">Measuring and Improving Cache Performance</h3>
@@ -2808,7 +2808,7 @@ $$</p>
 $$
 \text{Write-stall clock cycles}=\left(\frac{\text{Writes}}{\text{Program}}\times\text{Write miss rate}\times\text{Write miss penalty}\right)+\text{Write buffer stalls}
 $$</p>
-<p>大多数写穿透缓存的结构中，读和写的失效代价是相同的，如果写缓冲停顿可以忽略不计，那么就可以使用失效率和失效代价来同时刻画读操作和写操作：
+<p>在大多数写穿透缓存的结构中，读和写的失效代价是相同的，如果写缓冲停顿可以忽略不计，那么就可以使用失效率和失效代价来同时刻画读操作和写操作：
 $$
 \text{Memory-stall clock cycles}= \frac{\text{Memory accesses}}{\text{Program}} \times\text{Miss rate}\times\text{Miss penalty}
 $$</p>
@@ -2825,14 +2825,14 @@ $$
 \text{AMAT}=\text{Time for a hit}+\text{Miss rate}\times\text{Miss penalty}
 $$</p>
 <h3 id="flexible-placement-of-blocks">Flexible Placement of Blocks</h3>
-<p>前面的已经介绍了一种被称为直接映射的策略，它将主存中的任意数据块地址直接映射到上层存储的一个准确位置。除了直接映射之外，还有两种方法</p>
+<p>前面已经介绍了一种被称为直接映射的策略，它将主存中的任意数据块地址直接映射到上层存储的一个准确位置。除了直接映射之外，还有两种方法</p>
 <ul>
 <li>
 <p><strong>全相联</strong>(full associative)中的数据块可以放在缓存的<strong>任何位置</strong><br />
-为了寻找一个特定的块，需要搜索缓存中的所有块，为提升性能，每个缓存表项都有一个比较器可以并行地进行比较，这些比较器极大增加了硬件成本，因此全相联策略只能用于容量较小的缓存</p>
+为了寻找一个特定的块，需要搜索缓存中的所有块，为提升性能，每个缓存表项都有一个比较器，可以并行地进行比较，这些比较器极大增加了硬件成本，因此全相联策略只能用于容量较小的缓存</p>
 </li>
 <li>
-<p><strong>组相联</strong>(set associative)中每个块有可以放在<strong>一个组内的任意位置</strong><br />
+<p><strong>组相联</strong>(set associative)中每个块可以放在<strong>一个组内的任意位置</strong><br />
 将缓存划分为一定数量的包含 <span class="arithmatex">\(n\)</span> 个块的组，这样的缓存被称为 <strong>n路组相联</strong>(<span class="arithmatex">\(n\)</span>-way set associative),内存中的一个块会被映射到唯一的一个组，并且可以被放在<strong>该组内的任何位置</strong></p>
 </li>
 </ul>
@@ -2870,16 +2870,39 @@ $$
 <ul>
 <li>对于直接映射，因为每个数据块都在缓存中有唯一的位置，所以直接替换对应的数据块即可</li>
 <li>对于组相联，数据块可以放在组内的任意一个位置，LRU(least recently used)是最常见的方法，它会选择未访问时间最长的数据块进行替换
-实现 LRU 的方法是记录同一个组内的数据块的相对使用时间，例如对于一个2路组相联，可以使用1个编程位来记录两个数据块的先后顺序</li>
+实现 LRU 的方法是记录同一个组内的数据块的相对使用时间，例如对于一个2路组相联，可以使用1个标记位来记录两个数据块的先后顺序</li>
 <li>对于全相联，数据块可以放在缓存的任意一个位置</li>
 </ul>
 <h3 id="multilevel-cache">Multilevel Cache</h3>
 <p>为了缩小处理器和访问内存之间巨大的性能差距，现代处理器引入了<strong>多级缓存</strong>(multilevel cache),即在 <strong>处理器核心与主存</strong>之间设置多个不同容量和速度的缓存层级。以二级缓存为例，当一级缓存发生缺失时，会先在第二级缓存中寻找需要的值，如果二级缓存命中，将显著降低缺失惩罚</p>
-<p>一级和二级缓存的设计目标不同，对于一级缓存，主要关注的是<strong>降低命中时间</strong>从而缩短时钟周期数或减少流水线阶段。因此一级缓存<strong>容量更小</strong>，同时采用<strong>更小的块大小</strong>，来降低缺失惩罚；而二级缓存主要关注<strong>缺失率</strong>，从而降低内存访问带来的缺失惩罚。相对来说空间会更大，且采用更高度的相联置放，以降低失效率</p>
+<p>一级和二级缓存的设计目标不同，对于一级缓存，主要关注的是<strong>降低命中时间</strong>从而缩短时钟周期数或减少流水线阶段。因此一级缓存<strong>容量更小</strong>，同时采用<strong>更小的块大小</strong>，来降低缺失惩罚；而二级缓存主要关注<strong>缺失率</strong>，从而降低内存访问带来的缺失惩罚。相对来说空间会更大，且采用更高度的相联放置，以降低失效率</p>
 <h3 id="cache-coherence">Cache Coherence</h3>
 <p>TODO</p>
 <h3 id="cache-control">Cache Control</h3>
-<p>TODO</p>
+<p>首先来看缓存的基本参数：</p>
+<ul>
+<li>直接映射缓存</li>
+<li>使用写分配的写返回</li>
+<li>块大小是 4 字（16 字节或 128 位）</li>
+<li>缓存大小是 16KiB ，因此它包含 1024 个数据块</li>
+<li>32位地址空间</li>
+<li>缓存包含一个有效位和脏位</li>
+</ul>
+<p>我们使用一个<strong>有限状态机</strong>(FSM)来控制缓存，一个有限状态机包含一组状态和如何改变状态的转移，转移由<strong>下一状态函数</strong>定义。如下图所示，FSM 通常实现为一组组合逻辑和一个保存当前状态的寄存器</p>
+<p><img alt="fsm sketch" src="../images/Memory/fsm_sketch.webp" width="60%" /></p>
+<p>下图为一个直接映射缓存控制器的 FSM</p>
+<p><img alt="fsm of cache" src="../images/Memory/fsm_of_cache.webp" width="60%" /></p>
+<p>这个缓存控制器一共有四个状态：</p>
+<ul>
+<li>Idle: 等待处理器的合法读写请求，这个请求会将 FSM 移动到 Compare Tag 状态</li>
+<li>Compare Tag:判断读写请求是否命中<ul>
+<li>若高速缓存块的数据合法，且标签位成功匹配，说明成功<strong>命中</strong>，并将 Cache Ready 信号设置为 1。如果是写操作，还需将脏位设置为 1。然后回到 Idle状态。</li>
+<li>若发生失效，首先更新高速缓存标签，然后根据脏位决定下一状态：若脏位为 1，进入 Write-Back状态；否则进入 Allocate 状态</li>
+</ul>
+</li>
+<li>Write-Back:使用由标签和索引组成的地址，将128位的数据块写入内存。保持这个状态直至写入完成，完成后将 FSM 移动到 Allocate 状态</li>
+<li>Allocate:从内存中获取新的数据块，然后等待 Ready 信号。当完成对内存的读取时，有限状态机会回到 Compare Tag状态</li>
+</ul>
 <h2 id="dependable-memory-hierarchy">Dependable Memory Hierarchy</h2>
 <p>假设有某种服务的需求，用户可以看到一个系统在两种分别有需求的服务的状态之间交替：</p>
 <ol>
@@ -2887,7 +2910,7 @@ $$
 <li>服务中断：交付的服务与需求不同</li>
 </ol>
 <p><strong>失效</strong>(failure)会导致系统由状态1转换到状态2；而从状态2转换到状态1的过程被称为<strong>恢复</strong>(restoration).系统中某个部件的失效可能并不会导致系统的失效，为了区分，将部件的失效称为<strong>故障</strong>(fault)</p>
-<p>失效可能是永久的，也可能是暂时。暂时的失效会导致系统在状态1和状态2之间振荡，因此前者比后者更好诊断。这引出了两个相关的定义：<strong>可靠性</strong>(reliability)与<strong>可用性</strong>(availability)</p>
+<p>失效可能是永久的，也可能是暂时的。暂时的失效会导致系统在状态1和状态2之间振荡，因此前者比后者更好诊断。这引出了两个相关的定义：<strong>可靠性</strong>(reliability)与<strong>可用性</strong>(availability)</p>
 <ul>
 <li><strong>可靠性</strong>是衡量连续完成的服务，即从一个参考点到失效的时间
 <strong>平均无故障时间</strong>(mean time to failure, MTTF)是可靠性的一个度量，与之类似的一个术语是<strong>年度失效率</strong>(annual failure rate, AFR),表示在已知 MTTF 的条件下，一年中可能失效的设备的百分比</li>
@@ -2908,7 +2931,7 @@ $$</li>
 <p>提高系统的 MTTF 有如下三种方法：</p>
 <ol>
 <li>故障避免技术(fault avoidance)：通过合理构建系统来避免故障的出现。</li>
-<li>故障容忍技术(fault tolerance)：使用增加冗余，即使出现故障，仍然可以按照需求完成服务。</li>
+<li>故障容忍技术(fault tolerance)：通过增加冗余，即使出现故障，仍然可以按照需求完成服务。</li>
 <li>故障预测技术(fault forecasting)：预测故障的出现和构建，从而允许在器件故障前进行替换</li>
 </ol>
 <h3 id="error-detect-code">Error Detect Code</h3>
@@ -2951,10 +2974,10 @@ $$
 </ul>
 <h3 id="raid">RAID</h3>
 <h2 id="virtual-memory">Virtual Memory</h2>
-<p><strong>虚拟内存</strong>(virtual memory)是一种将主存用作第二级储存（通常是硬盘）的缓存的技术</p>
+<p><strong>虚拟内存</strong>(virtual memory)是一种将主存用作第二级存储（通常是硬盘）的缓存的技术</p>
 <p>使用虚拟内存主要有以下几个原因：</p>
 <ul>
-<li>高效且安全的在多个程序间共享内存</li>
+<li>高效且安全地在多个程序间共享内存</li>
 <li>让单一用户程序可以使用超过原始大小的内存</li>
 <li>虚拟内存通过重定位简化可执行程序的加载</li>
 </ul>
@@ -2975,10 +2998,10 @@ $$
 <li>虚拟内存中使用<strong>写返回</strong> 策略（写穿透耗时太长）</li>
 </ul>
 <h3 id="page-table">Page Table</h3>
-<p>页错误造成的损失十分高昂，因此我们在虚拟内存中选择全相联作为虚拟内存的置放策略，即页可以被放置在内存中的任意位置。但这将会导致一个新问题，即如何寻找一个页。全部查找显然是不现实的，解决方案是使用一个被称为<strong>页表</strong>的结构，它保存了虚拟地址与物理地址的映射关系。每个程序都有自己的页表，将程序的虚拟地址空间映射到主存中。页表同样位于主存中，并且假设它是主存中的一个固定大小的连续区域，硬件通过指向页表的起始位置的<strong>页表寄存器</strong>来找到页表的地址</p>
+<p>页错误造成的损失十分高昂，因此我们在虚拟内存中选择全相联作为虚拟内存的置放策略，即页可以被放置在内存中的任意位置。但这将会导致一个新问题，即如何寻找一个页。全部查找显然是不现实的，解决方案是使用一个被称为<strong>页表</strong>的结构，它保存了虚拟地址与物理地址的映射关系。每个程序都有自己的页表，将程序的虚拟地址空间映射到主存中。页表同样位于主存中，并且假设它是主存中的一个固定大小的连续区域，硬件通过<strong>页表寄存器</strong>来找到页表的起始位置</p>
 <div class="admonition info">
 <p class="admonition-title">状态和进程</p>
-<p>页表，程序计数器以及寄存器决定了虚拟机的<strong>状态</strong>(state)，这个状态通常被称为<strong>进程</strong>(process).当一个进程正在被处理器运行时，它是<strong>活跃</strong>(active)，否则它是<strong>不活跃</strong>(inactive)的。操作系统通过加载一个进程的状态使其变得活跃，在这个过程中，操作系统只加载页表寄存器而不是整个页表。如果需要让另一个进程使用处理器，我们需要先保持当前的进程，然后等另一个进程执行结束后恢复它的状态</p>
+<p>页表，程序计数器以及寄存器决定了虚拟机的<strong>状态</strong>(state)，这个状态通常被称为<strong>进程</strong>(process).当一个进程正在被处理器运行时，它是<strong>活跃</strong>(active)，否则它是<strong>不活跃</strong>(inactive)的。操作系统通过加载一个进程的状态使其变得活跃，在这个过程中，操作系统只加载页表寄存器而不是整个页表。如果需要让另一个进程使用处理器，我们需要先保存当前的进程，然后等另一个进程执行结束后恢复它的状态</p>
 </div>
 <p>下图<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>展示了带有页表的地址翻译过程</p>
 <p><img alt="translation with table" src="../images/Memory/translation_with_table.webp" /></p>
@@ -2992,27 +3015,27 @@ $$
 <p>如果有效位为0，将会导致页错误。操作系统会通过异常机制来接管控制，一旦操作系统接管了控制，它必须在下一级存储（闪存或机械硬盘）中寻找页并决定对应的页放置在主存中的位置。由于我们事先并不知道页会被放在主存中的位置，因此，操作系统在创建进程时会在闪存（或硬盘）上创造一个空间用于保存所有的页，称为<strong>交换空间</strong>(swap space).同时也创建了一个记录每个虚拟页的存储情况的数据结构，该数据结构可以是页表的一部分，也可以是一个类似页表的辅助数据结构</p>
 <p>下图所示的页表中，除了用于保存物理地址的页之外，空闲的页（灰色的块）会被标记并在磁盘（二级内存）中保留它们的交换空间</p>
 <p><img alt="translation with page table" src=".././images/Memory/translation_with_tab.webp" /></p>
-<p>当页错误发生时，如果主存中的所有页都已被使用，操作系统必须选择一个页进行替换。因为我们想最小化页错误的数量，因此操作系统使用<strong>最近使用</strong>(least recently used, LRU)替换方法。操作系统会搜索最近最少使用的页面，将被替换的页放在第二级存储中的交换空间</p>
-<p>实现一个精确的 LRU 方法过于复杂，因此，大多数操作系统都使用近似 LRU 。RISC-V 处理器提供了一个<strong>引用位</strong>，当页被访问是设置它的引用位。操作系统会周期性的清楚有效位并重新设置，以便找到在特定的时间段内需要被替换的页</p>
+<p>当页错误发生时，如果主存中的所有页都已被使用，操作系统必须选择一个页进行替换。因为我们想最小化页错误的数量，因此操作系统使用<strong>最近最少使用</strong>(least recently used, LRU)替换方法。操作系统会搜索最近最少使用的页面，将被替换的页放在第二级存储中的交换空间</p>
+<p>实现一个精确的 LRU 方法过于复杂，因此，大多数操作系统都使用近似 LRU 。RISC-V 处理器提供了一个<strong>引用位</strong>，当页被访问时设置它的引用位。操作系统会周期性地清除有效位并重新设置，以便找到在特定的时间段内需要被替换的页</p>
 <h3 id="large-virtual-addresses">Large Virtual Addresses</h3>
-<p>32位虚拟地址，页大小为4KiB ，页表项为4 bytes 的页表的大小为4MiB 。也就是说，我们需要为每个程序提供4MiB 的页表，这个数字貌似不是很大，但如果同时运行上百个程序，所需要的内存就十分庞大。如果我们使用的是64为虚拟地址，这个数字将更加庞大。因此，有以下这些方法来解决这个问题</p>
+<p>32位虚拟地址，页大小为4KiB ，页表项为4 bytes 的页表的大小为4MiB 。也就是说，我们需要为每个程序提供4MiB 的页表，这个数字貌似不是很大，但如果同时运行上百个程序，所需要的内存就十分庞大。如果我们使用的是64位虚拟地址，这个数字将更加庞大。因此，有以下这些方法来解决这个问题</p>
 <ol>
 <li>最简单的方法是提供一个限制寄存器来限制页表的大小<br />
-如果虚拟页编号超过了限制，那么就为它再分配一个页表项</li>
+如果虚拟页编号超过了限制，那么就会发生地址映射错误</li>
 <li>提供两个分开的页表，每个页表有独立的限制<br />
-一个表向上增长（对应栈）,一个向下增长（对应堆）.这样将地址空间划分为两段，高位地址用于决定使用哪个段。这种方法的缺点是在非连续、稀疏的地址空间上表现不佳</li>
-<li>减小页表的大小对虚拟地址使用一个哈希函数，这样的结构被称为<strong>逆页表</strong><br />
+一个表向上增长（对应堆）,一个向下增长（对应栈）.这样将地址空间划分为两段，高位地址用于决定使用哪个段。这种方法的缺点是在非连续、稀疏的地址空间上表现不佳</li>
+<li>减小页表的大小：对虚拟地址使用一个哈希函数，这样的结构被称为<strong>逆页表</strong><br />
 这种结构不再使用索引，因此查找起来比较麻烦</li>
 <li>将每个页表也当作一个页保存在页表中</li>
 <li>多级页表，RISC-V 处理器使用的正是这种方法<br />
-从高位地址开始寻找，如果在某个页表中找到了的话（合法位为 1），那么继续到下一级页表中寻找，直至最后一个页表，如下图</li>
+从高位地址开始寻找，如果在某个页表中找到了的话（有效位为 1），那么继续到下一级页表中寻找，直至最后一个页表，如下图</li>
 </ol>
 <p><img alt="multilevel page table" src=".././images/Memory/multilevel_page.webp" /></p>
 <h3 id="tlb">TLB</h3>
 <p>因为页表保存在主存中，程序访问内存需要进行两次：第一次访问主存获得物理地址，第二次访问主存获得数据。可以利用局部性原理，增加一个特殊的缓存来保存最近使用过的地址转换，这个特殊缓存通常被称为<strong>转译 - 旁路缓冲器</strong>(translation-lookaside buffer, <strong>TLB</strong>).</p>
 <p>下图展示一个带有 TLB 的页表，虽然图中展示的是一个单级页表，但 TLB 也同样适用于多级页表，此时TLB 只是从最后一级页表加载物理地址和标签</p>
 <p><img alt="translation with tlb" src=".././images/Memory/translation_with_tlb.webp" /></p>
-<p>TLB 中的每个项的标签位保存了虚拟页编号，而数据位保存了物理页编号，同时也保留了页表中的几个状态位（合法位、引用位、脏位等)</p>
+<p>TLB 中的每个项的标签位保存了虚拟页编号，而数据位保存了物理页编号，同时也保留了页表中的几个状态位（有效位、引用位、脏位等)</p>
 <p>每次内存访问时，先在 TLB 中查找虚拟页号：</p>
 <p>若TLB <strong>命中</strong>：用物理页号生成地址，并设置对应引用位；若为写操作，还需设置脏位。</p>
 <p>若TLB 失效：处理起来比较复杂，TLB 失效可以分为两种情况：</p>
@@ -3020,8 +3043,8 @@ $$
 <li>页已经在内存中，我们只需要创建失效的TLB 项</li>
 <li>页不在内存中，我们需要将控制交给操作系统来处理一个页错误</li>
 </ol>
-<p>处理页错误或者 TLB 失效需要使用<strong>异常机制</strong>中断激活的程序，将控制权交给操作系统，然后在恢复被中断的进程。</p>
-<p>为了在异常处理完成后能够恢复被中断的进程，需要使用 <strong>SPEC</strong>(supervisor exception program counter) <strong>寄存器</strong>保存该进程的状态。除此之外，TLB 失效或页错误需要在当前时钟周期结束时及时声明，这样的话下一个时钟周期就会执行异常进程而非后面的正常指令，及时防止可能得写入操作带来的破坏</p>
+<p>处理页错误或者 TLB 失效需要使用<strong>异常机制</strong>中断激活的程序，将控制权交给操作系统，然后再恢复被中断的进程。</p>
+<p>为了在异常处理完成后能够恢复被中断的进程，需要使用 <strong>SEPC</strong>(supervisor exception program counter) <strong>寄存器</strong>保存该进程的状态。除此之外，TLB 失效或页错误需要在当前时钟周期结束时及时声明，这样的话下一个时钟周期就会执行异常进程而非后面的正常指令，及时防止可能的写入操作带来的破坏</p>
 <p>一旦操作系统知道虚拟内存发生了一个页错误，它必须完成下面三步：</p>
 <ol>
 <li>使用虚拟地址查找页表项并在第二级存储中寻找被引入的页</li>
@@ -3033,14 +3056,14 @@ $$
 <p>下面是一个典型的 TLB 的规格</p>
 <p><img alt="TLB parameters" src=".././images/Memory/TLB_para.webp" /></p>
 <h3 id="integrating-virtual-memory-tlbs-and-caches">Integrating Virtual Memory, TLBs, and Caches</h3>
-<p>虚拟内存和缓存共同组成了内存层级，不在主存中数据也不能出现在缓存中。操作系统通过周期性的刷新缓存中的数据来维持这一结构，如果在此时访问页表会造成页错误</p>
+<p>虚拟内存和缓存共同组成了内存层级，不在主存中的数据也不能出现在缓存中。操作系统通过周期性地刷新缓存中的数据来维持这一结构，如果在此时访问页表会造成页错误</p>
 <p>下图给出了可能的失效组合</p>
 <p><img alt="miss category" src=".././images/Memory/miss_category.webp" /></p>
 <p>后三种情况是不可能发生的</p>
 <h3 id="protect">Protect</h3>
 <p>保护机制必须确保在多个进程共享一个主存时，一个进程不能写入其他进程或者操作系统的地址空间；同时，还需要确保一个进程不会读取到另一个进程的数据</p>
 <p>TLB 通过提供一个<strong>写访问位</strong>(write access bit)防止页被意外写入<br />
-操作系统提供确保页表组织良好，使得独立的虚拟页映射到不相交的物理页，那么就可以确保一个进程不会读到另一个进程上；将页表放入受保护的地址空间，使得只有操作系统能够修改页表，而用户无权修改</p>
+操作系统确保页表组织良好，使得独立的虚拟页映射到不相交的物理页，那么就可以确保一个进程不会读到另一个进程的数据；将页表放入受保护的地址空间，使得只有操作系统能够修改页表，而用户无权修改</p>
 <p>硬件提供了以下机制帮助操作系统实现内存系统的保护</p>
 <ol>
 <li>为操作系统进程和用户进程提供至少两个模式</li>
@@ -3058,14 +3081,14 @@ $$
 <li>全相联</li>
 <li>组相联</li>
 </ul>
-<p><img alt="" src="../placement_scheme.png" /></p>
-<p>提升相联度通常会降低失效率，但是随着缓存尺寸的增大，关联度带来的改善越来越小；这是由于较大缓存的总体未命中率较低，提高未命中率的空间就减少了</p>
+<p><img alt="placement schemes" src=".././images/Memory/placement_schemes.webp" /></p>
+<p>提升相联度通常会降低失效率，但是随着缓存尺寸的增大，关联度带来的改善越来越小；这是由于较大缓存的总体失效率较低，进一步降低失效率的空间就减少了</p>
 <p>关联度增加可能带来的缺点是成本增加和访问速度变慢</p>
-<p><img alt="" src="../Pasted%20image%2020260916223656.png" /></p>
+<p><img alt="miss rate and associativity" src=".././images/Memory/miss_rate_associativity.webp" /></p>
 </div>
 <div class="tabbed-block">
 <p>寻找数据块的方法取决于置放策略</p>
-<p><img alt="" src="../Pasted%20image%2020260916224924.png" /></p>
+<p><img alt="find block" src=".././images/Memory/location_scheme.webp" /></p>
 <p>置放策略的选择还需要考虑失效和实现相联度的代价</p>
 </div>
 <div class="tabbed-block">
@@ -3081,35 +3104,40 @@ $$
 <p>下面是两种主要的写入策略及其优势：</p>
 <ul>
 <li>写穿透：数据将同时写入缓存和内存层级中低一级的块<ul>
+<li>失效更简单也更便宜，因为它们从不需要将块写回到下一级。</li>
+</ul>
+</li>
+<li>写返回：数据将只写入缓存，当数据被替换时才写入到内存层级中低一级的块<ul>
 <li>处理器可以以缓存接受的速度写入单个字。</li>
 <li>一个块内的多次写入只需对下一级存储写一次。</li>
 <li>当块被回写时，由于整个块都会被写入，系统可以有效利用高带宽传输。</li>
 </ul>
 </li>
-<li>写返回：数据将只写入缓存，当数据被修改时将写入到内存层级中低一级的块<ul>
-<li>失效更简单也更便宜，因为它们从不需要将块写回到下一级。</li>
-<li>写穿透比写返回更容易实现，尽管写穿透缓存需要使用写缓冲区</li>
 </ul>
-</li>
-</ul>
+<p>写穿透比写返回更容易实现，尽管写穿透缓存需要使用写缓冲区</p>
 </div>
 </div>
 </div>
 </div>
 <h3 id="the-three-cs-model">The Three Cs Model</h3>
-<p>TODO</p>
 <p>我们可以将所有的失效分为以下三类（<strong>three Cs</strong>）:</p>
 <ul>
-<li><strong>强制失效</strong></li>
-<li><strong>容量失效</strong></li>
-<li><strong>冲突失效</strong></li>
-<li>下图展示了三种失效所占的比例</li>
+<li><strong>强制失效</strong>(compulsory miss)：第一次访问还没有被加入缓存的数据块造成的缺失，也称为<strong>冷启动缺失</strong>(cold-start miss)</li>
+<li><strong>容量失效</strong>(capacity miss)：缓存不能包含程序运行过程中所需的所有数据块</li>
+<li><strong>冲突失效</strong>(conflict miss)：组相联或者直接映射时，多个块被映射到同一个位置，也称为<strong>碰撞缺失</strong>(collision miss)</li>
 </ul>
-<p><img alt="" src="../Pasted%20image%2020260916232404.png" /></p>
+<p>下图展示了三种失效所占的比例</p>
+<p><img alt="" src=".././images/Memory/three_misses.webp" /></p>
 <p>下表给出了三种失效的解决办法及其代价</p>
-<p><img alt="" src="../Pasted%20image%2020260916232418.png" /></p>
+<p><img alt="solution and cost of miss" src=".././images/Memory/solution_of_miss.webp" /></p>
 <h2 id="fallacy-and-pitfalls">Fallacy and Pitfalls</h2>
 <p>TODO</p>
+<div class="admonition failure">
+<p class="admonition-title">Fallacy</p>
+</div>
+<div class="admonition bug">
+<p class="admonition-title">Pitfall</p>
+</div>
 <div class="footnote">
 <hr />
 <ol>

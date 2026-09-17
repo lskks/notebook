@@ -530,12 +530,12 @@ img.error::before {
 }
 
 /* 自定义字体 */
-@import url('https://fontsapi.zeoseven.com/292/main/result.css');
+/* 引入霞鹜文楷屏幕阅读版 */
+@import url("https://cdn.jsdelivr.net/npm/cn-fontsource-lxgw-wen-kai-screen/font.css");
 
-body {
-  font-family: "LXGW WenKai";
-  font-weight: normal;
-  font-size: 28px;
+:root {
+  /* 中英文统一使用屏幕阅读版，英文回退到系统无衬线字体 */
+  --md-text-font: "LXGW WenKai Screen", -apple-system, "Segoe UI", sans-serif;
 }
 
 /* 返回顶部按钮字体 */
