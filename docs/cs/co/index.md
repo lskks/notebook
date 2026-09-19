@@ -20,7 +20,7 @@ tags:
     - [ ] [Chapter 3: Arithmetic for Computers](3.md)
     - [x] [Chapter 4: The Processor](4.md)
     - [x] [Chapter 5: Large and Fast: Expierarchy](5.md)
-    - [ ] [Chapter 6: Parallel Processors from Client to Cloud](6.md)
+    - [x] [Chapter 6: Parallel Processors from Client to Cloud](6.md)
 
 !!! note "相关资源"
     - [课程网站(UCB CS61C)](https://cs61c.org/){:target="_blank"}
