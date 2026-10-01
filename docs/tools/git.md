@@ -134,102 +134,79 @@ git commit -a                    # 自动暂存所有已跟踪文件的修改并
 
 ## Viewing the Commit History
 
-```bash
-git log
-```
+可以使用 `git log` 查看提交历史记录。`git log` 默认按时间倒序显示提交历史，包含校验和(checksum)、作者、邮箱、提交时间以及提交说明
 
-默认按时间倒序显示提交历史，每条记录包含：校验和(checksum)、作者、邮箱、提交时间、提交说明
+`git log` 的几个常用选项如下：
 
-常用选项：
+![alt text](./images/git/git_log_opt.png)
 
-```bash
-git log -p              # 显示每次提交的完整 diff
-git log -2              # 仅显示最近 2 条记录
-git log --stat          # 在输出末尾附上修改文件统计
-git log --pretty=oneline            # 单行格式
-git log --pretty=format:"%h - %an, %ar : %s"   # 自定义格式
-git log --pretty=short
-git log --graph         # ASCII 图形显示分支合并历史
-```
+其中 `--pretty` 支持的格式包括：`oneline`、`short`、`full`、`fuller`，以及 `format`. `format` 比较特殊，它允许**自定义格式化**提交历史记录的输出，在使用机器解析输出结果时十分有用。下表是其常用的占位符：
 
-`--pretty` 支持的格式：`oneline`、`short`、`full`、`fuller`，以及 `format` 自定义。常用占位符：
+![alt text](./images/git/format_args.png)
 
-| 占位符 | 说明 |
-| ------ | ---- |
-| `%H`   | 提交完整哈希 |
-| `%h`   | 提交简写哈希 |
-| `%an`  | 作者名称 |
-| `%ae`  | 作者邮箱 |
-| `%ad`  | 作者修订日期（配合 `--date=short` 等选项定制格式） |
-| `%ar`  | 作者修订日期，按多久以前的方式显示 |
-| `%s`   | 提交说明 |
+??? example "例子"
+    ```bash
+    $ git log --pretty=format:"%h - %an, %ar : %s"
+    ca82a6d - Scott Chacon, 19 years ago : changed the verison number
+    085bb3b - Scott Chacon, 19 years ago : removed unnecessary test code
+    a11bef0 - Scott Chacon, 19 years ago : first commit
+    ```
 
-!!! tip "限制日志输出"
-    - `--since="2 weeks ago"` / `--until`：按时间过滤
-    - `--author=John`：按作者过滤
-    - `--grep="bugfix"`：搜索提交说明关键字
-    - `path/to/file`：只显示影响某文件的提交，如 `git log -- v2.0 -- README`
-    - `git log -L <start>,<end>:<file>`：追踪某几行的演变历史
+可以给`git log`添加其他选项从而筛选出符合条件的提交历史记录。常用选项如下
 
-!!! warning "交互式终端的陷阱"
-    `git log` 等命令默认把输出导入分页器，一旦打开便不会返回 shell。用 `q` 退出分页器。若不希望 Git 打开分页器，可以运行 `git config --global core.pager ''`
+![git log limitation](./images/git/git_log_limits.png)
 
 ## Undoing Things
 
-!!! warning "谨慎使用"
+!!! warning ""
     并非所有撤销操作都是安全的。有些操作(如丢弃未提交的修改)不可恢复，还有些操作(如改写已推送的历史)会造成协作冲突
 
-### Amending the Last Commit
-
-`git commit --amend` 可以将最后一次提交重新提交，常用于修正提交说明或遗漏了某个文件的场景：
+常见的撤销操作发生在过早地提交了修改可能忘记添加一些文件或者提交说明错误，这时可以使用`git commit --amend` 将最后一次提交重新提交
 
 ```bash
-git add MissedFile.txt         # 补充遗漏的文件
-git commit --amend --no-edit   # 并入上次提交，且不改提交说明
+git commit -m "initial commit"
+git add forgotted_file
+git commit --amend 
 ```
 
-!!! warning "amend 会改写历史"
-    `--amend` 并不是修补上一次提交，而是用它**替换**上一次提交，生成一个全新的提交(哈希改变)。因此**不要用它修补已推送到共享仓库的提交**
-
-### Unstaging a Staged File
+在修改了两个文件之后不小心使用了 `git add *` 将两个文件都暂存了，这时可以使用
 
 ```bash
-git restore --staged <file>    # 新版本推荐
-git reset HEAD <file>          # 旧版本写法
+git restore --staged <file>    # New version recommended
+git reset HEAD <file>          # Old version
 ```
+将其中一个文件(`<file>`)从暂存区移除，这会把文件从暂存区撤回，但**保留工作目录中的修改**
 
-这会把文件从暂存区撤回，但**保留工作目录中的修改**
 
-### Unmodifying a File
-
-如果文件已修改但尚未暂存，想丢弃工作目录的改动：
+如果文件已经修改但尚未暂存，想要将文件恢复到最后一次提交的状态，可以使用
 
 ```bash
-git restore <file>             # 新版本推荐
-git checkout -- <file>         # 旧版本写法
+git restore <file>             # New version recommended
+git checkout -- <file>         # Old version
 ```
 
-!!! danger "丢弃修改不可恢复"
-    `git restore` / `git checkout --` 会丢弃该文件中所有已修改但未提交的内容，且**无法找回**。未跟踪的文件不受影响，也不会被还原
+!!! note ""
+    在 Git 中几乎任何提交的内容都是可以恢复的。即使是存在于已删除分支上的提交，或者被 `--amend` 提交覆盖的提交，也可以恢复。但是，任何从未提交过的内容一旦丢失，很可能再也见不到了。
 
 ## Working with Remotes
 
 远程仓库是托管在网络上的项目版本。常用命令：
 
-### Viewing Remotes
+可以使用 `git remote` 命令查看已配置的服务器，这将列出了指定的每个远程句柄的简称。如果 `clone` 了一个项目，至少会看到 `origin` ，这是 Git 为服务器分配的默认名称
+
+也可以指定 `-v` 选项，这会显示 Git 为短名称存储的 URL，以便在读取和写入该远程仓库时使用，如果你有多个远程 URL，这个命令会将它们都列出
 
 ```bash
-git remote -v                  # 显示简写名与抓取/推送 URL
-git remote show origin         # 查看某个远程仓库的详细信息（分支、跟踪关系等）
+git remote -v
 ```
 
-### Adding Remotes
+---
 
+可以使用
 ```bash
 git remote add <shortname> <url>
 ```
-
-添加后即可用 `<shortname>` 代替完整 URL 与远端交互
+来添加一个新的远程仓库，其中 `<shortname>` 可以代替完整 URL 与远端交互
 
 ### Fetching and Pulling
 
