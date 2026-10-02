@@ -75,6 +75,9 @@ nav = [
         "cs/index.md",
         { "Computer Organization" = [
             "cs/co/index.md",
+            "cs/co/1.md",
+            "cs/co/2.md",
+            "cs/co/3.md",
             "cs/co/4.md",
             "cs/co/5.md",
             "cs/co/6.md",
