@@ -92,6 +92,7 @@ nav = [
         { "Operating System" = [
             "cs/os/index.md",
             "cs/os/1.md",
+            "cs/os/2.md",
         ] },
     ] },
     { "C++" = [
