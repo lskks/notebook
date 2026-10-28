@@ -563,3 +563,33 @@ button.md-top {
   font-size: 16px;
   font-weight: bold;
 }
+
+/* ========== 正文链接样式 ========== */
+/* 常态:淡色细下划线;悬停:实色下划线 + 柔光高亮(记号笔效果) */
+.md-typeset a:not(.headerlink):not(:has(img)) {
+  color: #2f6db5;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(74, 144, 217, 0.45);
+  border-radius: 4px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.md-typeset a:not(.headerlink):not(:has(img)):hover {
+  color: #1d5a9e;
+  text-decoration-color: #1d5a9e;
+  background-color: rgba(74, 144, 217, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:not(.headerlink):not(:has(img)) {
+  color: #7fc4f0;
+  text-decoration-color: rgba(127, 196, 240, 0.4);
+}
+
+[data-md-color-scheme="slate"] .md-typeset a:not(.headerlink):not(:has(img)):hover {
+  color: #a5d8f5;
+  text-decoration-color: #a5d8f5;
+  background-color: rgba(127, 196, 240, 0.14);
+}
