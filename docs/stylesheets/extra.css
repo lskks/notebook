@@ -268,6 +268,25 @@ body.is-homepage .md-content__inner {
   margin-bottom: 0 !important;
 }
 
+/* ========== 页脚配色(上一页/下一页 + 版权条):浅灰 -> 清新蓝 ========== */
+[data-md-color-scheme="default"] .md-footer,
+[data-md-color-scheme="default"] .md-footer-meta {
+  background-color: #e7f0f9;
+}
+
+[data-md-color-scheme="default"] .md-footer-meta {
+  border-top: 1px solid #d3e3f3;
+}
+
+[data-md-color-scheme="slate"] .md-footer,
+[data-md-color-scheme="slate"] .md-footer-meta {
+  background-color: #1b2836;
+}
+
+[data-md-color-scheme="slate"] .md-footer-meta {
+  border-top: 1px solid #2a3b4f;
+}
+
 body.is-homepage .content-section {
   display: none !important;
 }
@@ -281,12 +300,12 @@ body.is-homepage .content-section {
 /* 加粗文本样式 - 醒目但不喧宾夺主 */
 :root,
 [data-md-color-scheme="default"] {
-  --md-strong-color: #004d99;
+  --md-strong-color: #4a90d9;
   font-size: 1.3em;
 }
 
 [data-md-color-scheme="slate"] {
-  --md-strong-color: #29b6f6;
+  --md-strong-color: #7fc4f0;
   font-size: 1.3em;
 }
 
