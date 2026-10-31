@@ -33,9 +33,9 @@ Copyright &copy; 2026 ljhkss
 repo_url = "https://github.com/lskks/notebook"
 repo_name = "lskks/notebook"
 
-# The repository's default branch is "master", so the auto-derived edit URL
+# The repository's default branch is "main", so the auto-derived edit URL
 # must be overridden.
-edit_uri = "edit/master/docs/"
+edit_uri = "edit/main/docs/"
 
 # ----------------------------------------------------------------------------
 # Navigation

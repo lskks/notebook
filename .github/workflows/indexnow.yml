@@ -3,7 +3,7 @@ name: IndexNow Auto Submit
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - "docs/**/*.md"
       - "docs/**/*.html"
