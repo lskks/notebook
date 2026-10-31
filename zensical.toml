@@ -96,6 +96,7 @@ nav = [
             "cs/os/3.md",
             "cs/os/4.md",
             "cs/os/5.md",
+            "cs/os/6.md",
         ] },
     ] },
     { "C++" = [
@@ -213,6 +214,7 @@ features = [
     # ranges by the user.
     # https://zensical.org/docs/authoring/code-blocks/#code-selection-button
     "content.code.select",
+    "content.code.annotate",
 
     # Zensical can render footnotes as inline tooltips, so the user can read
     # the footnote without leaving the context of the document.
