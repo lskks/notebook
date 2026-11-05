@@ -109,3 +109,16 @@
   grid-template-rows: 1fr;
 }
 
+/* ========== 代码字体连字 (JetBrains Mono ligatures) ========== */
+/* JetBrains Mono 通过 calt/liga 特性提供 := -> => != >= <= 等连字。
+   Firefox 等浏览器默认关闭 calt,需要显式开启。 */
+.md-typeset code,
+.md-typeset pre,
+.md-typeset kbd,
+.md-typeset samp,
+.highlight code,
+.highlight pre {
+  font-variant-ligatures: contextual common-ligatures;
+  font-feature-settings: "calt" 1, "liga" 1;
+}
+
