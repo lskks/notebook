@@ -95,8 +95,7 @@ document$.subscribe(function() {
 
     preloadCriticalImages: function() {
       const criticalImages = [
-        '../images/hero-bg.webp',
-        '../images/favicon.jpg'
+        '../images/hero-bg.webp'
       ];
 
       if ('requestIdleCallback' in window) {

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{#
+  屏蔽主题默认从 Google Fonts 加载字体的阻塞式请求。
+  fonts.googleapis.com 在国内经常超时,会直接卡住首次渲染(FCP)。
+  字体改由 stylesheets/extra.css 里的 --md-text-font / --md-code-font 指定。
+#}
+{% block fonts %}
+  <style>:root{--md-text-font:"LXGW WenKai Screen",-apple-system,"Segoe UI",sans-serif;--md-code-font:"JetBrains Mono","Cascadia Code","Fira Code",Consolas,monospace}</style>
+{% endblock %}

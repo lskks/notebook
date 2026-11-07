@@ -113,18 +113,17 @@ extra_javascript = [
     "javascripts/wordcount.js",
     "javascripts/git-dates.js",
     "javascripts/article-dates.js",
-    "https://unpkg.com/katex@0/dist/katex.min.js",
-    "https://unpkg.com/katex@0/dist/contrib/auto-render.min.js",
+    "https://gcore.jsdelivr.net/npm/katex@0/dist/katex.min.js",
+    "https://gcore.jsdelivr.net/npm/katex@0/dist/contrib/auto-render.min.js",
     "javascripts/katex.js",
 ]
 
 extra_css = [
-    "https://unpkg.com/katex@0/dist/katex.min.css",
+    "https://gcore.jsdelivr.net/npm/katex@0/dist/katex.min.css",
     "stylesheets/extra.css",
     "stylesheets/custom.css",
     "stylesheets/code-theme.css",
     "https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css",
-    "https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css",
     "https://gcore.jsdelivr.net/npm/@fontsource/bitter@5/700.css",
 ]
 
@@ -159,7 +158,7 @@ custom_dir = "docs/overrides"
 # - https://zensical.org/docs/setup/logo-and-icons/#favicon
 # - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
 #
-favicon = "images/favicon.webp"
+favicon = "images/favicon-64.webp"
 
 # Zensical supports more than 60 different languages. This means that the
 # labels and tooltips that Zensical's templates produce are translated.
@@ -345,8 +344,10 @@ toggle.name = "Switch to light mode"
 # a monospaced font used in code blocks.
 # ----------------------------------------------------------------------------
 [project.theme.font]
-text = "LXGW WenKai"
-code = "JetBrains Mono"
+# text / code 留空是有意为之:只要填了字体名,主题就会插入一条
+# fonts.googleapis.com 的阻塞式样式表请求,而该域名在国内常常超时,
+# 直接拖慢首次渲染(FCP)。正文字体改由 stylesheets/extra.css 中的
+# --md-text-font(--md-code-font) 指定,走本地字体或 jsDelivr 加载。
 size = "36px"
 
 # ----------------------------------------------------------------------------

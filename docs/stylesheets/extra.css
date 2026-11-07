@@ -78,7 +78,8 @@ body.is-homepage .md-grid {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* 不再使用 background-attachment: fixed:
+     它会让浏览器无法用便宜的方式绘制背景,首屏大图(LCP)反而更慢 */
 }
 
 /* 半透明遮罩层，让文字更清晰 */
@@ -426,10 +427,17 @@ img.error::before {
   }
 }
 
-/* 预加载关键图片（Hero 背景） */
-.hero-section {
-  background-attachment: fixed;
-  will-change: transform;
+/* 首屏大图按屏幕宽度取小尺寸版本,移动端 LCP 图片体积从 ~105KB 降到 ~20KB */
+@media screen and (max-width: 768px) {
+  .hero-section {
+    background-image: url('../images/hero-bg-768w.webp');
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-section {
+    background-image: url('../images/hero-bg-480w.webp');
+  }
 }
 
 /* 优化 favicon 加载 */
@@ -533,17 +541,19 @@ img.error::before {
 }
 
 /* 自定义字体 */
-/* 引入霞鹜文楷屏幕阅读版 */
-@import url("https://cdn.jsdelivr.net/npm/cn-fontsource-lxgw-wen-kai-screen/font.css");
+/* 字体文件由 zensical.toml 的 extra_css 统一引入,这里不再使用 @import,
+   避免额外的串行请求和失效链接阻塞渲染 */
 
 :root {
   /* 中英文统一使用屏幕阅读版，英文回退到系统无衬线字体 */
   --md-text-font: "LXGW WenKai Screen", -apple-system, "Segoe UI", sans-serif;
+  /* 代码字体:不再从 Google Fonts 拉取,优先用本机已安装的等宽字体 */
+  --md-code-font: "JetBrains Mono", "Cascadia Code", "Fira Code", Consolas, monospace;
 }
 
 /* 返回顶部按钮字体 */
 button.md-top {
-  font-family: "LXGW WenKai";
+  font-family: "LXGW WenKai Screen";
   font-size: 16px;
   font-weight: bold;
 }
