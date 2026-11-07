@@ -4,7 +4,9 @@
     export PATH="$HOME/.cargo/bin:$PATH"
     uv sync
     uv run python generate_git_dates.py
+    uv run python build_homepage.py
     uv run zensical build
+    uv run python add_sitemap_lastmod.py
   """
   publish = "site"
 

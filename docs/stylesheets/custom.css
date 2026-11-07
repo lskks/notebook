@@ -89,6 +89,12 @@
   display: none;
 }
 
+/* ========== 首页隐藏字数统计与文章时间 ========== */
+.md-content__inner:has(> .hero-section.is-homepage) .word-count-badge,
+.md-content__inner:has(> .hero-section.is-homepage) .article-dates {
+  display: none;
+}
+
 /* ========== 右侧目录:默认折叠,滚动到对应章节才展开 ========== */
 /* 主题模板的 TOC 子列表没有折叠机制,子节会全部展开。
    这里把嵌套的子目录默认收起,只有当其中包含当前活动锚点
@@ -143,12 +149,13 @@
 /* ========== 文章创建与修改时间 ========== */
 .article-dates {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.2rem 1rem;
   margin: 1rem 0 0.5rem;
   color: var(--md-default-fg-color--light);
   font-size: 0.6rem;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
 .article-dates__item {
@@ -161,4 +168,174 @@
   width: 1em;
   height: 1em;
   flex-shrink: 0;
+}
+
+/* ========== 提示块字号 ========== */
+/* 内置样式将 admonition 设为 0.64rem,这里改为与正文一致 */
+.md-typeset .admonition,
+.md-typeset details {
+  font-size: inherit;
+}
+
+/* ========== 主页第二屏:最新笔记与分类 ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+.home-section {
+  box-sizing: border-box;
+  width: 100vw;
+  min-height: 100vh;
+  margin-left: calc(-50vw + 50%);
+  padding: 5rem 1.5rem 6rem;
+  background: var(--md-default-bg-color);
+  scroll-margin-top: 3.5rem;
+}
+
+.home-section__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 第二屏背景:仅浅色模式使用纯色,深色模式保持默认 */
+[data-md-color-scheme="default"] .home-section {
+  background: #f5f4f1;
+}
+
+.md-typeset .home-heading {
+  position: relative;
+  margin: 0 0 1.4rem;
+  padding-left: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .home-heading::before {
+  content: "";
+  position: absolute;
+  top: 0.25em;
+  bottom: 0.25em;
+  left: 0;
+  width: 4px;
+  border-radius: 2px;
+  background: var(--md-primary-fg-color);
+}
+
+.md-typeset .home-heading:not(:first-child) {
+  margin-top: 3rem;
+}
+
+.md-typeset .home-subheading {
+  margin: -1rem 0 1.6rem;
+  font-size: 0.6rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .note-grid,
+.md-typeset .category-grid {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.md-typeset .note-grid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.md-typeset .category-grid {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.8rem;
+}
+
+.md-typeset .note-card,
+.md-typeset .category-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 10px;
+  background: var(--md-default-bg-color);
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.45s ease, transform 0.45s ease,
+    border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.home-section.is-animated .note-card,
+.home-section.is-animated .category-card {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.home-section.is-animated .note-card.is-visible,
+.home-section.is-animated .category-card.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.md-typeset .note-card:hover,
+.md-typeset .category-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--md-primary-fg-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.home-section.is-animated .note-card.is-visible:hover,
+.home-section.is-animated .category-card.is-visible:hover {
+  transform: translateY(-3px);
+}
+
+.md-typeset .note-card__category {
+  align-self: flex-start;
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  background: var(--md-code-bg-color);
+  color: var(--md-primary-fg-color);
+  font-size: 0.5rem;
+  line-height: 1.6;
+}
+
+.md-typeset .note-card__title {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .note-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.8rem;
+  margin-top: auto;
+  padding-top: 0.3rem;
+  font-size: 0.55rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.md-typeset .category-card__name {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--md-default-fg-color);
+}
+
+.md-typeset .category-card__count {
+  font-size: 0.55rem;
+  color: var(--md-default-fg-color--light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .home-section.is-animated .note-card,
+  .home-section.is-animated .category-card {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

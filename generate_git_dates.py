@@ -9,6 +9,25 @@ DOCS = ROOT / "docs"
 OUTPUT = DOCS / "javascripts" / "git-dates.js"
 
 
+def ensure_full_history() -> None:
+    """浅克隆时补全历史，否则取不到真实的首次提交时间。"""
+    try:
+        shallow = subprocess.run(
+            ["git", "rev-parse", "--is-shallow-repository"],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+        ).stdout.strip()
+        if shallow == "true":
+            subprocess.run(
+                ["git", "fetch", "--unshallow", "--quiet"], cwd=ROOT, check=True
+            )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        print("警告：无法补全 Git 历史，时间可能只反映最新提交")
+
+
 def git_dates(relative_path: str) -> dict[str, str] | None:
     result = subprocess.run(
         ["git", "log", "--follow", "--format=%aI", "--", f"docs/{relative_path}"],
@@ -25,6 +44,7 @@ def git_dates(relative_path: str) -> dict[str, str] | None:
 
 
 def main() -> None:
+    ensure_full_history()
     data = {}
     for path in sorted(DOCS.rglob("*.md")):
         relative_path = path.relative_to(DOCS).as_posix()

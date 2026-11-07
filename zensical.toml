@@ -125,6 +125,7 @@ extra_css = [
     "stylesheets/code-theme.css",
     "https://gcore.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css",
     "https://gcore.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css",
+    "https://gcore.jsdelivr.net/npm/@fontsource/bitter@5/700.css",
 ]
 
 extra_files = [

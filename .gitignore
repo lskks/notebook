@@ -7,3 +7,4 @@
 package-lock.json
 site/
 docs/javascripts/git-dates.js
+__pycache__/

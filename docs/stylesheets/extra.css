@@ -113,12 +113,14 @@ body.is-homepage .md-grid {
   padding: 2rem;
 }
 
-.hero-title {
-  font-size: 3.5rem;
+/* 提高特异性,避免被主题的 .md-typeset h1 颜色覆盖 */
+.md-typeset .hero-title {
+  font-family: "Bitter", Georgia, "Songti SC", serif;
+  font-size: 4rem;
   font-weight: 700;
   margin: 0 0 1rem 0;
   color: #FFF8DC;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55), 0 1px 3px rgba(0, 0, 0, 0.75);
   letter-spacing: 2px;
   animation: fadeInDown 1s ease-out;
 }
@@ -134,7 +136,7 @@ body.is-homepage .md-grid {
 
 .hero-scroll-button {
   position: absolute;
-  bottom: 60px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -161,11 +163,12 @@ body.is-homepage .md-grid {
 }
 
 .scroll-arrow {
-  width: 30px;
-  height: 30px;
-  border-right: 3px solid rgba(255, 255, 255, 0.7);
-  border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+  width: 42px;
+  height: 42px;
+  border-right: 4px solid rgba(255, 255, 255, 0.85);
+  border-bottom: 4px solid rgba(255, 255, 255, 0.85);
   transform: rotate(45deg);
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
   animation: bounce 2s infinite;
 }
 
@@ -232,7 +235,7 @@ body.is-homepage .md-grid {
 /* 响应式设计 */
 @media screen and (max-width: 768px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
   }
 
   .hero-subtitle {
