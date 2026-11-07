@@ -109,3 +109,56 @@
   grid-template-rows: 1fr;
 }
 
+/* ========== 文章字数统计 ========== */
+.md-typeset h1:has(+ .word-count-badge) {
+  margin-bottom: 0.25rem;
+}
+
+.word-count-badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.7rem;
+  margin: 0;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.word-count-badge__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.word-count-badge svg {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+.md-typeset .word-count-badge + h2 {
+  margin-top: 0.75rem;
+}
+
+/* ========== 文章创建与修改时间 ========== */
+.article-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1rem;
+  margin: 1rem 0 0.5rem;
+  color: var(--md-default-fg-color--light);
+  font-size: 0.6rem;
+  line-height: 1.5;
+}
+
+.article-dates__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+.article-dates svg {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
