@@ -23,7 +23,9 @@ tags:
         - [x] [Beyond Physical Memory](5.md)
 	- **Concurrency**
 		- [x] [Concurrency and Threads](6.md)
-      	- [x] [Synchronization](7.md)
+        - [x] [Synchronization](7.md)
+        - [x] [Pitfalls and Events](8.md)
 	- **Persistence**
+		- [] [Device]()
 
 !!! note "相关资源"

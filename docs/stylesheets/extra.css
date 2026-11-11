@@ -300,12 +300,12 @@ body.is-homepage .content-section {
 /* 加粗文本样式 - 醒目但不喧宾夺主 */
 :root,
 [data-md-color-scheme="default"] {
-  --md-strong-color: #4a90d9;
+  --md-strong-color: #375a7b;
   font-size: 1.3em;
 }
 
 [data-md-color-scheme="slate"] {
-  --md-strong-color: #7fc4f0;
+  --md-strong-color: #a3c7e0;
   font-size: 1.3em;
 }
 
@@ -459,6 +459,8 @@ img.error::before {
 /* 应用自定义字体到正文 */
 .md-typeset {
   font-family: var(--md-text-font-family);
+  /* 中文正文行距放宽,减少大字号下的拥挤感 */
+  line-height: 1.8;
 }
 
 /* 应用自定义字体到代码块 */

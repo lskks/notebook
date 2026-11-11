@@ -98,6 +98,7 @@ nav = [
             "cs/os/5.md",
             "cs/os/6.md",
             "cs/os/7.md",
+            "cs/os/8.md",
         ] },
     ] },
     { "C++" = [
